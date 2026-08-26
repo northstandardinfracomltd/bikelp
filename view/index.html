@@ -845,14 +845,16 @@ max-width: 300px;
     <div class="bk-sub-123-step-indicator" data-step="5"><span>5</span> VALIDATION</div>
   </div>
 
-  <form id="bk-sub-123-main-form" onsubmit="return false;">
+
+
+<form id="bk-sub-123-main-form" onsubmit="return false;">
     
-    <!-- ==================== STEP 1 ==================== -->
+    <!-- ==================== STEP 1 (PROGRESSIVE) ==================== -->
     <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
       <h2 class="bk-sub-123-title">Quel vélo souhaitez-vous assurer ?</h2>
 
-      <!-- Marque -->
-      <div class="bk-sub-123-field-group">
+      <!-- 1. Marque (Visible) -->
+      <div class="bk-sub-123-field-group" id="bk-sub-123-fg-brand">
         <label class="bk-sub-123-label" for="bk-sub-123-brand">Marque du vélo *</label>
         <select id="bk-sub-123-brand" class="bk-sub-123-select" required>
           <option value="" disabled selected>Sélectionnez une marque</option>
@@ -904,8 +906,8 @@ max-width: 300px;
         </div>
       </div>
 
-      <!-- Type de vélo -->
-      <div class="bk-sub-123-field-group">
+      <!-- 2. Type de vélo (Visible) -->
+      <div class="bk-sub-123-field-group" id="bk-sub-123-fg-type">
         <label class="bk-sub-123-label" for="bk-sub-123-type">Type de vélo *</label>
         <select id="bk-sub-123-type" class="bk-sub-123-select" required>
           <option value="" disabled selected>Sélectionnez un type</option>
@@ -947,15 +949,15 @@ max-width: 300px;
         </div>
       </div>
 
-      <!-- Valeur vélo -->
-      <div class="bk-sub-123-field-group">
+      <!-- 3. Valeur vélo (Caché au départ) -->
+      <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-value" style="display: none;">
         <label class="bk-sub-123-label" for="bk-sub-123-bike-value">Valeur du vélo (€) *</label>
         <div class="bk-sub-123-helper">Combien coûterait le remplacement à neuf au prix catalogue avec vos éventuelles personnalisations et améliorations.</div>
         <input type="number" id="bk-sub-123-bike-value" class="bk-sub-123-input" min="1" step="any" placeholder="Ex: 2500" required />
       </div>
 
-      <!-- Gravure -->
-      <div class="bk-sub-123-field-group">
+      <!-- 4. Gravure (Caché au départ) -->
+      <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-engraved" style="display: none;">
         <label class="bk-sub-123-label">Mon vélo dispose d’une gravure et d’un numéro d’enregistrement *</label>
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
@@ -963,14 +965,14 @@ max-width: 300px;
             <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-engraved" value="Non" checked>
+            <input type="radio" name="bk-sub-123-engraved" value="Non">
             <span>Non</span>
           </label>
         </div>
       </div>
 
-      <!-- Option Accessoires -->
-      <div class="bk-sub-123-field-group">
+      <!-- 5. Option Accessoires (Caché au départ) -->
+      <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-accessories" style="display: none;">
         <label class="bk-sub-123-label">Je souhaite assurer mes accessoires et vêtements de vélo *</label>
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
@@ -978,14 +980,14 @@ max-width: 300px;
             <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-has-acc" value="Non" id="bk-sub-123-has-acc-no" checked>
+            <input type="radio" name="bk-sub-123-has-acc" value="Non" id="bk-sub-123-has-acc-no">
             <span>Non</span>
           </label>
         </div>
       </div>
 
-      <!-- Nuage de tags accessoires (Caché au départ) -->
-      <div id="bk-sub-123-acc-panel" class="bk-sub-123-sub-box" style="display: none;">
+      <!-- Nuage de tags accessoires -->
+      <div id="bk-sub-123-acc-panel" class="bk-sub-123-sub-box bk-sub-123-prog-field" style="display: none;">
         <label class="bk-sub-123-label">Sélectionnez vos accessoires et équipements :</label>
         <div class="bk-sub-123-tag-cloud" id="bk-sub-123-tags-container">
           <button type="button" class="bk-sub-123-tag">Antivol</button>
@@ -1023,7 +1025,8 @@ max-width: 300px;
         </div>
       </div>
 
-      <div class="bk-sub-123-actions">
+      <!-- Bouton étape 1 (Caché au départ) -->
+      <div class="bk-sub-123-actions bk-sub-123-prog-field" id="bk-sub-123-step1-actions" style="display: none;">
         <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(1)">Obtenir un devis</button>
       </div>
     </div>
@@ -1220,7 +1223,7 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q3" value="Oui" required>
-            <span>Non</span>
+            <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q3" value="Non">
@@ -1368,13 +1371,17 @@ max-width: 300px;
     animation: bkFadeIn 0.25s ease-in-out;
   }
 
+  .bk-sub-123-prog-field {
+    animation: bkFadeIn 0.3s ease-in-out;
+  }
+
   @keyframes bkFadeIn {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .bk-sub-123-title {
-font-size: 26px;
+    font-size: 26px;
     font-weight: 800;
     margin: 15px 0 40px 0;
     color: #000;
@@ -1415,7 +1422,7 @@ font-size: 26px;
 
   .bk-sub-123-input,
   .bk-sub-123-select {
-width: 100%;
+    width: 100%;
     padding: 20px 20px;
     font-size: 18px;
     font-weight: 600;
@@ -1427,21 +1434,19 @@ width: 100%;
     color: #0059ff;
     outline: none;
     transition: border-color 0.2s ease;
-/* Force-remove default dropdown arrow */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
 
-/* Removes the arrow in legacy IE / Edge */
-.bk-sub-123-select::-ms-expand {
-  display: none;
-}
+  .bk-sub-123-select::-ms-expand {
+    display: none;
+  }
 
-.bk-sub-123-input::placeholder {
+  .bk-sub-123-input::placeholder {
     color: #0059ff;
-  opacity: 1;      /* Requis pour corriger la transparence par défaut de Firefox */
-}
+    opacity: 1;
+  }
 
   .bk-sub-123-input:focus,
   .bk-sub-123-select:focus {
@@ -1683,6 +1688,7 @@ width: 100%;
     }
   }
 </style>
+
 <!-- ==================== JAVASCRIPT LOGIC ==================== -->
 <script>
 (function() {
@@ -1724,9 +1730,7 @@ width: 100%;
 
   // --- LOGIQUE PROGRESSIVE STEP 1 ---
   function updateStep1ProgressiveFlow() {
-    // 1. Marque valide ?
     var brandValid = brandSelect.value !== "" && (brandSelect.value !== "Autre" || brandOtherInput.value.trim() !== "");
-    // 2. Type valide ?
     var typeValid = typeSelect.value !== "" && (typeSelect.value !== "Autre" || typeOtherInput.value.trim() !== "");
 
     // Étape A : Affichage du champ Valeur
@@ -1741,7 +1745,7 @@ width: 100%;
       return;
     }
 
-    // Étape B : Affichage du champ Gravure (dès que la valeur est saisie et > 0)
+    // Étape B : Affichage du champ Gravure (dès que la valeur est valide)
     var val = parseFloat(bikeValueInput.value);
     if (!isNaN(val) && val > 0) {
       fgEngraved.style.display = 'block';
@@ -1871,9 +1875,6 @@ width: 100%;
         }
       } else if (!input.value.trim()) {
         valid = false;
-        input.style.borderColor = '#d90429';
-      } else {
-        input.style.borderColor = '#333333';
       }
     });
 
@@ -1970,6 +1971,8 @@ width: 100%;
 <!-- ========================================================== -->
 <!-- FIN DU MODULE DE SOUSCRIPTION BIKELP -->
 <!-- ========================================================== -->
+
+
 
         </div>
       </div>
