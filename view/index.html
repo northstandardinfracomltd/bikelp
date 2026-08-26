@@ -828,466 +828,477 @@ max-width: 300px;
         <div>
           <h1 class="hero-title">Bikelp assure votre vélo à partir de 9€ par mois vol et dommages inclus.</h1>
           <p class="hero-subtitle">Bikelp réinvente la protection vélo : un système équitable, transparent et sans franchise obscure, piloté depuis Calp.</p>
-        </div>
+      
+      
 
-        <div class="subscription-panel">
-<!-- ========================================================== -->
-<!-- DEBUT DU MODULE DE SOUSCRIPTION ASSURANCE BIKELP -->
-<!-- ========================================================== -->
 
-<div id="bk-sub-123-wrapper" class="bk-sub-123-container">
-  <!-- Barre de progression -->
-  <div class="bk-sub-123-progress-container">
-    <div class="bk-sub-123-step-indicator active" data-step="1"><span>1</span> VÉLO</div>
-    <div class="bk-sub-123-step-indicator" data-step="2"><span>2</span> RÉSIDENCE</div>
-    <div class="bk-sub-123-step-indicator" data-step="3"><span>3</span> TARIF</div>
-    <div class="bk-sub-123-step-indicator" data-step="4"><span>4</span> PROFIL</div>
-    <div class="bk-sub-123-step-indicator" data-step="5"><span>5</span> VALIDATION</div>
+
+
+
+          <!-- ========================================================== -->
+<!-- 1. BOUTON DECLENCHEUR SUR VOTRE PAGE -->
+<!-- ========================================================== -->
+<button type="button" class="bk-sub-123-trigger-btn" onclick="bkSubOpenPane()">
+  Obtenir un devis
+</button>
+
+<!-- ========================================================== -->
+<!-- 2. SIDE-PANE (OVERLAY + TIROIR LATERAL FULL HEIGHT) -->
+<!-- ========================================================== -->
+<div id="bk-sub-123-overlay" class="bk-sub-123-drawer-overlay" onclick="bkSubClosePane()"></div>
+
+<aside id="bk-sub-123-drawer" class="bk-sub-123-drawer" aria-hidden="true">
+  
+  <!-- Entête du Side-Pane -->
+  <div class="bk-sub-123-drawer-header">
+    <h3 class="bk-sub-123-drawer-title">Configuration de votre offre</h3>
+    <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()">
+      Fermer
+    </button>
   </div>
 
-
-
-<form id="bk-sub-123-main-form" onsubmit="return false;">
-    
-    <!-- ==================== STEP 1 (PROGRESSIVE) ==================== -->
-    <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
-      <h2 class="bk-sub-123-title">Quel vélo souhaitez-vous assurer ?</h2>
-
-      <!-- 1. Marque (Visible) -->
-      <div class="bk-sub-123-field-group" id="bk-sub-123-fg-brand">
-        <label class="bk-sub-123-label" for="bk-sub-123-brand">Marque du vélo *</label>
-        <select id="bk-sub-123-brand" class="bk-sub-123-select" required>
-          <option value="" disabled selected>Sélectionnez une marque</option>
-          <option value="Cube">Cube</option>
-          <option value="Specialized">Specialized</option>
-          <option value="Van Rysel">Van Rysel</option>
-          <option value="Trek">Trek</option>
-          <option value="Giant">Giant</option>
-          <option value="Cannondale">Cannondale</option>
-          <option value="Scott">Scott</option>
-          <option value="Canyon">Canyon</option>
-          <option value="Bianchi">Bianchi</option>
-          <option value="Pinarello">Pinarello</option>
-          <option value="Santa Cruz">Santa Cruz</option>
-          <option value="Colnago">Colnago</option>
-          <option value="BMC">BMC</option>
-          <option value="Merida">Merida</option>
-          <option value="Orbea">Orbea</option>
-          <option value="Cervélo">Cervélo</option>
-          <option value="Look">Look</option>
-          <option value="Lapierre">Lapierre</option>
-          <option value="Wilier Triestina">Wilier Triestina</option>
-          <option value="Focus">Focus</option>
-          <option value="Kona">Kona</option>
-          <option value="GT Bicycles">GT Bicycles</option>
-          <option value="Marin">Marin</option>
-          <option value="Ridley">Ridley</option>
-          <option value="Factor">Factor</option>
-          <option value="Time">Time</option>
-          <option value="Felt">Felt</option>
-          <option value="Ghost">Ghost</option>
-          <option value="Yeti Cycles">Yeti Cycles</option>
-          <option value="Mondraker">Mondraker</option>
-          <option value="Pivot Cycles">Pivot Cycles</option>
-          <option value="Commencal">Commencal</option>
-          <option value="Norco">Norco</option>
-          <option value="Rocky Mountain">Rocky Mountain</option>
-          <option value="Argon 18">Argon 18</option>
-          <option value="De Rosa">De Rosa</option>
-          <option value="Cinelli">Cinelli</option>
-          <option value="Ribble">Ribble</option>
-          <option value="Rose">Rose</option>
-          <option value="Basso">Basso</option>
-          <option value="3T">3T</option>
-          <option value="Autre">Autre</option>
-        </select>
-        <div id="bk-sub-123-brand-other-wrap" class="bk-sub-123-subfield" style="display: none;">
-          <input type="text" id="bk-sub-123-brand-other" class="bk-sub-123-input" placeholder="Précisez la marque et le modèle..." />
-        </div>
-      </div>
-
-      <!-- 2. Type de vélo (Visible) -->
-      <div class="bk-sub-123-field-group" id="bk-sub-123-fg-type">
-        <label class="bk-sub-123-label" for="bk-sub-123-type">Type de vélo *</label>
-        <select id="bk-sub-123-type" class="bk-sub-123-select" required>
-          <option value="" disabled selected>Sélectionnez un type</option>
-          <option value="Vélo de route">Vélo de route</option>
-          <option value="Vélo de ville">Vélo de ville</option>
-          <option value="Vélo électrique (VAE)">Vélo électrique (VAE)</option>
-          <option value="VTT (MTB)">VTT (MTB)</option>
-          <option value="Gravel">Gravel</option>
-          <option value="Vélo de trekking (VTC)">Vélo de trekking (VTC)</option>
-          <option value="Vélo pliable">Vélo pliable</option>
-          <option value="Vélo cargo">Vélo cargo</option>
-          <option value="Fixie (Pignon fixe)">Fixie (Pignon fixe)</option>
-          <option value="Singlespeed">Singlespeed</option>
-          <option value="BMX">BMX</option>
-          <option value="Fatbike">Fatbike</option>
-          <option value="Tandem">Tandem</option>
-          <option value="Vélo de cyclo-cross">Vélo de cyclo-cross</option>
-          <option value="Vélo de contre-la-montre (Triathlon)">Vélo de contre-la-montre (Triathlon)</option>
-          <option value="Vélo de piste">Vélo de piste</option>
-          <option value="Vélo couché (Recumbent)">Vélo couché (Recumbent)</option>
-          <option value="Vélo hollandais">Vélo hollandais</option>
-          <option value="Beach Cruiser">Beach Cruiser</option>
-          <option value="Draisienne">Draisienne</option>
-          <option value="VTT de descente (Downhill)">VTT de descente (Downhill)</option>
-          <option value="VTT d'enduro">VTT d'enduro</option>
-          <option value="VTT de cross-country (XC)">VTT de cross-country (XC)</option>
-          <option value="VTT all-mountain">VTT all-mountain</option>
-          <option value="VTT dirt/street">VTT dirt/street</option>
-          <option value="Vélo longtail">Vélo longtail</option>
-          <option value="Biporteur">Biporteur</option>
-          <option value="Triporteur">Triporteur</option>
-          <option value="Vélo de voyage (Touring/Randonneuse)">Vélo de voyage (Touring/Randonneuse)</option>
-          <option value="Vélomobile">Vélomobile</option>
-          <option value="Vélo handisport (Handbike)">Vélo handisport (Handbike)</option>
-          <option value="Autre">Autre</option>
-        </select>
-        <div id="bk-sub-123-type-other-wrap" class="bk-sub-123-subfield" style="display: none;">
-          <input type="text" id="bk-sub-123-type-other" class="bk-sub-123-input" placeholder="Précisez le type de vélo..." />
-        </div>
-      </div>
-
-      <!-- 3. Valeur vélo (Caché au départ) -->
-      <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-value" style="display: none;">
-        <label class="bk-sub-123-label" for="bk-sub-123-bike-value">Valeur du vélo (€) *</label>
-        <div class="bk-sub-123-helper">Combien coûterait le remplacement à neuf au prix catalogue avec vos éventuelles personnalisations et améliorations.</div>
-        <input type="number" id="bk-sub-123-bike-value" class="bk-sub-123-input" min="1" step="any" placeholder="Ex: 2500" required />
-      </div>
-
-      <!-- 4. Gravure (Caché au départ) -->
-      <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-engraved" style="display: none;">
-        <label class="bk-sub-123-label">Mon vélo dispose d’une gravure et d’un numéro d’enregistrement *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-engraved" value="Oui" required>
-            <span>Oui</span>
-          </label>
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-engraved" value="Non">
-            <span>Non</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- 5. Option Accessoires (Caché au départ) -->
-      <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-accessories" style="display: none;">
-        <label class="bk-sub-123-label">Je souhaite assurer mes accessoires et vêtements de vélo *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-has-acc" value="Oui" id="bk-sub-123-has-acc-yes">
-            <span>Oui</span>
-          </label>
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-has-acc" value="Non" id="bk-sub-123-has-acc-no">
-            <span>Non</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Nuage de tags accessoires -->
-      <div id="bk-sub-123-acc-panel" class="bk-sub-123-sub-box bk-sub-123-prog-field" style="display: none;">
-        <label class="bk-sub-123-label">Sélectionnez vos accessoires et équipements :</label>
-        <div class="bk-sub-123-tag-cloud" id="bk-sub-123-tags-container">
-          <button type="button" class="bk-sub-123-tag">Antivol</button>
-          <button type="button" class="bk-sub-123-tag">Casque</button>
-          <button type="button" class="bk-sub-123-tag">Éclairage</button>
-          <button type="button" class="bk-sub-123-tag">Panier</button>
-          <button type="button" class="bk-sub-123-tag">Capteur de puissance non intégré</button>
-          <button type="button" class="bk-sub-123-tag">Porte-bagages</button>
-          <button type="button" class="bk-sub-123-tag">Rétroviseur de vélo</button>
-          <button type="button" class="bk-sub-123-tag">Sacoche pour vélo</button>
-          <button type="button" class="bk-sub-123-tag">Sacoches</button>
-          <button type="button" class="bk-sub-123-tag">Siège pour enfant</button>
-          <button type="button" class="bk-sub-123-tag">Alarme pour vélo</button>
-          <button type="button" class="bk-sub-123-tag">Bidon</button>
-          <button type="button" class="bk-sub-123-tag">Caméra embarquée</button>
-          <button type="button" class="bk-sub-123-tag">Chargeur</button>
-          <button type="button" class="bk-sub-123-tag">Chaussures</button>
-          <button type="button" class="bk-sub-123-tag">Compteur</button>
-          <button type="button" class="bk-sub-123-tag">Gants</button>
-          <button type="button" class="bk-sub-123-tag">Cuissard</button>
-          <button type="button" class="bk-sub-123-tag">Maillot</button>
-          <button type="button" class="bk-sub-123-tag">Combinaison</button>
-          <button type="button" class="bk-sub-123-tag">Garde-Boue</button>
-          <button type="button" class="bk-sub-123-tag">Housse de vélo</button>
-          <button type="button" class="bk-sub-123-tag">Valise de vélo</button>
-          <button type="button" class="bk-sub-123-tag">Kit de réparation</button>
-          <button type="button" class="bk-sub-123-tag">Lunette</button>
-          <button type="button" class="bk-sub-123-tag">Porte-bidons</button>
-          <button type="button" class="bk-sub-123-tag">Remorque</button>
-        </div>
-
-        <div id="bk-sub-123-acc-val-wrap" class="bk-sub-123-subfield" style="display: none; margin-top: 15px;">
-          <label class="bk-sub-123-label" for="bk-sub-123-acc-value">Montant total de la valeur des objets (€) *</label>
-          <input type="number" id="bk-sub-123-acc-value" class="bk-sub-123-input" min="0" step="any" placeholder="0" />
-        </div>
-      </div>
-
-      <!-- Bouton étape 1 (Caché au départ) -->
-      <div class="bk-sub-123-actions bk-sub-123-prog-field" id="bk-sub-123-step1-actions" style="display: none;">
-        <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(1)">Obtenir un devis</button>
-      </div>
-    </div>
-
-
-    <!-- ==================== STEP 2 ==================== -->
-    <div class="bk-sub-123-step-panel" id="bk-sub-123-step-2">
-      <h2 class="bk-sub-123-title">Indiquez votre lieu de résidence.</h2>
-
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label" for="bk-sub-123-country">Pays *</label>
-        <select id="bk-sub-123-country" class="bk-sub-123-select" required>
-          <option value="" disabled selected>Sélectionnez un pays</option>
-          <option value="France">France</option>
-          <option value="Espagne">Espagne</option>
-          <option value="Allemagne">Allemagne</option>
-          <option value="Italie">Italie</option>
-          <option value="Portugal">Portugal</option>
-          <option value="Belgique">Belgique</option>
-          <option value="Pays-Bas">Pays-Bas</option>
-          <option value="Autriche">Autriche</option>
-          <option value="Irlande">Irlande</option>
-          <option value="Suède">Suède</option>
-          <option value="Danemark">Danemark</option>
-          <option value="Finlande">Finlande</option>
-          <option value="Pologne">Pologne</option>
-          <option value="République tchèque">République tchèque</option>
-          <option value="Grèce">Grèce</option>
-          <option value="Hongrie">Hongrie</option>
-          <option value="Roumanie">Roumanie</option>
-          <option value="Bulgarie">Bulgarie</option>
-          <option value="Croatie">Croatie</option>
-          <option value="Slovaquie">Slovaquie</option>
-          <option value="Slovénie">Slovénie</option>
-          <option value="Lituanie">Lituanie</option>
-          <option value="Lettonie">Lettonie</option>
-          <option value="Estonie">Estonie</option>
-          <option value="Luxembourg">Luxembourg</option>
-          <option value="Malte">Malte</option>
-          <option value="Chypre">Chypre</option>
-        </select>
-      </div>
-
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label" for="bk-sub-123-zip">Code postal *</label>
-        <input type="text" id="bk-sub-123-zip" class="bk-sub-123-input" placeholder="Ex: 75008" required />
-      </div>
-
-      <div class="bk-sub-123-actions">
-        <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(2)">Retour</button>
-        <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(2)">Voir mon tarif</button>
-      </div>
-    </div>
-
-
-    <!-- ==================== STEP 3 ==================== -->
-    <div class="bk-sub-123-step-panel" id="bk-sub-123-step-3">
-      <h2 class="bk-sub-123-title">Votre tarif.</h2>
+  <!-- Contenu défilable : Formulaire -->
+  <div class="bk-sub-123-drawer-body">
+    <div id="bk-sub-123-wrapper" class="bk-sub-123-container">
       
-      <p class="bk-sub-123-subtitle">Valeur totale assurée (Vélo + Équipements) : <strong id="bk-sub-123-summary-total">0.00€</strong></p>
+      <!-- Barre de progression -->
+      <div class="bk-sub-123-progress-container">
+        <div class="bk-sub-123-step-indicator active" data-step="1"><span>1</span> VÉLO</div>
+        <div class="bk-sub-123-step-indicator" data-step="2"><span>2</span> RÉSIDENCE</div>
+        <div class="bk-sub-123-step-indicator" data-step="3"><span>3</span> TARIF</div>
+        <div class="bk-sub-123-step-indicator" data-step="4"><span>4</span> PROFIL</div>
+        <div class="bk-sub-123-step-indicator" data-step="5"><span>5</span> VALIDATION</div>
+      </div>
 
-      <div class="bk-sub-123-pricing-grid">
-        <!-- Formule Mensuelle -->
-        <div class="bk-sub-123-price-card active" id="bk-sub-123-card-monthly" onclick="bkSubSelectPlan('monthly')">
-          <div class="bk-sub-123-price-badge">FLEXIBLE</div>
-          <h3 class="bk-sub-123-price-card-title">Mensuel</h3>
-          <div class="bk-sub-123-price-amount" id="bk-sub-123-val-month">--€</div>
-          <div class="bk-sub-123-price-period">par mois</div>
-          <input type="radio" name="bk-sub-123-plan-type" value="monthly" checked style="display:none;">
+      <form id="bk-sub-123-main-form" onsubmit="return false;">
+        
+        <!-- ==================== STEP 1 ==================== -->
+        <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
+          <h2 class="bk-sub-123-title">Quel vélo souhaitez-vous assurer ?</h2>
+
+          <!-- 1. Marque (Visible d'office) -->
+          <div class="bk-sub-123-field-group" id="bk-sub-123-fg-brand">
+            <label class="bk-sub-123-label" for="bk-sub-123-brand">Marque du vélo *</label>
+            <select id="bk-sub-123-brand" class="bk-sub-123-select" required>
+              <option value="" disabled selected>Sélectionnez une marque</option>
+              <option value="Cube">Cube</option>
+              <option value="Specialized">Specialized</option>
+              <option value="Van Rysel">Van Rysel</option>
+              <option value="Trek">Trek</option>
+              <option value="Giant">Giant</option>
+              <option value="Cannondale">Cannondale</option>
+              <option value="Scott">Scott</option>
+              <option value="Canyon">Canyon</option>
+              <option value="Bianchi">Bianchi</option>
+              <option value="Pinarello">Pinarello</option>
+              <option value="Santa Cruz">Santa Cruz</option>
+              <option value="Colnago">Colnago</option>
+              <option value="BMC">BMC</option>
+              <option value="Merida">Merida</option>
+              <option value="Orbea">Orbea</option>
+              <option value="Cervélo">Cervélo</option>
+              <option value="Look">Look</option>
+              <option value="Lapierre">Lapierre</option>
+              <option value="Wilier Triestina">Wilier Triestina</option>
+              <option value="Focus">Focus</option>
+              <option value="Kona">Kona</option>
+              <option value="GT Bicycles">GT Bicycles</option>
+              <option value="Marin">Marin</option>
+              <option value="Ridley">Ridley</option>
+              <option value="Factor">Factor</option>
+              <option value="Time">Time</option>
+              <option value="Felt">Felt</option>
+              <option value="Ghost">Ghost</option>
+              <option value="Yeti Cycles">Yeti Cycles</option>
+              <option value="Mondraker">Mondraker</option>
+              <option value="Pivot Cycles">Pivot Cycles</option>
+              <option value="Commencal">Commencal</option>
+              <option value="Norco">Norco</option>
+              <option value="Rocky Mountain">Rocky Mountain</option>
+              <option value="Argon 18">Argon 18</option>
+              <option value="De Rosa">De Rosa</option>
+              <option value="Cinelli">Cinelli</option>
+              <option value="Ribble">Ribble</option>
+              <option value="Rose">Rose</option>
+              <option value="Basso">Basso</option>
+              <option value="3T">3T</option>
+              <option value="Autre">Autre</option>
+            </select>
+            <div id="bk-sub-123-brand-other-wrap" class="bk-sub-123-subfield" style="display: none;">
+              <input type="text" id="bk-sub-123-brand-other" class="bk-sub-123-input" placeholder="Précisez la marque et le modèle..." />
+            </div>
+          </div>
+
+          <!-- 2. Type de vélo (Visible d'office) -->
+          <div class="bk-sub-123-field-group" id="bk-sub-123-fg-type">
+            <label class="bk-sub-123-label" for="bk-sub-123-type">Type de vélo *</label>
+            <select id="bk-sub-123-type" class="bk-sub-123-select" required>
+              <option value="" disabled selected>Sélectionnez un type</option>
+              <option value="Vélo de route">Vélo de route</option>
+              <option value="Vélo de ville">Vélo de ville</option>
+              <option value="Vélo électrique (VAE)">Vélo électrique (VAE)</option>
+              <option value="VTT (MTB)">VTT (MTB)</option>
+              <option value="Gravel">Gravel</option>
+              <option value="Vélo de trekking (VTC)">Vélo de trekking (VTC)</option>
+              <option value="Vélo pliable">Vélo pliable</option>
+              <option value="Vélo cargo">Vélo cargo</option>
+              <option value="Fixie (Pignon fixe)">Fixie (Pignon fixe)</option>
+              <option value="Singlespeed">Singlespeed</option>
+              <option value="BMX">BMX</option>
+              <option value="Fatbike">Fatbike</option>
+              <option value="Tandem">Tandem</option>
+              <option value="Vélo de cyclo-cross">Vélo de cyclo-cross</option>
+              <option value="Vélo de contre-la-montre (Triathlon)">Vélo de contre-la-montre (Triathlon)</option>
+              <option value="Vélo de piste">Vélo de piste</option>
+              <option value="Vélo couché (Recumbent)">Vélo couché (Recumbent)</option>
+              <option value="Vélo hollandais">Vélo hollandais</option>
+              <option value="Beach Cruiser">Beach Cruiser</option>
+              <option value="Draisienne">Draisienne</option>
+              <option value="VTT de descente (Downhill)">VTT de descente (Downhill)</option>
+              <option value="VTT d'enduro">VTT d'enduro</option>
+              <option value="VTT de cross-country (XC)">VTT de cross-country (XC)</option>
+              <option value="VTT all-mountain">VTT all-mountain</option>
+              <option value="VTT dirt/street">VTT dirt/street</option>
+              <option value="Vélo longtail">Vélo longtail</option>
+              <option value="Biporteur">Biporteur</option>
+              <option value="Triporteur">Triporteur</option>
+              <option value="Vélo de voyage (Touring/Randonneuse)">Vélo de voyage (Touring/Randonneuse)</option>
+              <option value="Vélomobile">Vélomobile</option>
+              <option value="Vélo handisport (Handbike)">Vélo handisport (Handbike)</option>
+              <option value="Autre">Autre</option>
+            </select>
+            <div id="bk-sub-123-type-other-wrap" class="bk-sub-123-subfield" style="display: none;">
+              <input type="text" id="bk-sub-123-type-other" class="bk-sub-123-input" placeholder="Précisez le type de vélo..." />
+            </div>
+          </div>
+
+          <!-- 3. Valeur vélo -->
+          <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-value" style="display: none;">
+            <label class="bk-sub-123-label" for="bk-sub-123-bike-value">Valeur du vélo (€) *</label>
+            <div class="bk-sub-123-helper">Combien coûterait le remplacement à neuf au prix catalogue avec vos éventuelles personnalisations et améliorations.</div>
+            <input type="number" id="bk-sub-123-bike-value" class="bk-sub-123-input" min="1" step="any" placeholder="Ex: 2500" required />
+          </div>
+
+          <!-- 4. Gravure -->
+          <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-engraved" style="display: none;">
+            <label class="bk-sub-123-label">Mon vélo dispose d’une gravure et d’un numéro d’enregistrement *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-engraved" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-engraved" value="Non">
+                <span>Non</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 5. Option Accessoires -->
+          <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-accessories" style="display: none;">
+            <label class="bk-sub-123-label">Je souhaite assurer mes accessoires et vêtements de vélo *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-has-acc" value="Oui" id="bk-sub-123-has-acc-yes">
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-has-acc" value="Non" id="bk-sub-123-has-acc-no">
+                <span>Non</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Nuage de tags accessoires -->
+          <div id="bk-sub-123-acc-panel" class="bk-sub-123-sub-box bk-sub-123-prog-field" style="display: none;">
+            <label class="bk-sub-123-label">Sélectionnez vos accessoires et équipements :</label>
+            <div class="bk-sub-123-tag-cloud" id="bk-sub-123-tags-container">
+              <button type="button" class="bk-sub-123-tag">Antivol</button>
+              <button type="button" class="bk-sub-123-tag">Casque</button>
+              <button type="button" class="bk-sub-123-tag">Éclairage</button>
+              <button type="button" class="bk-sub-123-tag">Panier</button>
+              <button type="button" class="bk-sub-123-tag">Capteur de puissance non intégré</button>
+              <button type="button" class="bk-sub-123-tag">Porte-bagages</button>
+              <button type="button" class="bk-sub-123-tag">Rétroviseur de vélo</button>
+              <button type="button" class="bk-sub-123-tag">Sacoche pour vélo</button>
+              <button type="button" class="bk-sub-123-tag">Sacoches</button>
+              <button type="button" class="bk-sub-123-tag">Siège pour enfant</button>
+              <button type="button" class="bk-sub-123-tag">Alarme pour vélo</button>
+              <button type="button" class="bk-sub-123-tag">Bidon</button>
+              <button type="button" class="bk-sub-123-tag">Caméra embarquée</button>
+              <button type="button" class="bk-sub-123-tag">Chargeur</button>
+              <button type="button" class="bk-sub-123-tag">Chaussures</button>
+              <button type="button" class="bk-sub-123-tag">Compteur</button>
+              <button type="button" class="bk-sub-123-tag">Gants</button>
+              <button type="button" class="bk-sub-123-tag">Cuissard</button>
+              <button type="button" class="bk-sub-123-tag">Maillot</button>
+              <button type="button" class="bk-sub-123-tag">Combinaison</button>
+              <button type="button" class="bk-sub-123-tag">Garde-Boue</button>
+              <button type="button" class="bk-sub-123-tag">Housse de vélo</button>
+              <button type="button" class="bk-sub-123-tag">Valise de vélo</button>
+              <button type="button" class="bk-sub-123-tag">Kit de réparation</button>
+              <button type="button" class="bk-sub-123-tag">Lunette</button>
+              <button type="button" class="bk-sub-123-tag">Porte-bidons</button>
+              <button type="button" class="bk-sub-123-tag">Remorque</button>
+            </div>
+
+            <div id="bk-sub-123-acc-val-wrap" class="bk-sub-123-subfield" style="display: none; margin-top: 15px;">
+              <label class="bk-sub-123-label" for="bk-sub-123-acc-value">Montant total de la valeur des objets (€) *</label>
+              <input type="number" id="bk-sub-123-acc-value" class="bk-sub-123-input" min="0" step="any" placeholder="0" />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-actions bk-sub-123-prog-field" id="bk-sub-123-step1-actions" style="display: none;">
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(1)">Obtenir un devis</button>
+          </div>
         </div>
 
-        <!-- Formule Annuelle -->
-        <div class="bk-sub-123-price-card" id="bk-sub-123-card-annual" onclick="bkSubSelectPlan('annual')">
-          <div class="bk-sub-123-price-badge">ÉCONOMIQUE</div>
-          <h3 class="bk-sub-123-price-card-title">Annuel</h3>
-          <div class="bk-sub-123-price-amount" id="bk-sub-123-val-year">--€</div>
-          <div class="bk-sub-123-price-period">par an</div>
-          <input type="radio" name="bk-sub-123-plan-type" value="annual" style="display:none;">
+        <!-- ==================== STEP 2 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-2">
+          <h2 class="bk-sub-123-title">Indiquez votre lieu de résidence.</h2>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-country">Pays *</label>
+            <select id="bk-sub-123-country" class="bk-sub-123-select" required>
+              <option value="" disabled selected>Sélectionnez un pays</option>
+              <option value="France">France</option>
+              <option value="Espagne">Espagne</option>
+              <option value="Allemagne">Allemagne</option>
+              <option value="Italie">Italie</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Belgique">Belgique</option>
+              <option value="Pays-Bas">Pays-Bas</option>
+              <option value="Autriche">Autriche</option>
+              <option value="Irlande">Irlande</option>
+              <option value="Suède">Suède</option>
+              <option value="Danemark">Danemark</option>
+              <option value="Finlande">Finlande</option>
+              <option value="Pologne">Pologne</option>
+              <option value="République tchèque">République tchèque</option>
+              <option value="Grèce">Grèce</option>
+              <option value="Hongrie">Hongrie</option>
+              <option value="Roumanie">Roumanie</option>
+              <option value="Bulgarie">Bulgarie</option>
+              <option value="Croatie">Croatie</option>
+              <option value="Slovaquie">Slovaquie</option>
+              <option value="Slovénie">Slovénie</option>
+              <option value="Lituanie">Lituanie</option>
+              <option value="Lettonie">Lettonie</option>
+              <option value="Estonie">Estonie</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Malte">Malte</option>
+              <option value="Chypre">Chypre</option>
+            </select>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-zip">Code postal *</label>
+            <input type="text" id="bk-sub-123-zip" class="bk-sub-123-input" placeholder="Ex: 75008" required />
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(2)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(2)">Voir mon tarif</button>
+          </div>
         </div>
-      </div>
 
-      <div class="bk-sub-123-field-group" style="margin-top: 25px;">
-        <label class="bk-sub-123-label" for="bk-sub-123-promo">Code promotion (Optionnel)</label>
-        <input type="text" id="bk-sub-123-promo" class="bk-sub-123-input" placeholder="Entrez un code promo" />
-      </div>
+        <!-- ==================== STEP 3 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-3">
+          <h2 class="bk-sub-123-title">Votre tarif.</h2>
+          
+          <p class="bk-sub-123-subtitle">Valeur totale assurée (Vélo + Équipements) : <strong id="bk-sub-123-summary-total">0.00€</strong></p>
 
-      <div class="bk-sub-123-actions">
-        <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(3)">Retour</button>
-        <button type="button" class="bk-sub-123-btn-primary" id="bk-sub-123-step3-btn" onclick="bkSubNextStep(3)">Souscrire</button>
-      </div>
+          <div class="bk-sub-123-pricing-grid">
+            <div class="bk-sub-123-price-card active" id="bk-sub-123-card-monthly" onclick="bkSubSelectPlan('monthly')">
+              <div class="bk-sub-123-price-badge">FLEXIBLE</div>
+              <h3 class="bk-sub-123-price-card-title">Mensuel</h3>
+              <div class="bk-sub-123-price-amount" id="bk-sub-123-val-month">--€</div>
+              <div class="bk-sub-123-price-period">par mois</div>
+              <input type="radio" name="bk-sub-123-plan-type" value="monthly" checked style="display:none;">
+            </div>
+
+            <div class="bk-sub-123-price-card" id="bk-sub-123-card-annual" onclick="bkSubSelectPlan('annual')">
+              <div class="bk-sub-123-price-badge">ÉCONOMIQUE</div>
+              <h3 class="bk-sub-123-price-card-title">Annuel</h3>
+              <div class="bk-sub-123-price-amount" id="bk-sub-123-val-year">--€</div>
+              <div class="bk-sub-123-price-period">par an</div>
+              <input type="radio" name="bk-sub-123-plan-type" value="annual" style="display:none;">
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group" style="margin-top: 25px;">
+            <label class="bk-sub-123-label" for="bk-sub-123-promo">Code promotion (Optionnel)</label>
+            <input type="text" id="bk-sub-123-promo" class="bk-sub-123-input" placeholder="Entrez un code promo" />
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(3)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" id="bk-sub-123-step3-btn" onclick="bkSubNextStep(3)">Souscrire</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 4 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-4">
+          <h2 class="bk-sub-123-title">Renseignements pour votre profil assuré.</h2>
+
+          <div class="bk-sub-123-row">
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-email">Votre email *</label>
+              <input type="email" id="bk-sub-123-email" class="bk-sub-123-input" required />
+            </div>
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-pwd">Votre mot de passe *</label>
+              <input type="password" id="bk-sub-123-pwd" class="bk-sub-123-input" required />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-row">
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-firstname">Votre prénom *</label>
+              <input type="text" id="bk-sub-123-firstname" class="bk-sub-123-input" required />
+            </div>
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-lastname">Votre nom *</label>
+              <input type="text" id="bk-sub-123-lastname" class="bk-sub-123-input" required />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-row">
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-dob">Votre date de naissance *</label>
+              <input type="date" id="bk-sub-123-dob" class="bk-sub-123-input" required />
+            </div>
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-pob">Votre lieu de naissance *</label>
+              <input type="text" id="bk-sub-123-pob" class="bk-sub-123-input" required />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-cob">Votre pays de naissance *</label>
+            <input type="text" id="bk-sub-123-cob" class="bk-sub-123-input" required />
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-address">Votre adresse postale (Voie) *</label>
+            <input type="text" id="bk-sub-123-address" class="bk-sub-123-input" required />
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-address-zip">Code postal *</label>
+            <input type="text" id="bk-sub-123-address-zip" class="bk-sub-123-input" required />
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(4)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(4)">Valider les informations</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 5 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-5">
+          <h2 class="bk-sub-123-title">Informations réglementaires sur l’assurance.</h2>
+          
+          <div class="bk-sub-123-legal-notice">
+            « Après avoir souscrit une assurance chez Bikelp, nous vous demandons de télécharger photos et documents relatifs à votre vélo et antivol. Nous vous conseillons de faire cela au plus vite afin de démontrer la preuve d'achat. Sans cela, nous pourrions être dans l'impossibilité de procéder à votre indemnisation. En tant que demandeur(-euse) d’assurance, vous êtes tenu(e) de répondre aux questions posées de la manière la plus complète possible. Elles valent également pour les faits et les circonstances liés à la personne que vous souhaitez assurer. Dans les réponses aux questions, seules vos connaissances, et celles de la personne assurée, sont décisives. »
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Je dispose d’un antivol ART2, Sold Secure Silver, FUB ou supérieur *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q1" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q1" value="Non">
+                <span>Non</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Avez-vous subi des dommages au niveau de votre vélo au cours des trois derniers mois *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q2" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q2" value="Non">
+                <span>NON</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Un assureur a-t-il déjà refusé ou résilié votre assurance *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q3" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q3" value="Non">
+                <span>NON</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Avez-vous déjà commis une infraction qui vous a mené à avoir des contacts avec la police ou à être condamné par la justice *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q4" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q4" value="Non">
+                <span>NON</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">J’ai lu et j'accepte les <a href="/ipid" target="_blank" class="bk-sub-123-link">Conditions de la police & Résumé de la police (IPID)</a> *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn single-opt">
+                <input type="radio" name="bk-sub-123-c1" value="Oui" required>
+                <span>Oui, J'accepte</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">J’ai lu et j'accepte la <a href="/finfor" target="_blank" class="bk-sub-123-link">Fiche d'informations</a> *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn single-opt">
+                <input type="radio" name="bk-sub-123-c2" value="Oui" required>
+                <span>OUI, J'ACCEPTE</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">J’accepte que mes données soient enregistrées dans des systèmes (d’avertissement) internes et externes afin d’assurer une politique d’acceptation et une politique de risque responsables et d’éviter les fraudes *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn single-opt">
+                <input type="radio" name="bk-sub-123-c3" value="Oui" required>
+                <span>OUI, J'ACCEPTE</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(5)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubFinalizePayment()">Enregistrer ma méthode de paiement</button>
+          </div>
+        </div>
+
+      </form>
     </div>
-
-
-    <!-- ==================== STEP 4 ==================== -->
-    <div class="bk-sub-123-step-panel" id="bk-sub-123-step-4">
-      <h2 class="bk-sub-123-title">Renseignements pour votre profil assuré.</h2>
-
-      <div class="bk-sub-123-row">
-        <div class="bk-sub-123-col">
-          <label class="bk-sub-123-label" for="bk-sub-123-email">Votre email *</label>
-          <input type="email" id="bk-sub-123-email" class="bk-sub-123-input" required />
-        </div>
-        <div class="bk-sub-123-col">
-          <label class="bk-sub-123-label" for="bk-sub-123-pwd">Votre mot de passe *</label>
-          <input type="password" id="bk-sub-123-pwd" class="bk-sub-123-input" required />
-        </div>
-      </div>
-
-      <div class="bk-sub-123-row">
-        <div class="bk-sub-123-col">
-          <label class="bk-sub-123-label" for="bk-sub-123-firstname">Votre prénom *</label>
-          <input type="text" id="bk-sub-123-firstname" class="bk-sub-123-input" required />
-        </div>
-        <div class="bk-sub-123-col">
-          <label class="bk-sub-123-label" for="bk-sub-123-lastname">Votre nom *</label>
-          <input type="text" id="bk-sub-123-lastname" class="bk-sub-123-input" required />
-        </div>
-      </div>
-
-      <div class="bk-sub-123-row">
-        <div class="bk-sub-123-col">
-          <label class="bk-sub-123-label" for="bk-sub-123-dob">Votre date de naissance *</label>
-          <input type="date" id="bk-sub-123-dob" class="bk-sub-123-input" required />
-        </div>
-        <div class="bk-sub-123-col">
-          <label class="bk-sub-123-label" for="bk-sub-123-pob">Votre lieu de naissance *</label>
-          <input type="text" id="bk-sub-123-pob" class="bk-sub-123-input" required />
-        </div>
-      </div>
-
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label" for="bk-sub-123-cob">Votre pays de naissance *</label>
-        <input type="text" id="bk-sub-123-cob" class="bk-sub-123-input" required />
-      </div>
-
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label" for="bk-sub-123-address">Votre adresse postale (Voie) *</label>
-        <input type="text" id="bk-sub-123-address" class="bk-sub-123-input" required />
-      </div>
-
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label" for="bk-sub-123-address-zip">Code postal *</label>
-        <input type="text" id="bk-sub-123-address-zip" class="bk-sub-123-input" required />
-      </div>
-
-      <div class="bk-sub-123-actions">
-        <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(4)">Retour</button>
-        <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(4)">Valider les informations</button>
-      </div>
-    </div>
-
-
-    <!-- ==================== STEP 5 ==================== -->
-    <div class="bk-sub-123-step-panel" id="bk-sub-123-step-5">
-      <h2 class="bk-sub-123-title">Informations réglementaires sur l’assurance.</h2>
-      
-      <div class="bk-sub-123-legal-notice">
-        « Après avoir souscrit une assurance chez Bikelp, nous vous demandons de télécharger photos et documents relatifs à votre vélo et antivol. Nous vous conseillons de faire cela au plus vite afin de démontrer la preuve d'achat. Sans cela, nous pourrions être dans l'impossibilité de procéder à votre indemnisation. En tant que demandeur(-euse) d’assurance, vous êtes tenu(e) de répondre aux questions posées de la manière la plus complète possible. Elles valent également pour les faits et les circonstances liés à la personne que vous souhaitez assurer. Dans les réponses aux questions, seules vos connaissances, et celles de la personne assurée, sont décisives. »
-      </div>
-
-      <!-- Q1 -->
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label">Je dispose d’un antivol ART2, Sold Secure Silver, FUB ou supérieur *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q1" value="Oui" required>
-            <span>Oui</span>
-          </label>
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q1" value="Non">
-            <span>Non</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Q2 -->
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label">Avez-vous subi des dommages au niveau de votre vélo au cours des trois derniers mois *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q2" value="Oui" required>
-            <span>Oui</span>
-          </label>
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q2" value="Non">
-            <span>NON</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Q3 -->
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label">Un assureur a-t-il déjà refusé ou résilié votre assurance *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q3" value="Oui" required>
-            <span>Oui</span>
-          </label>
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q3" value="Non">
-            <span>NON</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Q4 -->
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label">Avez-vous déjà commis une infraction qui vous a mené à avoir des contacts avec la police ou à être condamné par la justice *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q4" value="Oui" required>
-            <span>Oui</span>
-          </label>
-          <label class="bk-sub-123-radio-btn">
-            <input type="radio" name="bk-sub-123-q4" value="Non">
-            <span>NON</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Q5 IPID -->
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label">J’ai lu et j'accepte les <a href="/ipid" target="_blank" class="bk-sub-123-link">Conditions de la police & Résumé de la police (IPID)</a> *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn single-opt">
-            <input type="radio" name="bk-sub-123-c1" value="Oui" required>
-            <span>Oui, J'accepte</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Q6 FINFOR -->
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label">J’ai lu et j'accepte la <a href="/finfor" target="_blank" class="bk-sub-123-link">Fiche d'informations</a> *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn single-opt">
-            <input type="radio" name="bk-sub-123-c2" value="Oui" required>
-            <span>OUI, J'ACCEPTE</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Q7 REG DATA -->
-      <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label">J’accepte que mes données soient enregistrées dans des systèmes (d’avertissement) internes et externes afin d’assurer une politique d’acceptation et une politique de risque responsables et d’éviter les fraudes *</label>
-        <div class="bk-sub-123-radio-toggle-group">
-          <label class="bk-sub-123-radio-btn single-opt">
-            <input type="radio" name="bk-sub-123-c3" value="Oui" required>
-            <span>OUI, J'ACCEPTE</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="bk-sub-123-actions">
-        <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(5)">Retour</button>
-        <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubFinalizePayment()">Enregistrer ma méthode de paiement</button>
-      </div>
-    </div>
-
-  </form>
-</div>
+  </div>
+</aside>
 
 <!-- ==================== STYLES CSS ==================== -->
 <style>
@@ -1300,22 +1311,133 @@ max-width: 300px;
     --bk-sub-border: #e2e2e8;
   }
 
+  /* Bouton Déclencheur sur la page */
+  .bk-sub-123-trigger-btn {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Civilprom', sans-serif;
+    border: none !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 16px 32px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .bk-sub-123-trigger-btn:hover {
+    background: var(--bk-sub-c1);
+  }
+
+  /* Overlay obscurcissant */
+  .bk-sub-123-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 99998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .bk-sub-123-drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Tiroir latéral Full Height */
+  .bk-sub-123-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 680px;
+    height: 100vh;
+    height: 100dvh;
+    background: #ffffff;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    border-radius: 0px !important;
+  }
+
+  .bk-sub-123-drawer.active {
+    transform: translateX(0);
+  }
+
+  /* Header du Side-Pane */
+  .bk-sub-123-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 35px;
+    border-bottom: 2px solid #000000;
+    background: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .bk-sub-123-drawer-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+    color: #000000;
+    font-family: 'Civilprom', sans-serif;
+    letter-spacing: 0px;
+  }
+
+  .bk-sub-123-drawer-close-btn {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000 !important;
+    font-family: 'Civilprom', sans-serif;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    border-radius: 0px !important;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .bk-sub-123-drawer-close-btn:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  /* Corps défilable du Side-Pane */
+  .bk-sub-123-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    background: #ffffff;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Conteneur formulaire interne */
   .bk-sub-123-container {
     width: 100%;
-    max-width: 820px;
     margin: 0 auto;
     background: #fff;
     color: #000;
     font-family: 'Civilprom', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     border: none;
     border-radius: 0px !important;
-    padding: 50px;
+    padding: 35px;
     box-sizing: border-box;
   }
 
   .bk-sub-123-container * {
     box-sizing: border-box;
-    border-radius: 0px !important; /* Force les angles droits */
+    border-radius: 0px !important;
   }
 
   /* Progress indicator */
@@ -1381,9 +1503,9 @@ max-width: 300px;
   }
 
   .bk-sub-123-title {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
-    margin: 15px 0 40px 0;
+    margin: 0 0 30px 0;
     color: #000;
     letter-spacing: 0px;
     line-height: 1.25;
@@ -1394,7 +1516,7 @@ max-width: 300px;
   }
 
   .bk-sub-123-subtitle {
-    font-size: 17px;
+    font-size: 16px;
     margin-bottom: 20px;
     color: #444;
   }
@@ -1405,14 +1527,14 @@ max-width: 300px;
 
   .bk-sub-123-label {
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 10px;
     color: #000;
   }
 
   .bk-sub-123-helper {
-    font-size: 16px;
+    font-size: 14px;
     color: #0000007a;
     font-weight: 600;
     margin-top: -4px;
@@ -1423,8 +1545,8 @@ max-width: 300px;
   .bk-sub-123-input,
   .bk-sub-123-select {
     width: 100%;
-    padding: 20px 20px;
-    font-size: 18px;
+    padding: 16px 18px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     font-family: inherit;
@@ -1489,9 +1611,9 @@ max-width: 300px;
   .bk-sub-123-radio-btn span {
     display: block;
     text-align: center;
-    padding: 16px;
+    padding: 14px;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     background: #eaf1ff;
     color: #0059ff;
@@ -1549,14 +1671,14 @@ max-width: 300px;
   /* Step 3: Pricing Cards */
   .bk-sub-123-pricing-grid {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     margin-top: 15px;
   }
 
   .bk-sub-123-price-card {
     flex: 1;
     border: 2px solid #ccc;
-    padding: 25px 20px;
+    padding: 22px 15px;
     text-align: center;
     cursor: pointer;
     background: #ffffff;
@@ -1591,21 +1713,21 @@ max-width: 300px;
   }
 
   .bk-sub-123-price-card-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
-    margin: 10px 0 5px 0;
+    margin: 8px 0 4px 0;
     text-transform: uppercase;
   }
 
   .bk-sub-123-price-amount {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 900;
     color: var(--bk-sub-c1);
-    margin: 10px 0 2px 0;
+    margin: 8px 0 2px 0;
   }
 
   .bk-sub-123-price-period {
-    font-size: 14px;
+    font-size: 13px;
     color: #666;
     font-weight: 600;
   }
@@ -1614,11 +1736,11 @@ max-width: 300px;
   .bk-sub-123-legal-notice {
     background: #f4f1fa;
     border-left: 4px solid var(--bk-sub-c1);
-    padding: 16px;
-    font-size: 13.5px;
+    padding: 14px;
+    font-size: 13px;
     line-height: 1.5;
     color: #222;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
 
   .bk-sub-123-link {
@@ -1632,7 +1754,7 @@ max-width: 300px;
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    margin-top: 30px;
+    margin-top: 25px;
     padding-top: 20px;
   }
 
@@ -1646,10 +1768,10 @@ max-width: 300px;
     color: #ffffff;
     cursor: pointer;
     text-decoration: none;
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-weight: 600 !important;
     border-radius: 0px !important;
-    padding: 20px 30px;
+    padding: 16px 26px;
     transition: 0s;
   }
 
@@ -1659,10 +1781,10 @@ max-width: 300px;
     border: 2px solid #000000 !important;
     font-family: 'Civilprom', sans-serif;
     cursor: pointer;
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: 600 !important;
-    padding: 10px 22px;
-    margin-top: 10px !important;
+    padding: 10px 20px;
+    margin-top: 0px !important;
     margin-bottom: 10px !important;
   }
 
@@ -1672,6 +1794,15 @@ max-width: 300px;
 
   /* Responsive rules */
   @media (max-width: 600px) {
+    .bk-sub-123-drawer {
+      max-width: 100%;
+    }
+    .bk-sub-123-container {
+      padding: 20px 15px;
+    }
+    .bk-sub-123-drawer-header {
+      padding: 18px 20px;
+    }
     .bk-sub-123-row {
       flex-direction: column;
       gap: 0;
@@ -1707,6 +1838,24 @@ max-width: 300px;
   var bkSelectedPlan = 'monthly';
   var bkCurrentTier = null;
 
+  // Drawer Controls
+  var drawer = document.getElementById('bk-sub-123-drawer');
+  var overlay = document.getElementById('bk-sub-123-overlay');
+
+  window.bkSubOpenPane = function() {
+    drawer.classList.add('active');
+    overlay.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.bkSubClosePane = function() {
+    drawer.classList.remove('active');
+    overlay.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
   // DOM Elements Step 1
   var brandSelect = document.getElementById('bk-sub-123-brand');
   var brandOtherWrap = document.getElementById('bk-sub-123-brand-other-wrap');
@@ -1733,7 +1882,6 @@ max-width: 300px;
     var brandValid = brandSelect.value !== "" && (brandSelect.value !== "Autre" || brandOtherInput.value.trim() !== "");
     var typeValid = typeSelect.value !== "" && (typeSelect.value !== "Autre" || typeOtherInput.value.trim() !== "");
 
-    // Étape A : Affichage du champ Valeur
     if (brandValid && typeValid) {
       fgValue.style.display = 'block';
     } else {
@@ -1745,7 +1893,6 @@ max-width: 300px;
       return;
     }
 
-    // Étape B : Affichage du champ Gravure (dès que la valeur est valide)
     var val = parseFloat(bikeValueInput.value);
     if (!isNaN(val) && val > 0) {
       fgEngraved.style.display = 'block';
@@ -1757,7 +1904,6 @@ max-width: 300px;
       return;
     }
 
-    // Étape C : Affichage du champ Accessoires (dès qu'une option Gravure est cochée)
     var engravedChecked = document.querySelector('input[name="bk-sub-123-engraved"]:checked');
     if (engravedChecked) {
       fgAccessories.style.display = 'block';
@@ -1768,7 +1914,6 @@ max-width: 300px;
       return;
     }
 
-    // Étape D : Affichage du Nuage de Tags & Bouton final
     if (hasAccYes.checked) {
       accPanel.style.display = 'block';
       var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
@@ -1847,7 +1992,6 @@ max-width: 300px;
     });
     document.getElementById('bk-sub-123-step-' + stepIndex).classList.add('active');
 
-    // Mise à jour de la barre de progression
     document.querySelectorAll('.bk-sub-123-step-indicator').forEach(function(ind) {
       var s = parseInt(ind.getAttribute('data-step'), 10);
       if (s <= stepIndex) {
@@ -1857,14 +2001,14 @@ max-width: 300px;
       }
     });
 
-    window.scrollTo({ top: document.getElementById('bk-sub-123-wrapper').offsetTop - 30, behavior: 'smooth' });
+    // Scroll au début du tiroir latéral
+    document.querySelector('.bk-sub-123-drawer-body').scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function validateStep(step) {
     var panel = document.getElementById('bk-sub-123-step-' + step);
     var valid = true;
 
-    // Champs requis
     var requiredInputs = panel.querySelectorAll('input[required], select[required]');
     requiredInputs.forEach(function(input) {
       if (input.type === 'radio') {
@@ -1878,7 +2022,6 @@ max-width: 300px;
       }
     });
 
-    // Validation spécifique step 1
     if (step === 1) {
       if (brandSelect.value === 'Autre' && !brandOtherInput.value.trim()) {
         alert('Veuillez préciser la marque et le modèle.');
@@ -1911,7 +2054,6 @@ max-width: 300px;
     return valid;
   }
 
-  // Calcul du tarif
   function computeAndRenderPrices() {
     var bikeVal = parseFloat(bikeValueInput.value) || 0;
     var accVal = 0;
@@ -1921,7 +2063,6 @@ max-width: 300px;
     var totalVal = bikeVal + accVal;
     document.getElementById('bk-sub-123-summary-total').innerText = totalVal.toLocaleString('fr-FR', { minimumFractionDigits: 2 }) + '€';
 
-    // Trouver le Tier
     for (var i = 0; i < BK_TIERS.length; i++) {
       if (totalVal < BK_TIERS[i].max) {
         bkCurrentTier = BK_TIERS[i];
@@ -1953,7 +2094,6 @@ max-width: 300px;
     }
   }
 
-  // Finalisation & Redirection
   window.bkSubFinalizePayment = function() {
     if (!validateStep(5)) return;
 
@@ -1971,12 +2111,28 @@ max-width: 300px;
 <!-- ========================================================== -->
 <!-- FIN DU MODULE DE SOUSCRIPTION BIKELP -->
 <!-- ========================================================== -->
-
-
-
+      
+      
         </div>
+
+
+
+
       </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- ==================== SECTION 2 : AVIS CLIENTS ==================== -->
 
