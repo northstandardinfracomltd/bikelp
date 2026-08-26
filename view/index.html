@@ -80,7 +80,7 @@
 
     .container {
       width: 100%;
-      max-width: var(--container-max);
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -129,7 +129,7 @@ margin-right: 0px;
 
     /* --- HEADER (NON STICKY) --- */
     .header-top {
-background: #4513a5;
+background: rgb(0, 89, 255);
     border-bottom: none;
     border-radius: 0px;
     padding: 35px 5px;
@@ -177,7 +177,7 @@ background: #4513a5;
 
     /* --- SECTION 1 : SOUSCRIPTION (HERO) --- */
     .section-hero {
-background: #350097;
+background: rgb(0, 89, 255);
     padding: 64px 0 80px;
     }
 
@@ -201,18 +201,22 @@ background: #350097;
     }
 
     .hero-title {
-font-size: 70px;
+font-size: 72px;
     font-family: 'Civilprom';
     margin-bottom: 20px;
     text-transform: none;
     color: #ffffff;
-    letter-spacing: 0px;
+    letter-spacing: 0.5px;
+    line-height: 80px;
+    cursor: default;
     }
 
     .hero-subtitle {
-      font-size: 1.2rem;
-      color: var(--color-text-muted);
-      max-width: 480px;
+font-size: 30px;
+    color: #fff;
+    max-width: 95%;
+    margin-top: 45px;
+    font-weight: 600;
     }
 
     .subscription-panel {
@@ -849,7 +853,7 @@ max-width: 300px;
 
       <!-- Marque -->
       <div class="bk-sub-123-field-group">
-        <label class="bk-sub-123-label" for="bk-sub-123-brand">Marque et modèle du vélo *</label>
+        <label class="bk-sub-123-label" for="bk-sub-123-brand">Marque du vélo *</label>
         <select id="bk-sub-123-brand" class="bk-sub-123-select" required>
           <option value="" disabled selected>Sélectionnez une marque</option>
           <option value="Cube">Cube</option>
@@ -956,11 +960,11 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-engraved" value="Oui" required>
-            <span>OUI</span>
+            <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-engraved" value="Non" checked>
-            <span>NON</span>
+            <span>Non</span>
           </label>
         </div>
       </div>
@@ -971,11 +975,11 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-has-acc" value="Oui" id="bk-sub-123-has-acc-yes">
-            <span>OUI</span>
+            <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-has-acc" value="Non" id="bk-sub-123-has-acc-no" checked>
-            <span>NON</span>
+            <span>Non</span>
           </label>
         </div>
       </div>
@@ -1186,11 +1190,11 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q1" value="Oui" required>
-            <span>OUI</span>
+            <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q1" value="Non">
-            <span>NON</span>
+            <span>Non</span>
           </label>
         </div>
       </div>
@@ -1201,7 +1205,7 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q2" value="Oui" required>
-            <span>OUI</span>
+            <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q2" value="Non">
@@ -1216,7 +1220,7 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q3" value="Oui" required>
-            <span>OUI</span>
+            <span>Non</span>
           </label>
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q3" value="Non">
@@ -1231,7 +1235,7 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q4" value="Oui" required>
-            <span>OUI</span>
+            <span>Oui</span>
           </label>
           <label class="bk-sub-123-radio-btn">
             <input type="radio" name="bk-sub-123-q4" value="Non">
@@ -1246,7 +1250,7 @@ max-width: 300px;
         <div class="bk-sub-123-radio-toggle-group">
           <label class="bk-sub-123-radio-btn single-opt">
             <input type="radio" name="bk-sub-123-c1" value="Oui" required>
-            <span>OUI, J'ACCEPTE</span>
+            <span>Oui, J'accepte</span>
           </label>
         </div>
       </div>
@@ -1294,15 +1298,15 @@ max-width: 300px;
   }
 
   .bk-sub-123-container {
-width: 100%;
+    width: 100%;
     max-width: 820px;
     margin: 0 auto;
     background: #fff;
     color: #000;
     font-family: 'Civilprom', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     border: none;
-    border-radius: 18px !important;
-    padding: 25px 25px;
+    border-radius: 0px !important;
+    padding: 50px;
     box-sizing: border-box;
   }
 
@@ -1370,13 +1374,16 @@ width: 100%;
   }
 
   .bk-sub-123-title {
-    font-size: 26px;
+font-size: 26px;
     font-weight: 800;
-    margin: 0 0 20px 0;
-    color: var(--bk-sub-dark);
+    margin: 15px 0 40px 0;
+    color: #000;
+    letter-spacing: 0px;
     line-height: 1.25;
-    border-left: 6px solid var(--bk-sub-c1);
-    padding-left: 12px;
+    font-family: 'Civilprom';
+    border-left: none;
+    cursor: default;
+    text-transform: none;
   }
 
   .bk-sub-123-subtitle {
@@ -1391,15 +1398,16 @@ width: 100%;
 
   .bk-sub-123-label {
     display: block;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 8px;
-    color: #111;
+    margin-bottom: 10px;
+    color: #000;
   }
 
   .bk-sub-123-helper {
-    font-size: 13px;
-    color: #666;
+    font-size: 16px;
+    color: #0000007a;
+    font-weight: 600;
     margin-top: -4px;
     margin-bottom: 8px;
     line-height: 1.4;
@@ -1407,22 +1415,38 @@ width: 100%;
 
   .bk-sub-123-input,
   .bk-sub-123-select {
-    width: 100%;
-    padding: 13px 15px;
-    font-size: 16px;
+width: 100%;
+    padding: 20px 20px;
+    font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
     font-family: inherit;
-    border: 2px solid #333333 !important;
-    background: #ffffff;
-    color: #000000;
+    text-align: center;
+    border: none;
+    background: #e9f1ff;
+    color: #0059ff;
     outline: none;
     transition: border-color 0.2s ease;
-  }
+/* Force-remove default dropdown arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Removes the arrow in legacy IE / Edge */
+.bk-sub-123-select::-ms-expand {
+  display: none;
+}
+
+.bk-sub-123-input::placeholder {
+    color: #0059ff;
+  opacity: 1;      /* Requis pour corriger la transparence par défaut de Firefox */
+}
 
   .bk-sub-123-input:focus,
   .bk-sub-123-select:focus {
-    border-color: var(--bk-sub-c1) !important;
-    box-shadow: 0 0 0 1px var(--bk-sub-c1);
+    background: #e9f1ff;
+    color: #0059ff;
   }
 
   .bk-sub-123-subfield {
@@ -1460,19 +1484,18 @@ width: 100%;
   .bk-sub-123-radio-btn span {
     display: block;
     text-align: center;
-    padding: 12px 10px;
-    border: 2px solid #333333;
+    padding: 16px;
+    border: none;
+    font-size: 18px;
     font-weight: 700;
-    font-size: 15px;
-    background: #fff;
-    color: #000;
+    background: #eaf1ff;
+    color: #0059ff;
     transition: all 0.2s ease;
   }
 
   .bk-sub-123-radio-btn input:checked + span {
-    background: var(--bk-sub-c1);
+    background: #0059ff;
     color: #ffffff;
-    border-color: var(--bk-sub-c1);
   }
 
   .bk-sub-123-radio-btn.single-opt {
@@ -1606,14 +1629,13 @@ width: 100%;
     gap: 12px;
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 2px solid var(--bk-sub-border);
   }
 
   .bk-sub-123-btn-primary {
     margin-right: 0px;
-    background: var(--bk-sub-c1);
+    background: #000;
     margin-bottom: 10px !important;
-    margin-top: 10px !important;
+    margin-top: 0px !important;
     font-family: 'Civilprom', sans-serif;
     border: none !important;
     color: #ffffff;
@@ -1622,12 +1644,8 @@ width: 100%;
     font-size: 20px !important;
     font-weight: 600 !important;
     border-radius: 0px !important;
-    padding: 12px 26px;
-    transition: background 0.2s ease;
-  }
-
-  .bk-sub-123-btn-primary:hover {
-    background: var(--bk-sub-c2);
+    padding: 20px 30px;
+    transition: 0s;
   }
 
   .bk-sub-123-btn-secondary {
@@ -1665,7 +1683,6 @@ width: 100%;
     }
   }
 </style>
-
 <!-- ==================== JAVASCRIPT LOGIC ==================== -->
 <script>
 (function() {
@@ -1684,48 +1701,124 @@ width: 100%;
   var bkSelectedPlan = 'monthly';
   var bkCurrentTier = null;
 
-  // Gestion Dropdown "Autre"
+  // DOM Elements Step 1
   var brandSelect = document.getElementById('bk-sub-123-brand');
-  var brandOther = document.getElementById('bk-sub-123-brand-other-wrap');
-  brandSelect.addEventListener('change', function() {
-    brandOther.style.display = (this.value === 'Autre') ? 'block' : 'none';
-  });
+  var brandOtherWrap = document.getElementById('bk-sub-123-brand-other-wrap');
+  var brandOtherInput = document.getElementById('bk-sub-123-brand-other');
 
   var typeSelect = document.getElementById('bk-sub-123-type');
-  var typeOther = document.getElementById('bk-sub-123-type-other-wrap');
-  typeSelect.addEventListener('change', function() {
-    typeOther.style.display = (this.value === 'Autre') ? 'block' : 'none';
-  });
+  var typeOtherWrap = document.getElementById('bk-sub-123-type-other-wrap');
+  var typeOtherInput = document.getElementById('bk-sub-123-type-other');
 
-  // Gestion Radio Accessoires
+  var fgValue = document.getElementById('bk-sub-123-fg-value');
+  var bikeValueInput = document.getElementById('bk-sub-123-bike-value');
+
+  var fgEngraved = document.getElementById('bk-sub-123-fg-engraved');
+  var fgAccessories = document.getElementById('bk-sub-123-fg-accessories');
   var hasAccYes = document.getElementById('bk-sub-123-has-acc-yes');
   var hasAccNo = document.getElementById('bk-sub-123-has-acc-no');
   var accPanel = document.getElementById('bk-sub-123-acc-panel');
   var accValWrap = document.getElementById('bk-sub-123-acc-val-wrap');
+  var accValueInput = document.getElementById('bk-sub-123-acc-value');
+  var step1Actions = document.getElementById('bk-sub-123-step1-actions');
 
-  function toggleAccDisplay() {
+  // --- LOGIQUE PROGRESSIVE STEP 1 ---
+  function updateStep1ProgressiveFlow() {
+    // 1. Marque valide ?
+    var brandValid = brandSelect.value !== "" && (brandSelect.value !== "Autre" || brandOtherInput.value.trim() !== "");
+    // 2. Type valide ?
+    var typeValid = typeSelect.value !== "" && (typeSelect.value !== "Autre" || typeOtherInput.value.trim() !== "");
+
+    // Étape A : Affichage du champ Valeur
+    if (brandValid && typeValid) {
+      fgValue.style.display = 'block';
+    } else {
+      fgValue.style.display = 'none';
+      fgEngraved.style.display = 'none';
+      fgAccessories.style.display = 'none';
+      accPanel.style.display = 'none';
+      step1Actions.style.display = 'none';
+      return;
+    }
+
+    // Étape B : Affichage du champ Gravure (dès que la valeur est saisie et > 0)
+    var val = parseFloat(bikeValueInput.value);
+    if (!isNaN(val) && val > 0) {
+      fgEngraved.style.display = 'block';
+    } else {
+      fgEngraved.style.display = 'none';
+      fgAccessories.style.display = 'none';
+      accPanel.style.display = 'none';
+      step1Actions.style.display = 'none';
+      return;
+    }
+
+    // Étape C : Affichage du champ Accessoires (dès qu'une option Gravure est cochée)
+    var engravedChecked = document.querySelector('input[name="bk-sub-123-engraved"]:checked');
+    if (engravedChecked) {
+      fgAccessories.style.display = 'block';
+    } else {
+      fgAccessories.style.display = 'none';
+      accPanel.style.display = 'none';
+      step1Actions.style.display = 'none';
+      return;
+    }
+
+    // Étape D : Affichage du Nuage de Tags & Bouton final
     if (hasAccYes.checked) {
       accPanel.style.display = 'block';
-    } else {
+      var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
+      if (selectedTags.length > 0) {
+        accValWrap.style.display = 'block';
+        var accVal = parseFloat(accValueInput.value);
+        if (!isNaN(accVal) && accVal >= 0 && accValueInput.value.trim() !== "") {
+          step1Actions.style.display = 'flex';
+        } else {
+          step1Actions.style.display = 'none';
+        }
+      } else {
+        accValWrap.style.display = 'none';
+        step1Actions.style.display = 'none';
+      }
+    } else if (hasAccNo.checked) {
       accPanel.style.display = 'none';
       accValWrap.style.display = 'none';
+      step1Actions.style.display = 'flex';
+    } else {
+      step1Actions.style.display = 'none';
     }
   }
-  hasAccYes.addEventListener('change', toggleAccDisplay);
-  hasAccNo.addEventListener('change', toggleAccDisplay);
+
+  // Événements Step 1
+  brandSelect.addEventListener('change', function() {
+    brandOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
+    updateStep1ProgressiveFlow();
+  });
+  brandOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
+
+  typeSelect.addEventListener('change', function() {
+    typeOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
+    updateStep1ProgressiveFlow();
+  });
+  typeOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
+
+  bikeValueInput.addEventListener('input', updateStep1ProgressiveFlow);
+
+  document.querySelectorAll('input[name="bk-sub-123-engraved"]').forEach(function(radio) {
+    radio.addEventListener('change', updateStep1ProgressiveFlow);
+  });
+
+  hasAccYes.addEventListener('change', updateStep1ProgressiveFlow);
+  hasAccNo.addEventListener('change', updateStep1ProgressiveFlow);
+
+  accValueInput.addEventListener('input', updateStep1ProgressiveFlow);
 
   // Tags Accessoires
   var tags = document.querySelectorAll('.bk-sub-123-tag');
   tags.forEach(function(tag) {
     tag.addEventListener('click', function() {
       this.classList.toggle('selected');
-      var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
-      if (selectedTags.length > 0) {
-        accValWrap.style.display = 'block';
-      } else {
-        accValWrap.style.display = 'none';
-        document.getElementById('bk-sub-123-acc-value').value = '';
-      }
+      updateStep1ProgressiveFlow();
     });
   });
 
@@ -1750,7 +1843,7 @@ width: 100%;
     });
     document.getElementById('bk-sub-123-step-' + stepIndex).classList.add('active');
 
-    // Update Header indicators
+    // Mise à jour de la barre de progression
     document.querySelectorAll('.bk-sub-123-step-indicator').forEach(function(ind) {
       var s = parseInt(ind.getAttribute('data-step'), 10);
       if (s <= stepIndex) {
@@ -1767,7 +1860,7 @@ width: 100%;
     var panel = document.getElementById('bk-sub-123-step-' + step);
     var valid = true;
 
-    // Champs requis classiques
+    // Champs requis
     var requiredInputs = panel.querySelectorAll('input[required], select[required]');
     requiredInputs.forEach(function(input) {
       if (input.type === 'radio') {
@@ -1775,7 +1868,6 @@ width: 100%;
         var checked = panel.querySelector('input[name="' + name + '"]:checked');
         if (!checked) {
           valid = false;
-          input.focus();
         }
       } else if (!input.value.trim()) {
         valid = false;
@@ -1787,15 +1879,15 @@ width: 100%;
 
     // Validation spécifique step 1
     if (step === 1) {
-      if (brandSelect.value === 'Autre' && !document.getElementById('bk-sub-123-brand-other').value.trim()) {
+      if (brandSelect.value === 'Autre' && !brandOtherInput.value.trim()) {
         alert('Veuillez préciser la marque et le modèle.');
         return false;
       }
-      if (typeSelect.value === 'Autre' && !document.getElementById('bk-sub-123-type-other').value.trim()) {
+      if (typeSelect.value === 'Autre' && !typeOtherInput.value.trim()) {
         alert('Veuillez préciser le type de vélo.');
         return false;
       }
-      var bVal = parseFloat(document.getElementById('bk-sub-123-bike-value').value);
+      var bVal = parseFloat(bikeValueInput.value);
       if (isNaN(bVal) || bVal <= 0) {
         alert('Veuillez indiquer une valeur valide pour le vélo.');
         return false;
@@ -1803,7 +1895,7 @@ width: 100%;
       if (hasAccYes.checked) {
         var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
         if (selectedTags.length > 0) {
-          var aVal = parseFloat(document.getElementById('bk-sub-123-acc-value').value);
+          var aVal = parseFloat(accValueInput.value);
           if (isNaN(aVal) || aVal < 0) {
             alert('Veuillez indiquer la valeur de vos accessoires.');
             return false;
@@ -1820,10 +1912,10 @@ width: 100%;
 
   // Calcul du tarif
   function computeAndRenderPrices() {
-    var bikeVal = parseFloat(document.getElementById('bk-sub-123-bike-value').value) || 0;
+    var bikeVal = parseFloat(bikeValueInput.value) || 0;
     var accVal = 0;
     if (hasAccYes.checked) {
-      accVal = parseFloat(document.getElementById('bk-sub-123-acc-value').value) || 0;
+      accVal = parseFloat(accValueInput.value) || 0;
     }
     var totalVal = bikeVal + accVal;
     document.getElementById('bk-sub-123-summary-total').innerText = totalVal.toLocaleString('fr-FR', { minimumFractionDigits: 2 }) + '€';
@@ -1878,11 +1970,125 @@ width: 100%;
 <!-- ========================================================== -->
 <!-- FIN DU MODULE DE SOUSCRIPTION BIKELP -->
 <!-- ========================================================== -->
+
         </div>
       </div>
     </section>
 
     <!-- ==================== SECTION 2 : AVIS CLIENTS ==================== -->
+
+
+
+    <!-- ==================== SECTION 3 : LA COUVERTURE ==================== -->
+    <section class="section-coverage" id="couverture">
+      <div class="container">
+        <h2 style="font-size: 2.6rem; text-align: center; margin-bottom: 36px;">Votre Couverture Complète</h2>
+        <div class="coverage-box">
+          <table class="coverage-table">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="coverage-title">Vol & Tentative d'Effraction</div>
+                  <div class="coverage-desc">Prise en charge 24/7 partout en Europe : voie publique, domicile ou local sécurisé.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="coverage-title">Casse, Chute & Sinistre Matériel</div>
+                  <div class="coverage-desc">Remplacement ou remise en état intégrale du cadre, transmission, roues et périphériques.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="coverage-title">Assistance Rapatriement 50 KM</div>
+                  <div class="coverage-desc">Taxi et dépanneur inclus si vous êtes immobilisé au cours d'une sortie vélo.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="coverage-title">Dommages Électriques VAE</div>
+                  <div class="coverage-desc">Garantie batterie, faisceaux et blocs moteurs contre les courts-circuits et avaries.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
+    <section class="section-claims" id="sinistres">
+      <div class="container">
+        <h2 style="font-size: 2.6rem; text-align: center;">Un Sinistre ?</h2>
+        <div class="claims-grid">
+          <div class="claim-card">
+            <div>
+              <h3>Remplacer</h3>
+              <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
+            </div>
+            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
+          </div>
+
+          <div class="claim-card">
+            <div>
+              <h3>Réparer</h3>
+              <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
+            </div>
+            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
+    <section class="section-claims" id="pro">
+      <div class="container">
+        <h2 style="font-size: 2.6rem; text-align: center;">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
+        <div class="claims-grid">
+          <div class="claim-card">
+            <div>
+              <h3>Programme Magasins</h3>
+              <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
+            </div>
+            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
+          </div>
+
+          <div class="claim-card">
+            <div>
+              <h3>Assurance Flotte</h3>
+              <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
+            </div>
+            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 4 : BIG COUNTER ==================== -->
+    <section class="section-counter">
+      <div class="container">
+        <div class="counter-val">189 662</div>
+        <p class="counter-claim">Cyclistes assurés qui partagent équitablement les sinistres.</p>
+      </div>
+    </section>
+
+        
     <section class="section-reviews" aria-label="Avis de nos cyclistes">
       <div class="container">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
@@ -1934,112 +2140,6 @@ width: 100%;
             </div>
             <p class="review-card__desc">Souscription rapide et déclaration de sinistre simplifiée au maximum sur mobile.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 3 : LA COUVERTURE ==================== -->
-    <section class="section-coverage" id="couverture">
-      <div class="container">
-        <h2 style="font-size: 2.6rem; text-align: center; margin-bottom: 36px;">Votre Couverture Complète</h2>
-        <div class="coverage-box">
-          <table class="coverage-table">
-            <tbody>
-              <tr>
-                <td>
-                  <div class="coverage-title">Vol & Tentative d'Effraction</div>
-                  <div class="coverage-desc">Prise en charge 24/7 partout en Europe : voie publique, domicile ou local sécurisé.</div>
-                </td>
-                <td style="text-align: right;">
-                  <span class="badge-included">✓ INCLUS</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="coverage-title">Casse, Chute & Sinistre Matériel</div>
-                  <div class="coverage-desc">Remplacement ou remise en état intégrale du cadre, transmission, roues et périphériques.</div>
-                </td>
-                <td style="text-align: right;">
-                  <span class="badge-included">✓ INCLUS</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="coverage-title">Assistance Rapatriement 50 KM</div>
-                  <div class="coverage-desc">Taxi et dépanneur inclus si vous êtes immobilisé au cours d'une sortie vélo.</div>
-                </td>
-                <td style="text-align: right;">
-                  <span class="badge-included">✓ INCLUS</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="coverage-title">Dommages Électriques VAE</div>
-                  <div class="coverage-desc">Garantie batterie, faisceaux et blocs moteurs contre les courts-circuits et avaries.</div>
-                </td>
-                <td style="text-align: right;">
-                  <span class="badge-included">✓ INCLUS</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 4 : BIG COUNTER ==================== -->
-    <section class="section-counter">
-      <div class="container">
-        <div class="counter-val">189 662</div>
-        <p class="counter-claim">Cyclistes assurés qui partagent équitablement les sinistres.</p>
-      </div>
-    </section>
-
-    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
-    <section class="section-claims" id="sinistres">
-      <div class="container">
-        <h2 style="font-size: 2.6rem; text-align: center;">Un Sinistre ?</h2>
-        <div class="claims-grid">
-          <div class="claim-card">
-            <div>
-              <h3>Remplacer</h3>
-              <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
-            </div>
-            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
-          </div>
-
-          <div class="claim-card">
-            <div>
-              <h3>Réparer</h3>
-              <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
-            </div>
-            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
-    <section class="section-claims" id="pro">
-      <div class="container">
-        <h2 style="font-size: 2.6rem; text-align: center;">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
-        <div class="claims-grid">
-          <div class="claim-card">
-            <div>
-              <h3>Programme Magasins</h3>
-              <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
-            </div>
-            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
-          </div>
-
-          <div class="claim-card">
-            <div>
-              <h3>Assurance Flotte</h3>
-              <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
-            </div>
-            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
-          </div>
         </div>
       </div>
     </section>
@@ -2342,5 +2442,450 @@ width: 100%;
       trackedSections.forEach(section => observer.observe(section));
     });
   </script>
+
+
+
+<div id="dfb-main-container">
+    <div id="dfb-welcome-bubble" class="dfb-hidden" onclick="dfbToggleChat()">
+        <div class="dfb-bubble-content">
+            <div class="dfb-bubble-text" data-key="LTX0001">Bonjour, comment puis-je vous aider aujourd'hui?</div>
+            <div class="dfb-agent-info">
+                <span class="dfb-agent-name">Clovis</span>
+                <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Noah.jpg" alt="Noah" class="dfb-agent-img">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <button id="dfb-floating-btn" onclick="dfbToggleChat()" data-key="LTX0002">
+        Assistance Bikelp
+    </button>
+<style>
+  /* 1. On applique l'animation au bouton */
+#dfb-floating-btn {
+    animation: shake-animation 5s infinite;
+    /* Optionnel : assure une transition fluide si vous avez déjà d'autres effets */
+    transition: transform 0.1s ease-in-out; 
+}
+
+/* 2. Définition de l'animation */
+@keyframes shake-animation {
+    /* Le bouton ne bouge pas pendant les 4 premières secondes (80% du temps) */
+    0%, 80%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    /* Le "shake" léger se produit pendant la dernière seconde (entre 80% et 100%) */
+    82% {
+        transform: rotate(1deg) translate(1px, 1px);
+    }
+    84% {
+        transform: rotate(-1deg) translate(-1px, -2px);
+    }
+    86% {
+        transform: rotate(1deg) translate(-1px, 0px);
+    }
+    88% {
+        transform: rotate(-1deg) translate(1px, 1px);
+    }
+    90% {
+        transform: rotate(0deg) translate(-1px, -1px);
+    }
+    92% {
+        transform: rotate(1deg) translate(1px, 0px);
+    }
+    94% {
+        transform: rotate(-1deg) translate(-1px, 1px);
+    }
+    96% {
+        transform: rotate(0deg) translate(1px, -1px);
+    }
+}
+</style>
+    <div id="dfb-chat-window" class="dfb-hidden">
+        <div id="dfb-loading-bar" class="dfb-hidden">
+            <div class="dfb-progress-bar">
+                <div class="dfb-progress-inc"></div>
+                <div class="dfb-progress-dec"></div>
+            </div>
+        </div>
+
+        <div class="dfb-chat-header">
+            <span data-key="LTX0003">Aide Défibeo</span>
+            <button class="dfb-close-btn" onclick="dfbToggleChat()" data-key="LTX0004">Réduire</button>
+        </div>
+
+        <div class="dfb-chat-body">
+            <div id="dfb-history-section" class="dfb-hidden">
+                <p class="dfb-section-title">Tickets Précédents</p>
+                <div id="dfb-tickets-list"></div>
+                <hr class="dfb-separator">
+            </div>
+
+            <p class="dfb-intro-text" data-key="LTX0005">Ajoutez vos informations pour démarrer la session avec l'aide Défibeo</p>
+            
+            <form id="dfb-contact-form" onsubmit="dfbHandleSubmit(event)">
+                <div class="dfb-input-group"><label data-key="LTX0006">Votre Nom</label><input type="text" id="dfb-form-name" required></div>
+                <div class="dfb-input-group"><label data-key="LTX0007">Votre Email</label><input type="email" id="dfb-form-email" required></div>
+                <div class="dfb-input-group"><label data-key="LTX0008">Votre Téléphone</label><input type="tel" id="dfb-form-tel" required></div>
+
+                <div class="dfb-radio-container">
+                    <span data-key="LTX0009">Déjà Client?</span>
+                    <label class="dfb-switch">
+                        <input type="checkbox" id="dfb-is-client" onchange="dfbToggleClientField()">
+                        <span class="dfb-slider"></span>
+                    </label>
+                </div>
+
+                <div id="dfb-client-field" class="dfb-input-group dfb-hidden">
+                    <label data-key="LTX00010">Votre Identifiant Logiciel</label>
+                    <input type="text" id="dfb-form-client-id">
+                </div>
+
+                <div class="dfb-input-group"><label data-key="LTX00011">Votre Message</label><textarea id="dfb-form-msg" rows="3" required></textarea></div>
+                <button type="submit" id="dfb-submit-btn" data-key="LTX00012">Envoyer</button>
+            </form>
+
+            <div id="dfb-success-msg" class="dfb-hidden">
+                <div class="dfb-offline-status" data-key="LTX00013">● Hors ligne</div>
+                <p  class="dfb-TXTEND" data-key="LTX00014">Les membres de l'aide Défibeo sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais. En cas d'urgence, écrivez-nous via WhatsApp avec le numéro : +44 7723 501018.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    :root { --dfb-primary: #2563eb; --dfb-dark: #1e293b; }
+    #dfb-main-container { font-family: 'DefibeoMain', sans-serif; cursor: default; }
+    
+    /* Bulle Noah */
+    #dfb-welcome-bubble {
+        position: fixed; bottom: 85px; right: 25px;
+        z-index: 9998; cursor: pointer;
+        /* Animation de flottement supprimée */
+    }
+    .dfb-bubble-content { display: flex; align-items: flex-end; gap: 10px; }
+    .dfb-bubble-text {
+    padding: 12px 18px;
+    border-radius: 15px 15px 0px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    border: 1px solid #e8e8e8;
+    color: #000000;
+    max-width: 200px;
+    background: #ffffff;
+    margin-right: 4px;
+    margin-bottom: -4px;
+    }
+    .dfb-agent-info { display: flex; flex-direction: column; align-items: center; }
+    .dfb-agent-img { width: 40px;
+    outline: #fe4eb9 solid 3px;
+    outline-offset: 3px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;}
+    .dfb-agent-name { 
+                  font-size: 14px;
+    background: #fe4ebabf;
+    width: 45px;
+    text-align: center;
+    font-family: 'Alternative';
+    border-radius: 18px;
+    font-weight: 100;
+    color: #ffffff;
+    padding: 1px 3px 0px 3Px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+     }
+
+    /* Bouton Flottant Principal */
+    #dfb-floating-btn {
+position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3556ec !important;
+    color: white;
+    border: none;
+    padding: 13px 21px;
+    border-radius: 13px;
+    font-weight: 100 !important;
+    cursor: pointer;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    gap: 10px;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    z-index: 9999;
+    transition: transform 0.2s;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+    
+
+    @media screen and (max-width: 768px) {
+    #dfb-chat-window {
+    right: 7px !important;
+    }
+  }
+
+    /* Fenêtre de Chat */
+    #dfb-chat-window {
+      border: 1px solid #cccccc;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 360px;
+    max-height: 85vh;
+    background: #f5f5f5;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 10000;
+    overflow: hidden;
+    }
+
+    .dfb-intro-text { font-size: 17px; color:#000; }
+    /* Historique Tickets */
+    .dfb-section-title {     font-size: 16px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif;
+    color: #000000;
+    margin-bottom: 10px; }
+    .dfb-ticket-item { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 13px;
+    border: 1px solid #e3e3e3;
+    background: transparent;
+    border-radius: 13px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    }
+    .dfb-status-badge {    background: #090909;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif !important;}
+    .dfb-separator { border: 0; border-top: 1px solid transparent; margin: 15px 0; }
+
+/* Optionnel : Personnalise le contour au clavier pour qu'il soit plus joli */
+:focus-visible {
+  outline: 2.5px solid #3556ec; 
+  outline-offset: 2px;
+}
+    /* Design Form (Inchangé) */
+    .dfb-chat-header { 
+          font-size: 18px;
+    font-weight: 100;
+    border-bottom: 1px solid #cbcbcb;
+    border-radius: 14px 14px 0px 0px;
+    background: transparent;
+    color: #000;
+    padding: 15px;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .dfb-close-btn { padding-top: 4px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: #155fff;
+    cursor: pointer;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif; }
+    .dfb-chat-body { padding: 20px; overflow-y: auto; }
+    .dfb-input-group { margin-bottom: 12px; display: flex; flex-direction: column; }
+    .dfb-input-group label { font-size: 16px;
+    font-weight: 100;
+    color: #000;
+    margin-bottom: 4px; }
+    .dfb-input-group input, .dfb-input-group textarea { padding: 12px;
+      font-size: 16px;
+    border: 1px solid #cbcbcb;
+    border-radius: 13px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif; }
+    #dfb-submit-btn { width: 100%;
+    background: #3556ec !important;
+    color: white;
+    border: none;
+    padding: 13px 21px;
+    font-size: 17px;
+    border-radius: 13px;
+    cursor: pointer;
+    font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;}
+    #dfb-submit-btn:disabled { background: #cbd5e1; }
+
+    /* Animations & Helpers */
+    .dfb-hidden { display: none !important; }
+    
+    /* Loading Bar (Material) */
+    #dfb-loading-bar { position: relative; width: 100%; height: 5.5px; overflow: hidden; background-color: #dbeafe; }
+    .dfb-progress-inc, .dfb-progress-dec { position: absolute; background-color: #674fff; height: 100%; }
+    .dfb-progress-inc { animation: dfb-wave-inc 2s infinite ease-in; }
+    .dfb-progress-dec { animation: dfb-wave-dec 2s infinite ease-out; }
+    @keyframes dfb-wave-inc { 0% { left: -35%; right: 100%; } 60% { left: 100%; right: -90%; } 100% { left: 100%; right: -90%; } }
+    @keyframes dfb-wave-dec { 0% { left: -200%; right: 100%; } 60% { left: 107%; right: -8%; } 100% { left: 107%; right: -8%; } }
+
+    /* Radio Switch */
+    .dfb-radio-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 16px; font-weight: 100; color: #000; }
+    .dfb-switch { position: relative;
+    width: 37px;
+    height: 21px;
+    cursor: pointer; }
+    .dfb-switch input { opacity: 0; width: 0; height: 0; }
+    .dfb-slider { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbcbcb; transition: .4s; border-radius: 34px; }
+    .dfb-slider:before {     position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; }
+    input:checked + .dfb-slider { background-color: #3556ec; }
+    input:checked + .dfb-slider:before { transform: translateX(16px); }
+    .dfb-offline-status {     color: #ff5d5f;
+    font-size: 16px;
+    font-weight: 100;
+    margin-bottom: 0px;}
+
+    .dfb-TXTEND { font-size: 16px;
+    color: #000;
+    font-weight:100;
+    text-align: left;
+    }
+
+    .PIXA {
+    color: #000;
+    font-family: 'DefibeoTAZ', sans-serif;
+    letter-spacing: -0.5px;
+    font-weight: 100;
+        font-size: 16px;
+    }
+
+        .DELXTA {
+color: #000;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 100;
+    }
+
+
+.logofooterdefibeo {
+margin: auto;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    }
+
+</style>
+
+<script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby0H2rfZ9Kzu37LpeMjvhKvSue4d23BZvMazsiJIa0N05eZz0A_p1u7OwchbsrtXf68/exec";
+    let currentTicket = "#" + Math.floor(1000 + Math.random() * 9000);
+
+    // Charger l'historique au démarrage
+    window.onload = function() {
+        dfbRenderHistory();
+        
+        // Apparition temporisée de la bulle Noah après 10 secondes
+        setTimeout(() => {
+            const chatWindow = document.getElementById('dfb-chat-window');
+            // On ne l'affiche que si le chat n'est pas déjà ouvert
+            if(chatWindow.classList.contains('dfb-hidden')) {
+                const bubble = document.getElementById('dfb-welcome-bubble');
+                bubble.classList.remove('dfb-hidden');
+            }
+        }, 5000); // 6 000 millisecondes = 6 secondes
+    };
+
+    function dfbToggleChat() {
+        const chatWindow = document.getElementById('dfb-chat-window');
+        const bubble = document.getElementById('dfb-welcome-bubble');
+        const isHidden = chatWindow.classList.contains('dfb-hidden');
+        
+        chatWindow.classList.toggle('dfb-hidden');
+        bubble.classList.add('dfb-hidden'); // On cache toujours la bulle quand le chat s'ouvre/se ferme
+        if(isHidden) dfbRenderHistory();
+    }
+
+    function dfbToggleClientField() {
+        const isClient = document.getElementById('dfb-is-client').checked;
+        document.getElementById('dfb-client-field').classList.toggle('dfb-hidden', !isClient);
+    }
+
+    function dfbRenderHistory() {
+        const history = JSON.parse(localStorage.getItem('dfb_tickets') || "[]");
+        const historySection = document.getElementById('dfb-history-section');
+        const listContainer = document.getElementById('dfb-tickets-list');
+        
+        if(history.length > 0) {
+            historySection.classList.remove('dfb-hidden');
+            listContainer.innerHTML = history.slice(-3).reverse().map(t => `
+                <div class="dfb-ticket-item">
+                    <span><strong class="PIXA">${t.id}</strong> <small class="DELXTA">${t.date}</small></span>
+                    <span class="dfb-status-badge">En cours</span>
+                </div>
+            `).join('');
+        }
+    }
+
+    async function dfbHandleSubmit(event) {
+        event.preventDefault();
+        const submitBtn = document.getElementById('dfb-submit-btn');
+        const loadingBar = document.getElementById('dfb-loading-bar');
+        
+        submitBtn.disabled = true;
+        loadingBar.classList.remove('dfb-hidden');
+
+        const payload = {
+            ticket: currentTicket,
+            nom: document.getElementById('dfb-form-name').value,
+            email: document.getElementById('dfb-form-email').value,
+            tel: document.getElementById('dfb-form-tel').value,
+            isClient: document.getElementById('dfb-is-client').checked,
+            clientId: document.getElementById('dfb-form-client-id').value,
+            message: document.getElementById('dfb-form-msg').value
+        };
+
+        try {
+            await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) });
+
+            // Sauvegarde en cache
+            const history = JSON.parse(localStorage.getItem('dfb_tickets') || "[]");
+            history.push({ id: currentTicket, date: new Date().toLocaleDateString('fr-FR') });
+            localStorage.setItem('dfb_tickets', JSON.stringify(history));
+
+            setTimeout(() => {
+                loadingBar.classList.add('dfb-hidden');
+                document.getElementById('dfb-contact-form').classList.add('dfb-hidden');
+                document.getElementById('dfb-history-section').classList.add('dfb-hidden');
+                document.querySelector('.dfb-intro-text').classList.add('dfb-hidden');
+                document.getElementById('dfb-display-ticket').innerText = currentTicket;
+                document.getElementById('dfb-success-msg').classList.remove('dfb-hidden');
+            }, 4000);
+
+        } catch (e) {
+            console.error(e);
+            submitBtn.disabled = false;
+            loadingBar.classList.add('dfb-hidden');
+        }
+    }
+</script>
+
+
 </body>
 </html>
