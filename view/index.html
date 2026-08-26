@@ -12,18 +12,25 @@
   <style>
     @font-face {
       font-family: 'Civilprom';
+          font-weight: 100 !important;
       src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
     }
-
     @font-face {
       font-family: 'DefibeoTitle';
+         font-weight: 100 !important;
       src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoTITLE.otf') format('opentype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
+    }
+
+        @font-face {
+      font-family: 'Alternative';
+         font-weight: 100 !important;
+      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/gochi.otf') format('opentype');
+    }
+
+        @font-face {
+      font-family: 'DefibeoTAZ';
+         font-weight: 100 !important;
+      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold+(1).otf') format('opentype');
     }
 
     /* --- VARIABLES CSS (Design Sharp, Android Bold & Couleurs imposées) --- */
@@ -88,30 +95,22 @@
 
     /* --- Boutons Sharp --- */
     .btn {
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #3556ec, inset 0 6px 12px #ffffff1f;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #4e00e2, inset 0 6px 12px #ffffff1f;
     margin-right: 0px;
-    margin-bottom: 85px !important;
-    font-family: 'Civilprom';
-    font-weight: 100 !important;
+    background: #4e00e2;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    font-family: 'Civilprom', sans-serif;
     border: none !important;
     padding: 10px 20px;
-    font-size: 18px !important;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px !important;
+    font-weight: 500 !important;
     border-radius: 13px !important;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 22px;
-    padding-right: 22px;
+    padding: 10px 20px;
     }
 
-    .btn:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 5px 5px 0px #000000;
-    }
-
-    .btn:active {
-      transform: translate(1px, 1px);
-      box-shadow: 1px 1px 0px #000000;
-    }
 
     .btn--primary {
       background-color: var(--color-primary);
@@ -130,11 +129,11 @@
 
     /* --- HEADER (NON STICKY) --- */
     .header-top {
-      background: linear-gradient(326deg, #2389ff, #0043c3);
-      border-bottom: none;
-          border-radius: 0px 0px 25px 25px;
-      padding: 20px 10px;
-      max-width: 99%;
+background: #4513a5;
+    border-bottom: none;
+    border-radius: 0px;
+    padding: 5Px;
+    width: 100%;
     margin: auto;
     }
 
