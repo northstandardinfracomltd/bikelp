@@ -95,26 +95,26 @@
 
     /* --- Boutons Sharp --- */
     .btn {
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #4e00e2, inset 0 6px 12px #ffffff1f;
-    margin-right: 0px;
-    background: #4e00e2;
+margin-right: 0px;
+    background: #ffffff;
     margin-bottom: 10px !important;
     margin-top: 10px !important;
     font-family: 'Civilprom', sans-serif;
     border: none !important;
-    padding: 10px 20px;
-    color: #fff;
+    color: #000000;
+    cursor: pointer;
     text-decoration: none;
-    font-size: 20px !important;
-    font-weight: 500 !important;
-    border-radius: 13px !important;
-    padding: 10px 20px;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 11px 22px 12px 22px;
     }
 
 
     .btn--primary {
-      background-color: var(--color-primary);
-      color: #FFFFFF;
+          cursor: pointer;
+    background-color: #935bff;
+    color: #FFFFFF;
     }
 
     .btn--secondary {
@@ -132,7 +132,7 @@
 background: #4513a5;
     border-bottom: none;
     border-radius: 0px;
-    padding: 5Px;
+    padding: 35px 5px;
     width: 100%;
     margin: auto;
     }
@@ -172,13 +172,13 @@ background: #4513a5;
 
     .header-actions {
       display: flex;
-      gap: 12px;
+      gap: 20px;
     }
 
     /* --- SECTION 1 : SOUSCRIPTION (HERO) --- */
     .section-hero {
-      padding: 64px 0 80px;
-      border-bottom: 2px solid var(--color-border);
+background: #350097;
+    padding: 64px 0 80px;
     }
 
     .hero-grid {
@@ -793,7 +793,7 @@ position: relative;
     .BikelpLogo {
 margin-right:auto;
 width: 100%;
-max-width: 250px;
+max-width: 300px;
       }
   </style>
 </head>
@@ -982,6 +982,31 @@ max-width: 250px;
           <div class="claim-card">
             <div>
               <h3>Réparer</h3>
+              <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
+            </div>
+            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
+    <section class="section-claims" id="pro">
+      <div class="container">
+        <h2 style="font-size: 2.6rem; text-align: center;">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
+        <div class="claims-grid">
+          <div class="claim-card">
+            <div>
+              <h3>Programme Magasins</h3>
+              <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
+            </div>
+            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
+          </div>
+
+          <div class="claim-card">
+            <div>
+              <h3>Assurance Flotte</h3>
               <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
             </div>
             <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
