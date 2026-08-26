@@ -825,17 +825,11 @@ max-width: 300px;
     <!-- ==================== SECTION 1 : SOUSCRIPTION (HERO) ==================== -->
     <section class="section-hero" id="souscription">
       <div class="container hero-grid">
-        <div>
+
           <h1 class="hero-title">Bikelp assure votre vélo à partir de 9€ par mois vol et dommages inclus.</h1>
           <p class="hero-subtitle">Bikelp réinvente la protection vélo : un système équitable, transparent et sans franchise obscure, piloté depuis Calp.</p>
       
-      
-
-
-
-
-
-          <!-- ========================================================== -->
+      <!-- ========================================================== -->
 <!-- 1. BOUTON DECLENCHEUR SUR VOTRE PAGE -->
 <!-- ========================================================== -->
 <button type="button" class="bk-sub-123-trigger-btn" onclick="bkSubOpenPane()">
@@ -876,7 +870,7 @@ max-width: 300px;
         <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
           <h2 class="bk-sub-123-title">Quel vélo souhaitez-vous assurer ?</h2>
 
-          <!-- 1. Marque (Visible d'office) -->
+          <!-- 1. Marque -->
           <div class="bk-sub-123-field-group" id="bk-sub-123-fg-brand">
             <label class="bk-sub-123-label" for="bk-sub-123-brand">Marque du vélo *</label>
             <select id="bk-sub-123-brand" class="bk-sub-123-select" required>
@@ -929,7 +923,7 @@ max-width: 300px;
             </div>
           </div>
 
-          <!-- 2. Type de vélo (Visible d'office) -->
+          <!-- 2. Type de vélo -->
           <div class="bk-sub-123-field-group" id="bk-sub-123-fg-type">
             <label class="bk-sub-123-label" for="bk-sub-123-type">Type de vélo *</label>
             <select id="bk-sub-123-type" class="bk-sub-123-select" required>
@@ -1203,6 +1197,7 @@ max-width: 300px;
             « Après avoir souscrit une assurance chez Bikelp, nous vous demandons de télécharger photos et documents relatifs à votre vélo et antivol. Nous vous conseillons de faire cela au plus vite afin de démontrer la preuve d'achat. Sans cela, nous pourrions être dans l'impossibilité de procéder à votre indemnisation. En tant que demandeur(-euse) d’assurance, vous êtes tenu(e) de répondre aux questions posées de la manière la plus complète possible. Elles valent également pour les faits et les circonstances liés à la personne que vous souhaitez assurer. Dans les réponses aux questions, seules vos connaissances, et celles de la personne assurée, sont décisives. »
           </div>
 
+          <!-- Q1 -->
           <div class="bk-sub-123-field-group">
             <label class="bk-sub-123-label">Je dispose d’un antivol ART2, Sold Secure Silver, FUB ou supérieur *</label>
             <div class="bk-sub-123-radio-toggle-group">
@@ -1217,6 +1212,7 @@ max-width: 300px;
             </div>
           </div>
 
+          <!-- Q2 -->
           <div class="bk-sub-123-field-group">
             <label class="bk-sub-123-label">Avez-vous subi des dommages au niveau de votre vélo au cours des trois derniers mois *</label>
             <div class="bk-sub-123-radio-toggle-group">
@@ -1231,6 +1227,7 @@ max-width: 300px;
             </div>
           </div>
 
+          <!-- Q3 -->
           <div class="bk-sub-123-field-group">
             <label class="bk-sub-123-label">Un assureur a-t-il déjà refusé ou résilié votre assurance *</label>
             <div class="bk-sub-123-radio-toggle-group">
@@ -1245,6 +1242,7 @@ max-width: 300px;
             </div>
           </div>
 
+          <!-- Q4 -->
           <div class="bk-sub-123-field-group">
             <label class="bk-sub-123-label">Avez-vous déjà commis une infraction qui vous a mené à avoir des contacts avec la police ou à être condamné par la justice *</label>
             <div class="bk-sub-123-radio-toggle-group">
@@ -1259,34 +1257,39 @@ max-width: 300px;
             </div>
           </div>
 
-          <div class="bk-sub-123-field-group">
-            <label class="bk-sub-123-label">J’ai lu et j'accepte les <a href="/ipid" target="_blank" class="bk-sub-123-link">Conditions de la police & Résumé de la police (IPID)</a> *</label>
-            <div class="bk-sub-123-radio-toggle-group">
-              <label class="bk-sub-123-radio-btn single-opt">
-                <input type="radio" name="bk-sub-123-c1" value="Oui" required>
-                <span>Oui, J'accepte</span>
-              </label>
-            </div>
+          <!-- TOGGLES STYLE APPLE MINIMALISTES -->
+          
+          <!-- Q5 IPID -->
+          <div class="bk-sub-123-apple-toggle-row">
+            <span class="bk-sub-123-apple-toggle-text">
+              J’ai lu et j'accepte les <a href="/ipid" target="_blank" class="bk-sub-123-link">Conditions de la police & Résumé de la police (IPID)</a> *
+            </span>
+            <label class="bk-sub-123-switch">
+              <input type="checkbox" name="bk-sub-123-c1" id="bk-sub-123-c1" required>
+              <span class="bk-sub-123-slider"></span>
+            </label>
           </div>
 
-          <div class="bk-sub-123-field-group">
-            <label class="bk-sub-123-label">J’ai lu et j'accepte la <a href="/finfor" target="_blank" class="bk-sub-123-link">Fiche d'informations</a> *</label>
-            <div class="bk-sub-123-radio-toggle-group">
-              <label class="bk-sub-123-radio-btn single-opt">
-                <input type="radio" name="bk-sub-123-c2" value="Oui" required>
-                <span>OUI, J'ACCEPTE</span>
-              </label>
-            </div>
+          <!-- Q6 FINFOR -->
+          <div class="bk-sub-123-apple-toggle-row">
+            <span class="bk-sub-123-apple-toggle-text">
+              J’ai lu et j'accepte la <a href="/finfor" target="_blank" class="bk-sub-123-link">Fiche d'informations</a> *
+            </span>
+            <label class="bk-sub-123-switch">
+              <input type="checkbox" name="bk-sub-123-c2" id="bk-sub-123-c2" required>
+              <span class="bk-sub-123-slider"></span>
+            </label>
           </div>
 
-          <div class="bk-sub-123-field-group">
-            <label class="bk-sub-123-label">J’accepte que mes données soient enregistrées dans des systèmes (d’avertissement) internes et externes afin d’assurer une politique d’acceptation et une politique de risque responsables et d’éviter les fraudes *</label>
-            <div class="bk-sub-123-radio-toggle-group">
-              <label class="bk-sub-123-radio-btn single-opt">
-                <input type="radio" name="bk-sub-123-c3" value="Oui" required>
-                <span>OUI, J'ACCEPTE</span>
-              </label>
-            </div>
+          <!-- Q7 REG DATA -->
+          <div class="bk-sub-123-apple-toggle-row">
+            <span class="bk-sub-123-apple-toggle-text">
+              J’accepte que mes données soient enregistrées dans des systèmes (d’avertissement) internes et externes afin d’assurer une politique d’acceptation et une politique de risque responsables et d’éviter les fraudes *
+            </span>
+            <label class="bk-sub-123-switch">
+              <input type="checkbox" name="bk-sub-123-c3" id="bk-sub-123-c3" required>
+              <span class="bk-sub-123-slider"></span>
+            </label>
           </div>
 
           <div class="bk-sub-123-actions">
@@ -1625,12 +1628,6 @@ max-width: 300px;
     color: #ffffff;
   }
 
-  .bk-sub-123-radio-btn.single-opt {
-    flex: none;
-    width: 100%;
-    max-width: 250px;
-  }
-
   /* Tag Cloud */
   .bk-sub-123-sub-box {
     background: var(--bk-sub-grey-light);
@@ -1747,6 +1744,77 @@ max-width: 300px;
     color: var(--bk-sub-c1);
     text-decoration: underline;
     font-weight: 700;
+  }
+
+  /* ========================================================== */
+  /* APPLE-LIKE TOGGLE SWITCHES */
+  /* ========================================================== */
+  .bk-sub-123-apple-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .bk-sub-123-apple-toggle-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 1.45;
+  }
+
+  /* Le switch conteneur */
+  .bk-sub-123-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .bk-sub-123-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* La glissière (Slider) : style pillule Apple standard */
+  .bk-sub-123-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e5e5ea; /* Gris inactif Apple */
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 30px !important; /* Exception spécifique pour forme pillule Apple */
+  }
+
+  .bk-sub-123-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50% !important; /* Bouton rond blanc */
+  }
+
+  /* Switch actif */
+  .bk-sub-123-switch input:checked + .bk-sub-123-slider {
+    background-color: #34c759; /* Vert iOS classique (ou remplacez par var(--bk-sub-c1) si vous préférez violet) */
+  }
+
+  .bk-sub-123-switch input:checked + .bk-sub-123-slider:before {
+    transform: translateX(22px);
   }
 
   /* Action Buttons */
@@ -1962,7 +2030,6 @@ max-width: 300px;
 
   accValueInput.addEventListener('input', updateStep1ProgressiveFlow);
 
-  // Tags Accessoires
   var tags = document.querySelectorAll('.bk-sub-123-tag');
   tags.forEach(function(tag) {
     tag.addEventListener('click', function() {
@@ -2001,7 +2068,6 @@ max-width: 300px;
       }
     });
 
-    // Scroll au début du tiroir latéral
     document.querySelector('.bk-sub-123-drawer-body').scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -2009,12 +2075,18 @@ max-width: 300px;
     var panel = document.getElementById('bk-sub-123-step-' + step);
     var valid = true;
 
+    // Validation des inputs classiques et radios
     var requiredInputs = panel.querySelectorAll('input[required], select[required]');
     requiredInputs.forEach(function(input) {
       if (input.type === 'radio') {
         var name = input.name;
         var checked = panel.querySelector('input[name="' + name + '"]:checked');
         if (!checked) {
+          valid = false;
+        }
+      } else if (input.type === 'checkbox') {
+        // Pour les switches Apple
+        if (!input.checked) {
           valid = false;
         }
       } else if (!input.value.trim()) {
@@ -2046,6 +2118,11 @@ max-width: 300px;
           }
         }
       }
+    }
+
+    if (step === 5 && !valid) {
+      alert('Veuillez répondre à toutes les questions et activer les acceptations réglementaires obligatoires.');
+      return false;
     }
 
     if (!valid) {
@@ -2111,12 +2188,6 @@ max-width: 300px;
 <!-- ========================================================== -->
 <!-- FIN DU MODULE DE SOUSCRIPTION BIKELP -->
 <!-- ========================================================== -->
-      
-      
-        </div>
-
-
-
 
       </div>
     </section>
