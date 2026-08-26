@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Bikelp — L'Assurance Vélo Haute Précision</title>
+  <meta name="description" content="Assurance vélo communautaire et connectée. Couverture vol, casse et rapatriement au départ de Calp.">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    @font-face {
+      font-family: 'Civilprom';
+      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'DefibeoTitle';
+      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoTITLE.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* --- VARIABLES CSS (Design Sharp, Android Bold & Couleurs imposées) --- */
+    :root {
+      --color-primary: #0882fc;     /* Bleu */
+      --color-secondary: #32BA58;   /* Vert */
+      --color-accent: #B5FF00;      /* Vert Néon */
+
+      --color-bg: #F3F4F6;
+      --color-surface: #FFFFFF;
+      --color-surface-dark: #0D1117;
+      --color-text-main: #0A0D14;
+      --color-text-muted: #4B5563;
+      --color-border: #D1D5DB;
+
+      --font-body: 'Civilprom', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-title: 'DefibeoTitle', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* SHARP DESIGN (0px border-radius) */
+      --radius-sharp: 0px;
+      --shadow-solid: 4px 4px 0px #000000;
+      --shadow-solid-primary: 5px 5px 0px var(--color-primary);
+
+      --container-max: 1200px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.5;
+      /* Dégagement large pour que le footer ne soit pas caché par la barre topographique fixe */
+      padding-bottom: 140px; 
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-title);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    /* --- Boutons Sharp --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      font-family: var(--font-title);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border: 2px solid #000000;
+      border-radius: var(--radius-sharp);
+      cursor: pointer;
+      text-decoration: none;
+      background: var(--color-surface);
+      color: #000000;
+      box-shadow: 3px 3px 0px #000000;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #000000;
+    }
+
+    .btn:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px #000000;
+    }
+
+    .btn--primary {
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+    }
+
+    .btn--secondary {
+      background-color: var(--color-secondary);
+      color: #FFFFFF;
+    }
+
+    .btn--accent {
+      background-color: var(--color-accent);
+      color: #000000;
+    }
+
+    /* --- HEADER (NON STICKY) --- */
+    .header-top {
+      background: var(--color-surface);
+      border-bottom: 2px solid #000000;
+      padding: 16px 0;
+    }
+
+    .header-top__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .header-brand__box {
+      width: 38px;
+      height: 38px;
+      background: var(--color-primary);
+      border: 2px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      display: grid;
+      place-content: center;
+      font-family: var(--font-title);
+      color: #FFFFFF;
+      font-size: 1.3rem;
+    }
+
+    .header-brand__text {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: #000000;
+      letter-spacing: -0.02em;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* --- SECTION 1 : SOUSCRIPTION (HERO) --- */
+    .section-hero {
+      padding: 64px 0 80px;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 5px 10px;
+      background: var(--color-accent);
+      border: 2px solid #000000;
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px #000000;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: 3.6rem;
+      margin-bottom: 20px;
+      color: #000000;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--color-text-muted);
+      max-width: 480px;
+    }
+
+    .subscription-panel {
+      background: var(--color-surface);
+      border: 3px solid #000000;
+      box-shadow: 7px 7px 0px var(--color-primary);
+      padding: 32px;
+    }
+
+    .subscription-panel__title {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 13px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      border: 2px solid #000000;
+      border-radius: var(--radius-sharp);
+      background: #FAFAFA;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: var(--color-primary);
+      box-shadow: 3px 3px 0px var(--color-primary);
+    }
+
+    /* --- SECTION 2 : AVIS CLIENTS --- */
+    .section-reviews {
+      padding: 72px 0;
+      background: var(--color-surface);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .reviews-stream {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 12px 4px 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+
+    .review-card {
+      flex: 0 0 320px;
+      background: var(--color-bg);
+      border: 2px solid #000000;
+      box-shadow: var(--shadow-solid);
+      padding: 22px;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-card__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .review-card__user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-card__img {
+      width: 42px;
+      height: 42px;
+      border: 2px solid #000000;
+      object-fit: cover;
+    }
+
+    .review-card__name {
+      font-family: var(--font-title);
+      font-size: 0.95rem;
+    }
+
+    .review-card__badge {
+      background: var(--color-accent);
+      border: 2px solid #000000;
+      padding: 4px 8px;
+      font-family: var(--font-title);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .review-card__badge small {
+      font-size: 0.65rem;
+    }
+
+    .review-card__desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+
+    /* --- SECTION 3 : LA COUVERTURE --- */
+    .section-coverage {
+      padding: 80px 0;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .coverage-box {
+      border: 3px solid #000000;
+      background: var(--color-surface);
+      box-shadow: 6px 6px 0px #000000;
+    }
+
+    .coverage-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .coverage-table tr {
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .coverage-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .coverage-table td {
+      padding: 22px 28px;
+    }
+
+    .coverage-title {
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .coverage-desc {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .badge-included {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border: 2px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      padding: 7px 14px;
+      font-family: var(--font-title);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* --- SECTION 4 : BIG COUNTER --- */
+    .section-counter {
+      padding: 88px 0;
+      background: var(--color-surface-dark);
+      color: #FFFFFF;
+      text-align: center;
+      border-bottom: 2px solid #000000;
+    }
+
+    .counter-val {
+      font-family: var(--font-title);
+      font-size: 6.8rem;
+      color: var(--color-accent);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+      text-shadow: 4px 4px 0px var(--color-primary);
+    }
+
+    .counter-claim {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      max-width: 720px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+
+    /* --- SECTION 5 : SOLUTIONS SINISTRES --- */
+    .section-claims {
+      padding: 80px 0;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .claims-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 36px;
+    }
+
+    .claim-card {
+      background: var(--color-surface);
+      border: 3px solid #000000;
+      padding: 36px;
+      box-shadow: 6px 6px 0px #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .claim-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .claim-card p {
+      color: var(--color-text-muted);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+
+    /* --- SECTION 6 : ÉVÉNEMENTS --- */
+    .section-events {
+      padding: 80px 0;
+      background: var(--color-surface);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .event-card {
+      background: var(--color-bg);
+      border: 2px solid #000000;
+      box-shadow: var(--shadow-solid);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-date-box {
+      width: 56px;
+      height: 56px;
+      background: var(--color-primary);
+      border: 2px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      color: #FFF;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      margin-bottom: 18px;
+      font-family: var(--font-title);
+    }
+
+    .event-date-box strong {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .event-date-box span {
+      font-size: 0.7rem;
+    }
+
+    .event-title {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .event-desc {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    /* --- SECTION CONTACT --- */
+    .section-contact {
+      padding: 80px 0;
+      background: var(--color-bg);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      margin-top: 36px;
+    }
+
+    .contact-info-card {
+      background: var(--color-surface);
+      border: 3px solid #000000;
+      padding: 32px;
+      box-shadow: 6px 6px 0px #000000;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-label {
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .contact-val {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    /* --- FOOTER --- */
+    .footer-main {
+      background: var(--color-surface-dark);
+      color: #F3F4F6;
+      padding: 72px 0 36px;
+      border-top: 3px solid #000000;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1.3fr 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 56px;
+    }
+
+    .footer-col h4 {
+      color: var(--color-accent);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-col p, .footer-col address {
+      font-style: normal;
+      color: #9CA3AF;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .partner-tag {
+      display: inline-block;
+      background: #1F2937;
+      border: 1px solid #374151;
+      padding: 6px 10px;
+      margin-bottom: 12px;
+      font-family: var(--font-title);
+      font-size: 0.85rem;
+      color: #FFF;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #9CA3AF;
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #1F2937;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      color: #6B7280;
+      font-size: 0.82rem;
+    }
+
+    /* ==========================================================================
+       STICKY BOTTOM NAV BAR — PROFIL ALTIMÉTRIQUE ÉTAPE VUELTA / TOUR
+       ========================================================================== */
+    .sticky-stage-nav {
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 120px !important;
+      background-color: #FFFFFF !important;
+      border-top: 4px solid #000000 !important;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25) !important;
+      z-index: 999999 !important;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .sticky-stage-nav__wrapper {
+      position: relative;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 16px;
+      height: 100%;
+    }
+
+    /* SVG Altimétrique avec les découpes de relief en fond */
+    .sticky-stage-svg {
+      position: absolute;
+      top: 0;
+      left: 16px;
+      right: 16px;
+      width: calc(100% - 32px);
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Grille de repères interactifs positionnés en overlay */
+    .sticky-stage-checkpoints {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      list-style: none;
+    }
+
+    .stage-cp-item {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .stage-cp-item:nth-child(1) { justify-content: flex-start; }
+    .stage-cp-item:nth-child(2) { justify-content: center; margin-left: -5%; }
+    .stage-cp-item:nth-child(3) { justify-content: center; margin-right: -5%; }
+    .stage-cp-item:nth-child(4) { justify-content: flex-end; }
+
+    .stage-cp-link {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #000000;
+      padding-top: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .stage-cp-link:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Fanion d'étape (Badge type profil de course) */
+    .stage-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      font-family: var(--font-title);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: 2px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+
+    .stage-flag__icon {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: #000000;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 14px;
+      font-size: 0.65rem;
+    }
+
+    .stage-flag__alt {
+      font-size: 0.65rem;
+      color: #4B5563;
+      font-weight: 400;
+      border-left: 1px solid #000000;
+      padding-left: 5px;
+    }
+
+    .stage-dist {
+      margin-top: 4px;
+      font-family: var(--font-title);
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #000000;
+      color: #FFFFFF;
+      padding: 1px 5px;
+      border: 1px solid #000000;
+    }
+
+    /* ÉTAT ACTIF AU SCROLL */
+    .stage-cp-link.active .stage-flag {
+      background: var(--color-accent) !important;
+      border-color: #000000 !important;
+      box-shadow: 3px 3px 0px #000000 !important;
+      transform: scale(1.08);
+    }
+
+    .stage-cp-link.active .stage-flag__icon {
+      background: #000000 !important;
+      color: var(--color-accent) !important;
+    }
+
+    .stage-cp-link.active .stage-dist {
+      background: var(--color-primary);
+      border-color: #000000;
+      color: #FFFFFF;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .claims-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-title {
+        font-size: 2.6rem;
+      }
+      .counter-val {
+        font-size: 4.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sticky-stage-nav {
+        height: 100px !important;
+      }
+      body {
+        padding-bottom: 120px;
+      }
+      .stage-flag {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+      }
+      .stage-flag__alt {
+        display: none;
+      }
+      .stage-dist {
+        font-size: 0.6rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER (NON STICKY) ==================== -->
+  <header class="header-top">
+    <div class="container header-top__wrapper">
+      <a href="#" class="header-brand" aria-label="Bikelp Accueil">
+        <div class="header-brand__box">B</div>
+        <span class="header-brand__text">BIKELP.</span>
+      </a>
+
+      <div class="header-actions">
+        <a href="#login" class="btn">Connexion</a>
+        <button type="button" class="btn btn--primary" id="btn-register-cta">Inscription</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== SECTION 1 : SOUSCRIPTION (HERO) ==================== -->
+    <section class="section-hero" id="souscription">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-tag">Assurance Cycle Haute Précision</span>
+          <h1 class="hero-title">Partagez la route, nous assurons le reste.</h1>
+          <p class="hero-subtitle">Bikelp réinvente la protection vélo : un système équitable, transparent et sans franchise obscure, piloté depuis Calp.</p>
+        </div>
+
+        <div class="subscription-panel">
+          <h2 class="subscription-panel__title">Souscription en ligne</h2>
+          <form id="subscription-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="subscriber-email" class="form-label">Email du cycliste</label>
+              <input type="email" id="subscriber-email" class="form-input" placeholder="cycliste@bikelp.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bike-type" class="form-label">Type de cycle</label>
+              <select id="bike-type" class="form-select" required>
+                <option value="" disabled selected>Sélectionner un modèle</option>
+                <option value="route">Route & Performance</option>
+                <option value="gravel">Gravel / All-Road</option>
+                <option value="vtt">VTT / Descente</option>
+                <option value="vae">VAE / Électrique</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bike-val" class="form-label">Valeur d'achat neuve (€)</label>
+              <input type="number" id="bike-val" class="form-input" placeholder="ex: 3200" min="200" required>
+            </div>
+
+            <button type="submit" class="btn btn--accent" style="width: 100%;">Calculer mon tarif</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2 : AVIS CLIENTS ==================== -->
+    <section class="section-reviews" aria-label="Avis de nos cyclistes">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <h2>Avis du Peloton</h2>
+          <span style="font-family: var(--font-title); font-size: 0.85rem; color: var(--color-primary);">/// SCROLL HORIZONTAL</span>
+        </div>
+
+        <div class="reviews-stream">
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <img class="review-card__img" src="https://picsum.photos/80/80?random=21" alt="Profil">
+                <span class="review-card__name">Marc T.</span>
+              </div>
+              <div class="review-card__badge">4.9<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Cadre carbone fissuré lors d'une chute, remplacement validé sous 48h sans expertise lourde.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <img class="review-card__img" src="https://picsum.photos/80/80?random=22" alt="Profil">
+                <span class="review-card__name">Hélène V.</span>
+              </div>
+              <div class="review-card__badge">5.0<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Rapatriement impeccable au pied du Coll de Rates lors d'un séjour d'entraînement.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <img class="review-card__img" src="https://picsum.photos/80/80?random=23" alt="Profil">
+                <span class="review-card__name">Sébastien P.</span>
+              </div>
+              <div class="review-card__badge">4.8<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Tarification transparente, pas de mauvaise surprise lors du remboursement de ma paire de roues.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <img class="review-card__img" src="https://picsum.photos/80/80?random=24" alt="Profil">
+                <span class="review-card__name">Guillaume R.</span>
+              </div>
+              <div class="review-card__badge">4.7<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Souscription rapide et déclaration de sinistre simplifiée au maximum sur mobile.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3 : LA COUVERTURE ==================== -->
+    <section class="section-coverage" id="couverture">
+      <div class="container">
+        <h2 style="font-size: 2.6rem; text-align: center; margin-bottom: 36px;">Votre Couverture Complète</h2>
+        <div class="coverage-box">
+          <table class="coverage-table">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="coverage-title">Vol & Tentative d'Effraction</div>
+                  <div class="coverage-desc">Prise en charge 24/7 partout en Europe : voie publique, domicile ou local sécurisé.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="coverage-title">Casse, Chute & Sinistre Matériel</div>
+                  <div class="coverage-desc">Remplacement ou remise en état intégrale du cadre, transmission, roues et périphériques.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="coverage-title">Assistance Rapatriement 50 KM</div>
+                  <div class="coverage-desc">Taxi et dépanneur inclus si vous êtes immobilisé au cours d'une sortie vélo.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="coverage-title">Dommages Électriques VAE</div>
+                  <div class="coverage-desc">Garantie batterie, faisceaux et blocs moteurs contre les courts-circuits et avaries.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">✓ INCLUS</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4 : BIG COUNTER ==================== -->
+    <section class="section-counter">
+      <div class="container">
+        <div class="counter-val">189 662</div>
+        <p class="counter-claim">Cyclistes assurés qui partagent équitablement les sinistres.</p>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
+    <section class="section-claims" id="sinistres">
+      <div class="container">
+        <h2 style="font-size: 2.6rem; text-align: center;">Un Sinistre ?</h2>
+        <div class="claims-grid">
+          <div class="claim-card">
+            <div>
+              <h3>Remplacer</h3>
+              <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
+            </div>
+            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
+          </div>
+
+          <div class="claim-card">
+            <div>
+              <h3>Réparer</h3>
+              <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
+            </div>
+            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 6 : NOS ÉVÉNEMENTS ==================== -->
+    <section class="section-events">
+      <div class="container">
+        <h2 style="font-size: 2.4rem; margin-bottom: 8px;">Nos Événements</h2>
+        <p style="color: var(--color-text-muted);">Rejoignez la communauté Bikelp sur les plus beaux parcours d'Europe.</p>
+
+        <div class="events-grid">
+          <article class="event-card">
+            <div class="event-date-box">
+              <strong>14</strong>
+              <span>OCT</span>
+            </div>
+            <h3 class="event-title">Gran Fondo Calp</h3>
+            <p class="event-desc">160 km d'ascension au cœur de la Communauté valencienne avec le peloton Bikelp.</p>
+            <a href="#event1" class="btn btn--accent">Participer</a>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date-box">
+              <strong>02</strong>
+              <span>NOV</span>
+            </div>
+            <h3 class="event-title">Gravel Camp Pyrénées</h3>
+            <p class="event-desc">Week-end d'aventure hors-piste encadré par des pros avec assistance totale.</p>
+            <a href="#event2" class="btn btn--accent">Participer</a>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date-box">
+              <strong>18</strong>
+              <span>DÉC</span>
+            </div>
+            <h3 class="event-title">Nocturne Urbaine</h3>
+            <p class="event-desc">Rassemblement convivial et parcours pour promouvoir la sécurité cycliste nocturne.</p>
+            <a href="#event3" class="btn btn--accent">Participer</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION CONTACT ==================== -->
+    <section class="section-contact" id="contact">
+      <div class="container">
+        <h2 style="font-size: 2.6rem;">Contacter Bikelp</h2>
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <div class="contact-item">
+              <span class="contact-label">Ligne directe cycliste</span>
+              <div class="contact-val">+34 965 00 00 00</div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-label">Email support & sinistres</span>
+              <div class="contact-val">contact@bikelp.com</div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-label">Siège européen</span>
+              <div class="contact-val">Avinguda de Gabriel Miró, Calp, Espagne</div>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <span class="badge-included" style="background: var(--color-surface-dark);">ASSISTANCE 24/7 EN COURSE</span>
+            </div>
+          </div>
+
+          <div class="subscription-panel">
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Nom complet</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Votre nom" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-body">Message</label>
+                <textarea id="contact-body" class="form-input" rows="3" placeholder="Votre demande..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" style="width: 100%;">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== SECTION 7 : FOOTER ==================== -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="partner-tag">PARTENAIRE OFFICIEL</div>
+          <p>Bikelp est partenaire de Seguros pour mieux assurer ! Solidité financière européenne certifiée.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Base</h4>
+          <p>Bikelp, implanté à <strong>Calp (Espagne)</strong>, capitale mondiale du cyclisme et base d'entraînement World Tour.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Accès B2B</h4>
+          <p>Bikelp propose un programme dédié aux professionnels qui proposent notre assurance unique à leurs clients.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacter Bikelp</h4>
+          <address>
+            Tél : +34 965 00 00 00<br>
+            Email : contact@bikelp.com<br>
+            Avinguda de Gabriel Miró, Calp
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h4>Mentions Légales</h4>
+          <ul class="footer-links">
+            <li><a href="#confidentialite">Confidentialité</a></li>
+            <li><a href="#cgu">Conditions Générales</a></li>
+            <li><a href="#certification">Certification Assurance Europe</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 BIKELP TECHNOLOGIES S.L.</span>
+        <span>DESIGN SHARP // INSPIRÉ PAR LES PROFILS D'ÉTAPE</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       STICKY BOTTOM NAV BAR — PROFIL ALTIMÉTRIQUE ÉTAPE VUELTA (INTERACTIF)
+       ========================================================================== -->
+  <nav class="sticky-stage-nav" aria-label="Navigation profil d'étape">
+    <div class="sticky-stage-nav__wrapper">
+      
+      <!-- Graphique SVG Topographique Rouge / Découpé comme la photo -->
+      <svg class="sticky-stage-svg" viewBox="0 0 1000 120" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="stageRedFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E11D48"/>
+            <stop offset="100%" stop-color="#881337"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Lignes altimétriques techniques en pointillés horizontaux -->
+        <line x1="0" y1="35" x2="1000" y2="35" stroke="#E5E7EB" stroke-dasharray="2,2"/>
+        <line x1="0" y1="70" x2="1000" y2="70" stroke="#E5E7EB" stroke-dasharray="2,2"/>
+        <line x1="0" y1="105" x2="1000" y2="105" stroke="#111827" stroke-width="1.5"/>
+
+        <!-- Repères d'altitudes à gauche -->
+        <text x="5" y="38" font-size="8" font-family="var(--font-title)" fill="#9CA3AF">1800m</text>
+        <text x="5" y="73" font-size="8" font-family="var(--font-title)" fill="#9CA3AF">1000m</text>
+
+        <!-- Profil montagneux rouge sharp -->
+        <polygon points="
+          0,105 
+          0,88 
+          40,92 
+          120,80 
+          220,52 
+          290,32 
+          330,68 
+          420,95 
+          500,98 
+          580,62 
+          630,78 
+          720,48 
+          780,82 
+          880,55 
+          960,24 
+          1000,20 
+          1000,105
+        " fill="url(#stageRedFill)"/>
+
+        <!-- Tracé d'arête supérieure blanche -->
+        <polyline points="
+          0,88 
+          40,92 
+          120,80 
+          220,52 
+          290,32 
+          330,68 
+          420,95 
+          500,98 
+          580,62 
+          630,78 
+          720,48 
+          780,82 
+          880,55 
+          960,24 
+          1000,20
+        " fill="none" stroke="#FFFFFF" stroke-width="2"/>
+
+        <!-- Lignes verticales de liaison pointillées vers les 4 sommets / jalons -->
+        <line x1="15" y1="35" x2="15" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="290" y1="32" x2="290" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="580" y1="35" x2="580" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="975" y1="20" x2="975" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+      </svg>
+
+      <!-- Balises d'étapes interactives (Boutons cliquables avec fanions) -->
+      <ul class="sticky-stage-checkpoints">
+        
+        <!-- POINT 1 : SOUSCRIPTION -->
+        <li class="stage-cp-item">
+          <a href="#souscription" class="stage-cp-link active" data-section="souscription">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">S</span>
+              <span>Souscription</span>
+              <span class="stage-flag__alt">806 m</span>
+            </div>
+            <span class="stage-dist">0 KM</span>
+          </a>
+        </li>
+
+        <!-- POINT 2 : LA COUVERTURE -->
+        <li class="stage-cp-item">
+          <a href="#couverture" class="stage-cp-link" data-section="couverture">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">1</span>
+              <span>La Couverture</span>
+              <span class="stage-flag__alt">1 724 m</span>
+            </div>
+            <span class="stage-dist">37,9 KM</span>
+          </a>
+        </li>
+
+        <!-- POINT 3 : SOLUTIONS SINISTRES -->
+        <li class="stage-cp-item">
+          <a href="#sinistres" class="stage-cp-link" data-section="sinistres">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">2</span>
+              <span>Solutions Sinistres</span>
+              <span class="stage-flag__alt">1 334 m</span>
+            </div>
+            <span class="stage-dist">107,7 KM</span>
+          </a>
+        </li>
+
+        <!-- POINT 4 : CONTACT -->
+        <li class="stage-cp-item">
+          <a href="#contact" class="stage-cp-link" data-section="contact">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">M</span>
+              <span>Contact</span>
+              <span class="stage-flag__alt">1 905 m</span>
+            </div>
+            <span class="stage-dist">188 KM</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // CTA "Inscription" -> Scroll fluide vers le formulaire + focus
+      const btnRegisterCTA = document.getElementById('btn-register-cta');
+      const firstInput = document.getElementById('subscriber-email');
+
+      if (btnRegisterCTA && firstInput) {
+        btnRegisterCTA.addEventListener('click', () => {
+          firstInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => firstInput.focus(), 450);
+        });
+      }
+
+      // Mise à jour de l'état actif des points topographiques au défilement
+      const stageLinks = document.querySelectorAll('.stage-cp-link');
+      const trackedSections = document.querySelectorAll('section[id]');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -55% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            stageLinks.forEach(link => {
+              if (link.getAttribute('data-section') === currentId) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      trackedSections.forEach(section => observer.observe(section));
+    });
+  </script>
+</body>
+</html>
