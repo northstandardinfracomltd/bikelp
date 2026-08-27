@@ -74,7 +74,7 @@
       color: var(--color-text-main);
       line-height: 1.5;
       /* Dégagement large pour que le footer ne soit pas caché par la barre topographique fixe */
-      padding-bottom: 140px; 
+      padding-bottom: 0px; 
       -webkit-font-smoothing: antialiased;
     }
 
@@ -284,15 +284,16 @@ font-size: 72px;
     }
 
     .review-card {
-      flex: 0 0 320px;
-      background: var(--color-bg);
-      border: 2px solid #000000;
-      box-shadow: var(--shadow-solid);
-      padding: 22px;
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    flex: 0 0 320px;
+    background: #0ef3bc;
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 30px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     }
 
     .review-card__top {
@@ -316,26 +317,37 @@ font-size: 72px;
     }
 
     .review-card__name {
-      font-family: var(--font-title);
-      font-size: 0.95rem;
+    font-family: 'Civilprom';
+    font-size: 22px;
+    font-weight: 600;
+    cursor: default;
+    letter-spacing: 0px;
     }
 
     .review-card__badge {
-      background: var(--color-accent);
-      border: 2px solid #000000;
-      padding: 4px 8px;
-      font-family: var(--font-title);
-      font-size: 0.9rem;
-      font-weight: 700;
+    background: #ffffff;
+    border: none;
+    border-radius: 0px;
+    padding: 7px 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    cursor: default;
+    font-family: 'Civilprom';
     }
 
     .review-card__badge small {
-      font-size: 0.65rem;
+font-size: 12px;
     }
 
     .review-card__desc {
-      font-size: 0.95rem;
-      color: var(--color-text-muted);
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 29px;
+    margin-top: -20px;
+        cursor: default;
     }
 
     /* --- SECTION 3 : LA COUVERTURE --- */
@@ -346,9 +358,12 @@ background: #fff;
     }
 
     .coverage-box {
-      border: 3px solid #000000;
-      background: var(--color-surface);
-      box-shadow: 6px 6px 0px #000000;
+    border: none;
+    background: linear-gradient(86deg, #ffffff, #e7ecff);
+    max-width: 920px;
+    margin: auto;
+    width: 100%;
+    box-shadow: none;
     }
 
     .coverage-table {
@@ -357,7 +372,7 @@ background: #fff;
     }
 
     .coverage-table tr {
-      border-bottom: 2px solid var(--color-border);
+    border-bottom: 12px solid #ffffff;
     }
 
     .coverage-table tr:last-child {
@@ -365,34 +380,42 @@ background: #fff;
     }
 
     .coverage-table td {
-      padding: 22px 28px;
+padding: 35px 40px;
     }
 
     .coverage-title {
-      font-family: var(--font-title);
-      font-size: 1.2rem;
-      margin-bottom: 4px;
+    font-family: 'Civilprom';
+    font-weight: 700;
+    font-size: 26px;
+    color: #000;
+    cursor: default;
+    letter-spacing: 0px;
+    margin-bottom: 4px;
     }
 
     .coverage-desc {
-      color: var(--color-text-muted);
-      font-size: 0.95rem;
+color: #0000006e;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: default;
     }
 
     .badge-included {
-box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #3556ec, inset 0 6px 12px #ffffff1f;
+box-shadow: none;
     display: inline-flex;
     align-items: center;
     text-transform: none;
-    border-radius: 13px;
-    gap: 6px;
-    background: rgb(0, 89, 255);
+    border-radius: 0px;
+    cursor: default;
+    background: #0059ff;
     color: #FFFFFF;
     border: none;
     padding: 15px 25px;
     font-family: 'Civilprom';
     font-weight: 700;
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: 0px;
     }
 
@@ -405,22 +428,26 @@ box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7
     }
 
     .counter-val {
-      font-family: var(--font-title);
-      font-size: 6.8rem;
-      color: var(--color-accent);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      margin-bottom: 18px;
-      text-shadow: 4px 4px 0px var(--color-primary);
+font-family: 'Civilprom';
+    font-size: 300px;
+    color: #fff;
+    cursor: default;
+    line-height: 1;
+    letter-spacing: 0px;
+    margin-bottom: 20px;
+    text-shadow: none;
     }
 
     .counter-claim {
-      font-family: var(--font-title);
-      font-size: 1.8rem;
-      max-width: 720px;
-      margin: 0 auto;
-      text-transform: uppercase;
-      line-height: 1.25;
+    font-family: 'Civilprom';
+    font-size: 35px;
+    margin: auto;
+    cursor: default;
+    text-transform: none;
+    line-height: 55px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 800px;
     }
 
     /* --- SECTION 5 : SOLUTIONS SINISTRES --- */
@@ -438,68 +465,77 @@ padding: 80px 0;
 
 
     .claims-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    max-width: 1100px;
+    margin: auto;
     }
 
     .claim-card {
-      background: var(--color-surface);
-      border: 3px solid #000000;
-      padding: 36px;
-      box-shadow: 6px 6px 0px #000000;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    background: #ffffff;
+    border: none;
+    padding: 45px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     }
 
     .claim-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: 'Civilprom';
+    text-transform: none;
+    letter-spacing: 0px;
+    cursor: default;
     }
 
     .claim-card p {
-      color: var(--color-text-muted);
-      margin-bottom: 28px;
-      font-size: 1rem;
+color: #000;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+    cursor: default;
+    margin-top: 20px;
     }
 
     /* --- SECTION 6 : ÉVÉNEMENTS --- */
     .section-events {
       padding: 80px 0;
-      background: var(--color-surface);
-      border-bottom: 2px solid var(--color-border);
+      background: #fff;
     }
 
     .events-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
     }
 
     .event-card {
-      background: var(--color-bg);
-      border: 2px solid #000000;
-      box-shadow: var(--shadow-solid);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-    }
+    background: #5c46de;
+    border: none;
+    box-shadow: none;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
 
     .event-date-box {
-      width: 56px;
-      height: 56px;
-      background: var(--color-primary);
-      border: 2px solid #000000;
-      box-shadow: 2px 2px 0px #000000;
-      color: #FFF;
-      display: grid;
-      place-content: center;
-      text-align: center;
-      margin-bottom: 18px;
-      font-family: var(--font-title);
+    width: 65px;
+    height: 65px;
+    background: #745cff;
+    border: none;
+    box-shadow: none;
+    color: #FFF;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600 !important;
+    font-family: 'Civilprom';
     }
 
     .event-date-box strong {
@@ -512,22 +548,29 @@ padding: 80px 0;
     }
 
     .event-title {
-      font-size: 1.25rem;
-      margin-bottom: 8px;
+    color: #fff;
+    font-family: 'Civilprom';
+    letter-spacing: 0px;
+    cursor: default;
+    text-transform: none;
+    font-size: 26px;
+    margin-bottom: 8px;
     }
 
     .event-desc {
-      color: var(--color-text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 22px;
-      flex-grow: 1;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+    flex-grow: 1;
+    cursor: default;
     }
 
     /* --- SECTION CONTACT --- */
     .section-contact {
       padding: 80px 0;
-      background: var(--color-bg);
-      border-bottom: 2px solid var(--color-border);
+      background: #fff;
     }
 
     .contact-grid {
@@ -564,10 +607,10 @@ padding: 80px 0;
 
     /* --- FOOTER --- */
     .footer-main {
-      background: var(--color-surface-dark);
-      color: #F3F4F6;
-      padding: 72px 0 36px;
-      border-top: 3px solid #000000;
+    background: #5841ff;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    color: #F3F4F6;
+    padding: 72px 0 36px;
     }
 
     .footer-grid {
@@ -578,17 +621,22 @@ padding: 80px 0;
     }
 
     .footer-col h4 {
-      color: var(--color-accent);
-      font-size: 0.95rem;
-      margin-bottom: 14px;
-      letter-spacing: 0.04em;
+color: #fff;
+    font-size: 22px;
+    margin-bottom: 15px;
+    letter-spacing: 0px;
+    text-transform: none;
+    font-family: 'Civilprom';
+    cursor: default;
     }
 
     .footer-col p, .footer-col address {
-      font-style: normal;
-      color: #9CA3AF;
-      font-size: 0.88rem;
-      line-height: 1.6;
+    font-style: normal;
+    color: #fff;
+    font-size: 20px !important;
+    line-height: 30px;
+    font-weight: 100 !important;
+    cursor: default;
     }
 
     .partner-tag {
@@ -611,23 +659,28 @@ padding: 80px 0;
     }
 
     .footer-links a {
-      color: #9CA3AF;
-      text-decoration: none;
-      font-size: 0.88rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 100;
+    cursor: default;
     }
 
     .footer-links a:hover {
       color: var(--color-accent);
     }
 
-    .footer-bottom {
-      border-top: 1px solid #1F2937;
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      color: #6B7280;
-      font-size: 0.82rem;
-    }
+.footer-bottom {
+font-family: 'Civilprom';
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: none;
+    background: #4e38ec;
+    padding: 25px;
+}
 
     /* ==========================================================================
        STICKY BOTTOM NAV BAR — PROFIL ALTIMÉTRIQUE ÉTAPE VUELTA / TOUR
@@ -818,6 +871,23 @@ margin-right:auto;
 width: 100%;
 max-width: 300px;
       }
+
+
+.divabtn {
+    margin-right: 0px;
+    background: #ffffff;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    font-family: 'Civilprom', sans-serif;
+    border: none !important;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 11px 22px 12px 22px;
+}
   </style>
 </head>
 <body>
@@ -1331,22 +1401,21 @@ max-width: 300px;
 
   /* Bouton Déclencheur sur la page */
   .bk-sub-123-trigger-btn {
-    background: #000000;
-    color: #ffffff;
+    box-shadow: none;
+    background: #ffffff;
+    color: #000;
     font-family: 'Civilprom', sans-serif;
     border: none !important;
-    font-size: 20px !important;
+    font-size: 22px !important;
     font-weight: 600 !important;
-    border-radius: 0px !important;
-    padding: 16px 32px;
+    border-radius: 0px;
+    padding: 20px 25px;
     cursor: pointer;
     text-decoration: none;
     transition: background 0.2s ease;
   }
 
-  .bk-sub-123-trigger-btn:hover {
-    background: var(--bk-sub-c1);
-  }
+
 
   /* Overlay obscurcissant */
   .bk-sub-123-drawer-overlay {
@@ -1901,6 +1970,13 @@ max-width: 300px;
       text-align: center;
     }
   }
+
+
+  .Icono {
+width: 100%;
+max-width: 500px; 
+margin: auto;
+    }
 </style>
 
 <!-- ==================== JAVASCRIPT LOGIC ==================== -->
@@ -2227,7 +2303,8 @@ max-width: 300px;
     <!-- ==================== SECTION 3 : LA COUVERTURE ==================== -->
     <section class="section-coverage" id="couverture">
       <div class="container">
-        <h2 style="font-size: 2.6rem; text-align: center; margin-bottom: 36px;">Votre Couverture Complète</h2>
+        <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+        <h2 style="font-size: 2.6rem; text-align: center; margin-bottom: 36px;">Faisons le tour de votre couverture. Rien n'est oublié, tout y est!</h2>
         <div class="coverage-box">
           <table class="coverage-table">
             <tbody>
@@ -2278,14 +2355,15 @@ max-width: 300px;
     <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
     <section class="section-claims" id="sinistres">
       <div class="container">
-        <h2 style="font-size: 2.6rem; text-align: center;">Un Sinistre ?</h2>
+        <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #fff; letter-spacing: 0px; margin-bottom: 45px; cursor: default;">Un Sinistre ?</h2>
         <div class="claims-grid">
           <div class="claim-card">
             <div>
               <h3>Remplacer</h3>
               <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
             </div>
-            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
+            <a href="#declarer-vol" class="divabtn">Déclarer un vol</a>
           </div>
 
           <div class="claim-card">
@@ -2293,7 +2371,7 @@ max-width: 300px;
               <h3>Réparer</h3>
               <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
             </div>
-            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
+            <a href="#reparateur" class="divabtn">Trouver un réparateur</a>
           </div>
         </div>
       </div>
@@ -2303,14 +2381,15 @@ max-width: 300px;
     <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
     <section class="section-busi" id="pro">
       <div class="container">
-        <h2 style="font-size: 2.6rem; text-align: center;">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
+                <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #000; letter-spacing: 0px; margin-bottom: 45px !important; line-height: 55px; max-width: 900px; cursor: default; margin: auto;">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
         <div class="claims-grid">
           <div class="claim-card">
             <div>
               <h3>Programme Magasins</h3>
               <p>Vol ou vélo irréparable ? Téléversez votre déclaration en ligne et recevez votre indemnisation directe sous 48h.</p>
             </div>
-            <a href="#declarer-vol" class="btn btn--primary">Déclarer un vol</a>
+            <a href="#declarer-vol" class="divabtn">Déclarer un vol</a>
           </div>
 
           <div class="claim-card">
@@ -2318,7 +2397,7 @@ max-width: 300px;
               <h3>Assurance Flotte</h3>
               <p>Composant abîmé suite à une chute ? Faites réparer dans notre réseau de vélocistes agréés ou chez votre réparateur habituel.</p>
             </div>
-            <a href="#reparateur" class="btn btn--secondary">Trouver un réparateur</a>
+            <a href="#reparateur" class="divabtn">Trouver un réparateur</a>
           </div>
         </div>
       </div>
@@ -2328,6 +2407,7 @@ max-width: 300px;
     <!-- ==================== SECTION 4 : BIG COUNTER ==================== -->
     <section class="section-counter">
       <div class="container">
+                <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
         <div class="counter-val">189 662</div>
         <p class="counter-claim">Cyclistes assurés qui partagent équitablement les sinistres.</p>
       </div>
@@ -2336,16 +2416,16 @@ max-width: 300px;
         
     <section class="section-reviews" aria-label="Avis de nos cyclistes">
       <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-          <h2>Avis du Peloton</h2>
-          <span style="font-family: var(--font-title); font-size: 0.85rem; color: var(--color-primary);">/// SCROLL HORIZONTAL</span>
+        <div style="display: block;">
+              <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #000; letter-spacing: 0px; margin-bottom: 45px !important; line-height: 55px; max-width: 900px; cursor: default; margin: auto;">Le peloton de tous les types de pratiquants en parle. Et vous?</h2>
+       
         </div>
 
         <div class="reviews-stream">
           <article class="review-card">
             <div class="review-card__top">
               <div class="review-card__user">
-                <img class="review-card__img" src="https://picsum.photos/80/80?random=21" alt="Profil">
                 <span class="review-card__name">Marc T.</span>
               </div>
               <div class="review-card__badge">4.9<small>/5</small></div>
@@ -2356,7 +2436,6 @@ max-width: 300px;
           <article class="review-card">
             <div class="review-card__top">
               <div class="review-card__user">
-                <img class="review-card__img" src="https://picsum.photos/80/80?random=22" alt="Profil">
                 <span class="review-card__name">Hélène V.</span>
               </div>
               <div class="review-card__badge">5.0<small>/5</small></div>
@@ -2367,7 +2446,6 @@ max-width: 300px;
           <article class="review-card">
             <div class="review-card__top">
               <div class="review-card__user">
-                <img class="review-card__img" src="https://picsum.photos/80/80?random=23" alt="Profil">
                 <span class="review-card__name">Sébastien P.</span>
               </div>
               <div class="review-card__badge">4.8<small>/5</small></div>
@@ -2378,7 +2456,6 @@ max-width: 300px;
           <article class="review-card">
             <div class="review-card__top">
               <div class="review-card__user">
-                <img class="review-card__img" src="https://picsum.photos/80/80?random=24" alt="Profil">
                 <span class="review-card__name">Guillaume R.</span>
               </div>
               <div class="review-card__badge">4.7<small>/5</small></div>
@@ -2392,9 +2469,10 @@ max-width: 300px;
     <!-- ==================== SECTION 6 : NOS ÉVÉNEMENTS ==================== -->
     <section class="section-events">
       <div class="container">
-        <h2 style="font-size: 2.4rem; margin-bottom: 8px;">Nos Événements</h2>
-        <p style="color: var(--color-text-muted);">Rejoignez the la communauté Bikelp sur les plus beaux parcours d'Europe.</p>
 
+                      <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #000; letter-spacing: 0px; margin-bottom: 45px !important; line-height: 55px; max-width: 900px; cursor: default; margin: auto;">Participez à nos événements</h2>
+       
         <div class="events-grid">
           <article class="event-card">
             <div class="event-date-box">
@@ -2429,48 +2507,7 @@ max-width: 300px;
       </div>
     </section>
 
-    <!-- ==================== SECTION CONTACT ==================== -->
-    <section class="section-contact" id="contact">
-      <div class="container">
-        <h2 style="font-size: 2.6rem;">Contacter Bikelp</h2>
-        <div class="contact-grid">
-          <div class="contact-info-card">
-            <div class="contact-item">
-              <span class="contact-label">Ligne directe cycliste</span>
-              <div class="contact-val">+34 965 00 00 00</div>
-            </div>
 
-            <div class="contact-item">
-              <span class="contact-label">Email support & sinistres</span>
-              <div class="contact-val">contact@bikelp.com</div>
-            </div>
-
-            <div class="contact-item">
-              <span class="contact-label">Siège européen</span>
-              <div class="contact-val">Avinguda de Gabriel Miró, Calp, Espagne</div>
-            </div>
-
-            <div style="margin-top: 24px;">
-              <span class="badge-included" style="background: var(--color-surface-dark);">ASSISTANCE 24/7 EN COURSE</span>
-            </div>
-          </div>
-
-          <div class="subscription-panel">
-            <form action="#" method="POST">
-              <div class="form-group">
-                <label class="form-label" for="contact-name">Nom complet</label>
-                <input type="text" id="contact-name" class="form-input" placeholder="Votre nom" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="contact-body">Message</label>
-                <textarea id="contact-body" class="form-input" rows="3" placeholder="Votre demande..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn--primary" style="width: 100%;">Envoyer le message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- ==================== SECTION 7 : FOOTER ==================== -->
@@ -2478,7 +2515,8 @@ max-width: 300px;
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="partner-tag">PARTENAIRE OFFICIEL</div>
+
+          <img class="partner-tag" src="https://picsum.photos/80/80?random=22" alt="Profil">
           <p>Bikelp est partenaire de Seguros pour mieux assurer ! Solidité financière européenne certifiée.</p>
         </div>
 
@@ -2813,58 +2851,66 @@ max-width: 300px;
     }
     .dfb-bubble-content { display: flex; align-items: flex-end; gap: 10px; }
     .dfb-bubble-text {
-    padding: 12px 18px;
+    padding: 15px 20px;
     border-radius: 15px 15px 0px 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    border: 1px solid #e8e8e8;
+    font-size: 18px;
+    border: none;
     color: #000000;
     max-width: 200px;
     background: #ffffff;
     margin-right: 4px;
     margin-bottom: -4px;
+    min-width: 250px;
+    font-weight: 600;
+    font-family: 'Civilprom';
     }
     .dfb-agent-info { display: flex; flex-direction: column; align-items: center; }
-    .dfb-agent-img { width: 40px;
-    outline: #fe4eb9 solid 3px;
-    outline-offset: 3px;
-    height: 40px;
+    .dfb-agent-img {
+
+      width: 45px;
+    outline: #fe4eb9 solid 3.5px;
+    outline-offset: 4px;
+    height: 45px;
     border-radius: 50%;
-    border: none;}
+    border: none;
+
+
+    }
     .dfb-agent-name { 
-                  font-size: 14px;
-    background: #fe4ebabf;
-    width: 45px;
+    font-size: 18px;
+    background: #fe4eba;
+    width: 65px;
     text-align: center;
-    font-family: 'Alternative';
+    font-weight: 600;
+    font-family: 'Civilprom';
     border-radius: 18px;
-    font-weight: 100;
     color: #ffffff;
-    padding: 1px 3px 0px 3Px;
+    padding: 1px 6px 0px 7Px;
     margin-top: 4px;
-    margin-bottom: 12px;
+    margin-bottom: 17px;
      }
 
     /* Bouton Flottant Principal */
     #dfb-floating-btn {
 position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #3556ec !important;
+    font-family: 'Civilprom';
+    bottom: 12px;
+    right: 12px;
+    background: #9f1996 !important;
     color: white;
     border: none;
-    padding: 13px 21px;
-    border-radius: 13px;
-    font-weight: 100 !important;
+    padding: 16px 21px;
+    border-radius: 0px;
+    font-weight: 600 !important;
     cursor: pointer;
     display: flex;
-    font-size: 17px;
+    font-size: 22px;
     align-items: center;
     gap: 10px;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    box-shadow: none;
     z-index: 9999;
-    transition: transform 0.2s;
-    font-family: 'DefibeoMain', sans-serif;
+    transition: 0s;
     }
     
 
