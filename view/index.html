@@ -419,13 +419,41 @@ box-shadow: none;
     letter-spacing: 0px;
     }
 
-    /* --- SECTION 4 : BIG COUNTER --- */
-    .section-counter {
-      padding: 88px 0;
+
+
+
+.section-counter {
+        padding: 88px 0;
       background: #5C46DE;
       color: #FFFFFF;
       text-align: center;
-    }
+
+  position: relative; /* Indispensable pour positionner l'overlay */
+  border-bottom: none;
+  overflow: hidden; /* Empêche le fond de déborder */
+}
+
+.section-counter::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Équivalent à top:0; right:0; bottom:0; left:0; */
+  
+  /* Ton image SVG */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/BikelpTexture1.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Règle l'opacité de l'image ici (de 0 à 1) */
+  opacity: 0.12; 
+  
+  /* Empêche l'image de bloquer les clics sur les liens/boutons */
+  pointer-events: none; 
+}
+
+
+
+
 
     .counter-val {
 font-family: 'Civilprom';
@@ -477,11 +505,34 @@ font-family: 'Civilprom';
   pointer-events: none; 
 }
 
-        .section-busi {
-padding: 80px 0;
-    background: #12F2BC;
-    border-bottom: none;
-    }
+
+
+.section-busi {
+  position: relative; /* Indispensable pour positionner l'overlay */
+  padding: 80px 0;
+  background-color: #4733bd; /* Ta couleur de fond */
+  border-bottom: none;
+  overflow: hidden; /* Empêche le fond de déborder */
+}
+
+.section-busi::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Équivalent à top:0; right:0; bottom:0; left:0; */
+  
+  /* Ton image SVG */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/BikelpTexture2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Règle l'opacité de l'image ici (de 0 à 1) */
+  opacity: 0.12; 
+  
+  /* Empêche l'image de bloquer les clics sur les liens/boutons */
+  pointer-events: none; 
+}
+
 
 
     .claims-grid {
