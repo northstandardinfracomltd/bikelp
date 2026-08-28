@@ -2459,6 +2459,7 @@ margin: auto;
     justify-content: center;
     min-height: 500px;
     overflow: hidden;
+        background: #f5ffc8;
   }
 
   .cp-bikelp-hero-2024-img {
@@ -2490,7 +2491,7 @@ margin: auto;
 
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
-    <h2 class="cp-bikelp-hero-2024-title">Découvrez une nouvelle façon de rouler</h2>
+    <h2 class="cp-bikelp-hero-2024-title">Le tour de notre super couverture!</h2>
     <p class="cp-bikelp-hero-2024-desc">
       Profitez d'un confort optimal et d'une expérience unique au quotidien avec notre solution dédiée aux cyclistes.
     </p>
@@ -2511,9 +2512,7 @@ margin: auto;
     <!-- ==================== SECTION 3 : LA COUVERTURE ==================== -->
     <section class="section-coverage" id="couverture">
       <div class="container">
-        <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
-        <h2 style="font-family: 'Civilprom'; font-size: 85px; text-align: center; text-transform: none; margin-bottom: 50px !important; letter-spacing: 0px; max-width: 1200px; width: 100%; margin: auto; cursor: default; line-height: 100px;">Le tour de notre super couverture!</h2>
-        <div class="coverage-box">
+ <div class="coverage-box">
           <table class="coverage-table">
             <tbody>
               <tr>
@@ -2560,12 +2559,137 @@ margin: auto;
 
 
 
+
+
+
+    Voici le code avec un nouveau jeu de classes totalement distinct (préfixé `cp-mecanic-sec-2024`) et la nouvelle image intégrée :
+
+```html
+<style>
+  .cp-mecanic-sec-2024-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #f7fafc; /* Fond neutre et clair */
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .cp-mecanic-sec-2024-wrapper * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-mecanic-sec-2024-left-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-mecanic-sec-2024-heading {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-mecanic-sec-2024-paragraph {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-mecanic-sec-2024-action-btn {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-mecanic-sec-2024-action-btn:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-mecanic-sec-2024-right-pane {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-mecanic-sec-2024-visual {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-mecanic-sec-2024-wrapper {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-mecanic-sec-2024-left-pane {
+      padding: 32px 24px;
+    }
+
+    .cp-mecanic-sec-2024-right-pane,
+    .cp-mecanic-sec-2024-visual {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-mecanic-sec-2024-wrapper">
+  <div class="cp-mecanic-sec-2024-left-pane">
+    <h2 class="cp-mecanic-sec-2024-heading">Traduire un sinistre en une solution.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
+      Prenez soin de votre vélo grâce à notre expertise technique et nos solutions de maintenance sur mesure.
+    </p>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Prendre rendez-vous</a>
+  </div>
+
+  <div class="cp-mecanic-sec-2024-right-pane">
+    <img 
+      class="cp-mecanic-sec-2024-visual" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_mecanic.svg" 
+      alt="Illustration Mécanique Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+```
+
     <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
     <section class="section-claims" id="sinistres">
       <div class="container">
-        <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
-        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #fff; letter-spacing: 0px; margin-bottom: 45px; cursor: default;">Un Sinistre ?</h2>
-        <div class="claims-grid">
+          <div class="claims-grid">
           <div class="claim-card">
             <div>
               <h3>Remplacer</h3>
@@ -2586,12 +2710,132 @@ margin: auto;
     </section>
 
 
+
+
+
+    <style>
+  .cp-velo-sec-2024-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #eef2f6; /* Nuance de fond adaptée pour mettre en valeur le vélo */
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .cp-velo-sec-2024-container * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-velo-sec-2024-text-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-velo-sec-2024-title-tag {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-velo-sec-2024-text-content {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-velo-sec-2024-cta-link {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-velo-sec-2024-cta-link:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-velo-sec-2024-pic-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-velo-sec-2024-image-element {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-velo-sec-2024-container {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-velo-sec-2024-text-area {
+      padding: 32px 24px;
+    }
+
+    .cp-velo-sec-2024-pic-wrapper,
+    .cp-velo-sec-2024-image-element {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-velo-sec-2024-container">
+  <div class="cp-velo-sec-2024-text-area">
+    <h2 class="cp-velo-sec-2024-title-tag">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
+    <p class="cp-velo-sec-2024-text-content">
+      Explorez nos équipements et modèles pensés pour allier performance, sécurité et plaisir à chaque coup de pédale.
+    </p>
+    <a href="#" class="cp-velo-sec-2024-cta-link">Découvrir la gamme</a>
+  </div>
+
+  <div class="cp-velo-sec-2024-pic-wrapper">
+    <img 
+      class="cp-velo-sec-2024-image-element" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_velo.svg" 
+      alt="Illustration Vélo Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
     <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
     <section class="section-busi" id="pro">
       <div class="container">
-                <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
-        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #000; letter-spacing: 0px; margin-bottom: 45px !important; line-height: 55px; max-width: 900px; cursor: default; margin: auto;">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
-        <div class="claims-grid">
+ <div class="claims-grid">
           <div class="claim-card">
             <div>
               <h3>Programme Magasins</h3>
@@ -2611,6 +2855,127 @@ margin: auto;
       </div>
     </section>
 
+
+
+    <!-- Bloc Section Café / Pause Bikelp -->
+<style>
+  .cp-cafe-sec-2024-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #fbf8f5; /* Nuance légèrement chaude adaptée à l'ambiance café */
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .cp-cafe-sec-2024-container * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-cafe-sec-2024-body-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-cafe-sec-2024-main-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-cafe-sec-2024-summary-txt {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-cafe-sec-2024-primary-btn {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-cafe-sec-2024-primary-btn:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-cafe-sec-2024-asset-box {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-cafe-sec-2024-svg-render {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-cafe-sec-2024-container {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-cafe-sec-2024-body-box {
+      padding: 32px 24px;
+    }
+
+    .cp-cafe-sec-2024-asset-box,
+    .cp-cafe-sec-2024-svg-render {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-cafe-sec-2024-container">
+  <div class="cp-cafe-sec-2024-body-box">
+    <h2 class="cp-cafe-sec-2024-main-title">Une communauté avec laquelle nous partagerions bien tous un café.</h2>
+    <p class="cp-cafe-sec-2024-summary-txt">
+      Partagez un moment chaleureux avec la communauté de cyclistes, échangez vos parcours et profitez d'une pause bien méritée.
+    </p>
+    <a href="#" class="cp-cafe-sec-2024-primary-btn">Rejoindre le club</a>
+  </div>
+
+  <div class="cp-cafe-sec-2024-asset-box">
+    <img 
+      class="cp-cafe-sec-2024-svg-render" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_caf.svg" 
+      alt="Illustration Café Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
 
     <!-- ==================== SECTION 4 : BIG COUNTER ==================== -->
     <section class="section-counter">
@@ -2674,13 +3039,135 @@ margin: auto;
       </div>
     </section>
 
+
+
+
+
+
+
+    <!-- Bloc Section Paysage / Évasion Bikelp -->
+<style>
+  .cp-land-sec-2024-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #f0f7f4; /* Teinte douce et naturelle pour l'ambiance paysage/nature */
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .cp-land-sec-2024-holder * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-land-sec-2024-info-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-land-sec-2024-headline {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-land-sec-2024-lead-copy {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-land-sec-2024-trigger-btn {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-land-sec-2024-trigger-btn:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-land-sec-2024-visual-column {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-land-sec-2024-art-display {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-land-sec-2024-holder {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-land-sec-2024-info-column {
+      padding: 32px 24px;
+    }
+
+    .cp-land-sec-2024-visual-column,
+    .cp-land-sec-2024-art-display {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-land-sec-2024-holder">
+  <div class="cp-land-sec-2024-info-column">
+    <h2 class="cp-land-sec-2024-headline">Participez à nos événement.</h2>
+    <p class="cp-land-sec-2024-lead-copy">
+      Parcourez les plus beaux paysages et profitez du plein air en toute sérénité grâce à nos itinéraires sur mesure.
+    </p>
+    <a href="#" class="cp-land-sec-2024-trigger-btn">Explorer les parcours</a>
+  </div>
+
+  <div class="cp-land-sec-2024-visual-column">
+    <img 
+      class="cp-land-sec-2024-art-display" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_landscape.svg" 
+      alt="Illustration Paysage Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
     <!-- ==================== SECTION 6 : NOS ÉVÉNEMENTS ==================== -->
     <section class="section-events">
       <div class="container">
-
-                      <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
-        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #000; letter-spacing: 0px; margin-bottom: 45px !important; line-height: 55px; max-width: 900px; cursor: default; margin: auto;">Participez à nos événements</h2>
-       
         <div class="events-grid">
           <article class="event-card">
             <div class="event-date-box">
