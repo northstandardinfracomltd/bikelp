@@ -2565,6 +2565,243 @@ Transparente et sans mauvaises surprises. Chez Bikelp, pas de petites lignes cac
 
 
 
+<style>
+  /* ==========================================================================
+     BLOC ASSURANCE VÉLO - STYLES SCOPÉS (Préfixe unique pour 0 conflit)
+     ========================================================================== */
+
+  .bp-custom-insurance-grid__wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .bp-custom-insurance-grid__wrapper *,
+  .bp-custom-insurance-grid__wrapper *::before,
+  .bp-custom-insurance-grid__wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  /* Carte individuelle (1 ligne sur 7 x 2 colonnes) */
+  .bp-custom-insurance-grid__item {
+    background-color: #0b57d0; /* Bleu électrique fidèle à votre maquette */
+    border-radius: 4px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .bp-custom-insurance-grid__item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(11, 87, 208, 0.25);
+  }
+
+  /* Zone texte */
+  .bp-custom-insurance-grid__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .bp-custom-insurance-grid__title {
+    margin: 0 0 4px 0 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em;
+  }
+
+  .bp-custom-insurance-grid__desc {
+    margin: 0 !important;
+    font-size: 12.5px !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Badge "Inclus" */
+  .bp-custom-insurance-grid__badge {
+    flex-shrink: 0;
+    background-color: #2b73f7; /* Bleu clair contrasté */
+    color: #ffffff !important;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    letter-spacing: 0.01em;
+  }
+
+  /* Affichage 2 colonnes sur PC / Tablette large (≥ 768px) */
+  @media (min-width: 768px) {
+    .bp-custom-insurance-grid__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 18px;
+    }
+
+    .bp-custom-insurance-grid__item {
+      padding: 14px 18px;
+    }
+
+    .bp-custom-insurance-grid__title {
+      font-size: 15px !important;
+    }
+
+    .bp-custom-insurance-grid__desc {
+      font-size: 12px !important;
+    }
+
+    .bp-custom-insurance-grid__badge {
+      font-size: 12px;
+      padding: 6px 14px;
+    }
+  }
+</style>
+
+<div class="bp-custom-insurance-grid__wrapper">
+
+  <!-- 1 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Formule Unique Vol &amp; Dommages</h4>
+      <p class="bp-custom-insurance-grid__desc">Une protection complète pour faire face à tous les imprévus du quotidien.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 2 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Dégâts Accidentels</h4>
+      <p class="bp-custom-insurance-grid__desc">Une chute est vite arrivée. Prenez soin de vous, nous nous occupons de votre vélo.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 3 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Libre &amp; Sans engagement</h4>
+      <p class="bp-custom-insurance-grid__desc">Suspendez ou résiliez votre contrat à tout moment, en un clic.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 4 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Zéro Franchise</h4>
+      <p class="bp-custom-insurance-grid__desc">En cas de sinistre, vous n'avez rien à débourser de votre poche.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 5 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Réponse Sinistre 48h</h4>
+      <p class="bp-custom-insurance-grid__desc">Vos déclarations de sinistre sont traitées sous 1 à 2 jours ouvrés.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 6 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Support Multilingue</h4>
+      <p class="bp-custom-insurance-grid__desc">Notre assistance vous répond en français, anglais, espagnol, allemand et néerlandais.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 7 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Aucun Frais Initial</h4>
+      <p class="bp-custom-insurance-grid__desc">Tout est inclus directement dans votre mensualité ou votre cotisation annuelle.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 8 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Courses &amp; Compétitions Officielles</h4>
+      <p class="bp-custom-insurance-grid__desc">Vous restez couvert lors des épreuves officielles nécessitant une licence.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 9 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Cyclosportives &amp; Événements</h4>
+      <p class="bp-custom-insurance-grid__desc">Une couverture active sur tous vos événements et défis ouverts à tous.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 10 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Couverture Européenne 180 Jours</h4>
+      <p class="bp-custom-insurance-grid__desc">Roulez sereinement dans toute l'Union européenne avec les mêmes garanties.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 11 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Remboursement Sans Vétusté</h4>
+      <p class="bp-custom-insurance-grid__desc">Aucune décote appliquée : votre vélo est indemnisé à sa valeur réelle.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 12 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Assistance &amp; Continuité</h4>
+      <p class="bp-custom-insurance-grid__desc">Jusqu’à 400 € pour louer un vélo de remplacement ou financer votre retour à domicile.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 13 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Offre Foyer Multi-Vélos</h4>
+      <p class="bp-custom-insurance-grid__desc">Profitez de -30 % sur chaque vélo supplémentaire au sein de votre famille.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 14 -->
+  <div class="bp-custom-insurance-grid__item">
+    <div class="bp-custom-insurance-grid__body">
+      <h4 class="bp-custom-insurance-grid__title">Assurez vos Équipements &amp; Accessoires</h4>
+      <p class="bp-custom-insurance-grid__desc">Casque, textile, compteur et antivols sont également pris en charge.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+</div>
+
+
 
 <style>
   .cp-mecanic-sec-2024-wrapper {
