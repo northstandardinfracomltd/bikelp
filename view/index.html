@@ -269,6 +269,7 @@ font-size: 72px;
 
     /* --- SECTION 2 : AVIS CLIENTS --- */
     .section-reviews {
+      display: none; 
       padding: 72px 0;
       background: var(--color-surface);
       border-bottom: 2px solid var(--color-border);
@@ -990,7 +991,11 @@ max-width: 300px;
 
       <div class="header-actions">
         <a href="/client" class="btn">Connexion</a>
-        <button type="button" class="btn btn--primary" id="btn-register-cta">French, FR</button>
+<select class="btn btn--primary" id="btn-register-cta" name="language">
+  <option value="fr-FR" selected>Français, France</option>
+  <option value="en-US">English, UK</option>
+  <option value="es-ES">Spanish, Spain</option>
+</select>
       </div>
     </div>
   </header>
@@ -2395,11 +2400,12 @@ margin: auto;
     align-items: stretch;
     justify-content: space-between;
     min-height: 500px;
-    background-color: #f3f6f9; /* Couleur de fond douce pour faire ressortir l'illustration */
+    background-color: #fff; /* Couleur de fond douce pour faire ressortir l'illustration */
     border-radius: 16px;
     overflow: hidden;
     font-family: 'Civilprom', sans-serif;
     box-sizing: border-box;
+        border-bottom: 1px solid #e1e1e1;
   }
 
   .cp-bikelp-hero-2024-container * {
@@ -2459,7 +2465,6 @@ margin: auto;
     justify-content: center;
     min-height: 500px;
     overflow: hidden;
-        background: #f5ffc8;
   }
 
   .cp-bikelp-hero-2024-img {
@@ -2794,6 +2799,7 @@ display: inline-block;
     min-height: 500px;
     object-fit: cover;
     display: block;
+        border-left: 1px solid #e1e1e1;
   }
 
   /* Responsive pour mobiles / tablettes */
@@ -2939,6 +2945,7 @@ display: inline-block;
     min-height: 500px;
     object-fit: cover;
     display: block;
+border-left: 1px solid #e1e1e1;
   }
 
   /* Responsive pour mobiles / tablettes */
@@ -2982,7 +2989,7 @@ display: inline-block;
     <!-- ==================== SECTION 4 : BIG COUNTER ==================== -->
     <section class="section-counter">
       <div class="container">
-                <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+                <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_white.svg" alt="Defibeo Logo">
         <div class="counter-val">189 662</div>
         <p class="counter-claim">Cyclistes assurés qui partagent équitablement les sinistres.</p>
       </div>
@@ -3055,11 +3062,12 @@ display: inline-block;
     align-items: stretch;
     justify-content: space-between;
     min-height: 500px;
-    background-color: #f0f7f4; /* Teinte douce et naturelle pour l'ambiance paysage/nature */
+    background-color: #fff; /* Teinte douce et naturelle pour l'ambiance paysage/nature */
     border-radius: 16px;
     overflow: hidden;
     font-family: 'Civilprom', sans-serif;
     box-sizing: border-box;
+border-bottom: 1px solid #e1e1e1;
   }
 
   .cp-land-sec-2024-holder * {
@@ -3127,6 +3135,7 @@ display: inline-block;
     min-height: 500px;
     object-fit: cover;
     display: block;
+        border-left: 1px solid #e1e1e1;
   }
 
   /* Responsive pour mobiles / tablettes */
