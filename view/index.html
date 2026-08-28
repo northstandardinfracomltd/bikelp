@@ -113,7 +113,7 @@ margin-right: 0px;
 
     .btn--primary {
           cursor: pointer;
-    background-color: #935bff;
+    background-color: #ffffff29;
     color: #FFFFFF;
     }
 
@@ -201,7 +201,7 @@ background: radial-gradient(#0059ff, #8550e7);
   background-repeat: no-repeat;
   
   /* Règle l'opacité de l'image ici (de 0 à 1) */
-  opacity: 0.12; 
+  opacity: 0.1; 
   
   /* Empêche l'image de bloquer les clics sur les liens/boutons */
   pointer-events: none; 
@@ -708,9 +708,8 @@ color: #000;
 
     /* --- FOOTER --- */
     .footer-main {
-    background: #5841ff;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
-    color: #F3F4F6;
+    background: #f2f2f2;
+    color: #000000;
     padding: 72px 0 36px;
     }
 
@@ -970,7 +969,7 @@ position: relative;
     .BikelpLogo {
 margin-right:auto;
 width: 100%;
-max-width: 300px;
+max-width: 325px;
       }
 
 
@@ -990,6 +989,11 @@ max-width: 300px;
     border-radius: 0px !important;
     padding: 16px 22px 17px 22px;
 }
+
+.currency-title {
+font-size: 22px !important;
+}
+
 
 
 .abstract-bg {
@@ -1018,12 +1022,13 @@ max-width: 300px;
       </a>
 
       <div class="header-actions">
-        <a href="/client" class="btn">Connexion</a>
+
 <select class="btn btn--primary" id="btn-register-cta" name="language">
   <option value="fr-FR" selected>Français, France</option>
   <option value="en-US">English, UK</option>
   <option value="es-ES">Spanish, Spain</option>
 </select>
+        <a href="/client" class="btn">Connexion</a>
       </div>
     </div>
   </header>
@@ -1033,14 +1038,14 @@ max-width: 300px;
     <section class="section-hero" id="souscription">
       <div class="container hero-grid">
 
-          <h1 class="hero-title">Bikelp assure votre vélo à partir de 9€ par mois vol et dommages inclus.</h1>
-          <p class="hero-subtitle">Bikelp réinvente la protection vélo : un système équitable, transparent et sans franchise obscure, piloté depuis Calp.</p>
+          <h1 class="hero-title">Bikelp assure votre vélo à partir de 9<span class="currency-title">€</span> par mois vol et dommages inclus.</h1>
+          <p class="hero-subtitle">L’assurance sans engagement qui rassemble toutes les pratiques du vélo et couvre tous les sinistres, sans franchise, dans toute l’Union européenne.</p>
       
       <!-- ========================================================== -->
 <!-- 1. BOUTON DECLENCHEUR SUR VOTRE PAGE -->
 <!-- ========================================================== -->
 <button type="button" class="bk-sub-123-trigger-btn" onclick="bkSubOpenPane()">
-  Obtenir un devis
+Devis en ligne instantané
 </button>
 
 <!-- ========================================================== -->
@@ -2540,9 +2545,9 @@ border-left: 1px solid #e1e1e1;
   <div class="cp-bikelp-hero-2024-content">
     <h2 class="cp-mecanic-sec-2024-heading">Le Tour de notre Super Couverture!</h2>
     <p class="cp-mecanic-sec-2024-paragraph">
-      Profitez d'un confort optimal et d'une expérience unique au quotidien avec notre solution dédiée aux cyclistes.
+Transparente et sans mauvaises surprises. Chez Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn">Je souscris à l'assurance</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Je souscris à l'assurance</a>
   </div>
 
   <div class="cp-bikelp-hero-2024-media">
@@ -3315,7 +3320,7 @@ border-bottom: 1px solid #e1e1e1;
     <p class="cp-mecanic-sec-2024-paragraph">
       Parcourez les plus beaux paysages et profitez du plein air en toute sérénité grâce à nos itinéraires sur mesure.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn">Je souscris à l'assurance</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Je souscris à l'assurance</a>
   </div>
 
   <div class="cp-land-sec-2024-visual-column">
@@ -3382,11 +3387,12 @@ border-bottom: 1px solid #e1e1e1;
     align-items: stretch;
     justify-content: space-between;
     min-height: 500px;
-    background-color: #f4f6f8; /* Teinte apaisante et épurée pour l'ambiance zen */
-    border-radius: 16px;
+    background-color: #fff;
+    border-radius: 0px;
     overflow: hidden;
     font-family: 'Civilprom', sans-serif;
     box-sizing: border-box;
+    border-top: 1px solid #e1e1e1;
   }
 
   .cp-zen-sec-2024-frame * {
@@ -3454,6 +3460,7 @@ border-bottom: 1px solid #e1e1e1;
     min-height: 500px;
     object-fit: cover;
     display: block;
+    border-left: 1px solid #e0e0e0;
   }
 
   /* Responsive pour mobiles / tablettes */
