@@ -175,11 +175,37 @@ background: transparent;
       gap: 20px;
     }
 
-    /* --- SECTION 1 : SOUSCRIPTION (HERO) --- */
-    .section-hero {
-    background: radial-gradient(#0059ff, #8550e7);
+
+
+
+        /* --- SECTION 5 : SOLUTIONS SINISTRES --- */
+.section-hero {
+  position: relative; /* Indispensable pour positionner l'overlay */
     padding: 64px 0 80px;
-    }
+background: radial-gradient(#0059ff, #8550e7);
+  border-bottom: none;
+  overflow: hidden; /* Empêche le fond de déborder */
+}
+
+.section-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Équivalent à top:0; right:0; bottom:0; left:0; */
+  
+  /* Ton image SVG */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/backgroundtexturehero.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Règle l'opacité de l'image ici (de 0 à 1) */
+  opacity: 0.12; 
+  
+  /* Empêche l'image de bloquer les clics sur les liens/boutons */
+  pointer-events: none; 
+}
+
+
 
     .hero-grid {
 display: block;
@@ -2536,40 +2562,177 @@ border-left: 1px solid #e1e1e1;
             <tbody>
               <tr>
                 <td>
-                  <div class="coverage-title">Vol & Tentative d'Effraction</div>
-                  <div class="coverage-desc">Prise en charge 24/7 partout en Europe : voie publique, domicile ou local sécurisé.</div>
+                  <div class="coverage-title">Formule unique Vol & Dommages</div>
+                  <div class="coverage-desc">Une protection complète pour faire face à tous les imprévus du quotidien.</div>
                 </td>
                 <td style="text-align: right;">
                   <span class="badge-included">Inclus</span>
                 </td>
               </tr>
-              <tr>
+
+                            <tr>
                 <td>
-                  <div class="coverage-title">Casse, Chute & Sinistre Matériel</div>
-                  <div class="coverage-desc">Remplacement ou remise en état intégrale du cadre, transmission, roues et périphériques.</div>
+                  <div class="coverage-title">Dégâts accidentels</div>
+                  <div class="coverage-desc">Une chute est vite arrivée. Prenez soin de vous, nous nous occupons de votre vélo.</div>
                 </td>
                 <td style="text-align: right;">
                   <span class="badge-included">Inclus</span>
                 </td>
               </tr>
-              <tr>
+
+                            <tr>
                 <td>
-                  <div class="coverage-title">Assistance Rapatriement 50 KM</div>
-                  <div class="coverage-desc">Taxi et dépanneur inclus si vous êtes immobilisé au cours d'une sortie vélo.</div>
+                  <div class="coverage-title">Sans engagement, liberté totale</div>
+                  <div class="coverage-desc">Suspendez ou résiliez votre contrat à tout moment, en un clic.</div>
                 </td>
                 <td style="text-align: right;">
                   <span class="badge-included">Inclus</span>
                 </td>
               </tr>
-              <tr>
+
+                            <tr>
                 <td>
-                  <div class="coverage-title">Dommages Électriques VAE</div>
-                  <div class="coverage-desc">Garantie batterie, faisceaux et blocs moteurs contre les courts-circuits et avaries.</div>
+                  <div class="coverage-title">Zéro franchise</div>
+                  <div class="coverage-desc">En cas de sinistre, vous n'avez rien à débourser de votre poche.</div>
                 </td>
                 <td style="text-align: right;">
                   <span class="badge-included">Inclus</span>
                 </td>
               </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">100% transparent, sans mauvaises surprises</div>
+                  <div class="coverage-desc">Pas de petites lignes cachées : notre priorité est de vous remettre en selle au plus vite.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Réponse sous 48h</div>
+                  <div class="coverage-desc">Vos déclarations de sinistre sont traitées sous 1 à 2 jours ouvrés.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Support multilingue</div>
+                  <div class="coverage-desc">Notre assistance vous répond en français, anglais, espagnol, allemand et néerlandais.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Aucun frais d’inscription</div>
+                  <div class="coverage-desc">Tout est inclus directement dans votre mensualité ou votre cotisation annuelle.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Courses & compétitions officielles</div>
+                  <div class="coverage-desc">Vous restez couvert lors des épreuves officielles nécessitant une licence.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Cyclosportives & événements</div>
+                  <div class="coverage-desc">Une couverture active sur tous vos événements et défis ouverts à tous.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Couverture européenne jusqu'à 180 jours</div>
+                  <div class="coverage-desc">Roulez sereinement dans toute l'Union européenne avec les mêmes garanties.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Remboursement sans vétusté</div>
+                  <div class="coverage-desc">Aucune décote appliquée : votre vélo est indemnisé à sa valeur réelle.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Assistance & continuité de trajet</div>
+                  <div class="coverage-desc">Jusqu’à 400 € pour louer un vélo de remplacement ou financer votre retour à domicile.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Offre foyer multi-vélos</div>
+                  <div class="coverage-desc">Profitez de -30 % sur chaque vélo supplémentaire au sein de votre famille.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Économisez avec le paiement annuel</div>
+                  <div class="coverage-desc">Bénéficiez de jusqu’à 40 % de réduction en choisissant la formule annuelle.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Équipements & accessoires inclus</div>
+                  <div class="coverage-desc">Casque, textile, compteur et antivols sont également pris en charge.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+                            <tr>
+                <td>
+                  <div class="coverage-title">Géré par des cyclistes comme vous</div>
+                  <div class="coverage-desc">L’équipe Bikelp comprend vos besoins, car elle est composée de membres de toutes les formes de pratiques, aussi bien de vélo de route que le vélo électrique pour aller au travail.</div>
+                </td>
+                <td style="text-align: right;">
+                  <span class="badge-included">Inclus</span>
+                </td>
+              </tr>
+
+
+
+
             </tbody>
           </table>
         </div>
