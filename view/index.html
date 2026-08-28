@@ -481,7 +481,7 @@ font-family: 'Civilprom';
     /* --- SECTION 5 : SOLUTIONS SINISTRES --- */
 .section-claims {
   position: relative; /* Indispensable pour positionner l'overlay */
-  padding: 80px 0;
+  padding: 120px 0;
   background-color: #9F1996; /* Ta couleur de fond */
   border-bottom: none;
   overflow: hidden; /* Empêche le fond de déborder */
@@ -509,7 +509,7 @@ font-family: 'Civilprom';
 
 .section-busi {
   position: relative; /* Indispensable pour positionner l'overlay */
-  padding: 80px 0;
+  padding: 120px 0;
   background-color: #4733bd; /* Ta couleur de fond */
   border-bottom: none;
   overflow: hidden; /* Empêche le fond de déborder */
@@ -2562,16 +2562,18 @@ margin: auto;
 
 <style>
   .cp-mecanic-sec-2024-wrapper {
-    display: flex;
+display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
     min-height: 500px;
-    background-color: #f7fafc; /* Fond neutre et clair */
-    border-radius: 16px;
+    background-color: #f7fafc;
+    border-radius: 0px;
     overflow: hidden;
     font-family: 'Civilprom', sans-serif;
     box-sizing: border-box;
+    margin-bottom: -25px;
+    border-top: 1px solid #e1e1e1;
   }
 
   .cp-mecanic-sec-2024-wrapper * {
@@ -2591,37 +2593,43 @@ margin: auto;
 
   .cp-mecanic-sec-2024-heading {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 75px;
+    letter-spacing: 0px;
+    text-transform: none;
     font-weight: 700;
-    color: #1a202c;
-    line-height: 1.2;
+    color: #000;
+    line-height: 90px;
+    cursor: default;
   }
 
   .cp-mecanic-sec-2024-paragraph {
     margin: 0;
-    font-size: 1.1rem;
-    color: #4a5568;
+    font-size: 22px;
+    color: #000;
     line-height: 1.5;
-    max-width: 520px;
+    max-width: 98%;
+    font-family: 'Civilprom';
+    font-weight: 600;
+    cursor: default;
   }
 
   .cp-mecanic-sec-2024-action-btn {
-    display: inline-block;
-    background-color: #2b6cb0;
+display: inline-block;
+    font-size: 20px;
+    font-family: 'Civilprom';
+    background-color: #0059ff;
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-    padding: 14px 28px;
-    border-radius: 8px;
+    padding: 17px 25px;
+    border-radius: 0px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  .cp-mecanic-sec-2024-action-btn:hover {
-    background-color: #2c5282;
-    transform: translateY(-1px);
-  }
 
   .cp-mecanic-sec-2024-right-pane {
     flex: 1;
@@ -2639,6 +2647,7 @@ margin: auto;
     min-height: 500px;
     object-fit: cover;
     display: block;
+    border-left: 1px solid #e1e1e1;
   }
 
   /* Responsive pour mobiles / tablettes */
@@ -2678,8 +2687,6 @@ margin: auto;
     />
   </div>
 </div>
-
-```
 
     <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
     <section class="section-claims" id="sinistres">
@@ -2810,11 +2817,11 @@ margin: auto;
 
 <div class="cp-velo-sec-2024-container">
   <div class="cp-velo-sec-2024-text-area">
-    <h2 class="cp-velo-sec-2024-title-tag">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
-    <p class="cp-velo-sec-2024-text-content">
+    <h2 class="cp-mecanic-sec-2024-heading">Et pour les professionnels, nous avons aussi des solutions adaptées.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
       Explorez nos équipements et modèles pensés pour allier performance, sécurité et plaisir à chaque coup de pédale.
     </p>
-    <a href="#" class="cp-velo-sec-2024-cta-link">Découvrir la gamme</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Découvrir la gamme</a>
   </div>
 
   <div class="cp-velo-sec-2024-pic-wrapper">
@@ -2955,11 +2962,11 @@ margin: auto;
 
 <div class="cp-cafe-sec-2024-container">
   <div class="cp-cafe-sec-2024-body-box">
-    <h2 class="cp-cafe-sec-2024-main-title">Une communauté avec laquelle nous partagerions bien tous un café.</h2>
-    <p class="cp-cafe-sec-2024-summary-txt">
+    <h2 class="cp-mecanic-sec-2024-heading">Une communauté avec laquelle nous partagerions bien tous un café.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
       Partagez un moment chaleureux avec la communauté de cyclistes, échangez vos parcours et profitez d'une pause bien méritée.
     </p>
-    <a href="#" class="cp-cafe-sec-2024-primary-btn">Rejoindre le club</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Souscrire</a>
   </div>
 
   <div class="cp-cafe-sec-2024-asset-box">
