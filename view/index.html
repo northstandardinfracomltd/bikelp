@@ -1046,6 +1046,11 @@ opacity: 0.5;
 }
 
 
+.radalignf {
+text-align: right;
+width: 100%;
+}
+
   </style>
 </head>
 <body>
@@ -1114,9 +1119,10 @@ Devis en ligne instantané
         
         <!-- ==================== STEP 1 ==================== -->
         <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
+          <div class="radalignf">
             <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()">
       Fermer
-    </button>
+    </button></div>
       <h2 class="bk-sub-123-title">Informations sur votre vélo</h2>
 
           <!-- 1. Marque -->
@@ -1349,14 +1355,14 @@ Devis en ligne instantané
         <div class="bk-sub-123-step-panel" id="bk-sub-123-step-3">
           <h2 class="bk-sub-123-title">Votre tarif personnalisé</h2>
           
-          <p class="bk-sub-123-subtitle">Valeur totale assurée (Vélo + Équipements) : <strong id="bk-sub-123-summary-total">0.00€</strong></p>
+          <p class="bk-sub-123-subtitle">Valeur totale (Vélo + Équipements) assurée pour tous les risques (Vol, Dommages & Dégâts Accidentels) : <strong id="bk-sub-123-summary-total">0.00€</strong>.</p>
 
           <div class="bk-sub-123-pricing-grid">
             <div class="bk-sub-123-price-card active" id="bk-sub-123-card-monthly" onclick="bkSubSelectPlan('monthly')">
               <div class="bk-sub-123-price-badge">FLEXIBLE</div>
               <h3 class="bk-sub-123-price-card-title">Mensuel</h3>
               <div class="bk-sub-123-price-amount" id="bk-sub-123-val-month">--€</div>
-              <div class="bk-sub-123-price-period">par mois</div>
+              <div class="bk-sub-123-price-period">Taxes et Frais inclus.</div>
               <input type="radio" name="bk-sub-123-plan-type" value="monthly" checked style="display:none;">
             </div>
 
@@ -1364,7 +1370,7 @@ Devis en ligne instantané
               <div class="bk-sub-123-price-badge">ÉCONOMIQUE</div>
               <h3 class="bk-sub-123-price-card-title">Annuel</h3>
               <div class="bk-sub-123-price-amount" id="bk-sub-123-val-year">--€</div>
-              <div class="bk-sub-123-price-period">par an</div>
+              <div class="bk-sub-123-price-period">Taxes et Frais inclus.</div>
               <input type="radio" name="bk-sub-123-plan-type" value="annual" style="display:none;">
             </div>
           </div>
@@ -1627,7 +1633,7 @@ Devis en ligne instantané
 
   /* Header du Side-Pane */
   .bk-sub-123-drawer-header {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -3182,7 +3188,7 @@ Votre vélo représente un investissement important. Optez pour une véritable s
 
 <div class="cp-velo-sec-2024-container">
   <div class="cp-velo-sec-2024-text-area">
-    <h2 class="cp-mecanic-sec-2024-heading">Des Solutions dédiées aux Professionnels.</h2>
+    <h2 class="cp-mecanic-sec-2024-heading">Et des Solutions dédiées aux Professionnels.</h2>
     <p class="cp-mecanic-sec-2024-paragraph">
 Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’une assurance pour le stock d'un magasin, de proposer Bikelp à vos clients contre une commission, ou encore d’assurer la flotte de vélos d’une entreprise utilisée par ses collaborateurs : Bikelp s'adapte à vos besoins, toujours au prix le plus juste.
     </p>
@@ -3403,7 +3409,7 @@ Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes pass
     // Sauvegarde dans le localStorage (cache)
     localStorage.setItem(STORAGE_KEY, currentValue);
 
-  }, 4000);
+  }, 5500);
 </script>
         <p class="counter-claim">Une communauté de cyclistes assurés de tous horizons qui mutualisent les sinistres et financent le fonds solidaire Bikelp.</p>
       </div>
