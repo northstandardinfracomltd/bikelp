@@ -11,12 +11,12 @@
 
   <style>
     @font-face {
-      font-family: 'Civilprom';
+      font-family: 'Civilprom' sans-serif;
           font-weight: 100 !important;
       src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
     }
     @font-face {
-      font-family: 'DefibeoTitle';
+      font-family: 'DefibeoTitle' sans-serif;
          font-weight: 100 !important;
       src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoTITLE.otf') format('opentype');
     }
@@ -732,9 +732,10 @@ color: #fff;
 
     /* --- FOOTER --- */
     .footer-main {
-    background: #f2f2f2;
+    background: #fff;
     color: #000000;
     padding: 72px 0 36px;
+    border-top: 1px solid #e0e0e0;
     }
 
     .footer-grid {
@@ -758,10 +759,12 @@ color: #fff;
     .footer-col p, .footer-col address {
     font-style: normal;
     color: #000;
-    font-size: 20px !important;
+    font-size: 18px !important;
     line-height: 30px;
     font-weight: 100 !important;
     cursor: default;
+        width: 100%;
+    max-width: 95%;
     }
 
     .partner-tag {
@@ -788,7 +791,7 @@ display: inline-block;
     }
 
     .footer-links a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 20px;
     font-weight: 100;
@@ -796,19 +799,21 @@ display: inline-block;
     }
 
     .footer-links a:hover {
-      color: var(--color-accent);
+    color: #000;
     }
 
 .footer-bottom {
-font-family: 'Civilprom';
-    font-weight: 600;
+    font-family: 'Civilprom';
+    font-weight: 100;
     display: flex;
     justify-content: space-between;
-    color: #ffffff;
+    color: #00000052;
     font-size: 18px;
     text-transform: none;
-    background: #4e38ec;
+    background: #e8e8e85e;
     padding: 25px;
+    border: none;
+    cursor: default;
 }
 
     /* ==========================================================================
@@ -2498,7 +2503,6 @@ margin: auto;
     overflow: hidden;
     font-family: 'Civilprom', sans-serif;
     box-sizing: border-box;
-        border-bottom: 1px solid #e1e1e1;
   }
 
   .cp-bikelp-hero-2024-container * {
@@ -3238,7 +3242,7 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
     align-items: stretch;
     justify-content: space-between;
     min-height: 500px;
-    background-color: #fbf8f5; /* Nuance légèrement chaude adaptée à l'ambiance café */
+    background-color: #fff; /* Nuance légèrement chaude adaptée à l'ambiance café */
     border-radius: 16px;
     overflow: hidden;
     font-family: 'Civilprom', sans-serif;
@@ -3751,7 +3755,7 @@ Partageons des moments uniques! Bikelp organise régulièrement des événements
     <p class="cp-mecanic-sec-2024-paragraph">
 Avec Bikelp, roulez l’esprit serein : notre mission est de transformer les imprévus en solutions concrètes pour assurer votre continuité d'activité. Notre assistance est disponible 24 h/24 et 7 j/7 par messagerie, e-mail ou téléphone. Bénéficiez d’une véritable relation de proximité avec votre assureur.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn">Découvrir les offres</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Consulter les offres</a>
   </div>
 
   <div class="cp-zen-sec-2024-media-zone">
@@ -3772,17 +3776,17 @@ Avec Bikelp, roulez l’esprit serein : notre mission est de transformer les imp
         <div class="footer-col">
 
           <img class="partner-tag" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Profil">
-          <p>Bikelp, l'assurance tous risques pour toutes les pratiques du vélo en Union européenne.</p>
+          <p>Bikelp, l'assurance tous risques pour toutes les pratiques du vélo dans l'Union européenne.</p>
         </div>
 
         <div class="footer-col">
           <h4>Particuliers</h4>
-          <p>Bikelp, implanté à capitale mondiale du cyclisme et base d'entraînement World Tour.</p>
+          <p>Bikelp, l’assurance des particuliers pour la mobilité douce, les loisirs et la compétition.</p>
         </div>
 
         <div class="footer-col">
           <h4>Entreprises</h4>
-          <p>Bikelp propose un programme dédié aux professionnels qui proposent notre assurance unique à leurs clients.</p>
+          <p>Bikelp, l’assurance des entreprises pour leurs flottes ou stocks de vélos.</p>
         </div>
 
         <div class="footer-col">
@@ -3790,23 +3794,24 @@ Avec Bikelp, roulez l’esprit serein : notre mission est de transformer les imp
           <address>
 +44 0000 000000<br>
 help@bikelp.com<br>
-(ES) Avinguda de Gabriel Miró, Calp.
-(UK) Main Street, London.
+(ES) Calp.<br>
+(UK) Glasgow.
           </address>
         </div>
 
         <div class="footer-col">
           <h4>Documents</h4>
           <ul class="footer-links">
-            <li><a href="#confidentialite">Confidentialité</a></li>
-            <li><a href="#cgu">Conditions Générales</a></li>
-            <li><a href="#certification">Certification Assurance Europe</a></li>
+            <li><a href="/privacy-fr">Politique Confidentialité</a></li>
+            <li><a href="/ipa-fr">Information Produit Assurance</a></li>
+            <li><a href="/conditions-fr">Conditions Générales</a></li>
+            <li><a href="/certificate-fr">Certificat FCA</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 Bikelp SLP ID24455238.</span>
+        <span>&copy; 2026 Bikelp SLP ID24015238.</span>
         <span>Licence F93297C291525AUK Financial Conduct Authority (FCA).</span>
       </div>
     </div>
@@ -4052,8 +4057,8 @@ help@bikelp.com<br>
         </div>
 
         <div class="dfb-chat-header">
-            <span data-key="LTX0003">Aide Bikelp</span>
-            <button class="dfb-close-btn" onclick="dfbToggleChat()" data-key="LTX0004">Réduire</button>
+            <span class="AMDS">Aide Bikelp</span>
+            <button class="BTNREDUIRE" onclick="dfbToggleChat()">Réduire</button>
         </div>
 
         <div class="dfb-chat-body">
@@ -4071,7 +4076,7 @@ help@bikelp.com<br>
                 <div class="dfb-input-group"><label data-key="LTX0008">Votre Téléphone</label><input type="tel" id="dfb-form-tel" required></div>
 
                 <div class="dfb-radio-container">
-                    <span data-key="LTX0009">Déjà Client?</span>
+                    <span class="hablababa">Déjà Client?</span>
                     <label class="dfb-switch">
                         <input type="checkbox" id="dfb-is-client" onchange="dfbToggleClientField()">
                         <span class="dfb-slider"></span>
@@ -4079,7 +4084,7 @@ help@bikelp.com<br>
                 </div>
 
                 <div id="dfb-client-field" class="dfb-input-group dfb-hidden">
-                    <label data-key="LTX00010">Votre Identifiant Logiciel</label>
+                    <label data-key="LTX00010">Votre Numéro Assuré</label>
                     <input type="text" id="dfb-form-client-id">
                 </div>
 
@@ -4089,13 +4094,43 @@ help@bikelp.com<br>
 
             <div id="dfb-success-msg" class="dfb-hidden">
                 <div class="dfb-offline-status" data-key="LTX00013">● Hors ligne</div>
-                <p  class="dfb-TXTEND" data-key="LTX00014">Les membres de l'aide Bikelp sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais. En cas d'urgence, écrivez-nous via WhatsApp avec le numéro : +44 7723 501018.</p>
+                <p  class="dfb-TXTEND" data-key="LTX00014">Les membres de l'aide Bikelp sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais.</p>
             </div>
         </div>
     </div>
 </div>
 
 <style>
+
+
+.hablababa {
+    font-family: 'Civilprom';
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #000;
+    cursor: default;
+}
+
+  .AMDS { 
+
+        font-family: 'Civilprom';
+    font-size: 20px;
+    font-weight: 100;
+    color: #000;
+    cursor: default;
+  }
+
+
+   .BTNREDUIRE  {
+    font-family: 'Civilprom';
+    font-size: 16px;
+    font-weight: 600;
+    color: #3556ec;
+    cursor: default;
+    letter-spacing: 0px;
+    padding-top: 4px; background: transparent; border: none;
+}
+
     :root { --dfb-primary: #2563eb; --dfb-dark: #1e293b; }
     #dfb-main-container { font-family: 'DefibeoMain', sans-serif; cursor: default; }
     
@@ -4151,8 +4186,8 @@ help@bikelp.com<br>
     #dfb-floating-btn {
 position: fixed;
     font-family: 'Civilprom';
-    bottom: 12px;
-    right: 12px;
+    bottom: 15px;
+    right: 15px;
     background: #9f1996 !important;
     color: white;
     border: none;
@@ -4167,6 +4202,7 @@ position: fixed;
     box-shadow: none;
     z-index: 9999;
     transition: 0s;
+    outline: 5px solid #8198ff5c;
     }
     
 
@@ -4193,7 +4229,15 @@ position: fixed;
     overflow: hidden;
     }
 
-    .dfb-intro-text { font-size: 17px; color:#000; }
+    .dfb-intro-text {
+      font-size: 18px;
+    font-family: 'Civilprom';
+    color: #000;
+    letter-spacing: 0px;
+    cursor: default;
+    margin-bottom: 15px;
+
+     }
     /* Historique Tickets */
     .dfb-section-title {     font-size: 16px;
     font-weight: 100;
@@ -4250,27 +4294,39 @@ position: fixed;
     font-family: 'DefibeoMain', sans-serif; }
     .dfb-chat-body { padding: 20px; overflow-y: auto; }
     .dfb-input-group { margin-bottom: 12px; display: flex; flex-direction: column; }
-    .dfb-input-group label { font-size: 16px;
+    .dfb-input-group label { 
+
+      font-size: 20px;
+    font-family: 'Alternative';
     font-weight: 100;
+    letter-spacing: 0px;
     color: #000;
-    margin-bottom: 4px; }
-    .dfb-input-group input, .dfb-input-group textarea { padding: 12px;
-      font-size: 16px;
+    margin-bottom: 4px;
+
+
+    }
+    .dfb-input-group input, .dfb-input-group textarea {     padding: 16px;
+    font-size: 18px;
     border: 1px solid #cbcbcb;
     border-radius: 13px;
     font-weight: 100;
-    font-family: 'DefibeoMain', sans-serif; }
-    #dfb-submit-btn { width: 100%;
-    background: #3556ec !important;
+    font-family: 'Civilprom';
+    text-align: center;
+   }
+    #dfb-submit-btn { 
+          width: 100%;
+    background: #0059ff !important;
     color: white;
     border: none;
     padding: 13px 21px;
-    font-size: 17px;
+    font-size: 18px;
     border-radius: 13px;
     cursor: pointer;
-    font-family: 'DefibeoMain', sans-serif;
-    font-weight: 100;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;}
+    font-family: 'Civilprom';
+    font-weight: 600;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+
+    }
     #dfb-submit-btn:disabled { background: #cbd5e1; }
 
     /* Animations & Helpers */
@@ -4303,15 +4359,19 @@ position: fixed;
     border-radius: 50%; }
     input:checked + .dfb-slider { background-color: #3556ec; }
     input:checked + .dfb-slider:before { transform: translateX(16px); }
-    .dfb-offline-status {     color: #ff5d5f;
-    font-size: 16px;
+    .dfb-offline-status {     color: #9f1996;
+    font-size: 18px;
     font-weight: 100;
-    margin-bottom: 0px;}
+    margin-bottom: 0px;
+    font-family: 'Civilprom';
+  
+  }
 
-    .dfb-TXTEND { font-size: 16px;
+    .dfb-TXTEND {     font-size: 18px;
     color: #000;
-    font-weight:100;
+    font-weight: 100 !important;
     text-align: left;
+    font-family: 'Civilprom';
     }
 
     .PIXA {
