@@ -1,0 +1,4498 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Bikelp — L'Assurance Vélo Haute Précision</title>
+  <meta name="description" content="Assurance vélo communautaire et connectée. Couverture vol, casse et rapatriement au départ de Calp.">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    @font-face {
+      font-family: 'Civilprom';
+          font-weight: 100 !important;
+      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'DefibeoTitle';
+         font-weight: 100 !important;
+      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoTITLE.otf') format('opentype');
+    }
+
+        @font-face {
+      font-family: 'Alternative';
+         font-weight: 100 !important;
+      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/gochi.otf') format('opentype');
+    }
+
+        @font-face {
+      font-family: 'DefibeoTAZ';
+         font-weight: 100 !important;
+      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold+(1).otf') format('opentype');
+    }
+
+    /* --- VARIABLES CSS (Design Sharp, Android Bold & Couleurs imposées) --- */
+    :root {
+      --color-primary: #0882fc;     /* Bleu */
+      --color-secondary: #32BA58;   /* Vert */
+      --color-accent: #B5FF00;      /* Vert Néon */
+
+      --color-bg: #F3F4F6;
+      --color-surface: #FFFFFF;
+      --color-surface-dark: #0D1117;
+      --color-text-main: #0A0D14;
+      --color-text-muted: #4B5563;
+      --color-border: #D1D5DB;
+
+      --font-body: 'Civilprom', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-title: 'DefibeoTitle', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* SHARP DESIGN (0px border-radius) */
+      --radius-sharp: 0px;
+      --shadow-solid: 4px 4px 0px #000000;
+      --shadow-solid-primary: 5px 5px 0px var(--color-primary);
+
+      --container-max: 1200px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #fff;
+      color: var(--color-text-main);
+      line-height: 1.5;
+      /* Dégagement large pour que le footer ne soit pas caché par la barre topographique fixe */
+      padding-bottom: 0px; 
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-title);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    /* --- Boutons Sharp --- */
+    .btn {
+margin-right: 0px;
+    background: #ffffff;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    font-family: 'Civilprom', sans-serif;
+    border: none !important;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 11px 22px 12px 22px;
+    }
+
+
+    .btn--primary {
+          cursor: pointer;
+    background-color: #ffffff29;
+    color: #FFFFFF;
+    }
+
+    .btn--secondary {
+      background-color: var(--color-secondary);
+      color: #FFFFFF;
+    }
+
+    .btn--accent {
+      background-color: var(--color-accent);
+      color: #000000;
+    }
+
+    /* --- HEADER (NON STICKY) --- */
+    .header-top {
+background: transparent;
+    margin-bottom: -150px !important;
+    border-radius: 0px;
+    padding: 35px 5px;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    z-index: 111;
+    }
+
+    .header-top__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .header-brand__box {
+      width: 38px;
+      height: 38px;
+      background: var(--color-primary);
+      border: 2px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      display: grid;
+      place-content: center;
+      font-family: var(--font-title);
+      color: #FFFFFF;
+      font-size: 1.3rem;
+    }
+
+    .header-brand__text {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: #000000;
+      letter-spacing: -0.02em;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 20px;
+    }
+
+
+
+
+        /* --- SECTION 5 : SOLUTIONS SINISTRES --- */
+.section-hero {
+  position: relative; /* Indispensable pour positionner l'overlay */
+    padding: 64px 0 80px;
+background: radial-gradient(#0059ff, #8550e7);
+  border-bottom: none;
+  overflow: hidden; /* Empêche le fond de déborder */
+}
+
+.section-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Équivalent à top:0; right:0; bottom:0; left:0; */
+  
+  /* Ton image SVG */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/backgroundtexturehero.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Règle l'opacité de l'image ici (de 0 à 1) */
+  opacity: 0.1; 
+  
+  /* Empêche l'image de bloquer les clics sur les liens/boutons */
+  pointer-events: none; 
+}
+
+
+
+    .hero-grid {
+display: block;
+    width: 100%;
+    max-width: 999px;
+    text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 5px 10px;
+      background: var(--color-accent);
+      border: 2px solid #000000;
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      box-shadow: 2px 2px 0px #000000;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+font-size: 72px;
+    font-family: 'Civilprom';
+    margin-bottom: 20px;
+    text-transform: none;
+    color: #ffffff;
+    margin-top: 125px;
+    letter-spacing: 0.5px;
+    line-height: 80px;
+    cursor: default;
+    }
+
+    .hero-subtitle {
+    font-size: 30px;
+    color: #fff;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-weight: 500;
+    padding: 0px;
+    cursor: default;
+    }
+
+    .subscription-panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0px;
+    }
+
+    .subscription-panel__title {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 13px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      border: 2px solid #000000;
+      border-radius: var(--radius-sharp);
+      background: #FAFAFA;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: var(--color-primary);
+      box-shadow: 3px 3px 0px var(--color-primary);
+    }
+
+    /* --- SECTION 2 : AVIS CLIENTS --- */
+    .section-reviews {
+      display: none; 
+      padding: 72px 0;
+      background: var(--color-surface);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .reviews-stream {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 12px 4px 24px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+
+    .review-card {
+    flex: 0 0 320px;
+    background: #0ef3bc;
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 30px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    .review-card__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .review-card__user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-card__img {
+      width: 42px;
+      height: 42px;
+      border: 2px solid #000000;
+      object-fit: cover;
+    }
+
+    .review-card__name {
+    font-family: 'Civilprom';
+    font-size: 22px;
+    font-weight: 600;
+    cursor: default;
+    letter-spacing: 0px;
+    }
+
+    .review-card__badge {
+    background: #ffffff;
+    border: none;
+    border-radius: 0px;
+    padding: 7px 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    cursor: default;
+    font-family: 'Civilprom';
+    }
+
+    .review-card__badge small {
+font-size: 12px;
+    }
+
+    .review-card__desc {
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 29px;
+    margin-top: -20px;
+        cursor: default;
+    }
+
+    /* --- SECTION 3 : LA COUVERTURE --- */
+    .section-coverage {
+background: #fff;
+    padding: 80px 0;
+    border-bottom: none;
+    }
+
+    .coverage-box {
+    border: none;
+    background: linear-gradient(45deg, #4733bd, #5d43f6);
+    max-width: 950px;
+    margin: auto;
+    width: 100%;
+    box-shadow: none;
+    }
+
+    .coverage-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .coverage-table tr {
+    border-bottom: 12px solid #ffffff;
+    }
+
+    .coverage-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .coverage-table td {
+padding: 35px 40px;
+    }
+
+    .coverage-title {
+    font-family: 'Civilprom';
+    font-weight: 600;
+    font-size: 26px;
+    color: #ffffff;
+    cursor: default;
+    letter-spacing: 0px;
+    margin-bottom: 4px;
+    }
+
+    .coverage-desc {
+color: #fff;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: 100;
+    margin-top: 10px;
+    cursor: default;
+    }
+
+    .badge-included {
+box-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    text-transform: none;
+    border-radius: 0px;
+    cursor: default;
+    background: #ffffff1a;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 25px;
+    font-family: 'Civilprom';
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0px;
+    }
+
+
+
+
+.section-counter {
+        padding: 88px 0;
+      background: #5C46DE;
+      color: #FFFFFF;
+      text-align: center;
+
+  position: relative; /* Indispensable pour positionner l'overlay */
+  border-bottom: none;
+  overflow: hidden; /* Empêche le fond de déborder */
+}
+
+.section-counter::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Équivalent à top:0; right:0; bottom:0; left:0; */
+  
+  /* Ton image SVG */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/BikelpTexture1.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Règle l'opacité de l'image ici (de 0 à 1) */
+  opacity: 0.12; 
+  
+  /* Empêche l'image de bloquer les clics sur les liens/boutons */
+  pointer-events: none; 
+}
+
+
+
+
+
+    .counter-val {
+font-family: 'Civilprom';
+    font-size: 300px;
+    color: #fff;
+    cursor: default;
+    line-height: 1;
+    letter-spacing: 0px;
+    margin-bottom: 20px;
+    text-shadow: none;
+    }
+
+    .counter-claim {
+    font-family: 'Civilprom';
+    font-size: 35px;
+    margin: auto;
+    cursor: default;
+    text-transform: none;
+    line-height: 55px;
+    font-weight: 100;
+    width: 100%;
+    max-width: 800px;
+    }
+
+    /* --- SECTION 5 : SOLUTIONS SINISTRES --- */
+.section-claims {
+  position: relative; /* Indispensable pour positionner l'overlay */
+  padding: 120px 0;
+  background-color: #9F1996; /* Ta couleur de fond */
+  border-bottom: none;
+  overflow: hidden; /* Empêche le fond de déborder */
+}
+
+.section-claims::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Équivalent à top:0; right:0; bottom:0; left:0; */
+  
+  /* Ton image SVG */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/backgroundtexture.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Règle l'opacité de l'image ici (de 0 à 1) */
+  opacity: 0.12; 
+  
+  /* Empêche l'image de bloquer les clics sur les liens/boutons */
+  pointer-events: none; 
+}
+
+
+
+.section-busi {
+  position: relative; /* Indispensable pour positionner l'overlay */
+  padding: 120px 0;
+  background-color: #4733bd; /* Ta couleur de fond */
+  border-bottom: none;
+  overflow: hidden; /* Empêche le fond de déborder */
+}
+
+.section-busi::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Équivalent à top:0; right:0; bottom:0; left:0; */
+  
+  /* Ton image SVG */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/BikelpTexture2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Règle l'opacité de l'image ici (de 0 à 1) */
+  opacity: 0.12; 
+  
+  /* Empêche l'image de bloquer les clics sur les liens/boutons */
+  pointer-events: none; 
+}
+
+
+
+    .claims-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    max-width: 1130px;
+    margin: auto;
+    }
+
+    .claim-card {
+          z-index: 11;
+    background: #ffffff;
+    border: none;
+    padding: 45px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    .claim-card h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: 'Civilprom';
+    text-transform: none;
+    letter-spacing: 0px;
+    cursor: default;
+    }
+
+    .claim-card p {
+color: #000;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 35px;
+    font-weight: 100;
+    cursor: default;
+    margin-top: 20px;
+    }
+
+    /* --- SECTION 6 : ÉVÉNEMENTS --- */
+    .section-events {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    }
+
+    .event-card {
+    background: #9f1996;
+    border: none;
+    box-shadow: none;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .event-date-box {
+    width: 65px;
+    height: 65px;
+    background: #ac3aa3;
+    border: none;
+    box-shadow: none;
+    color: #FFF;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600 !important;
+    font-family: 'Civilprom';
+    }
+
+
+.btnevent {
+    margin-right: 0px;
+    text-align: center;
+    background: #fff;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    font-family: 'Civilprom', sans-serif;
+    border: none !important;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 16px 22px 17px 22px;
+}
+
+    .event-date-box strong {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .event-date-box span {
+      font-size: 0.7rem;
+    }
+
+    .event-title {
+    color: #fff;
+    font-family: 'Alternative';
+    letter-spacing: 0px;
+    cursor: default;
+    text-transform: none;
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 100;
+    white-space: nowrap;
+    }
+
+    .event-desc {
+color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 100;
+    flex-grow: 1;
+    cursor: default;
+    line-height: 35px;
+    letter-spacing: 0px; 
+    }
+
+    /* --- SECTION CONTACT --- */
+    .section-contact {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      margin-top: 36px;
+    }
+
+    .contact-info-card {
+      background: var(--color-surface);
+      border: 3px solid #000000;
+      padding: 32px;
+      box-shadow: 6px 6px 0px #000000;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+    }
+
+    .contact-label {
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .contact-val {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    /* --- FOOTER --- */
+    .footer-main {
+    background: #fff;
+    color: #000000;
+    padding: 72px 0 36px;
+    border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1.3fr 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 56px;
+    }
+
+    .footer-col h4 {
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 15px;
+    letter-spacing: 0px;
+    text-transform: none;
+    font-family: 'Alternative';
+    cursor: default;
+    font-weight: 500;
+    }
+
+    .footer-col p, .footer-col address {
+    font-style: normal;
+    color: #000;
+    font-size: 18px !important;
+    line-height: 30px;
+    font-weight: 100 !important;
+    cursor: default;
+        width: 100%;
+    max-width: 95%;
+    }
+
+    .partner-tag {
+display: inline-block;
+    width: 100%;
+    max-width: 160px;
+    margin-left: -15px;
+    background: transparent;
+    border: none;
+    margin-top: -25px;
+    padding: 6px 10px;
+    margin-bottom: 12px;
+    font-family: var(--font-title);
+    font-size: 0.85rem;
+    color: #FFF;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 100;
+    cursor: default;
+    }
+
+    .footer-links a:hover {
+    color: #000;
+    }
+
+.footer-bottom {
+    font-family: 'Civilprom';
+    font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+    color: #00000052;
+    font-size: 18px;
+    text-transform: none;
+    background: #e8e8e85e;
+    padding: 25px;
+    border: none;
+    cursor: default;
+}
+
+    /* ==========================================================================
+       STICKY BOTTOM NAV BAR — PROFIL ALTIMÉTRIQUE ÉTAPE VUELTA / TOUR
+       ========================================================================== */
+    .sticky-stage-nav {
+      display: none !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 120px !important;
+      background-color: #FFFFFF !important;
+      border-top: 4px solid #000000 !important;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25) !important;
+      z-index: 999999 !important;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .sticky-stage-nav__wrapper {
+position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    height: 100%;
+    }
+
+    /* SVG Altimétrique avec les découpes de relief en fond */
+    .sticky-stage-svg {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    width: calc(100% - 0px);
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    margin-top: 12px;
+    }
+
+    /* Grille de repères interactifs positionnés en overlay */
+    .sticky-stage-checkpoints {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      list-style: none;
+    }
+
+    .stage-cp-item {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .stage-cp-item:nth-child(1) { justify-content: flex-start; }
+    .stage-cp-item:nth-child(2) { justify-content: center; margin-left: -5%; }
+    .stage-cp-item:nth-child(3) { justify-content: center; margin-right: -5%; }
+    .stage-cp-item:nth-child(4) { justify-content: flex-end; }
+
+    .stage-cp-link {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #000000;
+      padding-top: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .stage-cp-link:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Fanion d'étape (Badge type profil de course) */
+    .stage-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      font-family: var(--font-title);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: 2px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+
+    .stage-flag__icon {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: #000000;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 14px;
+      font-size: 0.65rem;
+    }
+
+    .stage-flag__alt {
+      font-size: 0.65rem;
+      color: #4B5563;
+      font-weight: 400;
+      border-left: 1px solid #000000;
+      padding-left: 5px;
+    }
+
+    .stage-dist {
+      margin-top: 4px;
+      font-family: var(--font-title);
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #000000;
+      color: #FFFFFF;
+      padding: 1px 5px;
+      border: 1px solid #000000;
+    }
+
+    /* ÉTAT ACTIF AU SCROLL */
+    .stage-cp-link.active .stage-flag {
+      background: var(--color-accent) !important;
+      border-color: #000000 !important;
+      box-shadow: 3px 3px 0px #000000 !important;
+      transform: scale(1.08);
+    }
+
+    .stage-cp-link.active .stage-flag__icon {
+      background: #000000 !important;
+      color: var(--color-accent) !important;
+    }
+
+    .stage-cp-link.active .stage-dist {
+      background: var(--color-primary);
+      border-color: #000000;
+      color: #FFFFFF;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .claims-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-title {
+        font-size: 2.6rem;
+      }
+      .counter-val {
+        font-size: 4.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sticky-stage-nav {
+        height: 100px !important;
+      }
+      body {
+        padding-bottom: 120px;
+      }
+      .stage-flag {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+      }
+      .stage-flag__alt {
+        display: none;
+      }
+      .stage-dist {
+        font-size: 0.6rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .BikelpLogo {
+margin-right:auto;
+width: 100%;
+max-width: 325px;
+      }
+
+
+.divabtn {
+    margin-right: 0px;
+    text-align: center;
+    background: #000000;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    font-family: 'Civilprom', sans-serif;
+    border: none !important;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 16px 22px 17px 22px;
+}
+
+.currency-title {
+font-size: 49px !important;
+opacity: 0.6;
+}
+
+.vat-title {
+font-size: 42px !important;
+opacity: 0.5;
+}
+
+
+
+
+.abstract-bg {
+
+  
+  /* Ta couleur de fond personnalisée */
+  background-color: #9F1996; 
+  
+  /* Le SVG transparent par-dessus avec opacité/couleur modifiable */
+  background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/backgroundtexture.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.radalignf {
+text-align: right;
+width: 100%;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER (NON STICKY) ==================== -->
+  <header class="header-top">
+    <div class="container header-top__wrapper">
+      <a href="#" class="header-brand" aria-label="Bikelp Accueil">
+<img class="BikelpLogo" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+      </a>
+
+      <div class="header-actions">
+
+<select class="btn btn--primary" id="btn-register-cta" name="language">
+  <option value="fr-FR" selected>Français, France</option>
+  <option value="en-US">English, UK</option>
+  <option value="es-ES">Spanish, Spain</option>
+</select>
+        <a href="/client" class="btn">Connexion</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== SECTION 1 : SOUSCRIPTION (HERO) ==================== -->
+    <section class="section-hero" id="souscription">
+      <div class="container hero-grid">
+
+          <h1 class="hero-title">Bikelp Assure votre Vélo à partir de 9<span class="currency-title">€</span><span class="vat-title"> TVA incl.</span> par mois Vol & Dommages inclus!</h1>
+          <p class="hero-subtitle">L’assurance sans engagement qui rassemble toutes les pratiques du vélo et couvre tous les sinistres, sans franchise, dans toute l’UE.</p>
+      
+      <!-- ========================================================== -->
+<!-- 1. BOUTON DECLENCHEUR SUR VOTRE PAGE -->
+<!-- ========================================================== -->
+<button type="button" class="bk-sub-123-trigger-btn" onclick="bkSubOpenPane()">
+Devis en ligne instantané
+</button>
+
+<!-- ========================================================== -->
+<!-- 2. SIDE-PANE (OVERLAY + TIROIR LATERAL FULL HEIGHT) -->
+<!-- ========================================================== -->
+<div id="bk-sub-123-overlay" class="bk-sub-123-drawer-overlay" onclick="bkSubClosePane()"></div>
+
+<aside id="bk-sub-123-drawer" class="bk-sub-123-drawer" aria-hidden="true">
+  
+  <!-- Entête du Side-Pane -->
+  <div class="bk-sub-123-drawer-header">
+    <h3 class="bk-sub-123-drawer-title">Configuration de votre offre</h3>
+
+  </div>
+
+  <!-- Contenu défilable : Formulaire -->
+  <div class="bk-sub-123-drawer-body">
+    <div id="bk-sub-123-wrapper" class="bk-sub-123-container">
+      
+      <!-- Barre de progression -->
+      <div class="bk-sub-123-progress-container">
+        <div class="bk-sub-123-step-indicator active" data-step="1"><span>1</span> VÉLO</div>
+        <div class="bk-sub-123-step-indicator" data-step="2"><span>2</span> RÉSIDENCE</div>
+        <div class="bk-sub-123-step-indicator" data-step="3"><span>3</span> TARIF</div>
+        <div class="bk-sub-123-step-indicator" data-step="4"><span>4</span> PROFIL</div>
+        <div class="bk-sub-123-step-indicator" data-step="5"><span>5</span> VALIDATION</div>
+      </div>
+
+      <form id="bk-sub-123-main-form" onsubmit="return false;">
+        
+        <!-- ==================== STEP 1 ==================== -->
+        <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
+          <div class="radalignf">
+            <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()">
+      Fermer
+    </button></div>
+      <h2 class="bk-sub-123-title">Informations sur votre vélo</h2>
+
+          <!-- 1. Marque -->
+          <div class="bk-sub-123-field-group" id="bk-sub-123-fg-brand">
+            <label class="bk-sub-123-label" for="bk-sub-123-brand">Marque du vélo *</label>
+            <select id="bk-sub-123-brand" class="bk-sub-123-select" required>
+              <option value="" disabled selected>Sélectionnez une marque</option>
+              <option value="Cube">Cube</option>
+              <option value="Specialized">Specialized</option>
+              <option value="Van Rysel">Van Rysel</option>
+              <option value="Trek">Trek</option>
+              <option value="Giant">Giant</option>
+              <option value="Cannondale">Cannondale</option>
+              <option value="Scott">Scott</option>
+              <option value="Canyon">Canyon</option>
+              <option value="Bianchi">Bianchi</option>
+              <option value="Pinarello">Pinarello</option>
+              <option value="Santa Cruz">Santa Cruz</option>
+              <option value="Colnago">Colnago</option>
+              <option value="BMC">BMC</option>
+              <option value="Merida">Merida</option>
+              <option value="Orbea">Orbea</option>
+              <option value="Cervélo">Cervélo</option>
+              <option value="Look">Look</option>
+              <option value="Lapierre">Lapierre</option>
+              <option value="Wilier Triestina">Wilier Triestina</option>
+              <option value="Focus">Focus</option>
+              <option value="Kona">Kona</option>
+              <option value="GT Bicycles">GT Bicycles</option>
+              <option value="Marin">Marin</option>
+              <option value="Ridley">Ridley</option>
+              <option value="Factor">Factor</option>
+              <option value="Time">Time</option>
+              <option value="Felt">Felt</option>
+              <option value="Ghost">Ghost</option>
+              <option value="Yeti Cycles">Yeti Cycles</option>
+              <option value="Mondraker">Mondraker</option>
+              <option value="Pivot Cycles">Pivot Cycles</option>
+              <option value="Commencal">Commencal</option>
+              <option value="Norco">Norco</option>
+              <option value="Rocky Mountain">Rocky Mountain</option>
+              <option value="Argon 18">Argon 18</option>
+              <option value="De Rosa">De Rosa</option>
+              <option value="Cinelli">Cinelli</option>
+              <option value="Ribble">Ribble</option>
+              <option value="Rose">Rose</option>
+              <option value="Basso">Basso</option>
+              <option value="3T">3T</option>
+              <option value="Autre">Autre</option>
+            </select>
+            <div id="bk-sub-123-brand-other-wrap" class="bk-sub-123-subfield" style="display: none;">
+              <input type="text" id="bk-sub-123-brand-other" class="bk-sub-123-input" placeholder="Précisez la marque et le modèle..." />
+            </div>
+          </div>
+
+          <!-- 2. Type de vélo -->
+          <div class="bk-sub-123-field-group" id="bk-sub-123-fg-type">
+            <label class="bk-sub-123-label" for="bk-sub-123-type">Type de vélo *</label>
+            <select id="bk-sub-123-type" class="bk-sub-123-select" required>
+              <option value="" disabled selected>Sélectionnez un type</option>
+              <option value="Vélo de route">Vélo de route</option>
+              <option value="Vélo de ville">Vélo de ville</option>
+              <option value="Vélo électrique (VAE)">Vélo électrique (VAE)</option>
+              <option value="VTT (MTB)">VTT (MTB)</option>
+              <option value="Gravel">Gravel</option>
+              <option value="Vélo de trekking (VTC)">Vélo de trekking (VTC)</option>
+              <option value="Vélo pliable">Vélo pliable</option>
+              <option value="Vélo cargo">Vélo cargo</option>
+              <option value="Fixie (Pignon fixe)">Fixie (Pignon fixe)</option>
+              <option value="Singlespeed">Singlespeed</option>
+              <option value="BMX">BMX</option>
+              <option value="Fatbike">Fatbike</option>
+              <option value="Tandem">Tandem</option>
+              <option value="Vélo de cyclo-cross">Vélo de cyclo-cross</option>
+              <option value="Vélo de contre-la-montre (Triathlon)">Vélo de contre-la-montre (Triathlon)</option>
+              <option value="Vélo de piste">Vélo de piste</option>
+              <option value="Vélo couché (Recumbent)">Vélo couché (Recumbent)</option>
+              <option value="Vélo hollandais">Vélo hollandais</option>
+              <option value="Beach Cruiser">Beach Cruiser</option>
+              <option value="Draisienne">Draisienne</option>
+              <option value="VTT de descente (Downhill)">VTT de descente (Downhill)</option>
+              <option value="VTT d'enduro">VTT d'enduro</option>
+              <option value="VTT de cross-country (XC)">VTT de cross-country (XC)</option>
+              <option value="VTT all-mountain">VTT all-mountain</option>
+              <option value="VTT dirt/street">VTT dirt/street</option>
+              <option value="Vélo longtail">Vélo longtail</option>
+              <option value="Biporteur">Biporteur</option>
+              <option value="Triporteur">Triporteur</option>
+              <option value="Vélo de voyage (Touring/Randonneuse)">Vélo de voyage (Touring/Randonneuse)</option>
+              <option value="Vélomobile">Vélomobile</option>
+              <option value="Vélo handisport (Handbike)">Vélo handisport (Handbike)</option>
+              <option value="Autre">Autre</option>
+            </select>
+            <div id="bk-sub-123-type-other-wrap" class="bk-sub-123-subfield" style="display: none;">
+              <input type="text" id="bk-sub-123-type-other" class="bk-sub-123-input" placeholder="Précisez le type de vélo..." />
+            </div>
+          </div>
+
+          <!-- 3. Valeur vélo -->
+          <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-value" style="display: none;">
+            <label class="bk-sub-123-label" for="bk-sub-123-bike-value">Valeur du vélo (€) *</label>
+            <div class="bk-sub-123-helper">Combien coûterait le remplacement à neuf au prix catalogue avec vos éventuelles personnalisations et améliorations.</div>
+            <input type="number" id="bk-sub-123-bike-value" class="bk-sub-123-input" min="1" step="any" placeholder="Ex: 2500" required />
+          </div>
+
+          <!-- 4. Gravure -->
+          <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-engraved" style="display: none;">
+            <label class="bk-sub-123-label">Mon vélo dispose d’une gravure et d’un numéro d’enregistrement *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-engraved" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-engraved" value="Non">
+                <span>Non</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 5. Option Accessoires -->
+          <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-accessories" style="display: none;">
+            <label class="bk-sub-123-label">Je souhaite assurer mes accessoires et vêtements de vélo *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-has-acc" value="Oui" id="bk-sub-123-has-acc-yes">
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-has-acc" value="Non" id="bk-sub-123-has-acc-no">
+                <span>Non</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Nuage de tags accessoires -->
+          <div id="bk-sub-123-acc-panel" class="bk-sub-123-sub-box bk-sub-123-prog-field" style="display: none;">
+            <label class="bk-sub-123-label">Sélectionnez vos accessoires et équipements :</label>
+            <div class="bk-sub-123-tag-cloud" id="bk-sub-123-tags-container">
+              <button type="button" class="bk-sub-123-tag">Antivol</button>
+              <button type="button" class="bk-sub-123-tag">Casque</button>
+              <button type="button" class="bk-sub-123-tag">Éclairage</button>
+              <button type="button" class="bk-sub-123-tag">Panier</button>
+              <button type="button" class="bk-sub-123-tag">Capteur de puissance non intégré</button>
+              <button type="button" class="bk-sub-123-tag">Porte-bagages</button>
+              <button type="button" class="bk-sub-123-tag">Rétroviseur de vélo</button>
+              <button type="button" class="bk-sub-123-tag">Sacoche pour vélo</button>
+              <button type="button" class="bk-sub-123-tag">Sacoches</button>
+              <button type="button" class="bk-sub-123-tag">Siège pour enfant</button>
+              <button type="button" class="bk-sub-123-tag">Alarme pour vélo</button>
+              <button type="button" class="bk-sub-123-tag">Bidon</button>
+              <button type="button" class="bk-sub-123-tag">Caméra embarquée</button>
+              <button type="button" class="bk-sub-123-tag">Chargeur</button>
+              <button type="button" class="bk-sub-123-tag">Chaussures</button>
+              <button type="button" class="bk-sub-123-tag">Compteur</button>
+              <button type="button" class="bk-sub-123-tag">Gants</button>
+              <button type="button" class="bk-sub-123-tag">Cuissard</button>
+              <button type="button" class="bk-sub-123-tag">Maillot</button>
+              <button type="button" class="bk-sub-123-tag">Combinaison</button>
+              <button type="button" class="bk-sub-123-tag">Garde-Boue</button>
+              <button type="button" class="bk-sub-123-tag">Housse de vélo</button>
+              <button type="button" class="bk-sub-123-tag">Valise de vélo</button>
+              <button type="button" class="bk-sub-123-tag">Kit de réparation</button>
+              <button type="button" class="bk-sub-123-tag">Lunette</button>
+              <button type="button" class="bk-sub-123-tag">Porte-bidons</button>
+              <button type="button" class="bk-sub-123-tag">Remorque</button>
+            </div>
+
+            <div id="bk-sub-123-acc-val-wrap" class="bk-sub-123-subfield" style="display: none; margin-top: 15px;">
+              <label class="bk-sub-123-label" for="bk-sub-123-acc-value">Montant total de la valeur des objets (€) *</label>
+              <input type="number" id="bk-sub-123-acc-value" class="bk-sub-123-input" min="0" step="any" placeholder="0" />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-actions bk-sub-123-prog-field" id="bk-sub-123-step1-actions" style="display: none;">
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(1)">Obtenir un devis</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 2 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-2">
+          <h2 class="bk-sub-123-title">Indiquez votre lieu de résidence</h2>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-country">Pays *</label>
+            <select id="bk-sub-123-country" class="bk-sub-123-select" required>
+              <option value="" disabled selected>Sélectionnez un pays</option>
+              <option value="France">France</option>
+              <option value="Espagne">Espagne</option>
+              <option value="Allemagne">Allemagne</option>
+              <option value="Italie">Italie</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Belgique">Belgique</option>
+              <option value="Pays-Bas">Pays-Bas</option>
+              <option value="Autriche">Autriche</option>
+              <option value="Irlande">Irlande</option>
+              <option value="Suède">Suède</option>
+              <option value="Danemark">Danemark</option>
+              <option value="Finlande">Finlande</option>
+              <option value="Pologne">Pologne</option>
+              <option value="République tchèque">République tchèque</option>
+              <option value="Grèce">Grèce</option>
+              <option value="Hongrie">Hongrie</option>
+              <option value="Roumanie">Roumanie</option>
+              <option value="Bulgarie">Bulgarie</option>
+              <option value="Croatie">Croatie</option>
+              <option value="Slovaquie">Slovaquie</option>
+              <option value="Slovénie">Slovénie</option>
+              <option value="Lituanie">Lituanie</option>
+              <option value="Lettonie">Lettonie</option>
+              <option value="Estonie">Estonie</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Malte">Malte</option>
+              <option value="Chypre">Chypre</option>
+            </select>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-zip">Code postal *</label>
+            <input type="text" id="bk-sub-123-zip" class="bk-sub-123-input" placeholder="Ex: 75008" required />
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(2)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(2)">Voir mon tarif</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 3 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-3">
+          <h2 class="bk-sub-123-title">Votre tarif personnalisé</h2>
+          
+          <p class="bk-sub-123-subtitle">Valeur totale (Vélo + Équipements) assurée pour tous les risques (Vol, Dommages & Dégâts Accidentels) : <strong id="bk-sub-123-summary-total">0.00€</strong>.</p>
+
+          <div class="bk-sub-123-pricing-grid">
+            <div class="bk-sub-123-price-card active" id="bk-sub-123-card-monthly" onclick="bkSubSelectPlan('monthly')">
+              <div class="bk-sub-123-price-badge">FLEXIBLE</div>
+              <h3 class="bk-sub-123-price-card-title">Mensuel</h3>
+              <div class="bk-sub-123-price-amount" id="bk-sub-123-val-month">--€</div>
+              <div class="bk-sub-123-price-period">Taxes et Frais inclus.</div>
+              <input type="radio" name="bk-sub-123-plan-type" value="monthly" checked style="display:none;">
+            </div>
+
+            <div class="bk-sub-123-price-card" id="bk-sub-123-card-annual" onclick="bkSubSelectPlan('annual')">
+              <div class="bk-sub-123-price-badge">ÉCONOMIQUE</div>
+              <h3 class="bk-sub-123-price-card-title">Annuel</h3>
+              <div class="bk-sub-123-price-amount" id="bk-sub-123-val-year">--€</div>
+              <div class="bk-sub-123-price-period">Taxes et Frais inclus.</div>
+              <input type="radio" name="bk-sub-123-plan-type" value="annual" style="display:none;">
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group" style="margin-top: 25px;">
+            <label class="bk-sub-123-label" for="bk-sub-123-promo">Code promotion (Optionnel)</label>
+            <input type="text" id="bk-sub-123-promo" class="bk-sub-123-input" placeholder="Entrez un code promo" />
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(3)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" id="bk-sub-123-step3-btn" onclick="bkSubNextStep(3)">Souscrire</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 4 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-4">
+          <h2 class="bk-sub-123-title">Renseignements pour votre profil assuré</h2>
+
+          <div class="bk-sub-123-row">
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-email">Votre email *</label>
+              <input type="email" id="bk-sub-123-email" class="bk-sub-123-input" required />
+            </div>
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-pwd">Votre mot de passe *</label>
+              <input type="password" id="bk-sub-123-pwd" class="bk-sub-123-input" required />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-row">
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-firstname">Votre prénom *</label>
+              <input type="text" id="bk-sub-123-firstname" class="bk-sub-123-input" required />
+            </div>
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-lastname">Votre nom *</label>
+              <input type="text" id="bk-sub-123-lastname" class="bk-sub-123-input" required />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-row">
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-dob">Votre date de naissance *</label>
+              <input type="date" id="bk-sub-123-dob" class="bk-sub-123-input" required />
+            </div>
+            <div class="bk-sub-123-col">
+              <label class="bk-sub-123-label" for="bk-sub-123-pob">Votre lieu de naissance *</label>
+              <input type="text" id="bk-sub-123-pob" class="bk-sub-123-input" required />
+            </div>
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-cob">Votre pays de naissance *</label>
+            <input type="text" id="bk-sub-123-cob" class="bk-sub-123-input" required />
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-address">Votre adresse postale (Numéro & Voie) *</label>
+            <input type="text" id="bk-sub-123-address" class="bk-sub-123-input" required />
+          </div>
+
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label" for="bk-sub-123-address-zip">Code postal *</label>
+            <input type="text" id="bk-sub-123-address-zip" class="bk-sub-123-input" required />
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(4)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(4)">Valider les informations</button>
+          </div>
+        </div>
+
+        <!-- ==================== STEP 5 ==================== -->
+        <div class="bk-sub-123-step-panel" id="bk-sub-123-step-5">
+          <h2 class="bk-sub-123-title">Informations réglementaires sur l’assurance.</h2>
+          
+          <div class="bk-sub-123-legal-notice">
+            « Après avoir souscrit une assurance chez Bikelp, nous vous demandons de télécharger photos et documents relatifs à votre vélo et antivol. Nous vous conseillons de faire cela au plus vite afin de démontrer la preuve d'achat. Sans cela, nous pourrions être dans l'impossibilité de procéder à votre indemnisation. En tant que demandeur(-euse) d’assurance, vous êtes tenu(e) de répondre aux questions posées de la manière la plus complète possible. Elles valent également pour les faits et les circonstances liés à la personne que vous souhaitez assurer. Dans les réponses aux questions, seules vos connaissances, et celles de la personne assurée, sont décisives. »
+          </div>
+
+          <!-- Q1 -->
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Je dispose d’un antivol ART2, Sold Secure Silver, FUB ou supérieur *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q1" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q1" value="Non">
+                <span>Non</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Avez-vous subi des dommages au niveau de votre vélo au cours des trois derniers mois *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q2" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q2" value="Non">
+                <span>NON</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Un assureur a-t-il déjà refusé ou résilié votre assurance *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q3" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q3" value="Non">
+                <span>NON</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="bk-sub-123-field-group">
+            <label class="bk-sub-123-label">Avez-vous déjà commis une infraction qui vous a mené à avoir des contacts avec la police ou à être condamné par la justice *</label>
+            <div class="bk-sub-123-radio-toggle-group">
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q4" value="Oui" required>
+                <span>Oui</span>
+              </label>
+              <label class="bk-sub-123-radio-btn">
+                <input type="radio" name="bk-sub-123-q4" value="Non">
+                <span>NON</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- TOGGLES STYLE APPLE MINIMALISTES -->
+          
+          <!-- Q5 IPID -->
+          <div class="bk-sub-123-apple-toggle-row">
+            <span class="bk-sub-123-apple-toggle-text">
+              J’ai lu et j'accepte les <a href="/ipid" target="_blank" class="bk-sub-123-link">Conditions de la police & Résumé de la police (IPID)</a> *
+            </span>
+            <label class="bk-sub-123-switch">
+              <input type="checkbox" name="bk-sub-123-c1" id="bk-sub-123-c1" required>
+              <span class="bk-sub-123-slider"></span>
+            </label>
+          </div>
+
+          <!-- Q6 FINFOR -->
+          <div class="bk-sub-123-apple-toggle-row">
+            <span class="bk-sub-123-apple-toggle-text">
+              J’ai lu et j'accepte la <a href="/finfor" target="_blank" class="bk-sub-123-link">Fiche d'informations</a> *
+            </span>
+            <label class="bk-sub-123-switch">
+              <input type="checkbox" name="bk-sub-123-c2" id="bk-sub-123-c2" required>
+              <span class="bk-sub-123-slider"></span>
+            </label>
+          </div>
+
+          <!-- Q7 REG DATA -->
+          <div class="bk-sub-123-apple-toggle-row">
+            <span class="bk-sub-123-apple-toggle-text">
+              J’accepte que mes données soient enregistrées dans des systèmes (d’avertissement) internes et externes afin d’assurer une politique d’acceptation et une politique de risque responsables et d’éviter les fraudes *
+            </span>
+            <label class="bk-sub-123-switch">
+              <input type="checkbox" name="bk-sub-123-c3" id="bk-sub-123-c3" required>
+              <span class="bk-sub-123-slider"></span>
+            </label>
+          </div>
+
+          <div class="bk-sub-123-actions">
+            <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(5)">Retour</button>
+            <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubFinalizePayment()">Enregistrer ma méthode de paiement</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</aside>
+
+<!-- ==================== STYLES CSS ==================== -->
+<style>
+  :root {
+    --bk-sub-c1: #4513a5;
+    --bk-sub-c2: #935bff;
+    --bk-sub-bg: #ffffff;
+    --bk-sub-dark: #121212;
+    --bk-sub-grey-light: #f7f7f9;
+    --bk-sub-border: #e2e2e8;
+  }
+
+  /* Bouton Déclencheur sur la page */
+  .bk-sub-123-trigger-btn {
+    box-shadow: none;
+    background: #ffffff;
+    color: #000;
+    font-family: 'Civilprom', sans-serif;
+    border: none !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    border-radius: 0px;
+    padding: 20px 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+
+
+  /* Overlay obscurcissant */
+  .bk-sub-123-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 99998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .bk-sub-123-drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Tiroir latéral Full Height */
+  .bk-sub-123-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 680px;
+    height: 100vh;
+    height: 100dvh;
+    background: #ffffff;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    border-radius: 0px !important;
+  }
+
+  .bk-sub-123-drawer.active {
+    transform: translateX(0);
+  }
+
+  /* Header du Side-Pane */
+  .bk-sub-123-drawer-header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: none;
+    background: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .bk-sub-123-drawer-title {
+font-size: 1px;
+    text-transform: none;
+    font-weight: 500;
+    padding-left: 13px;
+    margin: 0;
+    color: #00000000 ;
+    font-family: 'Alternative';
+    letter-spacing: 0px;
+    cursor: default;
+  }
+
+  .bk-sub-123-drawer-close-btn {
+    background: #9f1996;
+    color: #fff;
+    border: none;
+    font-family: 'Civilprom', sans-serif;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 18px 25px;
+    cursor: pointer;
+  }
+
+
+
+  /* Corps défilable du Side-Pane */
+  .bk-sub-123-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    background: #ffffff;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Conteneur formulaire interne */
+  .bk-sub-123-container {
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    color: #000;
+    font-family: 'Civilprom', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border: none;
+    border-radius: 0px !important;
+    padding: 35px;
+    box-sizing: border-box;
+  }
+
+  .bk-sub-123-container * {
+    box-sizing: border-box;
+    border-radius: 0px !important;
+  }
+
+  /* Progress indicator */
+  .bk-sub-123-progress-container {
+    display: none !important;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--bk-sub-border);
+    padding-bottom: 18px;
+    margin-bottom: 30px;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .bk-sub-123-step-indicator {
+    font-size: 13px;
+    font-weight: 700;
+    color: #9999a5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .bk-sub-123-step-indicator span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #eaeaf0;
+    color: #444;
+    font-size: 12px;
+  }
+
+  .bk-sub-123-step-indicator.active {
+    color: var(--bk-sub-c1);
+  }
+
+  .bk-sub-123-step-indicator.active span {
+    background: var(--bk-sub-c1);
+    color: #ffffff;
+  }
+
+  /* Panels */
+  .bk-sub-123-step-panel {
+    display: none;
+  }
+
+  .bk-sub-123-step-panel.active {
+    display: block;
+    animation: bkFadeIn 0.25s ease-in-out;
+  }
+
+  .bk-sub-123-prog-field {
+    animation: bkFadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes bkFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .bk-sub-123-title {
+    font-size: 30px;
+    letter-spacing: 0px;
+    font-weight: 100;
+    margin: 0 0 30px 0;
+    color: #000000;
+    line-height: 1.25;
+    font-family: 'Alternative';
+    border-left: none;
+    cursor: default;
+    text-transform: none;
+    text-align: left;
+  }
+
+  .bk-sub-123-subtitle {
+font-size: 18px !important;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: left;
+    font-weight: 100 !important;
+    cursor: default;
+    padding-bottom: 20px;
+  }
+
+  .bk-sub-123-field-group {
+    margin-bottom: 22px;
+  }
+
+  .bk-sub-123-label {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+    text-align: left;
+    cursor: default;
+  }
+
+  .bk-sub-123-helper {
+    font-size: 18px;
+    color: #0000007a;
+    font-weight: 100;
+    margin-top: -4px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    text-align: left;
+    cursor: default;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .bk-sub-123-input,
+  .bk-sub-123-select {
+width: 100%;
+    padding: 25px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+    border: none;
+    background: #e9f1ff;
+    color: #0059ff;
+    outline: none;
+    transition: border-color 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .bk-sub-123-select::-ms-expand {
+    display: none;
+  }
+
+  .bk-sub-123-input::placeholder {
+    color: #0059ff;
+    opacity: 1;
+  }
+
+  .bk-sub-123-input:focus,
+  .bk-sub-123-select:focus {
+    background: #e9f1ff;
+    color: #0059ff;
+  }
+
+  .bk-sub-123-subfield {
+    margin-top: 10px;
+  }
+
+  .bk-sub-123-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 22px;
+  }
+
+  .bk-sub-123-col {
+    flex: 1;
+  }
+
+  /* Stylised Radio Toggle (OUI / NON) */
+  .bk-sub-123-radio-toggle-group {
+    display: flex;
+    gap: 10px;
+  }
+
+  .bk-sub-123-radio-btn {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .bk-sub-123-radio-btn input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .bk-sub-123-radio-btn span {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    background: #eaf1ff;
+    color: #0059ff;
+    transition: all 0.2s ease;
+  }
+
+  .bk-sub-123-radio-btn input:checked + span {
+    background: #0059ff;
+    color: #ffffff;
+  }
+
+  /* Tag Cloud */
+  .bk-sub-123-sub-box {
+    background: #fff;
+    border: none;
+    padding: 0px;
+    margin-bottom: 22px;
+  }
+
+  .bk-sub-123-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .bk-sub-123-tag {
+    background: #eaf1ff;
+    border: none;
+    border-radius: 80px !important;
+    color: #0059ff;
+    padding: 14px 20px 15px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .bk-sub-123-tag:hover {
+    border-color: var(--bk-sub-c2) !important;
+  }
+
+  .bk-sub-123-tag.selected {
+    background: #0059ff;
+    color: #ffffff;
+  }
+
+  /* Step 3: Pricing Cards */
+  .bk-sub-123-pricing-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .bk-sub-123-price-card {
+flex: 1;
+    border: none;
+    padding: 22px 15px;
+    text-align: center;
+    color: #3556ec;
+    cursor: pointer;
+    background: #eaf1ff;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+
+
+  .bk-sub-123-price-card.active {
+background: #3556ec;
+    color: #fff !important;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+  }
+
+  .bk-sub-123-price-badge {
+    display: none !important;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bk-sub-dark);
+    color: #fff;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+  }
+
+  .bk-sub-123-price-card.active .bk-sub-123-price-badge {
+    background: var(--bk-sub-c1);
+  }
+
+  .bk-sub-123-price-card-title {
+    font-size: 28px;
+    font-weight: 100;
+    margin: 8px 0 4px 0;
+    text-transform: none;
+    font-family: 'Alternative';
+    cursor: default;
+    letter-spacing: 0px;
+  }
+
+  .bk-sub-123-price-amount {
+    font-size: 42px;
+    font-weight: 100;
+    margin: 8px 0 2px 0;
+    letter-spacing: -0.5px;
+    cursor: pointer;
+  }
+
+  .bk-sub-123-price-period {
+    font-size: 18px;
+    font-weight: 100;
+    font-family: 'Civilprom';
+    cursor: pointer;
+    letter-spacing: 0px;
+  }
+
+  /* Legal Notice */
+  .bk-sub-123-legal-notice {
+    background: #f4f1fa;
+    border-left: 4px solid var(--bk-sub-c1);
+    padding: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #222;
+    margin-bottom: 22px;
+  }
+
+  .bk-sub-123-link {
+    color: var(--bk-sub-c1);
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  /* ========================================================== */
+  /* APPLE-LIKE TOGGLE SWITCHES */
+  /* ========================================================== */
+  .bk-sub-123-apple-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .bk-sub-123-apple-toggle-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 1.45;
+  }
+
+  /* Le switch conteneur */
+  .bk-sub-123-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .bk-sub-123-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* La glissière (Slider) : style pillule Apple standard */
+  .bk-sub-123-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e5e5ea; /* Gris inactif Apple */
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 30px !important; /* Exception spécifique pour forme pillule Apple */
+  }
+
+  .bk-sub-123-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50% !important; /* Bouton rond blanc */
+  }
+
+  /* Switch actif */
+  .bk-sub-123-switch input:checked + .bk-sub-123-slider {
+    background-color: #34c759; /* Vert iOS classique (ou remplacez par var(--bk-sub-c1) si vous préférez violet) */
+  }
+
+  .bk-sub-123-switch input:checked + .bk-sub-123-slider:before {
+    transform: translateX(22px);
+  }
+
+  /* Action Buttons */
+  .bk-sub-123-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+    padding-top: 20px;
+  }
+
+  .bk-sub-123-btn-primary {
+margin-right: 0px;
+    background: #9f1996;
+    margin-bottom: 10px !important;
+    margin-top: 0px !important;
+    font-family: 'Civilprom', sans-serif;
+    border: none !important;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    border-radius: 0px !important;
+    padding: 20px 29px;
+    transition: 0s;
+  }
+
+  .bk-sub-123-btn-secondary {
+    background: #000;
+    color: #fff;
+    border: none;
+    font-family: 'Civilprom', sans-serif;
+    cursor: pointer;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    padding: 10px 25px;
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+  }
+
+
+
+  /* Responsive rules */
+  @media (max-width: 600px) {
+    .bk-sub-123-drawer {
+      max-width: 100%;
+    }
+    .bk-sub-123-container {
+      padding: 20px 15px;
+    }
+    .bk-sub-123-drawer-header {
+      padding: 18px 20px;
+    }
+    .bk-sub-123-row {
+      flex-direction: column;
+      gap: 0;
+    }
+    .bk-sub-123-pricing-grid {
+      flex-direction: column;
+    }
+    .bk-sub-123-actions {
+      flex-direction: column-reverse;
+    }
+    .bk-sub-123-btn-primary, .bk-sub-123-btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+  .Icono {
+width: 100%;
+max-width: 210px; 
+margin: auto;
+    }
+</style>
+
+<!-- ==================== JAVASCRIPT LOGIC ==================== -->
+<script>
+(function() {
+  // Grille des prix & URLs
+  var BK_TIERS = [
+    { max: 2000,     m: "9.99€",   a: "99.99€",  mVal: 9.99,  aVal: 99.99,  linkM: "https://bikelp.com/subs999/",   linkA: "https://bikelp.com/subs9999/" },
+    { max: 4000,     m: "15.99€",  a: "169.99€", mVal: 15.99, aVal: 169.99, linkM: "https://bikelp.com/subs1599/",  linkA: "https://bikelp.com/subs16999/" },
+    { max: 6000,     m: "23.99€",  a: "239.99€", mVal: 23.99, aVal: 239.99, linkM: "https://bikelp.com/subs23999/", linkA: "https://bikelp.com/subs23999/" },
+    { max: 8000,     m: "27.99€",  a: "299.99€", mVal: 27.99, aVal: 299.99, linkM: "https://bikelp.com/subs2799",   linkA: "https://bikelp.com/subs29999/" },
+    { max: 10000,    m: "33.99€",  a: "349.99€", mVal: 33.99, aVal: 349.99, linkM: "https://bikelp.com/subs3399/",  linkA: "https://bikelp.com/subs34999/" },
+    { max: 12000,    m: "42.99€",  a: "449.99€", mVal: 42.99, aVal: 449.99, linkM: "https://bikelp.com/subs4299/",  linkA: "https://bikelp.com/subs44999/" },
+    { max: 14000,    m: "55.99€",  a: "599.99€", mVal: 55.99, aVal: 599.99, linkM: "https://bikelp.com/subs5599/",  linkA: "https://bikelp.com/subs59999/" },
+    { max: Infinity, m: "69.99€",  a: "699.99€", mVal: 69.99, aVal: 699.99, linkM: "https://bikelp.com/subs6999/",  linkA: "https://bikelp.com/subs699.99/" }
+  ];
+
+  var bkSelectedPlan = 'monthly';
+  var bkCurrentTier = null;
+
+  // Drawer Controls
+  var drawer = document.getElementById('bk-sub-123-drawer');
+  var overlay = document.getElementById('bk-sub-123-overlay');
+
+  window.bkSubOpenPane = function() {
+    drawer.classList.add('active');
+    overlay.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.bkSubClosePane = function() {
+    drawer.classList.remove('active');
+    overlay.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  // DOM Elements Step 1
+  var brandSelect = document.getElementById('bk-sub-123-brand');
+  var brandOtherWrap = document.getElementById('bk-sub-123-brand-other-wrap');
+  var brandOtherInput = document.getElementById('bk-sub-123-brand-other');
+
+  var typeSelect = document.getElementById('bk-sub-123-type');
+  var typeOtherWrap = document.getElementById('bk-sub-123-type-other-wrap');
+  var typeOtherInput = document.getElementById('bk-sub-123-type-other');
+
+  var fgValue = document.getElementById('bk-sub-123-fg-value');
+  var bikeValueInput = document.getElementById('bk-sub-123-bike-value');
+
+  var fgEngraved = document.getElementById('bk-sub-123-fg-engraved');
+  var fgAccessories = document.getElementById('bk-sub-123-fg-accessories');
+  var hasAccYes = document.getElementById('bk-sub-123-has-acc-yes');
+  var hasAccNo = document.getElementById('bk-sub-123-has-acc-no');
+  var accPanel = document.getElementById('bk-sub-123-acc-panel');
+  var accValWrap = document.getElementById('bk-sub-123-acc-val-wrap');
+  var accValueInput = document.getElementById('bk-sub-123-acc-value');
+  var step1Actions = document.getElementById('bk-sub-123-step1-actions');
+
+  // --- LOGIQUE PROGRESSIVE STEP 1 ---
+  function updateStep1ProgressiveFlow() {
+    var brandValid = brandSelect.value !== "" && (brandSelect.value !== "Autre" || brandOtherInput.value.trim() !== "");
+    var typeValid = typeSelect.value !== "" && (typeSelect.value !== "Autre" || typeOtherInput.value.trim() !== "");
+
+    if (brandValid && typeValid) {
+      fgValue.style.display = 'block';
+    } else {
+      fgValue.style.display = 'none';
+      fgEngraved.style.display = 'none';
+      fgAccessories.style.display = 'none';
+      accPanel.style.display = 'none';
+      step1Actions.style.display = 'none';
+      return;
+    }
+
+    var val = parseFloat(bikeValueInput.value);
+    if (!isNaN(val) && val > 0) {
+      fgEngraved.style.display = 'block';
+    } else {
+      fgEngraved.style.display = 'none';
+      fgAccessories.style.display = 'none';
+      accPanel.style.display = 'none';
+      step1Actions.style.display = 'none';
+      return;
+    }
+
+    var engravedChecked = document.querySelector('input[name="bk-sub-123-engraved"]:checked');
+    if (engravedChecked) {
+      fgAccessories.style.display = 'block';
+    } else {
+      fgAccessories.style.display = 'none';
+      accPanel.style.display = 'none';
+      step1Actions.style.display = 'none';
+      return;
+    }
+
+    if (hasAccYes.checked) {
+      accPanel.style.display = 'block';
+      var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
+      if (selectedTags.length > 0) {
+        accValWrap.style.display = 'block';
+        var accVal = parseFloat(accValueInput.value);
+        if (!isNaN(accVal) && accVal >= 0 && accValueInput.value.trim() !== "") {
+          step1Actions.style.display = 'flex';
+        } else {
+          step1Actions.style.display = 'none';
+        }
+      } else {
+        accValWrap.style.display = 'none';
+        step1Actions.style.display = 'none';
+      }
+    } else if (hasAccNo.checked) {
+      accPanel.style.display = 'none';
+      accValWrap.style.display = 'none';
+      step1Actions.style.display = 'flex';
+    } else {
+      step1Actions.style.display = 'none';
+    }
+  }
+
+  // Événements Step 1
+  brandSelect.addEventListener('change', function() {
+    brandOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
+    updateStep1ProgressiveFlow();
+  });
+  brandOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
+
+  typeSelect.addEventListener('change', function() {
+    typeOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
+    updateStep1ProgressiveFlow();
+  });
+  typeOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
+
+  bikeValueInput.addEventListener('input', updateStep1ProgressiveFlow);
+
+  document.querySelectorAll('input[name="bk-sub-123-engraved"]').forEach(function(radio) {
+    radio.addEventListener('change', updateStep1ProgressiveFlow);
+  });
+
+  hasAccYes.addEventListener('change', updateStep1ProgressiveFlow);
+  hasAccNo.addEventListener('change', updateStep1ProgressiveFlow);
+
+  accValueInput.addEventListener('input', updateStep1ProgressiveFlow);
+
+  var tags = document.querySelectorAll('.bk-sub-123-tag');
+  tags.forEach(function(tag) {
+    tag.addEventListener('click', function() {
+      this.classList.toggle('selected');
+      updateStep1ProgressiveFlow();
+    });
+  });
+
+  // Navigation & Validation
+  window.bkSubNextStep = function(currentStep) {
+    if (!validateStep(currentStep)) return;
+
+    if (currentStep === 2) {
+      computeAndRenderPrices();
+    }
+
+    showStep(currentStep + 1);
+  };
+
+  window.bkSubPrevStep = function(currentStep) {
+    showStep(currentStep - 1);
+  };
+
+  function showStep(stepIndex) {
+    document.querySelectorAll('.bk-sub-123-step-panel').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.getElementById('bk-sub-123-step-' + stepIndex).classList.add('active');
+
+    document.querySelectorAll('.bk-sub-123-step-indicator').forEach(function(ind) {
+      var s = parseInt(ind.getAttribute('data-step'), 10);
+      if (s <= stepIndex) {
+        ind.classList.add('active');
+      } else {
+        ind.classList.remove('active');
+      }
+    });
+
+    document.querySelector('.bk-sub-123-drawer-body').scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(step) {
+    var panel = document.getElementById('bk-sub-123-step-' + step);
+    var valid = true;
+
+    // Validation des inputs classiques et radios
+    var requiredInputs = panel.querySelectorAll('input[required], select[required]');
+    requiredInputs.forEach(function(input) {
+      if (input.type === 'radio') {
+        var name = input.name;
+        var checked = panel.querySelector('input[name="' + name + '"]:checked');
+        if (!checked) {
+          valid = false;
+        }
+      } else if (input.type === 'checkbox') {
+        // Pour les switches Apple
+        if (!input.checked) {
+          valid = false;
+        }
+      } else if (!input.value.trim()) {
+        valid = false;
+      }
+    });
+
+    if (step === 1) {
+      if (brandSelect.value === 'Autre' && !brandOtherInput.value.trim()) {
+        alert('Veuillez préciser la marque et le modèle.');
+        return false;
+      }
+      if (typeSelect.value === 'Autre' && !typeOtherInput.value.trim()) {
+        alert('Veuillez préciser le type de vélo.');
+        return false;
+      }
+      var bVal = parseFloat(bikeValueInput.value);
+      if (isNaN(bVal) || bVal <= 0) {
+        alert('Veuillez indiquer une valeur valide pour le vélo.');
+        return false;
+      }
+      if (hasAccYes.checked) {
+        var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
+        if (selectedTags.length > 0) {
+          var aVal = parseFloat(accValueInput.value);
+          if (isNaN(aVal) || aVal < 0) {
+            alert('Veuillez indiquer la valeur de vos accessoires.');
+            return false;
+          }
+        }
+      }
+    }
+
+    if (step === 5 && !valid) {
+      alert('Veuillez répondre à toutes les questions et activer les acceptations réglementaires obligatoires.');
+      return false;
+    }
+
+    if (!valid) {
+      alert('Veuillez remplir tous les champs obligatoires.');
+    }
+    return valid;
+  }
+
+  function computeAndRenderPrices() {
+    var bikeVal = parseFloat(bikeValueInput.value) || 0;
+    var accVal = 0;
+    if (hasAccYes.checked) {
+      accVal = parseFloat(accValueInput.value) || 0;
+    }
+    var totalVal = bikeVal + accVal;
+    document.getElementById('bk-sub-123-summary-total').innerText = totalVal.toLocaleString('fr-FR', { minimumFractionDigits: 2 }) + '€';
+
+    for (var i = 0; i < BK_TIERS.length; i++) {
+      if (totalVal < BK_TIERS[i].max) {
+        bkCurrentTier = BK_TIERS[i];
+        break;
+      }
+    }
+    if (!bkCurrentTier) bkCurrentTier = BK_TIERS[BK_TIERS.length - 1];
+
+    document.getElementById('bk-sub-123-val-month').innerText = bkCurrentTier.m;
+    document.getElementById('bk-sub-123-val-year').innerText = bkCurrentTier.a;
+
+    updateStep3BtnText();
+  }
+
+  window.bkSubSelectPlan = function(plan) {
+    bkSelectedPlan = plan;
+    document.getElementById('bk-sub-123-card-monthly').classList.toggle('active', plan === 'monthly');
+    document.getElementById('bk-sub-123-card-annual').classList.toggle('active', plan === 'annual');
+    updateStep3BtnText();
+  };
+
+  function updateStep3BtnText() {
+    var btn = document.getElementById('bk-sub-123-step3-btn');
+    if (!bkCurrentTier) return;
+    if (bkSelectedPlan === 'monthly') {
+      btn.innerText = 'Souscrire pour ' + bkCurrentTier.m + '/mois';
+    } else {
+      btn.innerText = 'Souscrire pour ' + bkCurrentTier.a + '/an';
+    }
+  }
+
+  window.bkSubFinalizePayment = function() {
+    if (!validateStep(5)) return;
+
+    if (!bkCurrentTier) {
+      alert('Une erreur est survenue lors du calcul de votre tarif.');
+      return;
+    }
+
+    var targetUrl = (bkSelectedPlan === 'monthly') ? bkCurrentTier.linkM : bkCurrentTier.linkA;
+    window.location.href = targetUrl;
+  };
+
+})();
+</script>
+<!-- ========================================================== -->
+<!-- FIN DU MODULE DE SOUSCRIPTION BIKELP -->
+<!-- ========================================================== -->
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== SECTION 2 : AVIS CLIENTS ==================== -->
+
+
+<style>
+  .cp-bikelp-hero-2024-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #fff; /* Couleur de fond douce pour faire ressortir l'illustration */
+    border-radius: 0px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .cp-bikelp-hero-2024-container * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-bikelp-hero-2024-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-bikelp-hero-2024-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-bikelp-hero-2024-desc {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-bikelp-hero-2024-btn {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-bikelp-hero-2024-btn:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-bikelp-hero-2024-media {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+border-left: 1px solid #e1e1e1;
+  }
+
+
+  #btn-register-cta {
+  -webkit-appearance: none; /* Safari, Chrome, Opera */
+  -moz-appearance: none;    /* Firefox */
+  appearance: none;         /* Standard */
+  background-image: none;   /* Supprime une éventuelle flèche ajoutée en background par une librairie CSS */
+}
+
+/* Masque la flèche sur les anciennes versions d'IE / Edge */
+#btn-register-cta::-ms-expand {
+  display: none;
+}
+
+  .cp-bikelp-hero-2024-img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover; /* Remplit toute la hauteur et largeur du conteneur droit */
+    display: block;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-bikelp-hero-2024-container {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-bikelp-hero-2024-content {
+      padding: 32px 24px;
+    }
+
+    .cp-bikelp-hero-2024-media,
+    .cp-bikelp-hero-2024-img {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-bikelp-hero-2024-container">
+  <div class="cp-bikelp-hero-2024-content">
+    <h2 class="cp-mecanic-sec-2024-heading">Le Tour de notre Super Couverture!</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
+Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
+    </p>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Je souscris à l'assurance</a>
+  </div>
+
+  <div class="cp-bikelp-hero-2024-media">
+    <img 
+      class="cp-bikelp-hero-2024-img" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_ride.svg" 
+      alt="Illustration Ride Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+
+
+<style>
+  /* ==========================================================================
+     BLOC ASSURANCE VÉLO - STYLES SCOPÉS (Préfixe unique pour 0 conflit)
+     ========================================================================== */
+
+  .bp-custom-insurance-grid__wrapper {
+box-sizing: border-box;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1100px;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    margin: 0 auto;
+    display: grid;
+    gap: 22px;
+    cursor: default;
+    font-family: 'Civilprom';
+  }
+
+  .bp-custom-insurance-grid__wrapper *,
+  .bp-custom-insurance-grid__wrapper *::before,
+  .bp-custom-insurance-grid__wrapper *::after {
+    box-sizing: border-box;
+  }
+
+  /* Carte individuelle (1 ligne sur 7 x 2 colonnes) */
+  .bp-custom-insurance-grid__item {
+    border-radius: 0px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: #ffffff;
+    box-shadow: none;
+    border: 1px solid #ffffff26;
+    transition: 0s;
+  }
+
+
+  .insidebarz {
+    width: 100%;
+    margin: auto;
+    background: #0059ff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+
+  /* Zone texte */
+  .bp-custom-insurance-grid__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .bp-custom-insurance-grid__title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    font-family: 'Civilprom';
+    color: #ffffff !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0px;
+    text-transform: none;
+    cursor: default;
+    margin-top: 20px;
+  }
+
+  .bp-custom-insurance-grid__desc {
+font-size: 18px !important;
+    font-weight: 100 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    line-height: 1.5 !important;
+    max-width: 90%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  /* Badge "Inclus" */
+  .bp-custom-insurance-grid__badge {
+    display: none !important; 
+    flex-shrink: 0;
+    background-color: #2b73f7; /* Bleu clair contrasté */
+    color: #ffffff !important;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    letter-spacing: 0.01em;
+  }
+
+
+.PBblue {
+background-color: #ffffff24 !important;
+}
+
+
+.PBblue:hover {
+background-color: #ffffff36 !important;
+}
+
+.PBpurple {
+background-color: #9f1996 !important;
+}
+
+.PBmoket {
+background-color: #4733bd !important;
+}
+
+
+
+
+
+
+
+    .bp-custom-insurance-grid__badge {
+      font-size: 12px;
+      padding: 6px 14px;
+    }
+
+.numerous {
+  letter-spacing: -1px;
+    font-size: 30px;
+    font-family: 'Alternative';
+    font-weight: 300;
+    color: #FFF;
+    margin-bottom: -5px;
+    margin-top: 7px;
+    border: 1px solid #5386ff;
+    background: #0059ff;
+    width: 100%;
+    max-width: 50px;
+    padding: 3px 4px 4px 4px;
+    max-height: 50px;
+    text-align: center;
+    border-radius: 1000px;
+    }
+
+    .reasonstitle {
+    font-size: 60px;
+    font-family: 'Alternative';
+    font-weight: 100;
+    color: #FFF;
+    margin: auto;
+    padding-bottom: 20px;
+    width: 100%;
+    line-height: 60px;
+    text-align: center;
+    max-width: 600px;
+    cursor: default;
+    }
+
+</style>
+<div class="insidebarz">
+<p class="reasonstitle">14 Raisons de Souscrire avec Bikelp!</p>
+
+<div class="bp-custom-insurance-grid__wrapper">
+
+  <!-- 1 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">1</p>
+      <h4 class="bp-custom-insurance-grid__title">Formule Unique Vol &amp; Dommages</h4>
+      <p class="bp-custom-insurance-grid__desc">Une protection complète pour faire face à tous les imprévus du quotidien.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 2 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">2</p>
+      <h4 class="bp-custom-insurance-grid__title">Dégâts Accidentels</h4>
+      <p class="bp-custom-insurance-grid__desc">Une chute est vite arrivée. Prenez soin de vous, nous nous occupons de votre vélo.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 3 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">3</p>
+      <h4 class="bp-custom-insurance-grid__title">Libre &amp; Sans engagement</h4>
+      <p class="bp-custom-insurance-grid__desc">Suspendez ou résiliez votre contrat à tout moment, en un clic.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 4 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">4</p>
+      <h4 class="bp-custom-insurance-grid__title">Zéro Franchise</h4>
+      <p class="bp-custom-insurance-grid__desc">En cas de sinistre, vous n'avez rien à débourser de votre poche.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 5 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">5</p>
+      <h4 class="bp-custom-insurance-grid__title">Réponse Sinistre 48h</h4>
+      <p class="bp-custom-insurance-grid__desc">Vos déclarations de sinistre sont traitées sous 1 à 2 jours ouvrés.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 6 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">6</p>
+      <h4 class="bp-custom-insurance-grid__title">Support Multilingue 24/7</h4>
+      <p class="bp-custom-insurance-grid__desc">Notre assistance vous répond en français, anglais, espagnol, allemand et néerlandais.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 7 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">7</p>
+      <h4 class="bp-custom-insurance-grid__title">Aucun Frais Initial</h4>
+      <p class="bp-custom-insurance-grid__desc">Tout est inclus directement dans votre mensualité ou votre cotisation annuelle.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 8 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">8</p>
+      <h4 class="bp-custom-insurance-grid__title">Courses &amp; Compétitions Officielles</h4>
+      <p class="bp-custom-insurance-grid__desc">Vous restez couvert lors des épreuves officielles nécessitant une licence.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 9 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">9</p>
+      <h4 class="bp-custom-insurance-grid__title">Cyclosportives &amp; Événements</h4>
+      <p class="bp-custom-insurance-grid__desc">Une couverture active sur tous vos événements et défis ouverts à tous.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 10 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">10</p>
+      <h4 class="bp-custom-insurance-grid__title">Couverture Européenne 180 Jours</h4>
+      <p class="bp-custom-insurance-grid__desc">Roulez sereinement dans toute l'Union européenne avec les mêmes garanties.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 11 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">11</p>
+      <h4 class="bp-custom-insurance-grid__title">Remboursement 100% Valeur Assurée</h4>
+      <p class="bp-custom-insurance-grid__desc">Aucune condition cachée ni décote de vétusté est appliquée : votre vélo est indemnisé à sa valeur réelle.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 12 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">12</p>
+      <h4 class="bp-custom-insurance-grid__title">Assistance &amp; Continuité</h4>
+      <p class="bp-custom-insurance-grid__desc">Jusqu’à 400 € pour louer un vélo de remplacement ou financer votre retour à domicile.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 13 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">13</p>
+      <h4 class="bp-custom-insurance-grid__title">Offre Foyer Multi-Vélos</h4>
+      <p class="bp-custom-insurance-grid__desc">Profitez de -30 % sur chaque vélo supplémentaire au sein de votre famille.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+
+  <!-- 14 -->
+  <div class="bp-custom-insurance-grid__item PBblue">
+    <div class="bp-custom-insurance-grid__body">
+      <p class="numerous">14</p>
+      <h4 class="bp-custom-insurance-grid__title">Assurez vos Équipements &amp; Accessoires</h4>
+      <p class="bp-custom-insurance-grid__desc">Casque, textile, compteur et antivols sont également pris en charge.</p>
+    </div>
+    <span class="bp-custom-insurance-grid__badge">Inclus</span>
+  </div>
+</div>
+</div>
+
+
+
+<style>
+  .cp-mecanic-sec-2024-wrapper {
+display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #fff;
+    border-radius: 0px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+    margin-bottom: -25px;
+    border-top: 1px solid #e1e1e1;
+  }
+
+  .cp-mecanic-sec-2024-wrapper * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-mecanic-sec-2024-left-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-mecanic-sec-2024-heading {
+    margin: 0;
+    font-size: 75px;
+    letter-spacing: 0px;
+    text-transform: none;
+    font-weight: 700;
+    color: #000;
+    line-height: 90px;
+    cursor: default;
+  }
+
+  .cp-mecanic-sec-2024-paragraph {
+    margin: 0;
+    font-size: 22px;
+    color: #000;
+    line-height: 1.5;
+    max-width: 98%;
+    font-family: 'Civilprom';
+    font-weight: 100;
+    cursor: default;
+  }
+
+  .cp-mecanic-sec-2024-action-btn {
+display: inline-block;
+    font-size: 20px;
+    font-family: 'Civilprom';
+    background-color: #0059ff;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 17px 25px;
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
+    transition: 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+
+  .cp-mecanic-sec-2024-right-pane {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-mecanic-sec-2024-visual {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+    border-left: 1px solid #e1e1e1;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-mecanic-sec-2024-wrapper {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-mecanic-sec-2024-left-pane {
+      padding: 32px 24px;
+    }
+
+    .cp-mecanic-sec-2024-right-pane,
+    .cp-mecanic-sec-2024-visual {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-mecanic-sec-2024-wrapper">
+  <div class="cp-mecanic-sec-2024-left-pane">
+    <h2 class="cp-mecanic-sec-2024-heading">Transformer un Sinistre en une Solution.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
+Votre vélo représente un investissement important. Optez pour une véritable sécurité avec l’assurance complète Bikelp : vol, dommages et dégâts accidentels à partir de 9€ TTC. Nous remboursons sans franchise les factures de réparation ou la valeur de votre vélo à 100%, sans décote. C'est cela un assureur responsable.
+    </p>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Configurer mon assurance</a>
+  </div>
+
+  <div class="cp-mecanic-sec-2024-right-pane">
+    <img 
+      class="cp-mecanic-sec-2024-visual" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_mecanic.svg" 
+      alt="Illustration Mécanique Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
+    <section class="section-claims" id="sinistres">
+      <div class="container">
+          <div class="claims-grid">
+          <div class="claim-card">
+            <div>
+              <h3>Remplacer</h3>
+              <p>
+                Votre vélo est volé ou irréparable? Pas d'inquiétude, nous vous aidons à le remplacer. Transmettez les informations relatives à votre sinistre depuis votre compte Bikelp et obtenez une confirmation de remboursement sous 48h.
+              </p>
+            </div>
+            <a href="#declarer-vol" class="divabtn">Déclarer sinistre</a>
+          </div>
+
+          <div class="claim-card">
+            <div>
+              <h3>Réparer</h3>
+              <p>
+                Un composant est abîmé suite à une chute ou une dégradation? Faites réparer votre vélo auprès de votre réparateur habituel et envoyez-nous la ou les facture(s) pour recevoir votre remboursement sous 2 à 4 jours ouvrés.</p>
+            </div>
+            <a href="#reparateur" class="divabtn">Suivre mon sinistre</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <style>
+  .cp-velo-sec-2024-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #fff; /* Nuance de fond adaptée pour mettre en valeur le vélo */
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .cp-velo-sec-2024-container * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-velo-sec-2024-text-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-velo-sec-2024-title-tag {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-velo-sec-2024-text-content {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-velo-sec-2024-cta-link {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-velo-sec-2024-cta-link:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-velo-sec-2024-pic-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-velo-sec-2024-image-element {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+        border-left: 1px solid #e1e1e1;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-velo-sec-2024-container {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-velo-sec-2024-text-area {
+      padding: 32px 24px;
+    }
+
+    .cp-velo-sec-2024-pic-wrapper,
+    .cp-velo-sec-2024-image-element {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-velo-sec-2024-container">
+  <div class="cp-velo-sec-2024-text-area">
+    <h2 class="cp-mecanic-sec-2024-heading">Et des Solutions dédiées aux Professionnels.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
+Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’une assurance pour le stock d'un magasin, de proposer Bikelp à vos clients contre une commission, ou encore d’assurer la flotte de vélos d’une entreprise utilisée par ses collaborateurs : Bikelp s'adapte à vos besoins, toujours au prix le plus juste.
+    </p>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Contacter Bikelp</a>
+  </div>
+
+  <div class="cp-velo-sec-2024-pic-wrapper">
+    <img 
+      class="cp-velo-sec-2024-image-element" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_velo.svg" 
+      alt="Illustration Vélo Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+    <!-- ==================== SECTION 5 : SOLUTIONS SINISTRES ==================== -->
+    <section class="section-busi" id="pro">
+      <div class="container">
+ <div class="claims-grid">
+          <div class="claim-card">
+            <div>
+              <h3>Programme Magasin</h3>
+              <p>Devenez partenaire Bikelp en proposant notre assurance complète à vos clients et obtenez une rémunération instantanée pour chaque souscription.</p>
+            </div>
+            <a href="#contact" class="divabtn">Contacter Bikelp</a>
+          </div>
+
+          <div class="claim-card">
+            <div>
+              <h3>Assurance Flotte</h3>
+              <p>Avec Bikelp, assurez votre stock ou votre flotte de vélos et accessoires contre le vol, les dégradations et les accidents.</p>
+            </div>
+            <a href="#contact" class="divabtn">Contacter Bikelp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Bloc Section Café / Pause Bikelp -->
+<style>
+  .cp-cafe-sec-2024-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #fff; /* Nuance légèrement chaude adaptée à l'ambiance café */
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .cp-cafe-sec-2024-container * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-cafe-sec-2024-body-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-cafe-sec-2024-main-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-cafe-sec-2024-summary-txt {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-cafe-sec-2024-primary-btn {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-cafe-sec-2024-primary-btn:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-cafe-sec-2024-asset-box {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-cafe-sec-2024-svg-render {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+border-left: 1px solid #e1e1e1;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-cafe-sec-2024-container {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-cafe-sec-2024-body-box {
+      padding: 32px 24px;
+    }
+
+    .cp-cafe-sec-2024-asset-box,
+    .cp-cafe-sec-2024-svg-render {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-cafe-sec-2024-container">
+  <div class="cp-cafe-sec-2024-body-box">
+    <h2 class="cp-mecanic-sec-2024-heading">Une Communauté d'Assurés avec qui l'on Partagerait bien un Café.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
+Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes passionnés et engagés pour la mobilité douce. Au-delà de l’assurance, souscrire chez Bikelp, c’est rejoindre une communauté solidaire qui s'entraide au quotidien.
+    </p>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Activer mon assurance</a>
+  </div>
+
+  <div class="cp-cafe-sec-2024-asset-box">
+    <img 
+      class="cp-cafe-sec-2024-svg-render" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_caf.svg" 
+      alt="Illustration Café Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+    <!-- ==================== SECTION 4 : BIG COUNTER ==================== -->
+    <section class="section-counter">
+      <div class="container">
+                <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_white.svg" alt="Defibeo Logo">
+<div class="counter-val">189 662</div>
+
+<script>
+  // Configuration des bornes
+  const MIN_VALUE = 189662;
+  const MAX_VALUE = 189999;
+  const STORAGE_KEY = 'animated_counter_val';
+
+  const counterElement = document.querySelector('.counter-val');
+
+  // Fonction pour formater le nombre avec un espace (ex: 189 662)
+  function formatNumber(num) {
+    return num.toLocaleString('fr-FR');
+  }
+
+  // Initialisation : récupérer la valeur sauvegardée ou la valeur par défaut
+  let savedValue = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+  let currentValue = (!isNaN(savedValue) && savedValue >= MIN_VALUE && savedValue <= MAX_VALUE)
+    ? savedValue 
+    : MIN_VALUE;
+
+  // Affichage initial
+  counterElement.textContent = formatNumber(currentValue);
+
+  // Variable pour compter les secondes écoulées (pour le cycle de 10s)
+  let secondsElapsed = 0;
+
+  // Intervalle principal exécuté chaque seconde
+  setInterval(() => {
+    secondsElapsed++;
+
+    // Tous les 10s : faire -5, sinon : faire +1
+    if (secondsElapsed % 10 === 0) {
+      currentValue -= 5;
+    } else {
+      currentValue += 1;
+    }
+
+    // Gestion du dépassement : retour à la valeur initiale si >= 189 999
+    if (currentValue >= MAX_VALUE) {
+      currentValue = MIN_VALUE;
+    }
+
+    // Sécurité au cas où un -5 ferait descendre sous le seuil minimal
+    if (currentValue < MIN_VALUE) {
+      currentValue = MIN_VALUE;
+    }
+
+    // Mise à jour de l'affichage
+    counterElement.textContent = formatNumber(currentValue);
+
+    // Sauvegarde dans le localStorage (cache)
+    localStorage.setItem(STORAGE_KEY, currentValue);
+
+  }, 5500);
+</script>
+        <p class="counter-claim">Une communauté de cyclistes assurés de tous horizons qui mutualisent les sinistres et financent le fonds solidaire Bikelp.</p>
+      </div>
+    </section>
+
+        
+    <section class="section-reviews" aria-label="Avis de nos cyclistes">
+      <div class="container">
+        <div style="display: block;">
+              <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
+        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #000; letter-spacing: 0px; margin-bottom: 45px !important; line-height: 55px; max-width: 900px; cursor: default; margin: auto;">Le peloton de tous les types de pratiquants en parle. Et vous?</h2>
+       
+        </div>
+
+        <div class="reviews-stream">
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <span class="review-card__name">Marc T.</span>
+              </div>
+              <div class="review-card__badge">4.9<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Cadre carbone fissuré lors d'une chute, remplacement validé sous 48h sans expertise lourde.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <span class="review-card__name">Hélène V.</span>
+              </div>
+              <div class="review-card__badge">5.0<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Rapatriement impeccable au pied du Coll de Rates lors d'un séjour d'entraînement.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <span class="review-card__name">Sébastien P.</span>
+              </div>
+              <div class="review-card__badge">4.8<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Tarification transparente, pas de mauvaise surprise lors du remboursement de ma paire de roues.</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div class="review-card__user">
+                <span class="review-card__name">Guillaume R.</span>
+              </div>
+              <div class="review-card__badge">4.7<small>/5</small></div>
+            </div>
+            <p class="review-card__desc">Souscription rapide et déclaration de sinistre simplifiée au maximum sur mobile.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- Bloc Section Paysage / Évasion Bikelp -->
+<style>
+  .cp-land-sec-2024-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #fff; /* Teinte douce et naturelle pour l'ambiance paysage/nature */
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+border-bottom: 1px solid #e1e1e1;
+  }
+
+  .cp-land-sec-2024-holder * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-land-sec-2024-info-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-land-sec-2024-headline {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-land-sec-2024-lead-copy {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-land-sec-2024-trigger-btn {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-land-sec-2024-trigger-btn:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-land-sec-2024-visual-column {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-land-sec-2024-art-display {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+        border-left: 1px solid #e1e1e1;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-land-sec-2024-holder {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-land-sec-2024-info-column {
+      padding: 32px 24px;
+    }
+
+    .cp-land-sec-2024-visual-column,
+    .cp-land-sec-2024-art-display {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-land-sec-2024-holder">
+  <div class="cp-land-sec-2024-info-column">
+    <h2 class="cp-mecanic-sec-2024-heading">Participez aux Événements Gratuits Bikelp.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
+Partageons des moments uniques! Bikelp organise régulièrement des événements, souvent en haute montagne ou dans des lieux emblématiques du cyclisme. C’est toujours gratuit et ouvert à tous, que vous soyez assuré chez nous ou non.
+    </p>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Je souscris à l'assurance</a>
+  </div>
+
+  <div class="cp-land-sec-2024-visual-column">
+    <img 
+      class="cp-land-sec-2024-art-display" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_landscape.svg" 
+      alt="Illustration Paysage Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+    <!-- ==================== SECTION 6 : NOS ÉVÉNEMENTS ==================== -->
+    <section class="section-events">
+      <div class="container">
+        <div class="events-grid">
+          <article class="event-card">
+            <div class="event-date-box">
+              <strong>19</strong>
+              <span>SEPT</span>
+            </div>
+            <h3 class="event-title">Pyrénées #BikelpRides</h3>
+            <p class="event-desc">Gravissez 3 cols d’exception dans les Pyrénées : le Pla d'Adet, Piau-Engaly et Azet, pour terminer à Loudenvielle avec plus de 40 cyclistes dans la joie et la bonne humeur!</p>
+            <a href="#joinevent" class="btnevent">Participer</a>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date-box">
+              <strong>17</strong>
+              <span>OCT</span>
+            </div>
+            <h3 class="event-title">Défi Calp'Express</h3>
+            <p class="event-desc">Participez avec plus de 60 cyclistes, à un parcours de 140km à travers les routes mytiques de la Costa Blanca (Calpe, Moraira, Benissa, Coll de Rates, La Vall d'Ebo, ...).</p>
+            <a href="#joinevent" class="btnevent">Participer</a>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date-box">
+              <strong>10</strong>
+              <span>DEC</span>
+            </div>
+            <h3 class="event-title">London #NightRide</h3>
+            <p class="event-desc">Rassemblement convivial en partenariat avec la sécurité civile et parcours pour promouvoir la sécurité cycliste nocturne.</p>
+            <a href="#joinevent" class="btnevent">Participer</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+
+
+
+
+
+  <!-- Bloc Section Zen / Sérénité Bikelp -->
+<style>
+  .cp-zen-sec-2024-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: 500px;
+    background-color: #fff;
+    border-radius: 0px;
+    overflow: hidden;
+    font-family: 'Civilprom', sans-serif;
+    box-sizing: border-box;
+    border-top: 1px solid #e1e1e1;
+  }
+
+  .cp-zen-sec-2024-frame * {
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .cp-zen-sec-2024-content-zone {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    gap: 20px;
+  }
+
+  .cp-zen-sec-2024-header-text {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+  }
+
+  .cp-zen-sec-2024-description {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 520px;
+  }
+
+  .cp-zen-sec-2024-action-link {
+    display: inline-block;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .cp-zen-sec-2024-action-link:hover {
+    background-color: #2c5282;
+    transform: translateY(-1px);
+  }
+
+  .cp-zen-sec-2024-media-zone {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .cp-zen-sec-2024-image-view {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+    border-left: 1px solid #e0e0e0;
+  }
+
+  /* Responsive pour mobiles / tablettes */
+  @media (max-width: 768px) {
+    .cp-zen-sec-2024-frame {
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
+
+    .cp-zen-sec-2024-content-zone {
+      padding: 32px 24px;
+    }
+
+    .cp-zen-sec-2024-media-zone,
+    .cp-zen-sec-2024-image-view {
+      min-height: 320px;
+      height: 320px;
+    }
+  }
+</style>
+
+<div class="cp-zen-sec-2024-frame">
+  <div class="cp-zen-sec-2024-content-zone">
+    <h2 class="cp-mecanic-sec-2024-heading">Roulez Zen avec l'Assurance Bikelp.</h2>
+    <p class="cp-mecanic-sec-2024-paragraph">
+Avec Bikelp, roulez l’esprit serein : notre mission est de transformer les imprévus en solutions concrètes pour assurer votre continuité d'activité. Notre assistance est disponible 24 h/24 et 7 j/7 par messagerie, e-mail ou téléphone. Bénéficiez d’une véritable relation de proximité avec votre assureur.
+    </p>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn">Consulter les offres</a>
+  </div>
+
+  <div class="cp-zen-sec-2024-media-zone">
+    <img 
+      class="cp-zen-sec-2024-image-view" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_zen.svg" 
+      alt="Illustration Zen Bikelp"
+      loading="lazy"
+    />
+  </div>
+</div>
+
+
+  <!-- ==================== SECTION 7 : FOOTER ==================== -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+
+          <img class="partner-tag" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Profil">
+          <p>Bikelp, l'assurance tous risques pour toutes les pratiques du vélo dans l'Union européenne.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Particuliers</h4>
+          <p>Bikelp, l’assurance des particuliers pour la mobilité douce, les loisirs et la compétition.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Entreprises</h4>
+          <p>Bikelp, l’assurance des entreprises pour leurs flottes ou stocks de vélos.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
++44 0000 000000<br>
+help@bikelp.com<br>
+(ES) Calp.<br>
+(UK) Glasgow.
+          </address>
+        </div>
+
+        <div class="footer-col">
+          <h4>Documents</h4>
+          <ul class="footer-links">
+            <li><a href="/privacy-fr">Politique Confidentialité</a></li>
+            <li><a href="/ipa-fr">Information Produit Assurance</a></li>
+            <li><a href="/conditions-fr">Conditions Générales</a></li>
+            <li><a href="/certificate-fr">Certificat FCA</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Bikelp SLP ID24015238.</span>
+        <span>Licence F93297C291525AUK Financial Conduct Authority (FCA).</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       STICKY BOTTOM NAV BAR — PROFIL ALTIMÉTRIQUE ÉTAPE VUELTA (INTERACTIF)
+       ========================================================================== -->
+  <nav class="sticky-stage-nav" aria-label="Navigation profil d'étape">
+    <div class="sticky-stage-nav__wrapper">
+      
+      <!-- Graphique SVG Topographique Rouge / Découpé comme la photo -->
+      <svg class="sticky-stage-svg" viewBox="0 0 1000 120" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="stageRedFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E11D48"/>
+            <stop offset="100%" stop-color="#881337"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Lignes altimétriques techniques en pointillés horizontaux -->
+        <line x1="0" y1="35" x2="1000" y2="35" stroke="#E5E7EB" stroke-dasharray="2,2"/>
+        <line x1="0" y1="70" x2="1000" y2="70" stroke="#E5E7EB" stroke-dasharray="2,2"/>
+        <line x1="0" y1="105" x2="1000" y2="105" stroke="#111827" stroke-width="1.5"/>
+
+        <!-- Repères d'altitudes à gauche -->
+        <text x="5" y="38" font-size="8" font-family="var(--font-title)" fill="#9CA3AF">1800m</text>
+        <text x="5" y="73" font-size="8" font-family="var(--font-title)" fill="#9CA3AF">1000m</text>
+
+        <!-- Profil montagneux rouge sharp -->
+        <polygon points="
+          0,105 
+          0,88 
+          40,92 
+          120,80 
+          220,52 
+          290,32 
+          330,68 
+          420,95 
+          500,98 
+          580,62 
+          630,78 
+          720,48 
+          780,82 
+          880,55 
+          960,24 
+          1000,20 
+          1000,105
+        " fill="url(#stageRedFill)"/>
+
+        <!-- Tracé d'arête supérieure blanche -->
+        <polyline points="
+          0,88 
+          40,92 
+          120,80 
+          220,52 
+          290,32 
+          330,68 
+          420,95 
+          500,98 
+          580,62 
+          630,78 
+          720,48 
+          780,82 
+          880,55 
+          960,24 
+          1000,20
+        " fill="none" stroke="#FFFFFF" stroke-width="2"/>
+
+        <!-- Lignes verticales de liaison pointillées vers les 4 sommets / jalons -->
+        <line x1="15" y1="35" x2="15" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="290" y1="32" x2="290" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="580" y1="35" x2="580" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="975" y1="20" x2="975" y2="105" stroke="#000000" stroke-width="1" stroke-dasharray="2,2"/>
+      </svg>
+
+      <!-- Balises d'étapes interactives (Boutons cliquables avec fanions) -->
+      <ul class="sticky-stage-checkpoints">
+        
+        <!-- POINT 1 : SOUSCRIPTION -->
+        <li class="stage-cp-item">
+          <a href="#souscription" class="stage-cp-link active" data-section="souscription">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">S</span>
+              <span>Souscription</span>
+              <span class="stage-flag__alt">806 m</span>
+            </div>
+            <span class="stage-dist">0 KM</span>
+          </a>
+        </li>
+
+        <!-- POINT 2 : LA COUVERTURE -->
+        <li class="stage-cp-item">
+          <a href="#couverture" class="stage-cp-link" data-section="couverture">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">1</span>
+              <span>La Couverture</span>
+              <span class="stage-flag__alt">1 724 m</span>
+            </div>
+            <span class="stage-dist">37,9 KM</span>
+          </a>
+        </li>
+
+        <!-- POINT 3 : SOLUTIONS SINISTRES -->
+        <li class="stage-cp-item">
+          <a href="#sinistres" class="stage-cp-link" data-section="sinistres">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">2</span>
+              <span>Solutions Sinistres</span>
+              <span class="stage-flag__alt">1 334 m</span>
+            </div>
+            <span class="stage-dist">107,7 KM</span>
+          </a>
+        </li>
+
+        <!-- POINT 4 : CONTACT -->
+        <li class="stage-cp-item">
+          <a href="#contact" class="stage-cp-link" data-section="contact">
+            <div class="stage-flag">
+              <span class="stage-flag__icon">M</span>
+              <span>Contact</span>
+              <span class="stage-flag__alt">1 905 m</span>
+            </div>
+            <span class="stage-dist">188 KM</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // CTA "Inscription" -> Scroll fluide vers le formulaire + focus
+      const btnRegisterCTA = document.getElementById('btn-register-cta');
+      const firstInput = document.getElementById('subscriber-email');
+
+      if (btnRegisterCTA && firstInput) {
+        btnRegisterCTA.addEventListener('click', () => {
+          firstInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => firstInput.focus(), 450);
+        });
+      }
+
+      // Mise à jour de l'état actif des points topographiques au défilement
+      const stageLinks = document.querySelectorAll('.stage-cp-link');
+      const trackedSections = document.querySelectorAll('section[id]');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -55% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            stageLinks.forEach(link => {
+              if (link.getAttribute('data-section') === currentId) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      trackedSections.forEach(section => observer.observe(section));
+    });
+  </script>
+
+
+
+<div id="dfb-main-container">
+    <div id="dfb-welcome-bubble" class="dfb-hidden" onclick="dfbToggleChat()">
+        <div class="dfb-bubble-content">
+            <div class="dfb-bubble-text" data-key="LTX0001">Bonjour, comment puis-je vous aider aujourd'hui?</div>
+            <div class="dfb-agent-info">
+                <span class="dfb-agent-name">Clovis</span>
+                <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Noah.jpg" alt="Noah" class="dfb-agent-img">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <button id="dfb-floating-btn" onclick="dfbToggleChat()" data-key="LTX0002">
+        Assistance Bikelp
+    </button>
+<style>
+  /* 1. On applique l'animation au bouton */
+#dfb-floating-btn {
+    animation: shake-animation 5s infinite;
+    /* Optionnel : assure une transition fluide si vous avez déjà d'autres effets */
+    transition: transform 0.1s ease-in-out; 
+}
+
+/* 2. Définition de l'animation */
+@keyframes shake-animation {
+    /* Le bouton ne bouge pas pendant les 4 premières secondes (80% du temps) */
+    0%, 80%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    /* Le "shake" léger se produit pendant la dernière seconde (entre 80% et 100%) */
+    82% {
+        transform: rotate(1deg) translate(1px, 1px);
+    }
+    84% {
+        transform: rotate(-1deg) translate(-1px, -2px);
+    }
+    86% {
+        transform: rotate(1deg) translate(-1px, 0px);
+    }
+    88% {
+        transform: rotate(-1deg) translate(1px, 1px);
+    }
+    90% {
+        transform: rotate(0deg) translate(-1px, -1px);
+    }
+    92% {
+        transform: rotate(1deg) translate(1px, 0px);
+    }
+    94% {
+        transform: rotate(-1deg) translate(-1px, 1px);
+    }
+    96% {
+        transform: rotate(0deg) translate(1px, -1px);
+    }
+}
+</style>
+    <div id="dfb-chat-window" class="dfb-hidden">
+        <div id="dfb-loading-bar" class="dfb-hidden">
+            <div class="dfb-progress-bar">
+                <div class="dfb-progress-inc"></div>
+                <div class="dfb-progress-dec"></div>
+            </div>
+        </div>
+
+        <div class="dfb-chat-header">
+            <span class="AMDS">Aide Bikelp</span>
+            <button class="BTNREDUIRE" onclick="dfbToggleChat()">Réduire</button>
+        </div>
+
+        <div class="dfb-chat-body">
+            <div id="dfb-history-section" class="dfb-hidden">
+                <p class="dfb-section-title">Tickets Précédents</p>
+                <div id="dfb-tickets-list"></div>
+                <hr class="dfb-separator">
+            </div>
+
+            <p class="dfb-intro-text" data-key="LTX0005">Ajoutez vos informations pour démarrer la session avec l'aide Bikelp</p>
+            
+            <form id="dfb-contact-form" onsubmit="dfbHandleSubmit(event)">
+                <div class="dfb-input-group"><label data-key="LTX0006">Votre Nom</label><input type="text" id="dfb-form-name" required></div>
+                <div class="dfb-input-group"><label data-key="LTX0007">Votre Email</label><input type="email" id="dfb-form-email" required></div>
+                <div class="dfb-input-group"><label data-key="LTX0008">Votre Téléphone</label><input type="tel" id="dfb-form-tel" required></div>
+
+                <div class="dfb-radio-container">
+                    <span class="hablababa">Déjà Client?</span>
+                    <label class="dfb-switch">
+                        <input type="checkbox" id="dfb-is-client" onchange="dfbToggleClientField()">
+                        <span class="dfb-slider"></span>
+                    </label>
+                </div>
+
+                <div id="dfb-client-field" class="dfb-input-group dfb-hidden">
+                    <label data-key="LTX00010">Votre Numéro Assuré</label>
+                    <input type="text" id="dfb-form-client-id">
+                </div>
+
+                <div class="dfb-input-group"><label data-key="LTX00011">Votre Message</label><textarea id="dfb-form-msg" rows="3" required></textarea></div>
+                <button type="submit" id="dfb-submit-btn" data-key="LTX00012">Envoyer</button>
+            </form>
+
+            <div id="dfb-success-msg" class="dfb-hidden">
+                <div class="dfb-offline-status" data-key="LTX00013">● Hors ligne</div>
+                <p  class="dfb-TXTEND" data-key="LTX00014">Les membres de l'aide Bikelp sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+
+.hablababa {
+    font-family: 'Civilprom';
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #000;
+    cursor: default;
+}
+
+  .AMDS { 
+
+        font-family: 'Civilprom';
+    font-size: 20px;
+    font-weight: 100;
+    color: #000;
+    cursor: default;
+  }
+
+
+   .BTNREDUIRE  {
+    font-family: 'Civilprom';
+    font-size: 16px;
+    font-weight: 600;
+    color: #3556ec;
+    cursor: default;
+    letter-spacing: 0px;
+    padding-top: 4px; background: transparent; border: none;
+}
+
+    :root { --dfb-primary: #2563eb; --dfb-dark: #1e293b; }
+    #dfb-main-container { font-family: 'DefibeoMain', sans-serif; cursor: default; }
+    
+    /* Bulle Noah */
+    #dfb-welcome-bubble {
+        position: fixed; bottom: 85px; right: 25px;
+        z-index: 9998; cursor: pointer;
+        /* Animation de flottement supprimée */
+    }
+    .dfb-bubble-content { display: flex; align-items: flex-end; gap: 10px; }
+    .dfb-bubble-text {
+    padding: 15px 20px;
+    border-radius: 15px 15px 0px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    border: none;
+    color: #000000;
+    max-width: 200px;
+    background: #ffffff;
+    margin-right: 4px;
+    margin-bottom: -4px;
+    min-width: 250px;
+    font-weight: 600;
+    font-family: 'Civilprom';
+    }
+    .dfb-agent-info { display: flex; flex-direction: column; align-items: center; }
+    .dfb-agent-img {
+
+      width: 45px;
+    outline: #fe4eb9 solid 3.5px;
+    outline-offset: 4px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+
+
+    }
+    .dfb-agent-name { 
+    font-size: 18px;
+    background: #fe4eba;
+    width: 65px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Civilprom';
+    border-radius: 18px;
+    color: #ffffff;
+    padding: 1px 6px 0px 7Px;
+    margin-top: 4px;
+    margin-bottom: 17px;
+     }
+
+    /* Bouton Flottant Principal */
+    #dfb-floating-btn {
+position: fixed;
+    font-family: 'Civilprom';
+    bottom: 15px;
+    right: 15px;
+    background: #9f1996 !important;
+    color: white;
+    border: none;
+    padding: 16px 21px;
+    border-radius: 0px;
+    font-weight: 600 !important;
+    cursor: pointer;
+    display: flex;
+    font-size: 22px;
+    align-items: center;
+    gap: 10px;
+    box-shadow: none;
+    z-index: 9999;
+    transition: 0s;
+    outline: 5px solid #8198ff5c;
+    }
+    
+
+    @media screen and (max-width: 768px) {
+    #dfb-chat-window {
+    right: 7px !important;
+    }
+  }
+
+    /* Fenêtre de Chat */
+    #dfb-chat-window {
+      border: 1px solid #cccccc;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 360px;
+    max-height: 85vh;
+    background: #f5f5f5;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 10000;
+    overflow: hidden;
+    }
+
+    .dfb-intro-text {
+      font-size: 18px;
+    font-family: 'Civilprom';
+    color: #000;
+    letter-spacing: 0px;
+    cursor: default;
+    margin-bottom: 15px;
+
+     }
+    /* Historique Tickets */
+    .dfb-section-title {     font-size: 16px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif;
+    color: #000000;
+    margin-bottom: 10px; }
+    .dfb-ticket-item { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 13px;
+    border: 1px solid #e3e3e3;
+    background: transparent;
+    border-radius: 13px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    }
+    .dfb-status-badge {    background: #090909;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif !important;}
+    .dfb-separator { border: 0; border-top: 1px solid transparent; margin: 15px 0; }
+
+/* Optionnel : Personnalise le contour au clavier pour qu'il soit plus joli */
+:focus-visible {
+  outline: 2.5px solid #3556ec; 
+  outline-offset: 2px;
+}
+    /* Design Form (Inchangé) */
+    .dfb-chat-header { 
+          font-size: 18px;
+    font-weight: 100;
+    border-bottom: 1px solid #cbcbcb;
+    border-radius: 14px 14px 0px 0px;
+    background: transparent;
+    color: #000;
+    padding: 15px;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .dfb-close-btn { padding-top: 4px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: #155fff;
+    cursor: pointer;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif; }
+    .dfb-chat-body { padding: 20px; overflow-y: auto; }
+    .dfb-input-group { margin-bottom: 12px; display: flex; flex-direction: column; }
+    .dfb-input-group label { 
+
+      font-size: 20px;
+    font-family: 'Alternative';
+    font-weight: 100;
+    letter-spacing: 0px;
+    color: #000;
+    margin-bottom: 4px;
+
+
+    }
+    .dfb-input-group input, .dfb-input-group textarea {     padding: 16px;
+    font-size: 18px;
+    border: 1px solid #cbcbcb;
+    border-radius: 13px;
+    font-weight: 100;
+    font-family: 'Civilprom';
+    text-align: center;
+   }
+    #dfb-submit-btn { 
+          width: 100%;
+    background: #0059ff !important;
+    color: white;
+    border: none;
+    padding: 13px 21px;
+    font-size: 18px;
+    border-radius: 13px;
+    cursor: pointer;
+    font-family: 'Civilprom';
+    font-weight: 600;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+
+    }
+    #dfb-submit-btn:disabled { background: #cbd5e1; }
+
+    /* Animations & Helpers */
+    .dfb-hidden { display: none !important; }
+    
+    /* Loading Bar (Material) */
+    #dfb-loading-bar { position: relative; width: 100%; height: 5.5px; overflow: hidden; background-color: #dbeafe; }
+    .dfb-progress-inc, .dfb-progress-dec { position: absolute; background-color: #674fff; height: 100%; }
+    .dfb-progress-inc { animation: dfb-wave-inc 2s infinite ease-in; }
+    .dfb-progress-dec { animation: dfb-wave-dec 2s infinite ease-out; }
+    @keyframes dfb-wave-inc { 0% { left: -35%; right: 100%; } 60% { left: 100%; right: -90%; } 100% { left: 100%; right: -90%; } }
+    @keyframes dfb-wave-dec { 0% { left: -200%; right: 100%; } 60% { left: 107%; right: -8%; } 100% { left: 107%; right: -8%; } }
+
+    /* Radio Switch */
+    .dfb-radio-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 16px; font-weight: 100; color: #000; }
+    .dfb-switch { position: relative;
+    width: 37px;
+    height: 21px;
+    cursor: pointer; }
+    .dfb-switch input { opacity: 0; width: 0; height: 0; }
+    .dfb-slider { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbcbcb; transition: .4s; border-radius: 34px; }
+    .dfb-slider:before {     position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; }
+    input:checked + .dfb-slider { background-color: #3556ec; }
+    input:checked + .dfb-slider:before { transform: translateX(16px); }
+    .dfb-offline-status {     color: #9f1996;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 0px;
+    font-family: 'Civilprom';
+  
+  }
+
+    .dfb-TXTEND {     font-size: 18px;
+    color: #000;
+    font-weight: 100 !important;
+    text-align: left;
+    font-family: 'Civilprom';
+    }
+
+    .PIXA {
+    color: #000;
+    font-family: 'DefibeoTAZ', sans-serif;
+    letter-spacing: -0.5px;
+    font-weight: 100;
+        font-size: 16px;
+    }
+
+        .DELXTA {
+color: #000;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 100;
+    }
+
+
+.logofooterdefibeo {
+margin: auto;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    }
+
+</style>
+
+<script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby0H2rfZ9Kzu37LpeMjvhKvSue4d23BZvMazsiJIa0N05eZz0A_p1u7OwchbsrtXf68/exec";
+    let currentTicket = "#" + Math.floor(1000 + Math.random() * 9000);
+
+    // Charger l'historique au démarrage
+    window.onload = function() {
+        dfbRenderHistory();
+        
+        // Apparition temporisée de la bulle Noah après 10 secondes
+        setTimeout(() => {
+            const chatWindow = document.getElementById('dfb-chat-window');
+            // On ne l'affiche que si le chat n'est pas déjà ouvert
+            if(chatWindow.classList.contains('dfb-hidden')) {
+                const bubble = document.getElementById('dfb-welcome-bubble');
+                bubble.classList.remove('dfb-hidden');
+            }
+        }, 5000); // 6 000 millisecondes = 6 secondes
+    };
+
+    function dfbToggleChat() {
+        const chatWindow = document.getElementById('dfb-chat-window');
+        const bubble = document.getElementById('dfb-welcome-bubble');
+        const isHidden = chatWindow.classList.contains('dfb-hidden');
+        
+        chatWindow.classList.toggle('dfb-hidden');
+        bubble.classList.add('dfb-hidden'); // On cache toujours la bulle quand le chat s'ouvre/se ferme
+        if(isHidden) dfbRenderHistory();
+    }
+
+    function dfbToggleClientField() {
+        const isClient = document.getElementById('dfb-is-client').checked;
+        document.getElementById('dfb-client-field').classList.toggle('dfb-hidden', !isClient);
+    }
+
+    function dfbRenderHistory() {
+        const history = JSON.parse(localStorage.getItem('dfb_tickets') || "[]");
+        const historySection = document.getElementById('dfb-history-section');
+        const listContainer = document.getElementById('dfb-tickets-list');
+        
+        if(history.length > 0) {
+            historySection.classList.remove('dfb-hidden');
+            listContainer.innerHTML = history.slice(-3).reverse().map(t => `
+                <div class="dfb-ticket-item">
+                    <span><strong class="PIXA">${t.id}</strong> <small class="DELXTA">${t.date}</small></span>
+                    <span class="dfb-status-badge">En cours</span>
+                </div>
+            `).join('');
+        }
+    }
+
+    async function dfbHandleSubmit(event) {
+        event.preventDefault();
+        const submitBtn = document.getElementById('dfb-submit-btn');
+        const loadingBar = document.getElementById('dfb-loading-bar');
+        
+        submitBtn.disabled = true;
+        loadingBar.classList.remove('dfb-hidden');
+
+        const payload = {
+            ticket: currentTicket,
+            nom: document.getElementById('dfb-form-name').value,
+            email: document.getElementById('dfb-form-email').value,
+            tel: document.getElementById('dfb-form-tel').value,
+            isClient: document.getElementById('dfb-is-client').checked,
+            clientId: document.getElementById('dfb-form-client-id').value,
+            message: document.getElementById('dfb-form-msg').value
+        };
+
+        try {
+            await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) });
+
+            // Sauvegarde en cache
+            const history = JSON.parse(localStorage.getItem('dfb_tickets') || "[]");
+            history.push({ id: currentTicket, date: new Date().toLocaleDateString('fr-FR') });
+            localStorage.setItem('dfb_tickets', JSON.stringify(history));
+
+            setTimeout(() => {
+                loadingBar.classList.add('dfb-hidden');
+                document.getElementById('dfb-contact-form').classList.add('dfb-hidden');
+                document.getElementById('dfb-history-section').classList.add('dfb-hidden');
+                document.querySelector('.dfb-intro-text').classList.add('dfb-hidden');
+                document.getElementById('dfb-display-ticket').innerText = currentTicket;
+                document.getElementById('dfb-success-msg').classList.remove('dfb-hidden');
+            }, 4000);
+
+        } catch (e) {
+            console.error(e);
+            submitBtn.disabled = false;
+            loadingBar.classList.add('dfb-hidden');
+        }
+    }
+</script>
+
+
+</body>
+</html>
