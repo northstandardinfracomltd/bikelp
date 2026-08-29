@@ -2755,7 +2755,7 @@ background-color: #4733bd !important;
 
 </style>
 <div class="insidebarz">
-<p class="reasonstitle">14 raisons de souscrire avec Bikelp!</p>
+<p class="reasonstitle">14 Raisons de Souscrire avec Bikelp!</p>
 
 <div class="bp-custom-insurance-grid__wrapper">
 
@@ -3331,7 +3331,62 @@ Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes pass
     <section class="section-counter">
       <div class="container">
                 <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_white.svg" alt="Defibeo Logo">
-        <div class="counter-val">189 662</div>
+<div class="counter-val">189 662</div>
+
+<script>
+  // Configuration des bornes
+  const MIN_VALUE = 189662;
+  const MAX_VALUE = 189999;
+  const STORAGE_KEY = 'animated_counter_val';
+
+  const counterElement = document.querySelector('.counter-val');
+
+  // Fonction pour formater le nombre avec un espace (ex: 189 662)
+  function formatNumber(num) {
+    return num.toLocaleString('fr-FR');
+  }
+
+  // Initialisation : récupérer la valeur sauvegardée ou la valeur par défaut
+  let savedValue = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+  let currentValue = (!isNaN(savedValue) && savedValue >= MIN_VALUE && savedValue <= MAX_VALUE)
+    ? savedValue 
+    : MIN_VALUE;
+
+  // Affichage initial
+  counterElement.textContent = formatNumber(currentValue);
+
+  // Variable pour compter les secondes écoulées (pour le cycle de 10s)
+  let secondsElapsed = 0;
+
+  // Intervalle principal exécuté chaque seconde
+  setInterval(() => {
+    secondsElapsed++;
+
+    // Tous les 10s : faire -5, sinon : faire +1
+    if (secondsElapsed % 10 === 0) {
+      currentValue -= 5;
+    } else {
+      currentValue += 1;
+    }
+
+    // Gestion du dépassement : retour à la valeur initiale si >= 189 999
+    if (currentValue >= MAX_VALUE) {
+      currentValue = MIN_VALUE;
+    }
+
+    // Sécurité au cas où un -5 ferait descendre sous le seuil minimal
+    if (currentValue < MIN_VALUE) {
+      currentValue = MIN_VALUE;
+    }
+
+    // Mise à jour de l'affichage
+    counterElement.textContent = formatNumber(currentValue);
+
+    // Sauvegarde dans le localStorage (cache)
+    localStorage.setItem(STORAGE_KEY, currentValue);
+
+  }, 1000);
+</script>
         <p class="counter-claim">Une communauté de cyclistes assurés de tous horizons qui mutualisent les sinistres et financent le fonds solidaire Bikelp.</p>
       </div>
     </section>
@@ -3526,7 +3581,7 @@ Partageons des moments uniques! Bikelp organise régulièrement des événements
               <strong>19</strong>
               <span>SEPT</span>
             </div>
-            <h3 class="event-title">Pyrénées #3Cols</h3>
+            <h3 class="event-title">Pyrénées #BikelpRides</h3>
             <p class="event-desc">Gravissez 3 cols d’exception dans les Pyrénées : le Pla d'Adet, Piau-Engaly et Azet, pour terminer à Loudenvielle avec plus de 40 cyclistes dans la joie et la bonne humeur!</p>
             <a href="#joinevent" class="btnevent">Participer</a>
           </article>
@@ -3546,7 +3601,7 @@ Partageons des moments uniques! Bikelp organise régulièrement des événements
               <strong>10</strong>
               <span>DEC</span>
             </div>
-            <h3 class="event-title">#LaNocturne à Antwerp</h3>
+            <h3 class="event-title">London #NightRide</h3>
             <p class="event-desc">Rassemblement convivial en partenariat avec la sécurité civile et parcours pour promouvoir la sécurité cycliste nocturne.</p>
             <a href="#joinevent" class="btnevent">Participer</a>
           </article>
