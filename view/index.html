@@ -1094,9 +1094,7 @@ Devis en ligne instantané
   <!-- Entête du Side-Pane -->
   <div class="bk-sub-123-drawer-header">
     <h3 class="bk-sub-123-drawer-title">Configuration de votre offre</h3>
-    <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()">
-      Fermer
-    </button>
+
   </div>
 
   <!-- Contenu défilable : Formulaire -->
@@ -1116,7 +1114,10 @@ Devis en ligne instantané
         
         <!-- ==================== STEP 1 ==================== -->
         <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
-          <h2 class="bk-sub-123-title">Quel vélo souhaitez-vous assurer ?</h2>
+            <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()">
+      Fermer
+    </button>
+      <h2 class="bk-sub-123-title">Informations sur votre vélo</h2>
 
           <!-- 1. Marque -->
           <div class="bk-sub-123-field-group" id="bk-sub-123-fg-brand">
@@ -1297,7 +1298,7 @@ Devis en ligne instantané
 
         <!-- ==================== STEP 2 ==================== -->
         <div class="bk-sub-123-step-panel" id="bk-sub-123-step-2">
-          <h2 class="bk-sub-123-title">Indiquez votre lieu de résidence.</h2>
+          <h2 class="bk-sub-123-title">Indiquez votre lieu de résidence</h2>
 
           <div class="bk-sub-123-field-group">
             <label class="bk-sub-123-label" for="bk-sub-123-country">Pays *</label>
@@ -1346,7 +1347,7 @@ Devis en ligne instantané
 
         <!-- ==================== STEP 3 ==================== -->
         <div class="bk-sub-123-step-panel" id="bk-sub-123-step-3">
-          <h2 class="bk-sub-123-title">Votre tarif.</h2>
+          <h2 class="bk-sub-123-title">Votre tarif personnalisé</h2>
           
           <p class="bk-sub-123-subtitle">Valeur totale assurée (Vélo + Équipements) : <strong id="bk-sub-123-summary-total">0.00€</strong></p>
 
@@ -1381,7 +1382,7 @@ Devis en ligne instantané
 
         <!-- ==================== STEP 4 ==================== -->
         <div class="bk-sub-123-step-panel" id="bk-sub-123-step-4">
-          <h2 class="bk-sub-123-title">Renseignements pour votre profil assuré.</h2>
+          <h2 class="bk-sub-123-title">Renseignements pour votre profil assuré</h2>
 
           <div class="bk-sub-123-row">
             <div class="bk-sub-123-col">
@@ -1422,7 +1423,7 @@ Devis en ligne instantané
           </div>
 
           <div class="bk-sub-123-field-group">
-            <label class="bk-sub-123-label" for="bk-sub-123-address">Votre adresse postale (Voie) *</label>
+            <label class="bk-sub-123-label" for="bk-sub-123-address">Votre adresse postale (Numéro & Voie) *</label>
             <input type="text" id="bk-sub-123-address" class="bk-sub-123-input" required />
           </div>
 
@@ -1629,38 +1630,37 @@ Devis en ligne instantané
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 35px;
-    border-bottom: 2px solid #000000;
+    padding: 10px;
+    border-bottom: none;
     background: #ffffff;
     flex-shrink: 0;
   }
 
   .bk-sub-123-drawer-title {
-    font-size: 20px;
-    font-weight: 800;
+font-size: 1px;
+    text-transform: none;
+    font-weight: 500;
+    padding-left: 13px;
     margin: 0;
-    color: #000000;
-    font-family: 'Civilprom', sans-serif;
+    color: #00000000 ;
+    font-family: 'Alternative';
     letter-spacing: 0px;
+    cursor: default;
   }
 
   .bk-sub-123-drawer-close-btn {
-    background: #ffffff;
-    color: #000000;
-    border: 2px solid #000000 !important;
+    background: #9f1996;
+    color: #fff;
+    border: none;
     font-family: 'Civilprom', sans-serif;
-    font-size: 15px !important;
-    font-weight: 700 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
     border-radius: 0px !important;
-    padding: 8px 18px;
+    padding: 18px 25px;
     cursor: pointer;
-    transition: all 0.2s ease;
   }
 
-  .bk-sub-123-drawer-close-btn:hover {
-    background: #000000;
-    color: #ffffff;
-  }
+
 
   /* Corps défilable du Side-Pane */
   .bk-sub-123-drawer-body {
@@ -1753,22 +1753,27 @@ Devis en ligne instantané
   }
 
   .bk-sub-123-title {
-    font-size: 24px;
-    font-weight: 800;
-    margin: 0 0 30px 0;
-    color: #000;
+    font-size: 30px;
     letter-spacing: 0px;
+    font-weight: 100;
+    margin: 0 0 30px 0;
+    color: #000000;
     line-height: 1.25;
-    font-family: 'Civilprom';
+    font-family: 'Alternative';
     border-left: none;
     cursor: default;
     text-transform: none;
+    text-align: left;
   }
 
   .bk-sub-123-subtitle {
-    font-size: 16px;
+font-size: 18px !important;
     margin-bottom: 20px;
-    color: #444;
+    color: #000000;
+    text-align: left;
+    font-weight: 100 !important;
+    cursor: default;
+    padding-bottom: 20px;
   }
 
   .bk-sub-123-field-group {
@@ -1777,26 +1782,32 @@ Devis en ligne instantané
 
   .bk-sub-123-label {
     display: block;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
     color: #000;
+    text-align: left;
+    cursor: default;
   }
 
   .bk-sub-123-helper {
-    font-size: 14px;
+    font-size: 18px;
     color: #0000007a;
-    font-weight: 600;
+    font-weight: 100;
     margin-top: -4px;
     margin-bottom: 8px;
     line-height: 1.4;
+    text-align: left;
+    cursor: default;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   .bk-sub-123-input,
   .bk-sub-123-select {
-    width: 100%;
-    padding: 16px 18px;
-    font-size: 16px;
+width: 100%;
+    padding: 25px 20px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     font-family: inherit;
@@ -1861,9 +1872,9 @@ Devis en ligne instantané
   .bk-sub-123-radio-btn span {
     display: block;
     text-align: center;
-    padding: 14px;
+    padding: 20px;
     border: none;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     background: #eaf1ff;
     color: #0059ff;
@@ -1877,25 +1888,26 @@ Devis en ligne instantané
 
   /* Tag Cloud */
   .bk-sub-123-sub-box {
-    background: var(--bk-sub-grey-light);
-    border: 2px dashed #999;
-    padding: 18px;
+    background: #fff;
+    border: none;
+    padding: 0px;
     margin-bottom: 22px;
   }
 
   .bk-sub-123-tag-cloud {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     margin-top: 10px;
   }
 
   .bk-sub-123-tag {
-    background: #ffffff;
-    border: 1.5px solid #444 !important;
-    color: #000000;
-    padding: 8px 14px;
-    font-size: 13.5px;
+    background: #eaf1ff;
+    border: none;
+    border-radius: 80px !important;
+    color: #0059ff;
+    padding: 14px 20px 15px 20px;
+    font-size: 18px;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -1907,9 +1919,8 @@ Devis en ligne instantané
   }
 
   .bk-sub-123-tag.selected {
-    background: var(--bk-sub-c1);
+    background: #0059ff;
     color: #ffffff;
-    border-color: var(--bk-sub-c1) !important;
   }
 
   /* Step 3: Pricing Cards */
@@ -1920,26 +1931,29 @@ Devis en ligne instantané
   }
 
   .bk-sub-123-price-card {
-    flex: 1;
-    border: 2px solid #ccc;
+flex: 1;
+    border: none;
     padding: 22px 15px;
     text-align: center;
+    color: #3556ec;
     cursor: pointer;
-    background: #ffffff;
+    background: #eaf1ff;
     position: relative;
     transition: all 0.2s ease;
   }
 
-  .bk-sub-123-price-card:hover {
-    border-color: var(--bk-sub-c2);
-  }
+
 
   .bk-sub-123-price-card.active {
-    border: 3px solid var(--bk-sub-c1);
-    background: #faf7ff;
+background: #3556ec;
+    color: #fff !important;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
   }
 
   .bk-sub-123-price-badge {
+    display: none !important;
     position: absolute;
     top: -12px;
     left: 50%;
@@ -1957,23 +1971,29 @@ Devis en ligne instantané
   }
 
   .bk-sub-123-price-card-title {
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 28px;
+    font-weight: 100;
     margin: 8px 0 4px 0;
-    text-transform: uppercase;
+    text-transform: none;
+    font-family: 'Alternative';
+    cursor: default;
+    letter-spacing: 0px;
   }
 
   .bk-sub-123-price-amount {
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--bk-sub-c1);
+    font-size: 42px;
+    font-weight: 100;
     margin: 8px 0 2px 0;
+    letter-spacing: -0.5px;
+    cursor: pointer;
   }
 
   .bk-sub-123-price-period {
-    font-size: 13px;
-    color: #666;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: 'Civilprom';
+    cursor: pointer;
+    letter-spacing: 0px;
   }
 
   /* Legal Notice */
@@ -2074,8 +2094,8 @@ Devis en ligne instantané
   }
 
   .bk-sub-123-btn-primary {
-    margin-right: 0px;
-    background: #000;
+margin-right: 0px;
+    background: #9f1996;
     margin-bottom: 10px !important;
     margin-top: 0px !important;
     font-family: 'Civilprom', sans-serif;
@@ -2083,29 +2103,27 @@ Devis en ligne instantané
     color: #ffffff;
     cursor: pointer;
     text-decoration: none;
-    font-size: 18px !important;
+    font-size: 20px !important;
     font-weight: 600 !important;
     border-radius: 0px !important;
-    padding: 16px 26px;
+    padding: 20px 29px;
     transition: 0s;
   }
 
   .bk-sub-123-btn-secondary {
-    background: #ffffff;
-    color: #000000;
-    border: 2px solid #000000 !important;
+    background: #000;
+    color: #fff;
+    border: none;
     font-family: 'Civilprom', sans-serif;
     cursor: pointer;
-    font-size: 16px !important;
+    font-size: 20px !important;
     font-weight: 600 !important;
-    padding: 10px 20px;
+    padding: 10px 25px;
     margin-top: 0px !important;
     margin-bottom: 10px !important;
   }
 
-  .bk-sub-123-btn-secondary:hover {
-    background: #eee;
-  }
+
 
   /* Responsive rules */
   @media (max-width: 600px) {
@@ -3385,7 +3403,7 @@ Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes pass
     // Sauvegarde dans le localStorage (cache)
     localStorage.setItem(STORAGE_KEY, currentValue);
 
-  }, 1000);
+  }, 4000);
 </script>
         <p class="counter-claim">Une communauté de cyclistes assurés de tous horizons qui mutualisent les sinistres et financent le fonds solidaire Bikelp.</p>
       </div>
@@ -3748,7 +3766,7 @@ Avec Bikelp, roulez l’esprit serein : notre mission est de transformer les imp
         <div class="footer-col">
 
           <img class="partner-tag" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Profil">
-          <p>Bikelp, l'assurance complète pour toutes les pratiques du vélo.</p>
+          <p>Bikelp, l'assurance tous risques pour toutes les pratiques du vélo en Union européenne.</p>
         </div>
 
         <div class="footer-col">
@@ -3764,9 +3782,10 @@ Avec Bikelp, roulez l’esprit serein : notre mission est de transformer les imp
         <div class="footer-col">
           <h4>Contact</h4>
           <address>
-            Tél : +34 965 00 00 00<br>
-            Email : contact@bikelp.com<br>
-            Avinguda de Gabriel Miró, Calp
++44 0000 000000<br>
+help@bikelp.com<br>
+(ES) Avinguda de Gabriel Miró, Calp.
+(UK) Main Street, London.
           </address>
         </div>
 
@@ -3781,8 +3800,8 @@ Avec Bikelp, roulez l’esprit serein : notre mission est de transformer les imp
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 Bikelp SLP ID24455238</span>
-        <span>Licence F93291C29111929AUK Financial Conduct Authority (FCA)</span>
+        <span>&copy; 2026 Bikelp SLP ID24455238.</span>
+        <span>Licence F93297C291525AUK Financial Conduct Authority (FCA).</span>
       </div>
     </div>
   </footer>
