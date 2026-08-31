@@ -229,9 +229,9 @@ display: block;
     margin-bottom: 20px;
     text-transform: none;
     color: #ffffff;
-    margin-top: 125px;
+    margin-top: 40px;
     letter-spacing: 1px;
-    line-height: 80px;
+    line-height: 85px;
     cursor: default;
     -webkit-font-smoothing: antialiased;
 }
@@ -606,6 +606,7 @@ color: #000;
     font-weight: 100;
     cursor: default;
     margin-top: 20px;
+font-family: 'bikelpfont';
     }
 
     /* --- SECTION 6 : ÉVÉNEMENTS --- */
@@ -684,7 +685,7 @@ color: #000;
     white-space: nowrap;
     }
 
-    .event-desc {
+    .event-desc {font-family: 'bikelpfont';
 color: #fff;
     font-size: 20px;
     margin-bottom: 20px;
@@ -761,6 +762,7 @@ color: #fff;
     }
 
     .footer-col p, .footer-col address {
+          font-family: 'bikelpfont';
     font-style: normal;
     color: #000;
     font-size: 18px !important;
@@ -1005,9 +1007,9 @@ position: relative;
     }
 
     .BikelpLogo {
-margin-right:auto;
-width: 100%;
-max-width: 325px;
+    margin: auto;
+    width: 97%;
+    max-width: 450px;
       }
 
 
@@ -1017,20 +1019,47 @@ max-width: 325px;
     background: #000000;
     margin-bottom: 10px !important;
     margin-top: 10px !important;
-    font-family: 'Civilprom', sans-serif;
+    font-family: 'bikelpfont';
     border: none !important;
     color: #ffffff;
     cursor: pointer;
     text-decoration: none;
     font-size: 22px !important;
-    font-weight: 600 !important;
+    font-weight: 600;
     border-radius: 0px !important;
     padding: 16px 22px 17px 22px;
 }
 
+/* Cible Safari desktop et iOS */
+@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+    .divabtn {
+    font-weight: 100;
+    }
+}
+
+
 .currency-title {
 font-size: 49px !important;
 }
+
+
+.subbtn {
+    box-shadow: none;
+    background: #ffffff29;
+    color: #fff;
+    font-family: 'bikelpfont';
+    border: none !important;
+    font-size: 22px !important;
+    font-weight: 600;
+    border-radius: 0px;
+    letter-spacing: 0px;
+    padding: 20px 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+
 
 .vat-title {
 font-size: 42px !important;
@@ -1071,7 +1100,7 @@ width: 100%;
       <a href="#" class="header-brand" aria-label="Bikelp Accueil">
 <img class="BikelpLogo" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
       </a>
-      
+
           <h1 class="hero-title">Bikelp Assure votre Vélo à partir de 9<span class="currency-title">€</span> par mois Vol & Dommages inclus</h1>
           <p class="hero-subtitle">L’assurance sans engagement qui rassemble toutes les pratiques du vélo et couvre tous les sinistres, sans franchise, dans toute l’UE</p>
       
@@ -1082,8 +1111,8 @@ width: 100%;
 Devis en ligne instantané
 </button>
 <br>
-<a href="/client" class="btn">Connexion</a>
-<select class="btn btn--primary" id="btn-register-cta" name="language">
+<a href="/client" class="subbtn">Connexion</a>
+<select class="subbtn" id="btn-register-cta" name="language">
   <option value="fr-FR" selected>Français</option>
   <option value="en-US">English</option>
   <option value="es-ES">Español</option>
@@ -2664,15 +2693,16 @@ box-sizing: border-box;
     gap: 16px;
     color: #ffffff;
     box-shadow: none;
-    border: 1px solid #ffffff26;
+    border: 1px solid #ffffff40;
     transition: 0s;
+    background: #ffffff00; 
   }
 
 
   .insidebarz {
     width: 100%;
     margin: auto;
-    background: #0059ff;
+    background: radial-gradient(#0059ff, #5a00ff);
     padding-top: 100px;
     padding-bottom: 100px;
   }
@@ -2730,23 +2760,6 @@ font-size: 18px !important;
     letter-spacing: 0.01em;
   }
 
-
-.PBblue {
-background-color: #ffffff24 !important;
-}
-
-
-.PBblue:hover {
-background-color: #ffffff36 !important;
-}
-
-.PBpurple {
-background-color: #9f1996 !important;
-}
-
-.PBmoket {
-background-color: #4733bd !important;
-}
 
 
 
@@ -3005,11 +3018,11 @@ font-family: 'bikelpfont';
   .cp-mecanic-sec-2024-action-btn {
 display: inline-block;
     font-size: 20px;
-    font-family: 'Civilprom';
-    background-color: #0059ff;
+    font-family: 'bikelpfont';
+    background-color: #9f1996;
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     padding: 17px 25px;
     border-radius: 0px;
     border: none;
@@ -3018,6 +3031,14 @@ display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+/* Cible Safari desktop et iOS */
+@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+  .cp-mecanic-sec-2024-action-btn {
+    font-weight: 100;
+  }
+
+}
 
 
   .cp-mecanic-sec-2024-right-pane {
