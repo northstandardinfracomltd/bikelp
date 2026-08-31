@@ -222,10 +222,10 @@ display: block;
       margin-bottom: 18px;
     }
 
-    .hero-title {
-font-size: 72px;
+.hero-title {
+    font-size: 72px;
     font-family: 'bikelpfont';
-    font-weight: 100;
+    font-weight: 800; /* Valeur par défaut pour Chrome, Firefox, Edge, etc. */
     margin-bottom: 20px;
     text-transform: none;
     color: #ffffff;
@@ -234,7 +234,14 @@ font-size: 72px;
     line-height: 80px;
     cursor: default;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Cible Safari desktop et iOS */
+@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+    .hero-title {
+        font-weight: 100;
     }
+}
 
     .hero-subtitle {
     font-size: 30px;
