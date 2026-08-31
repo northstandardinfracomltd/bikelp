@@ -223,15 +223,18 @@ display: block;
     }
 
 .hero-title {
-    font-size: 72px;
+font-size: 72px;
     font-family: 'bikelpfont';
-    font-weight: 800; 
-    margin-bottom: 20px;
+    font-weight: 800;
+    margin-bottom: 20px !important;
     text-transform: none;
     color: #ffffff;
-    margin-top: 40px;
+    margin-top: 40px !important;
     letter-spacing: 1px;
     line-height: 85px;
+    margin: auto;
+    width: 98%;
+    max-width: 850px;
     cursor: default;
     -webkit-font-smoothing: antialiased;
 }
@@ -459,7 +462,7 @@ box-shadow: none;
 
 .section-counter {
         padding: 88px 0;
-      background: #5C46DE;
+      background: #3e27c6;
       color: #FFFFFF;
       text-align: center;
 
@@ -517,7 +520,7 @@ font-family: 'Civilprom';
 .section-claims {
   position: relative; /* Indispensable pour positionner l'overlay */
   padding: 120px 0;
-  background-color: #9F1996; /* Ta couleur de fond */
+  background-color: #900f87; /* Ta couleur de fond */
   border-bottom: none;
   overflow: hidden; /* Empêche le fond de déborder */
 }
@@ -545,7 +548,7 @@ background-size: auto 130%;
 .section-busi {
   position: relative; /* Indispensable pour positionner l'overlay */
   padding: 120px 0;
-  background-color: #4733bd; /* Ta couleur de fond */
+  background-color: #3e27c6; /* Ta couleur de fond */
   border-bottom: none;
   overflow: hidden; /* Empêche le fond de déborder */
 }
@@ -623,7 +626,7 @@ font-family: 'bikelpfont';
     }
 
     .event-card {
-    background: #9f1996;
+    background: #3e1573;
     border: none;
     box-shadow: none;
     padding: 35px;
@@ -631,13 +634,13 @@ font-family: 'bikelpfont';
     flex-direction: column;
 }
 
-    .event-date-box {
+   .event-date-box  {
     width: 65px;
     height: 65px;
-    background: #ac3aa3;
+    background: #fff;
     border: none;
     box-shadow: none;
-    color: #FFF;
+    color: #000;
     display: grid;
     place-content: center;
     text-align: center;
@@ -762,15 +765,23 @@ color: #fff;
     }
 
     .footer-col p, .footer-col address {
-          font-family: 'bikelpfont';
-    font-style: normal;
-    color: #000;
-    font-size: 18px !important;
-    line-height: 30px;
-    font-weight: 100 !important;
-    cursor: default;
-        width: 100%;
-    max-width: 95%;
+    box-shadow: none;
+    background: #ffffff29;
+    color: #fff;
+    font-family: 'bikelpfont';
+    border: none !important;
+    font-size: 22px !important;
+    font-weight: 600;
+    border-radius: 0px;
+    letter-spacing: 0px;
+    padding: 19px 29px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    margin-top: 15px;
+    margin-left: 6px;
+    margin-right: 6px;
+    text-align: center;
     }
 
     .partner-tag {
@@ -797,6 +808,7 @@ display: inline-block;
     }
 
     .footer-links a {
+          font-family: 'bikelpfont';
     color: #000;
     text-decoration: none;
     font-size: 20px;
@@ -2634,11 +2646,16 @@ border-left: 1px solid #e1e1e1;
       height: 320px;
     }
   }
+
+
+  .triach {
+font-family: 'Alternative' !important;
+    }
 </style>
 
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
-    <h2 class="cp-mecanic-sec-2024-heading">Le Tour de notre Super Couverture!</h2>
+    <h2 class="cp-mecanic-sec-2024-heading">Le <span class="triach">Tour</span>de notre Super Couverture!</h2>
     <p class="cp-mecanic-sec-2024-paragraph">
 Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
     </p>
@@ -2735,9 +2752,9 @@ box-sizing: border-box;
 }
 
   .bp-custom-insurance-grid__desc {
-font-size: 18px !important;
+font-size: 20px !important;
     font-weight: 100 !important;
-    color: rgba(255, 255, 255, 0.88) !important;
+    color: #fff !important;
     line-height: 1.5 !important;
     max-width: 90%;
     margin-top: 15px;
@@ -2773,21 +2790,21 @@ font-size: 18px !important;
     }
 
 .numerous {
-  letter-spacing: -1px;
+    letter-spacing: -1px;
     font-size: 30px;
     font-family: 'Alternative';
     font-weight: 300;
-    color: #FFF;
+    color: black;
     margin-bottom: -5px;
     margin-top: 7px;
-    border: 1px solid #5386ff;
-    background: #0059ff;
+    border: none;
+    background: white;
     width: 100%;
     max-width: 50px;
     padding: 3px 4px 4px 4px;
     max-height: 50px;
     text-align: center;
-    border-radius: 1000px;
+    border-radius: 0px;
     }
 
     .reasonstitle {
