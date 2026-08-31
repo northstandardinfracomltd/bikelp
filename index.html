@@ -4492,7 +4492,22 @@ margin: auto;
         }
     }
 </script>
+<script>
+  (function() {
+    // Détection stricte de Safari (exclut Chrome, Edge, etc. sur desktop et mobile)
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
+    if (isSafari) {
+      const style = document.createElement('style');
+      style.textContent = `
+        *, *::before, *::after {
+          font-weight: 100 !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  })();
+</script>
 
 </body>
 </html>
