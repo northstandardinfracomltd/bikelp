@@ -176,11 +176,25 @@ background: transparent;
 
         /* --- SECTION 5 : SOLUTIONS SINISTRES --- */
 .section-hero {
-    position: relative;
+position: relative;
     padding: 64px 0 80px;
     background: radial-gradient(#0059ff, #5a00ff);
     border-bottom: none;
     overflow: hidden;
+    max-width: 95%;
+    margin: auto;
+    margin-top: 35px;
+    border-radius: 23px;
+}
+
+/* Passage sur une seule colonne sur mobile */
+@media (max-width: 768px) {
+.section-hero {
+    max-width: 98%;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 20px;
+}
 }
 
 .section-hero::before {
@@ -685,7 +699,6 @@ font-family: 'bikelpfont';
     font-size: 32px;
     margin-bottom: 8px;
     font-weight: 100;
-    white-space: nowrap;
     }
 
     .event-desc {font-family: 'bikelpfont';
@@ -766,19 +779,19 @@ color: #fff;
 
     .footer-col p, .footer-col address {
     box-shadow: none;
-    text-align: left;
     color: #000;
     font-family: 'bikelpfont';
     border: none !important;
     font-size: 18px !important;
-    font-weight: 100;
+    font-style: normal;
     border-radius: 0px;
     letter-spacing: 0px;
-    padding: 19px 29px;
-    cursor: pointer;
+    padding: 0px;
+    text-transform: none;
+    cursor: default;
     text-decoration: none;
     transition: background 0.2s ease;
-    text-align: center;
+    text-align: left;
     }
 
     .partner-tag {
@@ -808,7 +821,7 @@ display: inline-block;
           font-family: 'bikelpfont';
     color: #000;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 100;
     cursor: default;
     }
@@ -2605,7 +2618,6 @@ margin: auto;
     justify-content: center;
     min-height: 500px;
     overflow: hidden;
-border-left: 1px solid #e1e1e1;
   }
 
 
@@ -2666,7 +2678,7 @@ border-left: 1px solid #e1e1e1;
 
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
-    <h2 class="cp-mecanic-sec-2024-heading">Le <span class="triach">Tour</span> de notre Super <span class="triach2">Couverture!</span></h2>
+    <h2 class="cp-mecanic-sec-2024-heading">Le <span class="triach">Tour</span> de notre super <span class="triach2">Couverture!</span></h2>
     <p class="cp-mecanic-sec-2024-paragraph">
 Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
     </p>
@@ -2676,7 +2688,7 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   <div class="cp-bikelp-hero-2024-media">
     <img 
       class="cp-bikelp-hero-2024-img" 
-      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_illustration_ride.svg" 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpentryillsutration.svg" 
       alt="Illustration Ride Bikelp"
       loading="lazy"
     />
@@ -2703,6 +2715,13 @@ box-sizing: border-box;
     cursor: default;
     font-family: 'Civilprom';
   }
+
+  /* Passage sur une seule colonne sur mobile */
+@media (max-width: 768px) {
+    .bp-custom-insurance-grid__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
 
   .bp-custom-insurance-grid__wrapper *,
   .bp-custom-insurance-grid__wrapper *::before,
