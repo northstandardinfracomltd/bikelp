@@ -1085,8 +1085,8 @@ font-size: 49px !important;
     text-align: center;
     text-decoration: none;
     transition: background 0.2s ease;
-    margin-right: 4px;
-    margin-left: 4px;
+    margin-right: 7px;
+    margin-left: 7px;
 }
 
 
@@ -1118,6 +1118,12 @@ text-align: right;
 width: 100%;
 }
 
+.triach2 {
+    font-family: 'Alternative' !important;
+    font-weight: 500;
+    font-size: 80px;
+}
+
   </style>
 </head>
 <body>
@@ -1131,7 +1137,7 @@ width: 100%;
 <img class="BikelpLogo" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
       </a>
 
-          <h1 class="hero-title">Bikelp Assure votre Vélo à partir de 9<span class="currency-title">€</span> par mois Vol & Dommages inclus</h1>
+          <h1 class="hero-title">Bikelp <span class="triach3">Assure</span> votre <span class="triach3">Vélo</span> à partir de 9<span class="currency-title">€</span> par mois Vol & Dommages inclus</h1>
           <p class="hero-subtitle">L’assurance sans engagement qui rassemble toutes les pratiques du vélo et couvre tous les sinistres, sans franchise, dans toute l’UE</p>
       
       <!-- ========================================================== -->
@@ -1722,14 +1728,15 @@ font-size: 1px;
   }
 
   .bk-sub-123-drawer-close-btn {
-    background: #9f1996;
+    box-shadow: inset 0 1px 1px #ffffff00, 0 1px 2px #ffffff38, 0 4px 4px #ffffff26, 0 7px 0 -12px #b625ad, inset 0 6px 12px #ffffff45;
+    background: linear-gradient(192deg, #b625ad, #891281);
     color: #fff;
     border: none;
     font-family: 'Civilprom', sans-serif;
     font-size: 20px !important;
     font-weight: 600 !important;
-    border-radius: 0px !important;
-    padding: 18px 25px;
+    border-radius: 15px !important;
+    padding: 15px 20px;
     cursor: pointer;
   }
 
@@ -1760,7 +1767,6 @@ font-size: 1px;
 
   .bk-sub-123-container * {
     box-sizing: border-box;
-    border-radius: 0px !important;
   }
 
   /* Progress indicator */
@@ -1879,13 +1885,15 @@ font-size: 18px !important;
   .bk-sub-123-input,
   .bk-sub-123-select {
 width: 100%;
-    padding: 25px 20px;
+    box-shadow: inset 0 1px 1px #395dff0d, 0 1px 2px #ffffff1c, 0 4px 4px #ffffff29, 0 7px 0 -12px #000000, inset 0 6px 12px #8ea7d826;
+    padding: 20px 15px;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     font-family: inherit;
     text-align: center;
     border: none;
+    border-radius: 15px;
     background: #e9f1ff;
     color: #0059ff;
     outline: none;
@@ -1943,12 +1951,14 @@ width: 100%;
   }
 
   .bk-sub-123-radio-btn span {
-    display: block;
+display: block;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     border: none;
     font-size: 20px;
+    border-radius: 15px;
     font-weight: 700;
+    box-shadow: inset 0 1px 1px #395dff0d, 0 1px 2px #ffffff1c, 0 4px 4px #ffffff29, 0 7px 0 -12px #000000, inset 0 6px 12px #8ea7d826;
     background: #eaf1ff;
     color: #0059ff;
     transition: all 0.2s ease;
@@ -1957,6 +1967,7 @@ width: 100%;
   .bk-sub-123-radio-btn input:checked + span {
     background: #0059ff;
     color: #ffffff;
+    box-shadow: inset 0 1px 1px #ffffff00, 0 1px 2px #ffffff33, 0 4px 4px #ffffff24, 0 7px 0 -12px #000000, inset 0 6px 12px #ffffff4f;
   }
 
   /* Tag Cloud */
@@ -2004,25 +2015,28 @@ width: 100%;
   }
 
   .bk-sub-123-price-card {
-flex: 1;
+    flex: 1;
+    padding-bottom: 35px;
+    padding-top: 32px;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 10px 0px #0000001a, 0px 1px 4px #08080814, 0px 2px 0 -12px #000000, inset 1px 1px 12px #ffffff1f;
+    border-radius: 16px;
     border: none;
-    padding: 22px 15px;
     text-align: center;
-    color: #3556ec;
+    color: #000000;
     cursor: pointer;
-    background: #eaf1ff;
+    background: #ffffff;
     position: relative;
-    transition: all 0.2s ease;
+    transition: all 0s ease;
   }
 
 
 
   .bk-sub-123-price-card.active {
-background: #3556ec;
+    background: linear-gradient(187deg, #375bff, #1533bc);
+    box-shadow: inset 0 1px 1px #294be300, 0 1px 2px #ffffff2b, 0 4px 4px #ffffff17, 0 7px 0 -12px #000000, inset 0 6px 12px #ffffff3b;
     color: #fff !important;
     border: none;
     cursor: pointer;
-    border-radius: 0px;
   }
 
   .bk-sub-123-price-badge {
@@ -2167,25 +2181,28 @@ background: #3556ec;
   }
 
   .bk-sub-123-btn-primary {
+    box-shadow: inset 0 1px 1px #ffffff00, 0 1px 2px #ffffff38, 0 4px 4px #ffffff26, 0 7px 0 -12px #b625ad, inset 0 6px 12px #ffffff45;
+    background: linear-gradient(192deg, #b625ad, #891281);
+    color: #fff;
+    border-radius: 15px !important;
+    padding: 15px 20px;
 margin-right: 0px;
-    background: #9f1996;
     margin-bottom: 10px !important;
     margin-top: 0px !important;
     font-family: 'Civilprom', sans-serif;
     border: none !important;
-    color: #ffffff;
     cursor: pointer;
     text-decoration: none;
     font-size: 20px !important;
     font-weight: 600 !important;
-    border-radius: 0px !important;
-    padding: 20px 29px;
     transition: 0s;
   }
 
   .bk-sub-123-btn-secondary {
-    background: #000;
+box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #000000, inset 0 6px 12px #ffffff4f;
+    background: linear-gradient(23deg, #1a1a1a, #000000);
     color: #fff;
+    border-radius: 15px;
     border: none;
     font-family: 'Civilprom', sans-serif;
     cursor: pointer;
@@ -2826,23 +2843,21 @@ font-size: 20px !important;
     }
 
 .numerous {
-letter-spacing: -1px;
+    letter-spacing: -1px;
     font-size: 25px;
     font-family: 'Alternative';
     font-weight: 500;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 0px;
     margin-top: 10px;
     border: none;
-    background: #ffffff1f;
+    background: #ffffff;
     width: 100%;
     max-width: 45px;
     padding: 4px 4px 3px 3px;
     max-height: 50px;
     text-align: center;
     border-radius: 100px;
-    outline: 2.5px solid #ffffff1f;
-    outline-offset: 4px;
     }
 
     .reasonstitle {
