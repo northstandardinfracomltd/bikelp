@@ -2798,12 +2798,506 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   </div>
 
   <div class="cp-bikelp-hero-2024-media">
-    <img 
-      class="cp-bikelp-hero-2024-img" 
-      src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpentryillsutration.svg" 
-      alt="Illustration Ride Bikelp"
-      loading="lazy"
-    />
+<!-- ========================================================================= -->
+<!-- COMPOSANT : ACCORDÉON VERTICAL KEY-INFOS AUTO-SCROLL                      -->
+<!-- Préfixe CSS sécurisé anti-collision : bkp-va59-                           -->
+<!-- ========================================================================= -->
+
+<style>
+  /* Encapsulation globale et reset interne */
+  .bkp-va59-wrapper {
+    --bkp-va59-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --bkp-va59-transition-speed: 0.4s;
+    --bkp-va59-duration: 5000ms;
+    
+    font-family: var(--bkp-va59-font);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 780px;
+    margin: 1.5rem auto;
+    padding: 0.5rem;
+    color: #1e293b;
+    position: relative;
+  }
+
+  .bkp-va59-wrapper *,
+  .bkp-va59-wrapper *::before,
+  .bkp-va59-wrapper *::after {
+    box-sizing: inherit;
+  }
+
+  /* Liste principale */
+  .bkp-va59-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Carte individuelle (Palette pastel indépendante) */
+  .bkp-va59-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .bkp-va59-item:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+
+  .bkp-va59-item.bkp-va59-active {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  /* 5 Couleurs de fond pastel distinctes */
+  .bkp-va59-theme-1 { background-color: #EBF7F3; border-color: #c4eedf; } /* Vert d'eau doux */
+  .bkp-va59-theme-2 { background-color: #F1EFFE; border-color: #dad4fd; } /* Lavande / Mauve */
+  .bkp-va59-theme-3 { background-color: #FFF4EC; border-color: #fddfcb; } /* Pêche poudrée */
+  .bkp-va59-theme-4 { background-color: #EDF6FD; border-color: #cde6fb; } /* Bleu ciel pastel */
+  .bkp-va59-theme-5 { background-color: #FEF9E7; border-color: #faecc0; } /* Jaune solaire doux */
+
+  /* Header cliquable */
+  .bkp-va59-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+  }
+
+  .bkp-va59-header:focus-visible {
+    outline: 2px solid #0f172a;
+    outline-offset: -2px;
+  }
+
+  .bkp-va59-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  /* Icône du titre */
+  .bkp-va59-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .bkp-va59-item.bkp-va59-active .bkp-va59-icon {
+    transform: scale(1.08);
+  }
+
+  /* Titre court */
+  .bkp-va59-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* Flèche / Chevron indicateur */
+  .bkp-va59-chevron {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: #64748b;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s;
+  }
+
+  .bkp-va59-item.bkp-va59-active .bkp-va59-chevron {
+    transform: rotate(180deg);
+    stroke: #0f172a;
+  }
+
+  /* Conteneur rétractable */
+  .bkp-va59-collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--bkp-va59-transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bkp-va59-item.bkp-va59-active .bkp-va59-collapse {
+    grid-template-rows: 1fr;
+  }
+
+  .bkp-va59-content-inner {
+    overflow: hidden;
+    padding: 0 22px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .bkp-va59-item.bkp-va59-active .bkp-va59-content-inner {
+    padding-bottom: 22px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Description textuelle */
+  .bkp-va59-desc {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #334155;
+  }
+
+  /* Barre de progression sticky en bas de l'élément actif */
+  .bkp-va59-progress-container {
+    height: 4px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+    overflow: hidden;
+  }
+
+  .bkp-va59-item.bkp-va59-active .bkp-va59-progress-container {
+    display: block;
+  }
+
+  .bkp-va59-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #0f172a;
+    border-radius: 0 4px 4px 0;
+    opacity: 0.75;
+  }
+
+  /* Barre de contrôle (Bouton Pause / Play) */
+  .bkp-va59-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+    padding: 0 4px;
+  }
+
+  .bkp-va59-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    padding: 7px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+    user-select: none;
+  }
+
+  .bkp-va59-toggle-btn:hover {
+    background: #f8fafc;
+    color: #0f172a;
+    border-color: #cbd5e1;
+  }
+
+  .bkp-va59-toggle-btn:active {
+    transform: scale(0.97);
+  }
+
+  .bkp-va59-toggle-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+  }
+
+  /* Responsive mobile */
+  @media (max-width: 580px) {
+    .bkp-va59-header {
+      padding: 15px 18px;
+    }
+    .bkp-va59-title {
+      font-size: 0.98rem;
+    }
+    .bkp-va59-content-inner {
+      padding: 0 18px;
+    }
+    .bkp-va59-item.bkp-va59-active .bkp-va59-content-inner {
+      padding-bottom: 18px;
+    }
+    .bkp-va59-desc {
+      font-size: 0.88rem;
+    }
+  }
+</style>
+
+<div class="bkp-va59-wrapper" id="bkpVa59Accordion">
+  <div class="bkp-va59-list" role="region" aria-label="Points Clés">
+
+    <!-- Item 1 : Vert d'eau -->
+    <div class="bkp-va59-item bkp-va59-theme-1 bkp-va59-active" data-index="0">
+      <button class="bkp-va59-header" type="button" aria-expanded="true">
+        <div class="bkp-va59-header-left">
+          <img class="bkp-va59-icon" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Icône point clé" loading="lazy" />
+          <h3 class="bkp-va59-title">Sécurisation & Géolocalisation</h3>
+        </div>
+        <svg class="bkp-va59-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="bkp-va59-collapse">
+        <div class="bkp-va59-content-inner">
+          <p class="bkp-va59-desc">
+            Bénéficiez d'une traçabilité continue et d'un verrouillage à distance en temps réel pour protéger votre équipement à chaque instant, sans friction.
+          </p>
+        </div>
+      </div>
+      <div class="bkp-va59-progress-container">
+        <div class="bkp-va59-progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Item 2 : Lavande -->
+    <div class="bkp-va59-item bkp-va59-theme-2" data-index="1">
+      <button class="bkp-va59-header" type="button" aria-expanded="false">
+        <div class="bkp-va59-header-left">
+          <img class="bkp-va59-icon" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Icône point clé" loading="lazy" />
+          <h3 class="bkp-va59-title">Autonomie Longue Durée</h3>
+        </div>
+        <svg class="bkp-va59-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="bkp-va59-collapse">
+        <div class="bkp-va59-content-inner">
+          <p class="bkp-va59-desc">
+            Une gestion d'énergie intelligente garantissant jusqu’à 45 jours d’autonomie avec alerte automatique dès que le seuil de 15% est atteint.
+          </p>
+        </div>
+      </div>
+      <div class="bkp-va59-progress-container">
+        <div class="bkp-va59-progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Item 3 : Pêche -->
+    <div class="bkp-va59-item bkp-va59-theme-3" data-index="2">
+      <button class="bkp-va59-header" type="button" aria-expanded="false">
+        <div class="bkp-va59-header-left">
+          <img class="bkp-va59-icon" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Icône point clé" loading="lazy" />
+          <h3 class="bkp-va59-title">Maintenance Prédictive</h3>
+        </div>
+        <svg class="bkp-va59-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="bkp-va59-collapse">
+        <div class="bkp-va59-content-inner">
+          <p class="bkp-va59-desc">
+            Capteurs intégrés détectant l'usure prématurée des composants pour planifier vos interventions avant toute défaillance mécanique.
+          </p>
+        </div>
+      </div>
+      <div class="bkp-va59-progress-container">
+        <div class="bkp-va59-progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Item 4 : Bleu pastel -->
+    <div class="bkp-va59-item bkp-va59-theme-4" data-index="3">
+      <button class="bkp-va59-header" type="button" aria-expanded="false">
+        <div class="bkp-va59-header-left">
+          <img class="bkp-va59-icon" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Icône point clé" loading="lazy" />
+          <h3 class="bkp-va59-title">Application Intuitive</h3>
+        </div>
+        <svg class="bkp-va59-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="bkp-va59-collapse">
+        <div class="bkp-va59-content-inner">
+          <p class="bkp-va59-desc">
+            Suivez vos statistiques de trajet, partagez vos accès temporaires et personnalisez vos alertes depuis une interface fluide iOS et Android.
+          </p>
+        </div>
+      </div>
+      <div class="bkp-va59-progress-container">
+        <div class="bkp-va59-progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Item 5 : Jaune doux -->
+    <div class="bkp-va59-item bkp-va59-theme-5" data-index="4">
+      <button class="bkp-va59-header" type="button" aria-expanded="false">
+        <div class="bkp-va59-header-left">
+          <img class="bkp-va59-icon" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Icône point clé" loading="lazy" />
+          <h3 class="bkp-va59-title">Assistance Dédiée 7j/7</h3>
+        </div>
+        <svg class="bkp-va59-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="bkp-va59-collapse">
+        <div class="bkp-va59-content-inner">
+          <p class="bkp-va59-desc">
+            Une équipe support disponible par messagerie instantanée ou téléphone pour répondre à vos demandes et assister les démarches d'assurance.
+          </p>
+        </div>
+      </div>
+      <div class="bkp-va59-progress-container">
+        <div class="bkp-va59-progress-bar"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Barre d'action avec bouton Pause / Reprendre -->
+  <div class="bkp-va59-controls">
+    <button class="bkp-va59-toggle-btn" id="bkpVa59PlayPauseBtn" type="button" aria-label="Mettre en pause l'animation">
+      <span id="bkpVa59BtnIcon">
+        <!-- SVG Pause -->
+        <svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+      </span>
+      <span id="bkpVa59BtnText">Pause</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // Initialisation scoped
+    const root = document.getElementById('bkpVa59Accordion');
+    if (!root) return;
+
+    const items = root.querySelectorAll('.bkp-va59-item');
+    const toggleBtn = document.getElementById('bkpVa59PlayPauseBtn');
+    const btnText = document.getElementById('bkpVa59BtnText');
+    const btnIcon = document.getElementById('bkpVa59BtnIcon');
+
+    const CYCLE_DURATION = 5000; // 5 secondes par onglet
+    let currentIndex = 0;
+    let isPaused = false;
+    let animStartTime = null;
+    let animFrameId = null;
+    let elapsedBeforePause = 0;
+
+    const pauseIconSvg = '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>';
+    const playIconSvg = '<svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>';
+
+    // Réinitialise toutes les barres de progression visuelles
+    function resetAllProgressBars() {
+      items.forEach(function(item) {
+        const bar = item.querySelector('.bkp-va59-progress-bar');
+        if (bar) bar.style.width = '0%';
+      });
+    }
+
+    // Bascule d'item
+    function setActiveItem(targetIndex) {
+      currentIndex = targetIndex;
+
+      items.forEach(function(item, idx) {
+        const header = item.querySelector('.bkp-va59-header');
+        const isActive = (idx === targetIndex);
+
+        if (isActive) {
+          item.classList.add('bkp-va59-active');
+          if (header) header.setAttribute('aria-expanded', 'true');
+        } else {
+          item.classList.remove('bkp-va59-active');
+          if (header) header.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      resetAllProgressBars();
+      elapsedBeforePause = 0;
+      animStartTime = null;
+
+      if (!isPaused) {
+        startTimer();
+      }
+    }
+
+    // Moteur d'animation fluide de la barre de progression (requestAnimationFrame)
+    function startTimer() {
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+
+      function step(timestamp) {
+        if (isPaused) return;
+
+        if (!animStartTime) animStartTime = timestamp - elapsedBeforePause;
+        const elapsed = timestamp - animStartTime;
+        const percent = Math.min((elapsed / CYCLE_DURATION) * 100, 100);
+
+        const currentBar = items[currentIndex]?.querySelector('.bkp-va59-progress-bar');
+        if (currentBar) {
+          currentBar.style.width = percent + '%';
+        }
+
+        if (elapsed >= CYCLE_DURATION) {
+          // Passer au slide suivant
+          const nextIndex = (currentIndex + 1) % items.length;
+          setActiveItem(nextIndex);
+        } else {
+          animFrameId = requestAnimationFrame(step);
+        }
+      }
+
+      animFrameId = requestAnimationFrame(step);
+    }
+
+    function pauseTimer() {
+      if (isPaused) return;
+      isPaused = true;
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+      if (animStartTime) {
+        elapsedBeforePause = performance.now() - animStartTime;
+      }
+      btnText.textContent = 'Reprendre';
+      btnIcon.innerHTML = playIconSvg;
+      toggleBtn.setAttribute('aria-label', 'Reprendre le défilement automatique');
+    }
+
+    function resumeTimer() {
+      if (!isPaused) return;
+      isPaused = false;
+      animStartTime = null;
+      btnText.textContent = 'Pause';
+      btnIcon.innerHTML = pauseIconSvg;
+      toggleBtn.setAttribute('aria-label', 'Mettre en pause');
+      startTimer();
+    }
+
+    // Gestion du clic sur les entêtes
+    items.forEach(function(item, index) {
+      const header = item.querySelector('.bkp-va59-header');
+      if (!header) return;
+
+      header.addEventListener('click', function() {
+        if (currentIndex === index && !isPaused) {
+          // Si déjà actif et qu'on clique : remet le compteur à zéro pour ce même élément
+          setActiveItem(index);
+        } else {
+          setActiveItem(index);
+        }
+      });
+    });
+
+    // Bouton Pause / Reprendre
+    toggleBtn.addEventListener('click', function() {
+      if (isPaused) {
+        resumeTimer();
+      } else {
+        pauseTimer();
+      }
+    });
+
+    // Démarrage initial
+    setActiveItem(0);
+  })();
+</script>
   </div>
 </div>
 
