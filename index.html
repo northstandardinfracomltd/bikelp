@@ -2678,6 +2678,7 @@ margin: auto;
 
 <style>
   .cp-bikelp-hero-2024-container {
+        box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -2814,7 +2815,7 @@ margin: auto;
 
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
-    <h2 class="cp-mecanic-sec-2024-heading">Optez pour la <span class="triach">Super</span> <span class="triach2">Couverture</span> vélo!</h2>
+    <h2 class="cp-mecanic-sec-2024-heading">Optez pour la <span class="triach">Super</span> <span class="triach2">Couverture!</span></h2>
     <p class="cp-mecanic-sec-2024-paragraph">
 Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
     </p>
@@ -2875,7 +2876,7 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   .bkp-va59-theme-2 { background-color: #ffe4fd; border-color: #ffe4fd; } /* Bikelp 2 */
   .bkp-va59-theme-3 { background-color: #ffedd8; border-color: #ffedd8; } /* Bikelp 3 */
   .bkp-va59-theme-4 { background-color: #d3ecff; border-color: #d3ecff; } /* Bikelp 4 */
-  .bkp-va59-theme-5 { background-color: #ffe4e4; border-color: #ffe4e4; } /* Bikelp 5 */
+  .bkp-va59-theme-5 { background-color: #e5e3ff; border-color: #e5e3ff; } /* Bikelp 5 */
 
   /* Header cliquable */
   .bkp-va59-header {
@@ -2929,11 +2930,11 @@ font-size: 20px;
 
   /* Flèche / Chevron indicateur */
   .bkp-va59-chevron {
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     flex-shrink: 0;
     fill: none;
-    stroke: #64748b;
+    stroke: #00000030;
     stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -2942,7 +2943,7 @@ font-size: 20px;
 
   .bkp-va59-item.bkp-va59-active .bkp-va59-chevron {
     transform: rotate(180deg);
-    stroke: #0f172a;
+    stroke: #000;
   }
 
   /* Conteneur rétractable */
@@ -2977,14 +2978,14 @@ font-size: 20px;
     line-height: 1.6;
     color: #000;
     font-family: 'Civilprom';
-    cursor: cursor;
+    cursor: pointer;
   }
 
   /* Barre de progression sticky en bas de l'élément actif */
   .bkp-va59-progress-container {
-    height: 4px;
+height: 5px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: #0000001a;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -3000,8 +3001,8 @@ font-size: 20px;
     height: 100%;
     width: 0%;
     background-color: #3e1cff;
-    border-radius: 0 4px 4px 0;
-    opacity: 0.75;
+    border-radius: 0px;
+    opacity: 1;
   }
 
   /* Barre de contrôle (Bouton Pause / Play) */
@@ -3365,12 +3366,20 @@ border-radius: 16px;
     gap: 16px;
     color: #ffffff;
     border: 1px solid #ffffff40;
-    transition: 0s;
     background: #ffffff00;
+    /* Animation fluide */
+  transition: transform 0.3s ease;
+  }
+
+  .bp-custom-insurance-grid__item:hover {
+    transform: scale(1.05);
   }
 
 
+
+
   .insidebarz {
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     margin: auto;
     background: radial-gradient(#0059ff, #5a00ff);
     padding-top: 100px;
@@ -3608,7 +3617,7 @@ font-size: 20px !important;
     <div class="bp-custom-insurance-grid__body">
       <p class="numerous">13</p>
       <h4 class="bp-custom-insurance-grid__title">Offre Foyer Multi-Vélos</h4>
-      <p class="bp-custom-insurance-grid__desc">Profitez de -30 % sur chaque vélo supplémentaire au sein de votre famille.</p>
+      <p class="bp-custom-insurance-grid__desc">Profitez de -30% sur chaque vélo supplémentaire au sein de votre famille.</p>
     </div>
     <span class="bp-custom-insurance-grid__badge">Inclus</span>
   </div>
@@ -3629,6 +3638,7 @@ font-size: 20px !important;
 
 <style>
   .cp-mecanic-sec-2024-wrapper {
+         box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -3798,7 +3808,18 @@ font-family: 'bikelpfont';
     font-family: 'Civilprom';
     color: #000;
     font-weight: 500 !important;
+        cursor: default;
     }
+    
+        /* En-tête et indice de défilement */
+    .bklp-cmp-meta-bar-meta {
+    font-size: 22px;
+    font-family: 'Alternative';
+    color: #000;
+    cursor: default;
+            margin-top:55px;
+    }
+
 
     .bklp-cmp-scroll-hint {
       display: none;
@@ -3817,8 +3838,8 @@ position: relative;
     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 20px;
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     overflow: hidden;
+        box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
     }
 
     .bklp-cmp-scroll-container {
@@ -3853,6 +3874,7 @@ position: relative;
 
     /* Cellules en-têtes (critères) */
     .bklp-cmp-th {
+      text-align: center;
 background: #fff;
     color: #000000;
     font-size: 18px;
@@ -3900,6 +3922,7 @@ padding: 0.95rem 1rem;
     transition: 0s;
     cursor: default;
     white-space: nowrap;
+    text-align: center;
     }
 
     /* Survol des lignes */
@@ -3919,7 +3942,7 @@ padding: 0.95rem 1rem;
 
     /* HIGHLIGHT SPÉCIFIQUE : BIKELP */
     .bklp-cmp-row-highlight .bklp-cmp-td {
-      background-color: #ffeffe;
+      background-color: #fff;
       border-top: 3px solid var(--bklp-primary);
       border-bottom: 3px solid var(--bklp-primary);
     }
@@ -3931,15 +3954,16 @@ padding: 0.95rem 1rem;
     }
 
     .bklp-cmp-badge-winner {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.55rem;
-      border-radius: 9999px;
-      font-size: 0.6875rem;
-      font-weight: 700;
-      background: var(--bklp-primary);
-      color: #ffffff;
-      letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px 4px 13px;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-family: 'Alternative';
+    font-weight: 700;
+    background: var(--bklp-primary);
+    color: #ffffff;
+    letter-spacing: 0px;
     }
 
     .bklp-cmp-brand-featured {
@@ -3958,7 +3982,7 @@ padding: 0.95rem 1rem;
     }
 
     .bklp-pill-success {
-    background: #3e1476;
+    background: #5a00ff;
     color: #ffffff;
     font-weight: 600;
     border-radius: 100px;
@@ -3975,19 +3999,61 @@ padding: 0.95rem 1rem;
     cursor: default;
     }
 
-    .bklp-score-bikelp {
-    color: var(--bklp-primary-dark);
+.bklp-score-bikelp {
     font-weight: 500;
     font-size: 20px;
-    }
+    display: block;
+    text-align: center !important;
+    background: #0059ff;
+    color: #fff;
+    max-width: 45px;
+    min-width: 44px;
+    margin: auto;
+    border-radius: 100px;
+    height: 45px;
+    padding: 8px 10px 10px 7px;
+    outline: 3px solid #0059ff;
+    outline-offset: 3px;
+    cursor: default;
+}
+
+.bklp-score-other {
+font-weight: 500;
+    font-size: 20px;
+    display: block;
+    text-align: center !important;
+    background: #ffddfd;
+    color: #891281;
+    max-width: 45px;
+    min-width: 44px;
+    margin: auto;
+    border-radius: 100px;
+    height: 45px;
+    padding: 8px 10px 10px 7px;
+    outline: 3px solid #ffddfd;
+    outline-offset: 3px;
+    cursor: default;
+}
 
     .gazelec {
     border-right: 3px solid var(--bklp-primary);
     }
+
+
+
+    .bklp-cmp-td-last {
+    border-right: 0px solid #e0e0e0 !important;
+
+}
+.bklp-cmp-td:hover {
+    background: #f5f5f5;
+}
+
   </style>
 
   <div class="bklp-cmp-meta-bar">
-    <span>Tableau comparatif des assurances pour vélo, actualisé en Septembre 2026.</span>
+<span class="bklp-cmp-meta-bar-meta">Pourquoi Bikelp?</span>
+<span>Tableau comparatif des assurances pour vélo, actualisé en Septembre 2026.</span>
     <span class="bklp-cmp-scroll-hint">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       Défiler horizontalement
@@ -4044,18 +4110,20 @@ padding: 0.95rem 1rem;
           <!-- 2. MAIF -->
           <tr class="bklp-cmp-row">
             <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Maif</div></td>
-            <td class="bklp-cmp-td"><span class="bklp-score-bar">91%</span></td>
-            <td class="bklp-cmp-td">Jusqu'à 8 000 €</td>
-            <td class="bklp-cmp-td">Dès 5,50 €/mois</td>
-            <td class="bklp-cmp-td">80 € fixe</td>
-            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">Oui, avec facture</span></td>
-            <td class="bklp-cmp-td">Adhérents uniquement</td>
-            <td class="bklp-cmp-td">En option (+3 €/m)</td>
-            <td class="bklp-cmp-td">Valeur résiduelle</td>
-            <td class="bklp-cmp-td">Oui, inclus.</td>
-            <td class="bklp-cmp-td">FUB 2 roues ou Sold Secure</td>
-            <td class="bklp-cmp-td">En option</td>
-            <td class="bklp-cmp-td">France &amp; UE</td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">91%</span></td>
+            <td class="bklp-cmp-td">8 000€</td>
+            <td class="bklp-cmp-td">9,99€/mois</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">4 semaines</td>
+            <td class="bklp-cmp-td">3 semaines</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last">Pays résidence</td>
           </tr>
 
           <!-- 3. AXA -->
@@ -4386,6 +4454,7 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
 
     <style>
   .cp-velo-sec-2024-container {
+    box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
       border: 1px solid #e1e1e1;
     width: 98%;
     max-width: 1400px;
@@ -4538,6 +4607,7 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
 
   /* Style des cartes */
   .bk-dualcard-item {
+    box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
 display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -4747,6 +4817,7 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
     <!-- Bloc Section Café / Pause Bikelp -->
 <style>
   .cp-cafe-sec-2024-container {
+     box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
         border: 1px solid #e1e1e1;
     width: 98%;
     max-width: 1400px;
@@ -5004,6 +5075,7 @@ Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes pass
     <!-- Bloc Section Paysage / Évasion Bikelp -->
 <style>
   .cp-land-sec-2024-holder {
+    box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
           border: 1px solid #e1e1e1;
     width: 98%;
     max-width: 1400px;
@@ -5179,6 +5251,7 @@ Partageons des moments uniques! Bikelp organise régulièrement des événements
   <!-- Bloc Section Zen / Sérénité Bikelp -->
 <style>
   .cp-zen-sec-2024-frame {
+    box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
             border: 1px solid #e1e1e1;
     width: 98%;
     max-width: 1400px;
