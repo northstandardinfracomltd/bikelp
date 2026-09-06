@@ -906,12 +906,13 @@ display: inline-block;
     font-weight: 100;
     display: flex;
     justify-content: space-between;
-    color: #00000052;
+    color: #000;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
     font-size: 18px;
     text-transform: none;
-    background: #e8e8e85e;
+    background: #ffffff;
     padding: 25px;
-    border: none;
     cursor: default;
 }
 
@@ -4426,7 +4427,7 @@ font-weight: 500;
     <p class="cp-mecanic-sec-2024-paragraph">
 Parce que votre vélo représente un investissement important et qu'il y a environ un vol de vélo toutes les minutes : optez pour une véritable sécurité avec l’assurance complète Bikelp : vol, dommages et dégâts accidentels. Nous remboursons sans franchise les factures de réparation ou la valeur de votre vélo à 100%, sans décote. C'est cela un assureur responsable.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn">Configurer mon assurance</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Configurer mon assurance</a>
   </div>
 
   <div class="cp-mecanic-sec-2024-right-pane">
@@ -4450,16 +4451,16 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
                 Votre vélo est volé ou irréparable? Pas d'inquiétude, nous vous aidons à le remplacer. Transmettez les informations relatives à votre sinistre depuis votre compte Bikelp et obtenez une confirmation de remboursement sous 48h.
               </p>
             </div>
-            <a href="#declarer-vol" class="divabtn">Déclarer sinistre</a>
+            <a href="https://client.bikelp.com/" class="divabtn">Déclarer sinistre</a>
           </div>
 
           <div class="claim-card">
             <div>
               <h3>Réparer</h3>
               <p>
-                Un composant est abîmé suite à une chute ou une dégradation? Faites réparer votre vélo auprès de votre réparateur habituel et envoyez-nous la ou les facture(s) pour recevoir votre remboursement sous 2 à 4 jours ouvrés.</p>
+                Un composant est abîmé suite à une chute ou une dégradation? Faites réparer votre vélo auprès de votre réparateur habituel et envoyez-nous la ou les facture(s) pour recevoir votre remboursement sous 4 à 7 jours ouvrés.</p>
             </div>
-            <a href="#reparateur" class="divabtn">Suivre mon sinistre</a>
+            <a href="https://client.bikelp.com/" class="divabtn">Suivre mon sinistre</a>
           </div>
         </div>
       </div>
@@ -4755,7 +4756,7 @@ text-decoration: underline;
 
     <!-- CARTE DE DROITE : Carte entièrement cliquable vers l'IPID -->
     <a 
-      href="https://bikelp.com/ipid2026/" 
+      href="/document-police" 
       target="_blank" 
       rel="noopener noreferrer" 
       class="bk-dualcard-item bk-dualcard-item--clickable"
@@ -4789,7 +4790,7 @@ text-decoration: underline;
     <p class="cp-mecanic-sec-2024-paragraph">
 Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’une assurance pour le stock d'un magasin, de proposer Bikelp à vos clients contre une commission, ou encore d’assurer la flotte de vélos d’une entreprise utilisée par ses collaborateurs : Bikelp s'adapte à vos besoins, toujours au prix le plus juste.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn">Contacter Bikelp</a>
+    <a href="mailto:support@bikelp.com" class="cp-mecanic-sec-2024-action-btn">Contacter Bikelp</a>
   </div>
 
   <div class="cp-velo-sec-2024-pic-wrapper">
@@ -4811,7 +4812,7 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
               <h3>Programme Magasin</h3>
               <p>Devenez partenaire Bikelp en proposant notre assurance complète à vos clients et obtenez une rémunération instantanée pour chaque souscription.</p>
             </div>
-            <a href="#contact" class="divabtn">Contacter Bikelp</a>
+            <a href="mailto:support@bikelp.com" class="divabtn">Contacter Bikelp</a>
           </div>
 
           <div class="claim-card">
@@ -4819,7 +4820,7 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
               <h3>Assurance Flotte</h3>
               <p>Avec Bikelp, assurez votre stock ou votre flotte de vélos et accessoires contre le vol, les dégradations et les accidents.</p>
             </div>
-            <a href="#contact" class="divabtn">Contacter Bikelp</a>
+            <a href="mailto:support@bikelp.com" class="divabtn">Contacter Bikelp</a>
           </div>
         </div>
       </div>
@@ -4949,7 +4950,7 @@ border-left: 1px solid #e1e1e1;
     <p class="cp-mecanic-sec-2024-paragraph">
 Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes passionnés et engagés pour la mobilité douce. Au-delà de l’assurance, souscrire chez Bikelp, c’est rejoindre une communauté solidaire qui s'entraide au quotidien.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn">Activer mon assurance</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Activer mon assurance</a>
   </div>
 
   <div class="cp-cafe-sec-2024-asset-box">
@@ -5386,6 +5387,7 @@ Partageons des moments uniques! Bikelp organise régulièrement des événements
         <div class="footer-col">
           <h4>Particuliers</h4>
           <p>Bikelp, l’assurance des particuliers pour la mobilité douce, les loisirs et la compétition.</p>
+          <p class="inlux">Partenariat d'influence et réseaux sociaux : Obtenez un lien à partager et obtenez une récompense pour chaque souscription. Contactez notre membre dédiée.</p>
         </div>
 
         <div class="footer-col">
@@ -5407,7 +5409,7 @@ help@bikelp.com<br>
           <h4>Documents</h4>
           <ul class="footer-links">
             <li><a href="/privacy">Politique Confidentialité</a></li>
-            <li><a href="/document-police">Information Produit Assurance IPID</a></li>
+            <li><a href="/document-police">Information Produit Assurance (IPID)</a></li>
             <li><a href="/conditions">Conditions Générales</a></li>
             <li><a href="/certificatefca">Certificat FCA</a></li>
           </ul>
