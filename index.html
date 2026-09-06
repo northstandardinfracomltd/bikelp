@@ -23,7 +23,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Bikelp | Assurance Vélo">
   <meta property="og:description" content="Bikelp | Assurance Vélo">
-  <meta property="og:image" content="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpseo.png">
+  <meta property="og:image" content="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_seo.png">
   <meta property="og:url" content="https://bikelp.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
@@ -32,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bikelp | Assurance Vélo">
   <meta name="twitter:description" content="Bikelp | Assurance Vélo">
-  <meta name="twitter:image" content="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpseo.png">
+  <meta name="twitter:image" content="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_seo.png">
 
   <!-- Hreflang (anticipation multi-langues) -->
 <link rel="alternate" hreflang="fr" href="https://bikelp.com/">
@@ -45,7 +45,7 @@
 <link rel="alternate" hreflang="ch" href="https://bikelp.com/ch">
 
   <!-- Favicon -->
-  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/favicon_bikelp.png" type="image/png">
+  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_favicon1.png" type="image/png">
  <title>Bikelp | Assurance Vélo</title>
   <style>
 
@@ -4506,11 +4506,13 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
   .bk-dualcard-section {
     box-sizing: border-box;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 24px 16px;
+    padding: 0px;
     font-family: 'Civilprom', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: #1a1a1a;
+    margin-top: 35px;
+    margin-bottom: 35px;
   }
 
   .bk-dualcard-section *,
@@ -4536,16 +4538,16 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
 
   /* Style des cartes */
   .bk-dualcard-item {
-    display: flex;
+display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
+    border: 1px solid #e1e1e1;
+    border-radius: 20px;
     padding: 32px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    transition: all 0.25s ease;
+    box-shadow: none;
+    transition: 0s;
     text-decoration: none;
     color: inherit;
   }
@@ -4553,16 +4555,9 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
   /* Spécificité pour la carte cliquable (à droite) */
   .bk-dualcard-item--clickable {
     cursor: pointer;
-    border-color: #d1d5db;
-    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-    position: relative;
   }
 
-  .bk-dualcard-item--clickable:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-    border-color: #111827;
-  }
+
 
   .bk-dualcard-item--clickable:active {
     transform: translateY(-1px);
@@ -4570,10 +4565,10 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
 
   /* Icône commune (48px - 50px) */
   .bk-dualcard-icon-wrap {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    min-height: 50px;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -4581,38 +4576,42 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
   }
 
   .bk-dualcard-icon {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     display: block;
   }
 
   /* Titre (22px) */
   .bk-dualcard-title {
-    font-size: 22px;
+font-size: 22px;
     line-height: 1.35;
-    font-weight: 700;
+    text-transform: none;
+    font-weight: 800;
     margin: 0 0 14px 0;
-    color: #111827;
-    letter-spacing: -0.01em;
+    color: #000;
+    letter-spacing: 0px;
+    cursor: default;
   }
 
   /* Sous-titre (18px) */
   .bk-dualcard-subtitle {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.45;
     font-weight: 600;
     margin: 0 0 12px 0;
-    color: #374151;
+    color: #000;
+    font-family: 'Alternative';
   }
 
   /* Paragraphes / Contenu (16px) */
   .bk-dualcard-body {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
-    font-weight: 400;
-    color: #4b5563;
+    font-weight: 500;
+    color: #000;
     margin: 0;
+    cursor: default;
   }
 
   /* Call-to-action pour la carte IPID cliquable */
@@ -4635,6 +4634,16 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
     transition: transform 0.2s ease;
     display: inline-block;
   }
+
+  .downloadABC  {
+    color: #3556ec;
+    cursor: pointer !important;
+}
+
+  .downloadABC:hover  {
+text-decoration: underline;
+}
+
 </style>
 
 <div class="bk-dualcard-section">
@@ -4644,14 +4653,14 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
     <div class="bk-dualcard-item">
       <div class="bk-dualcard-icon-wrap">
         <img 
-          src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" 
+          src="https://civilprom.s3.eu-north-1.amazonaws.com/icono_bikelp2.svg" 
           alt="Icône d'avertissement vélo" 
           class="bk-dualcard-icon"
           loading="lazy"
         />
       </div>
       <h3 class="bk-dualcard-title">
-        Attention, votre assurance habitation n'assure pas véritablement votre vélo.
+        Prévention : Attention, votre assurance habitation n'assure pas véritablement votre vélo.
       </h3>
       <p class="bk-dualcard-body">
         La majorité des contrats multirisques habitation restreignent fortement l'indemnisation de votre cycle en dehors de votre domicile. Entre franchises élevées, plafonds de remboursement dérisoires et clauses d'exclusion liées au vol sur voie publique ou sans point fixe, votre vélo reste très souvent exposé en cas de sinistre imprévu.
@@ -4668,14 +4677,14 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
     >
       <div class="bk-dualcard-icon-wrap">
         <img 
-          src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" 
+          src="https://civilprom.s3.eu-north-1.amazonaws.com/icono_bikelp1.svg" 
           alt="Icône document IPID" 
           class="bk-dualcard-icon"
           loading="lazy"
         />
       </div>
-      <h3 class="bk-dualcard-title">
-        Téléchargez la fiche IPID
+      <h3 class="bk-dualcard-title downloadABC">
+        Téléchargez la fiche IPID.
       </h3>
       <p class="bk-dualcard-subtitle">
         Document d’information officiel sur le produit d’assurance
@@ -4683,9 +4692,6 @@ Parce que votre vélo représente un investissement important et qu'il y a envir
       <p class="bk-dualcard-body">
         Accédez en toute transparence au récapitulatif complet de vos garanties, plafonds et modalités de prise en charge avant de souscrire.
       </p>
-      <div class="bk-dualcard-action">
-        Consulter le document <span class="bk-arrow">→</span>
-      </div>
     </a>
 
   </div>
@@ -5333,10 +5339,10 @@ help@bikelp.com<br>
         <div class="footer-col">
           <h4>Documents</h4>
           <ul class="footer-links">
-            <li><a href="/privacy-fr">Politique Confidentialité</a></li>
-            <li><a href="/ipa-fr">Information Produit Assurance</a></li>
-            <li><a href="/conditions-fr">Conditions Générales</a></li>
-            <li><a href="/certificate-fr">Certificat FCA</a></li>
+            <li><a href="/privacy">Politique Confidentialité</a></li>
+            <li><a href="/document-police">Information Produit Assurance IPID</a></li>
+            <li><a href="/conditions">Conditions Générales</a></li>
+            <li><a href="/certificatefca">Certificat FCA</a></li>
           </ul>
         </div>
       </div>
