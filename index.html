@@ -2814,7 +2814,7 @@ margin: auto;
 
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
-    <h2 class="cp-mecanic-sec-2024-heading">Découvre la <span class="triach">Super</span> <span class="triach2">Couverture</span> Bikelp!</h2>
+    <h2 class="cp-mecanic-sec-2024-heading">La <span class="triach">Super</span> <span class="triach2">Couverture</span> pour votre vélo!</h2>
     <p class="cp-mecanic-sec-2024-paragraph">
 Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
     </p>
@@ -2866,7 +2866,7 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
     border-radius: 0px;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 0px solid rgba(0, 0, 0, 0.05);
   }
 
 
@@ -2875,11 +2875,11 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   }
 
   /* 5 Couleurs de fond pastel distinctes */
-  .bkp-va59-theme-1 { background-color: #EAFCF7; border-color: #EAFCF7; } /* Bikelp 1 */
-  .bkp-va59-theme-2 { background-color: #F9F3FF; border-color: #F9F3FF; } /* Bikelp 2 */
-  .bkp-va59-theme-3 { background-color: #FFF9E7; border-color: #FFF9E7; } /* Bikelp 3 */
-  .bkp-va59-theme-4 { background-color: #FFEEF1; border-color: #FFEEF1; } /* Bikelp 4 */
-  .bkp-va59-theme-5 { background-color: #ffefef; border-color: #ffefef; } /* Bikelp 5 */
+  .bkp-va59-theme-1 { background-color: #d8fff4; border-color: #d8fff4; } /* Bikelp 1 */
+  .bkp-va59-theme-2 { background-color: #ffe4fd; border-color: #ffe4fd; } /* Bikelp 2 */
+  .bkp-va59-theme-3 { background-color: #ffedd8; border-color: #ffedd8; } /* Bikelp 3 */
+  .bkp-va59-theme-4 { background-color: #d3ecff; border-color: #d3ecff; } /* Bikelp 4 */
+  .bkp-va59-theme-5 { background-color: #ffe4e4; border-color: #ffe4e4; } /* Bikelp 5 */
 
   /* Header cliquable */
   .bkp-va59-header {
@@ -2908,8 +2908,8 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
 
   /* Icône du titre */
   .bkp-va59-icon {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     object-fit: contain;
     flex-shrink: 0;
     transition: transform 0.3s ease;
@@ -3766,20 +3766,23 @@ font-family: 'bikelpfont';
   <style>
     /* Scope namespace : bklp-cmp-* pour zéro conflit avec votre CSS existant */
     .bklp-cmp-wrapper {
-      --bklp-primary: #059669;
-      --bklp-primary-dark: #047857;
-      --bklp-primary-light: #ecfdf5;
-      --bklp-primary-border: #a7f3d0;
-      --bklp-bg-header: #f8fafc;
-      --bklp-border: #e2e8f0;
-      --bklp-text-dark: #0f172a;
-      --bklp-text-muted: #64748b;
-      --bklp-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      box-sizing: border-box;
-      width: 100%;
-      margin: 2rem 0;
-      font-family: var(--bklp-font-family);
-      color: var(--bklp-text-dark);
+    --bklp-primary: #3e1475;
+    --bklp-primary-dark: #3e1475;
+    --bklp-primary-light: #ffffff;
+    --bklp-primary-border: #ffffff;
+    --bklp-bg-header: #ffffff;
+    --bklp-border: #e0e0e0;
+    --bklp-text-dark: #3e1475;
+    --bklp-text-muted: #3e1475;
+    --bklp-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+    font-family: 'Civilprom';
+    color: #3e1475;
     }
 
     .bklp-cmp-wrapper *,
@@ -3812,12 +3815,12 @@ font-family: 'bikelpfont';
 
     /* Conteneur de défilement horizontal avec ombres indicatrices */
     .bklp-cmp-scroll-outer {
-      position: relative;
-      background: #ffffff;
-      border: 1px solid var(--bklp-border);
-      border-radius: 1rem;
-      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
+position: relative;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
     }
 
     .bklp-cmp-scroll-container {
@@ -3852,54 +3855,58 @@ font-family: 'bikelpfont';
 
     /* Cellules en-têtes (critères) */
     .bklp-cmp-th {
-      background: var(--bklp-bg-header);
-      color: #334155;
-      font-size: 0.8125rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 1.1rem 1rem;
-      border-bottom: 2px solid var(--bklp-border);
-      border-right: 1px solid #edf2f7;
-      white-space: nowrap;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+background: #fff;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0px;
+    padding: 1.1rem 1rem;
+    border-bottom: 0px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    white-space: nowrap;
+    position: sticky;
+    cursor: default;
+    top: 0;
+    z-index: 10;
+    font-family: 'Alternative';
     }
 
     /* Colonne figée : Marque */
     .bklp-cmp-col-sticky {
-      position: sticky;
-      left: 0;
-      z-index: 20;
-      background: #ffffff;
-      width: 180px;
-      min-width: 180px;
-      max-width: 180px;
-      border-right: 2px solid var(--bklp-border) !important;
-      box-shadow: 3px 0 10px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    left: 0;
+    z-index: 20;
+    background: #ffffff;
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+    border-right: 1px solid #e1e1e1 !important;
+    box-shadow: none;
     }
 
     .bklp-cmp-th.bklp-cmp-col-sticky {
       z-index: 30;
-      background: #f1f5f9;
+      background: #fff;
     }
 
     /* Cellules de contenu standards */
     .bklp-cmp-td {
-      padding: 0.95rem 1rem;
-      font-size: 0.875rem;
-      color: #334155;
-      border-bottom: 1px solid var(--bklp-border);
-      border-right: 1px solid #f1f5f9;
-      vertical-align: middle;
-      background: #ffffff;
-      transition: background 0.15s ease-in-out;
+padding: 0.95rem 1rem;
+    font-size: 16px;
+    color: #000000;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    vertical-align: middle;
+    background: #ffffff;
+    transition: 0s;
+    cursor: default;
+    white-space: nowrap;
     }
 
     /* Survol des lignes */
     .bklp-cmp-row:hover .bklp-cmp-td {
-      background: #f8fafc;
+      background: #fff;
     }
 
     /* Nom de la marque */
@@ -3914,18 +3921,15 @@ font-family: 'bikelpfont';
 
     /* HIGHLIGHT SPÉCIFIQUE : BIKELP */
     .bklp-cmp-row-highlight .bklp-cmp-td {
-      background-color: var(--bklp-primary-light);
-      border-top: 2px solid var(--bklp-primary);
-      border-bottom: 2px solid var(--bklp-primary);
+      background-color: #ffeffe;
+      border-top: 3px solid var(--bklp-primary);
+      border-bottom: 3px solid var(--bklp-primary);
     }
 
-    .bklp-cmp-row-highlight:hover .bklp-cmp-td {
-      background-color: #dcfce7;
-    }
 
     .bklp-cmp-row-highlight .bklp-cmp-col-sticky {
-      background-color: #e6f9f0 !important;
-      border-left: 4px solid var(--bklp-primary);
+    background-color: #fff !important;
+    border-left: 3px solid var(--bklp-primary);
     }
 
     .bklp-cmp-badge-winner {
@@ -3941,9 +3945,8 @@ font-family: 'bikelpfont';
     }
 
     .bklp-cmp-brand-featured {
-      font-weight: 800;
-      color: #065f46;
-      font-size: 1.05rem;
+    color: #3e1476;
+    font-size: 20px;
     }
 
     /* Badges de valeurs / Pills */
@@ -3957,27 +3960,27 @@ font-family: 'bikelpfont';
     }
 
     .bklp-pill-success {
-      background: #dcfce7;
-      color: #15803d;
-      font-weight: 600;
+    background: #3e1476;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 100px;
     }
 
-    .bklp-pill-neutral {
-      background: #f1f5f9;
-      color: #475569;
-    }
 
     .bklp-score-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    font-family: 'Alternative';
+    font-size: 22px;
+    cursor: default;
     }
 
     .bklp-score-bikelp {
-      color: var(--bklp-primary-dark);
-      font-weight: 800;
-      font-size: 0.9375rem;
+    color: var(--bklp-primary-dark);
+    font-weight: 500;
+    font-size: 20px;
     }
   </style>
 
@@ -3995,9 +3998,9 @@ font-family: 'bikelpfont';
         <thead>
           <tr>
             <th class="bklp-cmp-th bklp-cmp-col-sticky">Marque</th>
-            <th class="bklp-cmp-th">Note Recommandation %</th>
-            <th class="bklp-cmp-th">Valeur vélo</th>
-            <th class="bklp-cmp-th">Tarif départ</th>
+            <th class="bklp-cmp-th">Évaluation</th>
+            <th class="bklp-cmp-th">Valeur Max</th>
+            <th class="bklp-cmp-th">Tarif départ (TTC)</th>
             <th class="bklp-cmp-th">Franchise</th>
             <th class="bklp-cmp-th">Vélo Occasion</th>
             <th class="bklp-cmp-th">Conditions acceptation</th>
