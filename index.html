@@ -3789,13 +3789,15 @@ font-family: 'bikelpfont';
 
     /* En-tête et indice de défilement */
     .bklp-cmp-meta-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-      padding: 0 0.25rem;
-      font-size: 0.8125rem;
-      color: var(--bklp-text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 0 0.25rem;
+    font-size: 20px;
+    font-family: 'Civilprom';
+    color: #000;
+    font-weight: 500 !important;
     }
 
     .bklp-cmp-scroll-hint {
@@ -3978,10 +3980,14 @@ padding: 0.95rem 1rem;
     font-weight: 500;
     font-size: 20px;
     }
+
+    .gazelec {
+    border-right: 3px solid var(--bklp-primary);
+    }
   </style>
 
   <div class="bklp-cmp-meta-bar">
-    <span><strong>14 assureurs</strong> comparés sur <strong>12 critères</strong></span>
+    <span>Tableau comparatif des assurances pour vélo, actualisé en Septembre 2026.</span>
     <span class="bklp-cmp-scroll-hint">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       Défiler horizontalement
@@ -4003,6 +4009,7 @@ padding: 0.95rem 1rem;
             <th class="bklp-cmp-th">Accessoires Vélo/Cycliste</th>
             <th class="bklp-cmp-th">Remboursement Vol</th>
             <th class="bklp-cmp-th">Délai Remboursement</th>
+            <th class="bklp-cmp-th">Délai Étude Sinistre</th>
             <th class="bklp-cmp-th">Casse et Vandalisme</th>
             <th class="bklp-cmp-th">Antivol Homologué Requis</th>
             <th class="bklp-cmp-th">Assistance / Remorquage</th>
@@ -4015,7 +4022,7 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td bklp-cmp-col-sticky">
               <div class="bklp-cmp-brand-name bklp-cmp-brand-featured">
                 Bikelp
-                <span class="bklp-cmp-badge-winner">Top #1</span>
+                <span class="bklp-cmp-badge-winner">Top ★</span>
               </div>
             </td>
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-bikelp">99%</span></td>
@@ -4026,11 +4033,12 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui</span></td>
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui</span></td>
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">4 à 7 jours</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">48h</span></td>
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui</span></td>
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui</span></td>
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui</span></td>
-            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui</span></td>
-            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Union Européenne</span></td>
+            <td class="bklp-cmp-td gazelec"><span class="bklp-pill bklp-pill-success">Union Européenne</span></td>
           </tr>
 
           <!-- 2. MAIF -->
@@ -4060,6 +4068,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">&lt; 2 ans seulement</span></td>
             <td class="bklp-cmp-td">Marquage obligatoire</td>
             <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Avec décote annuelle</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">Antivol norme ART / SRA</td>
@@ -4078,6 +4088,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td">Photos récentes requises</td>
             <td class="bklp-cmp-td">Accessoires déclarés</td>
             <td class="bklp-cmp-td">Remplacement à neuf</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">Sold Secure Gold/Silver</td>
             <td class="bklp-cmp-td">En option</td>
@@ -4094,6 +4106,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">Non</span></td>
             <td class="bklp-cmp-td">Achat en magasin agréé</td>
             <td class="bklp-cmp-td">Casque uniquement</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Vétusté déduite</td>
             <td class="bklp-cmp-td">Partielle</td>
             <td class="bklp-cmp-td">Antivol classe SRA</td>
@@ -4110,6 +4124,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td">120 €</td>
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">Oui, &lt; 3 ans</span></td>
             <td class="bklp-cmp-td">Facture nominative</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Jusqu'à 300 €</td>
             <td class="bklp-cmp-td">Valeur à neuf 1 an</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
@@ -4129,6 +4145,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td">Expertise si &gt; 5 000 €</td>
             <td class="bklp-cmp-td">Fixés au cadre</td>
             <td class="bklp-cmp-td">Valeur agréée</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">2 antivols obligatoires</td>
             <td class="bklp-cmp-td">Inclus</td>
@@ -4146,6 +4164,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td">Vélo neuf &lt; 30 jours</td>
             <td class="bklp-cmp-td">Non inclus</td>
             <td class="bklp-cmp-td">Valeur résiduelle</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Casse uniquement</td>
             <td class="bklp-cmp-td">Antivol mécanique U</td>
             <td class="bklp-cmp-td">Non disponible</td>
@@ -4158,6 +4178,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-score-bar">89%</span></td>
             <td class="bklp-cmp-td">Jusqu'à 12 000 €</td>
             <td class="bklp-cmp-td">Dès 8,10 €/mois</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">75 €</td>
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
             <td class="bklp-cmp-td">Facture pro d'achat</td>
@@ -4179,6 +4201,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
             <td class="bklp-cmp-td">Bicycode obligatoire</td>
             <td class="bklp-cmp-td">Jusqu'à 500 €</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Valeur à neuf 2 ans</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">FUB 2 roues</td>
@@ -4196,6 +4220,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">&lt; 1 an d'achat</span></td>
             <td class="bklp-cmp-td">Achat magasin partenaire</td>
             <td class="bklp-cmp-td">En option</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Avec coefficient vétusté</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">Antivol homologué SRA</td>
@@ -4213,6 +4239,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
             <td class="bklp-cmp-td">Vélo de moins de 5 ans</td>
             <td class="bklp-cmp-td">Inclus jusqu'à 350 €</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Valeur d'achat</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">Valeur antivol &gt; 50 €</td>
@@ -4230,6 +4258,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
             <td class="bklp-cmp-td">Application photo requise</td>
             <td class="bklp-cmp-td">Antivol &amp; casque</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Remboursement sous 48h</td>
             <td class="bklp-cmp-td">En formule Plus</td>
             <td class="bklp-cmp-td">Antivol agréé FUB/ART</td>
@@ -4247,6 +4277,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
             <td class="bklp-cmp-td">Gravage Paravol / Bicycode</td>
             <td class="bklp-cmp-td">Inclus jusqu'à 500 €</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Valeur à neuf 2 ans</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">Norme 2 roues FUB</td>
@@ -4266,6 +4298,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td">Gravage Paravol / Bicycode</td>
             <td class="bklp-cmp-td">Inclus jusqu'à 500 €</td>
             <td class="bklp-cmp-td">Valeur à neuf 2 ans</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">Norme 2 roues FUB</td>
             <td class="bklp-cmp-td">Option assistance 0 km</td>
@@ -4283,6 +4317,8 @@ padding: 0.95rem 1rem;
             <td class="bklp-cmp-td">Gravage Paravol / Bicycode</td>
             <td class="bklp-cmp-td">Inclus jusqu'à 500 €</td>
             <td class="bklp-cmp-td">Valeur à neuf 2 ans</td>
+                        <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+                                    <td class="bklp-cmp-td">Jusqu'à 400 €</td>
             <td class="bklp-cmp-td">Oui, inclus.</td>
             <td class="bklp-cmp-td">Norme 2 roues FUB</td>
             <td class="bklp-cmp-td">Option assistance 0 km</td>
@@ -4303,7 +4339,7 @@ padding: 0.95rem 1rem;
   <div class="cp-mecanic-sec-2024-left-pane">
     <h2 class="cp-mecanic-sec-2024-heading">Nous transformons votre <span class="triach">Sinistre</span> en une <span class="triach2">Solution!</span></h2>
     <p class="cp-mecanic-sec-2024-paragraph">
-Votre vélo représente un investissement important. Optez pour une véritable sécurité avec l’assurance complète Bikelp : vol, dommages et dégâts accidentels à partir de 9€ TTC. Nous remboursons sans franchise les factures de réparation ou la valeur de votre vélo à 100%, sans décote. C'est cela un assureur responsable.
+Parce que votre vélo représente un investissement important et qu'il y a environ un vol de vélo toutes les minutes : optez pour une véritable sécurité avec l’assurance complète Bikelp : vol, dommages et dégâts accidentels. Nous remboursons sans franchise les factures de réparation ou la valeur de votre vélo à 100%, sans décote. C'est cela un assureur responsable.
     </p>
     <a href="#" class="cp-mecanic-sec-2024-action-btn">Configurer mon assurance</a>
   </div>
@@ -4611,7 +4647,7 @@ border-left: 1px solid #e1e1e1;
 
 <div class="cp-cafe-sec-2024-container">
   <div class="cp-cafe-sec-2024-body-box">
-    <h2 class="cp-mecanic-sec-2024-heading">Une <span class="triach">Communauté</span> d'assurés avec qui l'on partagerait bien un <span class="triach2">Café!</span></h2>
+    <h2 class="cp-mecanic-sec-2024-heading">Une <span class="triach">Communauté</span> avec qui l'on partagerait bien un <span class="triach2">Café!</span></h2>
     <p class="cp-mecanic-sec-2024-paragraph">
 Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes passionnés et engagés pour la mobilité douce. Au-delà de l’assurance, souscrire chez Bikelp, c’est rejoindre une communauté solidaire qui s'entraide au quotidien.
     </p>
