@@ -1193,9 +1193,28 @@ width: 100%;
     font-size: 80px;
 }
 
+.div-preventio {
+width: 98%;
+max-width: 1400px;
+background: red;
+border-radius: 0px 0px 20px 20px; 
+}
+
+.preventio {
+font-size: 20px; 
+color: #fff; 
+text-align: center; 
+font-family: 'Civilprom'; 
+}
+
   </style>
 </head>
 <body>
+
+  <div class="div-preventio">
+    <h3 class="preventio">En Europe, entre 3 et 4 millions de vélos sont dérobés chaque année, soit en moyenne 6 à 8 vols par minute, bien que le phénomène varie selon les pays : souscrire une assurance et faire une gravure de son vélo devraient être des réflexes dès l'acquisition.</h3>
+
+  </div>
 
 
   <main>
@@ -1272,16 +1291,19 @@ Devis en ligne instantané
 <option value="BMC">BMC</option>
 <option value="BH">BH</option>
 <option value="Berria">Berria</option>
+<option value="Berria">Benotti</option>
 <option value="Cannondale">Cannondale</option>
 <option value="Canyon">Canyon</option>
 <option value="Cube">Cube</option>
 <option value="Cervélo">Cervélo</option>
 <option value="Cinelli">Cinelli</option>
+<option value="Cinelli">Cipollini</option>
 <option value="Colnago">Colnago</option>
 <option value="Commencal">Commencal</option>
 <option value="Caminade">Caminade</option>
 <option value="De Rosa">De Rosa</option>
 <option value="Dare">Dare</option>
+<option value="Dare">Ducati</option>
 <option value="Enve">Enve</option>
 <option value="Factor">Factor</option>
 <option value="Felt">Felt</option>
@@ -1319,6 +1341,7 @@ Devis en ligne instantané
 <option value="Standert">Standert</option>
 <option value="Scott">Scott</option>
 <option value="Storck">Storck</option>
+<option value="Seraph">Storck</option>
 <option value="Specialized">Specialized</option>
 <option value="Time">Time</option>
 <option value="Triban">Triban</option>
@@ -3827,11 +3850,12 @@ font-family: 'bikelpfont';
     
         /* En-tête et indice de défilement */
     .bklp-cmp-meta-bar-meta {
-    font-size: 22px;
+font-size: 30px;
     font-family: 'Alternative';
     color: #000;
     cursor: default;
-            margin-top:55px;
+    font-weight: 500;
+    margin-top: 55px;
     }
 
 
@@ -4071,7 +4095,8 @@ font-weight: 500;
 }
 
 .devaz {
-font-family: 'Civilprom'
+font-family: 'Civilprom';
+    font-size: 22px !important;
 }
 
   </style>
@@ -4104,7 +4129,7 @@ font-family: 'Civilprom'
             <th class="bklp-cmp-th">Casse et Vandalisme</th>
             <th class="bklp-cmp-th">Antivol Homologué Requis</th>
             <th class="bklp-cmp-th">Assistance / Remorquage</th>
-            <th class="bklp-cmp-th">Couverture Géographique</th>
+            <th class="bklp-cmp-th bklp-cmp-td-last">Couverture Géographique</th>
           </tr>
         </thead>
         <tbody>
@@ -4135,7 +4160,7 @@ font-family: 'Civilprom'
           <!-- 2. MAIF -->
           <tr class="bklp-cmp-row">
             <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Maif</div></td>
-            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">91%</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">86%</span></td>
             <td class="bklp-cmp-td">8 000€</td>
             <td class="bklp-cmp-td">69,99€/mois</td>
             <td class="bklp-cmp-td">Non</td>
@@ -4154,7 +4179,7 @@ font-family: 'Civilprom'
           <!-- 3. AXA -->
           <tr class="bklp-cmp-row">
             <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Axa</div></td>
-            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">91%</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">84%</span></td>
             <td class="bklp-cmp-td">9 000€</td>
             <td class="bklp-cmp-td">49,99€/mois</td>
             <td class="bklp-cmp-td">Non</td>
@@ -4173,10 +4198,10 @@ font-family: 'Civilprom'
           <!-- 4. LAKA -->
           <tr class="bklp-cmp-row">
             <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Laka</div></td>
-            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">91%</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">88%</span></td>
             <td class="bklp-cmp-td">10 000€</td>
             <td class="bklp-cmp-td">24,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
+            <td class="bklp-cmp-td">Oui</td>
             <td class="bklp-cmp-td">Oui</td>
             <td class="bklp-cmp-td">Oui</td>
             <td class="bklp-cmp-td">Oui</td>
@@ -4752,7 +4777,7 @@ text-decoration: underline;
         />
       </div>
       <h3 class="bk-dualcard-title">
-        Prévention : Attention, votre assurance habitation n'assure pas véritablement votre vélo.
+        Prévention : Non, votre assurance habitation n'assure pas véritablement votre vélo.
       </h3>
       <p class="bk-dualcard-body">
         La majorité des contrats multirisques habitation restreignent fortement l'indemnisation de votre cycle en dehors de votre domicile. Entre franchises élevées, plafonds de remboursement dérisoires et clauses d'exclusion liées au vol sur voie publique ou sans point fixe, votre vélo reste très souvent exposé en cas de sinistre imprévu.
