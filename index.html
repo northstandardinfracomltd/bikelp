@@ -2753,7 +2753,7 @@ margin: auto;
     justify-content: center;
     min-height: 500px;
     overflow: hidden;
-        padding-right: 25px;
+    padding: 25px 40px;
   }
 
 
@@ -2814,7 +2814,7 @@ margin: auto;
 
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
-    <h2 class="cp-mecanic-sec-2024-heading"><span class="triach">Pourquoi</span> choisir notre super <span class="triach2">Couverture!</span></h2>
+    <h2 class="cp-mecanic-sec-2024-heading">Découvre la <span class="triach">Super</span> <span class="triach2">Couverture</span> Bikelp!</h2>
     <p class="cp-mecanic-sec-2024-paragraph">
 Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
     </p>
@@ -2863,26 +2863,23 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   /* Carte individuelle (Palette pastel indépendante) */
   .bkp-va59-item {
     position: relative;
-    border-radius: 14px;
+    border-radius: 0px;
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
   }
 
-  .bkp-va59-item:hover {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  }
 
   .bkp-va59-item.bkp-va59-active {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   }
 
   /* 5 Couleurs de fond pastel distinctes */
-  .bkp-va59-theme-1 { background-color: #EBF7F3; border-color: #c4eedf; } /* Vert d'eau doux */
-  .bkp-va59-theme-2 { background-color: #F1EFFE; border-color: #dad4fd; } /* Lavande / Mauve */
-  .bkp-va59-theme-3 { background-color: #FFF4EC; border-color: #fddfcb; } /* Pêche poudrée */
-  .bkp-va59-theme-4 { background-color: #EDF6FD; border-color: #cde6fb; } /* Bleu ciel pastel */
-  .bkp-va59-theme-5 { background-color: #FEF9E7; border-color: #faecc0; } /* Jaune solaire doux */
+  .bkp-va59-theme-1 { background-color: #EAFCF7; border-color: #EAFCF7; } /* Bikelp 1 */
+  .bkp-va59-theme-2 { background-color: #F9F3FF; border-color: #F9F3FF; } /* Bikelp 2 */
+  .bkp-va59-theme-3 { background-color: #FFF9E7; border-color: #FFF9E7; } /* Bikelp 3 */
+  .bkp-va59-theme-4 { background-color: #FFEEF1; border-color: #FFEEF1; } /* Bikelp 4 */
+  .bkp-va59-theme-5 { background-color: #ffefef; border-color: #ffefef; } /* Bikelp 5 */
 
   /* Header cliquable */
   .bkp-va59-header {
@@ -2911,8 +2908,8 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
 
   /* Icône du titre */
   .bkp-va59-icon {
-    width: 28px;
-    height: 28px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
     flex-shrink: 0;
     transition: transform 0.3s ease;
@@ -2924,11 +2921,14 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
 
   /* Titre court */
   .bkp-va59-title {
-    font-size: 1.05rem;
+font-size: 20px;
+    text-transform: none;
+    font-family: 'Civilprom';
     font-weight: 700;
-    color: #1e293b;
+    color: #000;
+    cursor: default;
     margin: 0;
-    letter-spacing: -0.01em;
+    letter-spacing: 0px;
   }
 
   /* Flèche / Chevron indicateur */
@@ -2977,9 +2977,11 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   /* Description textuelle */
   .bkp-va59-desc {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 18px;
     line-height: 1.6;
-    color: #334155;
+    color: #000;
+    font-family: 'Civilprom';
+    cursor: default;
   }
 
   /* Barre de progression sticky en bas de l'élément actif */
@@ -3001,7 +3003,7 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   .bkp-va59-progress-bar {
     height: 100%;
     width: 0%;
-    background-color: #0f172a;
+    background-color: #3e1cff;
     border-radius: 0 4px 4px 0;
     opacity: 0.75;
   }
@@ -3017,24 +3019,19 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   .bkp-va59-toggle-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    gap: 0px;
+    background: #3e1474;
+    border: 0px solid transparent;
     border-radius: 9999px;
-    padding: 7px 16px;
-    font-size: 0.85rem;
+    padding: 10px 15px;
+    font-size: 16px;
     font-weight: 600;
-    color: #475569;
+    font-family: 'Civilprom';
+    color: #fff;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
     transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
     user-select: none;
-  }
-
-  .bkp-va59-toggle-btn:hover {
-    background: #f8fafc;
-    color: #0f172a;
-    border-color: #cbd5e1;
   }
 
   .bkp-va59-toggle-btn:active {
@@ -3042,6 +3039,7 @@ Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petite
   }
 
   .bkp-va59-toggle-btn svg {
+    display: none; 
     width: 14px;
     height: 14px;
     fill: currentColor;
@@ -3762,6 +3760,505 @@ font-family: 'bikelpfont';
     }
   }
 </style>
+
+
+<div class="bklp-cmp-wrapper">
+  <style>
+    /* Scope namespace : bklp-cmp-* pour zéro conflit avec votre CSS existant */
+    .bklp-cmp-wrapper {
+      --bklp-primary: #059669;
+      --bklp-primary-dark: #047857;
+      --bklp-primary-light: #ecfdf5;
+      --bklp-primary-border: #a7f3d0;
+      --bklp-bg-header: #f8fafc;
+      --bklp-border: #e2e8f0;
+      --bklp-text-dark: #0f172a;
+      --bklp-text-muted: #64748b;
+      --bklp-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 2rem 0;
+      font-family: var(--bklp-font-family);
+      color: var(--bklp-text-dark);
+    }
+
+    .bklp-cmp-wrapper *,
+    .bklp-cmp-wrapper *::before,
+    .bklp-cmp-wrapper *::after {
+      box-sizing: border-box;
+    }
+
+    /* En-tête et indice de défilement */
+    .bklp-cmp-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      padding: 0 0.25rem;
+      font-size: 0.8125rem;
+      color: var(--bklp-text-muted);
+    }
+
+    .bklp-cmp-scroll-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      background: #f1f5f9;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+    }
+
+    /* Conteneur de défilement horizontal avec ombres indicatrices */
+    .bklp-cmp-scroll-outer {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid var(--bklp-border);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .bklp-cmp-scroll-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+    }
+
+    .bklp-cmp-scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .bklp-cmp-scroll-container::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .bklp-cmp-scroll-container::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .bklp-cmp-scroll-container::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Structure de la grille du tableau */
+    .bklp-cmp-table {
+      width: 100%;
+      min-width: 1540px; /* Assure un espacement aéré même sur mobile */
+      border-collapse: separate;
+      border-spacing: 0;
+      text-align: left;
+    }
+
+    /* Cellules en-têtes (critères) */
+    .bklp-cmp-th {
+      background: var(--bklp-bg-header);
+      color: #334155;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 1.1rem 1rem;
+      border-bottom: 2px solid var(--bklp-border);
+      border-right: 1px solid #edf2f7;
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    /* Colonne figée : Marque */
+    .bklp-cmp-col-sticky {
+      position: sticky;
+      left: 0;
+      z-index: 20;
+      background: #ffffff;
+      width: 180px;
+      min-width: 180px;
+      max-width: 180px;
+      border-right: 2px solid var(--bklp-border) !important;
+      box-shadow: 3px 0 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .bklp-cmp-th.bklp-cmp-col-sticky {
+      z-index: 30;
+      background: #f1f5f9;
+    }
+
+    /* Cellules de contenu standards */
+    .bklp-cmp-td {
+      padding: 0.95rem 1rem;
+      font-size: 0.875rem;
+      color: #334155;
+      border-bottom: 1px solid var(--bklp-border);
+      border-right: 1px solid #f1f5f9;
+      vertical-align: middle;
+      background: #ffffff;
+      transition: background 0.15s ease-in-out;
+    }
+
+    /* Survol des lignes */
+    .bklp-cmp-row:hover .bklp-cmp-td {
+      background: #f8fafc;
+    }
+
+    /* Nom de la marque */
+    .bklp-cmp-brand-name {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--bklp-text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* HIGHLIGHT SPÉCIFIQUE : BIKELP */
+    .bklp-cmp-row-highlight .bklp-cmp-td {
+      background-color: var(--bklp-primary-light);
+      border-top: 2px solid var(--bklp-primary);
+      border-bottom: 2px solid var(--bklp-primary);
+    }
+
+    .bklp-cmp-row-highlight:hover .bklp-cmp-td {
+      background-color: #dcfce7;
+    }
+
+    .bklp-cmp-row-highlight .bklp-cmp-col-sticky {
+      background-color: #e6f9f0 !important;
+      border-left: 4px solid var(--bklp-primary);
+    }
+
+    .bklp-cmp-badge-winner {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      background: var(--bklp-primary);
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+
+    .bklp-cmp-brand-featured {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 1.05rem;
+    }
+
+    /* Badges de valeurs / Pills */
+    .bklp-pill {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .bklp-pill-success {
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 600;
+    }
+
+    .bklp-pill-neutral {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .bklp-score-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 700;
+    }
+
+    .bklp-score-bikelp {
+      color: var(--bklp-primary-dark);
+      font-weight: 800;
+      font-size: 0.9375rem;
+    }
+  </style>
+
+  <div class="bklp-cmp-meta-bar">
+    <span><strong>14 assureurs</strong> comparés sur <strong>12 critères</strong></span>
+    <span class="bklp-cmp-scroll-hint">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Défiler horizontalement
+    </span>
+  </div>
+
+  <div class="bklp-cmp-scroll-outer">
+    <div class="bklp-cmp-scroll-container">
+      <table class="bklp-cmp-table" aria-label="Tableau comparatif des assurances vélo">
+        <thead>
+          <tr>
+            <th class="bklp-cmp-th bklp-cmp-col-sticky">Marque</th>
+            <th class="bklp-cmp-th">Note Recommandation %</th>
+            <th class="bklp-cmp-th">Valeur vélo</th>
+            <th class="bklp-cmp-th">Tarif départ</th>
+            <th class="bklp-cmp-th">Franchise</th>
+            <th class="bklp-cmp-th">Vélo Occasion</th>
+            <th class="bklp-cmp-th">Conditions acceptation</th>
+            <th class="bklp-cmp-th">Accessoires pris en charge</th>
+            <th class="bklp-cmp-th">Remboursement Vol</th>
+            <th class="bklp-cmp-th">Casse et Vandalisme</th>
+            <th class="bklp-cmp-th">Exigence Antivol</th>
+            <th class="bklp-cmp-th">Assistance / Remorquage</th>
+            <th class="bklp-cmp-th">Couverture Géographique</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1. BIKELP (HIGHLIGHTED) -->
+          <tr class="bklp-cmp-row bklp-cmp-row-highlight">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky">
+              <div class="bklp-cmp-brand-name bklp-cmp-brand-featured">
+                Bikelp
+                <span class="bklp-cmp-badge-winner">N°1 Recommandé</span>
+              </div>
+            </td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-bikelp">98% ★★★★★</span></td>
+            <td class="bklp-cmp-td"><strong>Jusqu'à 12 000 €</strong></td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Dès 3,90 €/mois</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">0 € (Sans franchise)</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Sans vétusté &lt; 3 ans</td>
+            <td class="bklp-cmp-td">Jusqu'à 1 000 € inclus</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Valeur à neuf 3 ans</span></td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Antivol homologué standard</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">24/7 partout en France</span></td>
+            <td class="bklp-cmp-td"><strong>Monde entier (30j)</strong></td>
+          </tr>
+
+          <!-- 2. MAIF -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Maif</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">91%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 8 000 €</td>
+            <td class="bklp-cmp-td">Dès 5,50 €/mois</td>
+            <td class="bklp-cmp-td">80 € fixe</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">Oui, avec facture</span></td>
+            <td class="bklp-cmp-td">Adhérents uniquement</td>
+            <td class="bklp-cmp-td">En option (+3 €/m)</td>
+            <td class="bklp-cmp-td">Valeur résiduelle</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">FUB 2 roues ou Sold Secure</td>
+            <td class="bklp-cmp-td">En option</td>
+            <td class="bklp-cmp-td">France &amp; UE</td>
+          </tr>
+
+          <!-- 3. AXA -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Axa</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">87%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 10 000 €</td>
+            <td class="bklp-cmp-td">Dès 6,20 €/mois</td>
+            <td class="bklp-cmp-td">10% (min. 100 €)</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">&lt; 2 ans seulement</span></td>
+            <td class="bklp-cmp-td">Marquage obligatoire</td>
+            <td class="bklp-cmp-td">Jusqu'à 400 €</td>
+            <td class="bklp-cmp-td">Avec décote annuelle</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">Antivol norme ART / SRA</td>
+            <td class="bklp-cmp-td">Inclus &gt; 20 km</td>
+            <td class="bklp-cmp-td">France Métropolitaine</td>
+          </tr>
+
+          <!-- 4. LAKA -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Laka</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">94%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 15 000 €</td>
+            <td class="bklp-cmp-td">Tarif variable collectif</td>
+            <td class="bklp-cmp-td">0 € (Sans franchise)</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Photos récentes requises</td>
+            <td class="bklp-cmp-td">Accessoires déclarés</td>
+            <td class="bklp-cmp-td">Remplacement à neuf</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">Sold Secure Gold/Silver</td>
+            <td class="bklp-cmp-td">En option</td>
+            <td class="bklp-cmp-td">Monde (jusqu'à 60j)</td>
+          </tr>
+
+          <!-- 5. MMA -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">MMA</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">82%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 6 000 €</td>
+            <td class="bklp-cmp-td">Dès 7,00 €/mois</td>
+            <td class="bklp-cmp-td">150 €</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">Non</span></td>
+            <td class="bklp-cmp-td">Achat en magasin agréé</td>
+            <td class="bklp-cmp-td">Casque uniquement</td>
+            <td class="bklp-cmp-td">Vétusté déduite</td>
+            <td class="bklp-cmp-td">Partielle</td>
+            <td class="bklp-cmp-td">Antivol classe SRA</td>
+            <td class="bklp-cmp-td">Non disponible</td>
+            <td class="bklp-cmp-td">France uniquement</td>
+          </tr>
+
+          <!-- 6. GROUPAMA -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Groupama</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">84%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 7 000 €</td>
+            <td class="bklp-cmp-td">Dès 6,80 €/mois</td>
+            <td class="bklp-cmp-td">120 €</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">Oui, &lt; 3 ans</span></td>
+            <td class="bklp-cmp-td">Facture nominative</td>
+            <td class="bklp-cmp-td">Jusqu'à 300 €</td>
+            <td class="bklp-cmp-td">Valeur à neuf 1 an</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">Antivol homologué</td>
+            <td class="bklp-cmp-td">En option</td>
+            <td class="bklp-cmp-td">France &amp; UE</td>
+          </tr>
+
+          <!-- 7. BALOISE -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Baloise</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">86%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 10 000 €</td>
+            <td class="bklp-cmp-td">Dès 7,50 €/mois</td>
+            <td class="bklp-cmp-td">50 €</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Expertise si &gt; 5 000 €</td>
+            <td class="bklp-cmp-td">Fixés au cadre</td>
+            <td class="bklp-cmp-td">Valeur agréée</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">2 antivols obligatoires</td>
+            <td class="bklp-cmp-td">Inclus</td>
+            <td class="bklp-cmp-td">Europe étendue</td>
+          </tr>
+
+          <!-- 8. CASER -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Caser</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">81%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 5 000 €</td>
+            <td class="bklp-cmp-td">Dès 5,90 €/mois</td>
+            <td class="bklp-cmp-td">10% du dommage</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">Non</span></td>
+            <td class="bklp-cmp-td">Vélo neuf &lt; 30 jours</td>
+            <td class="bklp-cmp-td">Non inclus</td>
+            <td class="bklp-cmp-td">Valeur résiduelle</td>
+            <td class="bklp-cmp-td">Casse uniquement</td>
+            <td class="bklp-cmp-td">Antivol mécanique U</td>
+            <td class="bklp-cmp-td">Non disponible</td>
+            <td class="bklp-cmp-td">France métropolitaine</td>
+          </tr>
+
+          <!-- 9. HELVETIA -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Helvetia</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">89%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 12 000 €</td>
+            <td class="bklp-cmp-td">Dès 8,10 €/mois</td>
+            <td class="bklp-cmp-td">75 €</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Facture pro d'achat</td>
+            <td class="bklp-cmp-td">Jusqu'à 600 €</td>
+            <td class="bklp-cmp-td">Valeur réactualisée</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">Certifié ART ** min.</td>
+            <td class="bklp-cmp-td">Inclus &gt; 0 km</td>
+            <td class="bklp-cmp-td">Europe</td>
+          </tr>
+
+          <!-- 10. BICYTRUST -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Bicytrust</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">88%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 9 000 €</td>
+            <td class="bklp-cmp-td">Dès 5,20 €/mois</td>
+            <td class="bklp-cmp-td">100 € fixe</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Bicycode obligatoire</td>
+            <td class="bklp-cmp-td">Jusqu'à 500 €</td>
+            <td class="bklp-cmp-td">Valeur à neuf 2 ans</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">FUB 2 roues</td>
+            <td class="bklp-cmp-td">En option</td>
+            <td class="bklp-cmp-td">France &amp; pays voisins</td>
+          </tr>
+
+          <!-- 11. CYCLASSUR -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Cyclassur</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">85%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 8 000 €</td>
+            <td class="bklp-cmp-td">Dès 6,00 €/mois</td>
+            <td class="bklp-cmp-td">10% à 20%</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-neutral">&lt; 1 an d'achat</span></td>
+            <td class="bklp-cmp-td">Achat magasin partenaire</td>
+            <td class="bklp-cmp-td">En option</td>
+            <td class="bklp-cmp-td">Avec coefficient vétusté</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">Antivol homologué SRA</td>
+            <td class="bklp-cmp-td">Non inclus</td>
+            <td class="bklp-cmp-td">France Métropolitaine</td>
+          </tr>
+
+          <!-- 12. HEPSTER -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Hepster</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">92%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 10 000 €</td>
+            <td class="bklp-cmp-td">Dès 5,10 €/mois</td>
+            <td class="bklp-cmp-td">0 € ou 50 €</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Vélo de moins de 5 ans</td>
+            <td class="bklp-cmp-td">Inclus jusqu'à 350 €</td>
+            <td class="bklp-cmp-td">Valeur d'achat</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">Valeur antivol &gt; 50 €</td>
+            <td class="bklp-cmp-td">En option</td>
+            <td class="bklp-cmp-td">Monde entier</td>
+          </tr>
+
+          <!-- 13. SHARELOCK -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Sharelock</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">90%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 7 000 €</td>
+            <td class="bklp-cmp-td">Dès 4,50 €/mois</td>
+            <td class="bklp-cmp-td">80 €</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Application photo requise</td>
+            <td class="bklp-cmp-td">Antivol &amp; casque</td>
+            <td class="bklp-cmp-td">Remboursement sous 48h</td>
+            <td class="bklp-cmp-td">En formule Plus</td>
+            <td class="bklp-cmp-td">Antivol agréé FUB/ART</td>
+            <td class="bklp-cmp-td">Dépannage serrurier</td>
+            <td class="bklp-cmp-td">France uniquement</td>
+          </tr>
+
+          <!-- 14. ULYGO -->
+          <tr class="bklp-cmp-row">
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Ulygo</div></td>
+            <td class="bklp-cmp-td"><span class="bklp-score-bar">92%</span></td>
+            <td class="bklp-cmp-td">Jusqu'à 10 000 €</td>
+            <td class="bklp-cmp-td">Dès 4,90 €/mois</td>
+            <td class="bklp-cmp-td">5% à 10% (min 50 €)</td>
+            <td class="bklp-cmp-td"><span class="bklp-pill bklp-pill-success">Oui, inclus.</span></td>
+            <td class="bklp-cmp-td">Gravage Paravol / Bicycode</td>
+            <td class="bklp-cmp-td">Inclus jusqu'à 500 €</td>
+            <td class="bklp-cmp-td">Valeur à neuf 2 ans</td>
+            <td class="bklp-cmp-td">Oui, inclus.</td>
+            <td class="bklp-cmp-td">Norme 2 roues FUB</td>
+            <td class="bklp-cmp-td">Option assistance 0 km</td>
+            <td class="bklp-cmp-td">Union Européenne</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="cp-mecanic-sec-2024-wrapper">
   <div class="cp-mecanic-sec-2024-left-pane">
