@@ -277,9 +277,9 @@ display: block;
     }
 
 .hero-title {
-font-size: 72px;
-    font-family: 'bikelpfont';
-    font-weight: 800;
+font-size: 80px;
+    font-family: 'Alternative';
+    font-weight: 500;
     margin-bottom: 20px !important;
     text-transform: none;
     color: #ffffff;
@@ -703,7 +703,7 @@ font-family: 'bikelpfont';
     }
 
     .events-grid {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
@@ -1191,6 +1191,7 @@ width: 100%;
     font-family: 'Alternative' !important;
     font-weight: 500;
     font-size: 80px;
+        line-height: 0px;
 }
 
 .div-preventio {
@@ -1235,7 +1236,7 @@ font-size: 18px;
       </a>
 
           <h1 class="hero-title">Bikelp <span class="triach3">Assure</span> votre <span class="triach3">Vélo</span> à partir de 9<span class="currency-title">€</span> par mois Vol & Dommages inclus</h1>
-          <p class="hero-subtitle">L’assurance sans engagement qui rassemble toutes les pratiques du vélo et couvre tous les sinistres, sans franchise, dans toute l’UE</p>
+          <p class="hero-subtitle">L’assurance sans engagement qui rassemble toutes les pratiques du vélo et couvre tous les sinistres, sans franchise, dans toute l’UE.</p>
       
       <!-- ========================================================== -->
 <!-- 1. BOUTON DECLENCHEUR SUR VOTRE PAGE -->
@@ -1798,7 +1799,7 @@ Devis en ligne instantané
     font-weight: 600;
     border-radius: 15px;
     letter-spacing: 0px;
-    padding: 15px 25px;
+    padding: 18px 32px;
     cursor: pointer;
     text-decoration: none;
     transition: background 0.2s ease;
@@ -2848,6 +2849,7 @@ margin: auto;
     font-weight: 500;
     color: #9f1996;
     font-size: 80px;
+        line-height: 0px;
     }
 
       .triach2 {
@@ -4108,7 +4110,29 @@ font-family: 'Civilprom';
     font-size: 22px !important;
 }
 
+.legendar {
+width: 98%;
+max-width: 1400px;
+text-align: left; 
+}
+
+
+.legendar-txt {
+font-family: 'Civilprom';
+font-size: 22px !important;
+color: #000; 
+cursor: default;
+}
+
+.legendar-txt-pin {
+font-family: 'Civilprom';
+font-size: 12px !important;
+color: #000; 
+cursor: default;
+}
   </style>
+
+
 
   <div class="bklp-cmp-meta-bar">
 <span class="bklp-cmp-meta-bar-meta">Pourquoi Bikelp?<br>
@@ -4126,25 +4150,23 @@ font-family: 'Civilprom';
           <tr>
             <th class="bklp-cmp-th bklp-cmp-col-sticky">Assurance</th>
             <th class="bklp-cmp-th">Évaluation</th>
-            <th class="bklp-cmp-th">Valeur Max (Vélo)</th>
+            <th class="bklp-cmp-th">Valeur Max (Vélo)<span class="legendar-txt-pin">(1)</span></th>
             <th class="bklp-cmp-th">Tarif Min (TTC)</th>
-            <th class="bklp-cmp-th">Sans Franchise</th>
+            <th class="bklp-cmp-th">Sans Franchise<span class="legendar-txt-pin">(2)</span></th>
             <th class="bklp-cmp-th">Vélo Occasion</th>
             <th class="bklp-cmp-th">Batterie VAE Couverte</th>
             <th class="bklp-cmp-th">Pas de Vétusté</th>
-            <th class="bklp-cmp-th">Accessoires Vélo/Cycliste</th>
+            <th class="bklp-cmp-th">Accessoires Vélo ou Cycliste<span class="legendar-txt-pin">(3)</span></th>
             <th class="bklp-cmp-th">Remboursement Vol</th>
-            <th class="bklp-cmp-th">Délai Remboursement</th>
-            <th class="bklp-cmp-th">Délai Étude Sinistre</th>
+            <th class="bklp-cmp-th">Délai Remboursement<span class="legendar-txt-pin">(4)</span></th>
+            <th class="bklp-cmp-th">Délai Étude Sinistre<span class="legendar-txt-pin">(5)</span></th>
             <th class="bklp-cmp-th">Casse et Vandalisme</th>
-            <th class="bklp-cmp-th">Antivol Homologué Requis</th>
-            <th class="bklp-cmp-th">Assistance / Remorquage</th>
-            <th class="bklp-cmp-th">Délai Carence</th>
-
-            <th class="bklp-cmp-th">Garantie Valeur d’Achat</th>
-            <th class="bklp-cmp-th">Réparateur Accepté</th>
-
-            <th class="bklp-cmp-th bklp-cmp-td-last">Couverture Géographique</th>
+            <th class="bklp-cmp-th">Antivol Homologué Requis<span class="legendar-txt-pin">(6)</span></th>
+            <th class="bklp-cmp-th">Assistance ou Remorquage</th>
+            <th class="bklp-cmp-th">Délai Carence<span class="legendar-txt-pin">(7)</span></th>
+            <th class="bklp-cmp-th">Garantie Valeur d’Achat<span class="legendar-txt-pin">(8)</span></th>
+            <th class="bklp-cmp-th">Réparateur Accepté<span class="legendar-txt-pin">(9)</span></th>
+            <th class="bklp-cmp-th bklp-cmp-td-last">Couverture Géographique<span class="legendar-txt-pin">(10)</span></th>
           </tr>
         </thead>
         <tbody>
@@ -4379,7 +4401,7 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td">Oui</td>
             <td class="bklp-cmp-td">0 à 15 jours</td>
             <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Réparateur Agréé</td>
+            <td class="bklp-cmp-td">Agréé Uniquement</td>
             <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
           </tr>
 
@@ -4526,6 +4548,24 @@ font-family: 'Civilprom';
       </table>
     </div>
   </div>
+
+    <div class="legendar">
+<span class="legendar-txt">
+Légende des critères du tableau comparatif.
+<br>
+— Valeur Max (Vélo) :<br>
+— Sans Franchise :<br>
+— Accessoires Vélo ou Cycliste :<br>
+— Délai Remboursement :<br>
+— Délai Étude Sinistre :<br>
+— Antivol Homologué Requis :<br>
+— Délai Carence :<br>
+— Garantie Valeur d’Achat :<br>
+— Réparateur Accepté :<br>
+— Couverture Géographique :<br>
+</span></span>
+  </div>
+
 </div>
 
 
