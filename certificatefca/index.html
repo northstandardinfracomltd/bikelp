@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Loading...</title>
+  <title>Loading XML Certificate...</title>
   <style>
     * {
       margin: 0;
@@ -30,11 +30,11 @@
   <p>Loading XML Certificate...</p>
 
   <script>
-    // Écrit en continu dans le document sans jamais appeler document.close()
-    // ce qui force le navigateur à maintenir son indicateur de chargement actif (onglet qui tourne à l'infini)
-    setInterval(() => {
-      document.write('<!-- loading... -->');
-    }, 1000);
+    // Recharge la page en boucle dès qu'elle s'affiche
+    // Le délai (ici 100ms) permet au texte d'apparaître brièvement avant de relancer le cycle
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   </script>
 </body>
 </html>
