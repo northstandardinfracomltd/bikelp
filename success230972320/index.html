@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bloquer l'indexation par les moteurs de recherche (Google, etc.) -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  
+  <title>Paiement confirmé - Bikelp</title>
+
+  <style>
+    /* ======================================================== */
+    /* 1. IMPORT DE LA TYPOGRAPHIE BIKELP                       */
+    /* ======================================================== */
+    @font-face {
+      font-family: 'Civilprom';
+      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/bikelpfont.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* ======================================================== */
+    /* 2. STYLE GLOBAL DE LA PAGE                               */
+    /* ======================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #ffffff; /* Fond 100% blanc */
+      font-family: 'Civilprom', sans-serif;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* ======================================================== */
+    /* 3. CONTENEUR PRINCIPAL DU CONTENU                       */
+    /* ======================================================== */
+    .conteneur-page {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ======================================================== */
+    /* 4. LOGO                                                  */
+    /* ======================================================== */
+    .logo-bikelp {
+      height: 75px;            /* Hauteur bien visible */
+      width: auto;
+      margin-bottom: 35px;     /* Espace sous le logo */
+      display: block;
+    }
+
+    /* ======================================================== */
+    /* 5. TITRE PRINCIPAL                                       */
+    /* ======================================================== */
+    .titre-page {
+      font-size: 30px;
+      font-weight: normal;
+      color: #111111;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    /* ======================================================== */
+    /* 6. TEXTE DE DESCRIPTION                                  */
+    /* ======================================================== */
+    .texte-description {
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    /* ======================================================== */
+    /* 7. CONTENEUR DES BOUTONS D'ACTION                        */
+    /* ======================================================== */
+    .zone-boutons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;               /* Espace entre les deux boutons */
+    }
+
+    /* ======================================================== */
+    /* 8. BOUTON 1 : ACCÉDER À L'ESPACE CLIENT (PRINCIPAL)      */
+    /* ======================================================== */
+    .bouton-espace-client {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: #111111; /* Fond noir */
+      color: #ffffff;            /* Texte blanc */
+      border: 1px solid #111111;
+      border-radius: 10px;
+      font-size: 15px;
+      text-decoration: none;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .bouton-espace-client:hover {
+      background-color: #333333;
+    }
+
+    /* ======================================================== */
+    /* 9. BOUTON 2 : CONTACTER L'ASSISTANCE (SECONDAIRE)        */
+    /* ======================================================== */
+    .bouton-assistance {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: #ffffff; /* Fond blanc */
+      color: #111111;            /* Texte noir */
+      border: 1px solid #dcdcdc; /* Bordure fine grise */
+      border-radius: 10px;
+      font-size: 15px;
+      text-decoration: none;
+      font-family: inherit;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .bouton-assistance:hover {
+      border-color: #111111;
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="conteneur-page">
+    
+    <!-- Logo officiel Bikelp -->
+    <img 
+      src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" 
+      alt="Bikelp" 
+      class="logo-bikelp"
+    >
+
+    <!-- Titre -->
+    <h1 class="titre-page">Paiement confirmé</h1>
+
+    <!-- Explication / Statut -->
+    <p class="texte-description">
+      Votre souscription est validée et votre assurance est désormais active. Vos documents contractuels vous ont été envoyés par e-mail.
+    </p>
+
+    <!-- Liens d'actions -->
+    <div class="zone-boutons">
+      
+      <!-- Lien vers l'espace client -->
+      <a href="https://client.bikelp.com/" target="_blank" rel="noopener noreferrer" class="bouton-espace-client">
+        Accéder à mon espace
+      </a>
+
+      <!-- Lien d'assistance par email -->
+      <a href="mailto:support@bikelp.com" class="bouton-assistance">
+        Contacter l'assistance
+      </a>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

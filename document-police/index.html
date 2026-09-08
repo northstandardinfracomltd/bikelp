@@ -1,369 +1,1163 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <!-- SEO Title & Description -->
-  <title>Bikelp Police Assurance | Assurance Vélo</title>
-  <meta name="description" content="Bikelp Police Assurance | Assurance Vélo">
-
-    <!-- Indexation / Robots -->
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="googlebot" content="noindex, nofollow">
-  <meta name="bingbot" content="noindex, nofollow">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://bikelp.com/">
-
-  <!-- Meta Keywords -->
-  <meta name="keywords" content="Bikelp, assurance vélo,">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Bikelp Police Assurance | Assurance Vélo">
-  <meta property="og:description" content="Bikelp Police Assurance | Assurance Vélo">
-  <meta property="og:image" content="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpseo.png">
-  <meta property="og:url" content="https://bikelp.com/police">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bikelp Police Assurance | Assurance Vélo">
-  <meta name="twitter:description" content="Bikelp Police Assurance | Assurance Vélo">
-  <meta name="twitter:image" content="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpseo.png">
-
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/favicon_bikelp.png" type="image/png">
- <title>Bikelp Police Assurance | Assurance Vélo</title>
-
-
+  <title>Assurance Vélo - Document d'information</title>
   <style>
-    @font-face {
-      font-family: 'Civilprom';
-      src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
+    /* =========================================================
+       TYPOGRAPHIE & RÉINITIALISATION
+       ========================================================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: 'Civilprom', sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      line-height: 1.35;
+      color: #222222;
       background-color: #ffffff;
-      color: #000000;
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 0;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      padding-top: 60px; /* Espace pour le header flottant */
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    /* =========================================================
+       FLOATING HEADER (SÉLECTEUR DE LANGUE)
+       ========================================================= */
+    .floating-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #d0d7de;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 30px;
+      gap: 12px;
+      z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .floating-nav-label {
+      font-size: 12px;
+      font-weight: bold;
+      color: #444444;
+    }
+
+    .lang-select {
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid #a0b2c6;
+      font-size: 12px;
+      font-family: inherit;
+      background: #ffffff;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* =========================================================
+       CONTENEUR DU DOCUMENT
+       ========================================================= */
+    .document-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 30px 40px 30px;
+      background-color: #ffffff;
+    }
+
+    /* =========================================================
+       EN-TÊTE : BANDEAU BLEU AVEC LOGO INTÉGRÉ
+       ========================================================= */
+    .header-bandeau {
+      background-color: #0b4f8a;
+      color: #ffffff;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    .header-text-col {
+      flex: 1;
+    }
+
+    .header-main-title {
       font-size: 22px;
       font-weight: bold;
-      color: #000000;
-      margin-top: 1.6em;
-      margin-bottom: 0.6em;
+      margin-bottom: 2px;
+      letter-spacing: -0.2px;
     }
 
-    p, ul, ol {
-      margin-top: 0;
-      margin-bottom: 1.1em;
+    .header-sub-product {
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 3px;
     }
 
-    ul {
-      padding-left: 25px;
+    .header-legal-info {
+      font-size: 10px;
+      line-height: 1.25;
+      opacity: 0.95;
     }
 
-    li {
-      margin-bottom: 0.5em;
+    .header-logo-col {
+      flex-shrink: 0;
     }
 
-    hr {
-      border: 0;
-      border-top: 1px solid #000000;
-      margin: 2.2em 0;
-    }
-
-    .lang-content {
-      display: none;
-    }
-
-    .lang-content.active {
+    .header-logo-img {
+      height: 52px;
+      width: auto;
       display: block;
+    }
+
+    /* =========================================================
+       DESCRIPTIF D'INTRODUCTION & QUESTION PRINCIPALE
+       ========================================================= */
+    .intro-notice {
+      font-size: 10.5px;
+      color: #333333;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .intro-section {
+      margin-bottom: 16px;
+    }
+
+    .intro-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+
+    .intro-body {
+      font-size: 11px;
+      color: #222222;
+    }
+
+    /* =========================================================
+       DISPOSITION EN 2 COLONNES
+       ========================================================= */
+    .grid-two-columns {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      align-items: stretch;
+    }
+
+    .column-left {
+      flex: 1.05;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .column-right {
+      flex: 0.95;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* =========================================================
+       BLOCS ENCADRÉS AVEC BORDURES
+       ========================================================= */
+    .card-block {
+      border: 1px solid #b7cde3;
+      padding: 12px;
+      background: #ffffff;
+    }
+
+    .card-block.full-height {
+      height: 100%;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .card-header-icon {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .card-header-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #000000;
+      line-height: 1.2;
+    }
+
+    /* =========================================================
+       LISTES ET COCHES / CROIX
+       ========================================================= */
+    .section-notice {
+      font-size: 10px;
+      font-style: italic;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .section-notice img {
+      width: 10px;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+
+    .sub-heading {
+      font-weight: bold;
+      font-size: 11px;
+      color: #000000;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-list {
+      list-style: none;
+      margin-bottom: 6px;
+    }
+
+    .item-list-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .inline-icon {
+      width: 11px;
+      height: 11px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .inline-icon-bullet {
+      width: 11px;
+      height: 11px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       SECTIONS PLEINE LARGEUR (PAGE 2 DU PDF)
+       ========================================================= */
+    .full-width-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .obligation-block {
+      margin-bottom: 8px;
+    }
+
+    .obligation-title {
+      font-weight: bold;
+      margin-bottom: 2px;
+      color: #111111;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .doc-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding-top: 10px;
+      font-size: 10px;
+      color: #777777;
+    }
+
+    @media print {
+      body {
+        padding-top: 0;
+      }
+      .floating-nav {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ================================================================= -->
-  <!-- FRANÇAIS (Par défaut ou ?lang=fr)                                 -->
-  <!-- ================================================================= -->
-  <div id="content-fr" class="lang-content">
-    <h1>Assurance vélo</h1>
-    <h2>Document d'information sur le produit d'assurance</h2>
-    <p><strong>Compagnie :</strong> Occidente Seguros<br>
-    <strong>Produit :</strong> Assurance vélo</p>
+  <!-- ================= BARRE FLOTTANTE DE LANGUE ================= -->
+  <header class="floating-nav">
+    <span class="floating-nav-label">Langue / Language :</span>
+    <select id="langSwitcher" class="lang-select" aria-label="Sélection de la langue">
+      <option value="fr" selected>Français</option>
+      <option value="en">English</option>
+      <option value="nl">Nederlands</option>
+      <option value="es">Español</option>
+      <option value="pt">Português</option>
+      <option value="it">Italiano</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </header>
 
-    <p>Ce document ne donne qu'un aperçu de l'assurance. Les Conditions Particulières décrivent en détail ce pour quoi vous êtes assuré et ce pour quoi vous ne l'êtes pas.</p>
+  <!-- ================= CONTENU DU DOCUMENT PDF ================= -->
+  <main class="document-page">
 
-    <hr>
+    <!-- BANDEAU BLEU : INFOS + LOGO SANS CARRÉ BLANC -->
+    <div class="header-bandeau">
+      <div class="header-text-col">
+        <div class="header-main-title" data-i18n="doc_title">Assurance Vélo</div>
+        <div class="header-sub-product" data-i18n="doc_subtitle">Document d'information sur le produit d'assurance</div>
+        <div class="header-legal-info" data-i18n="doc_legal">
+          MAIF - Entreprise d'assurance immatriculée en France<br>
+          et régie par le Code des assurances - 775709702<br>
+          Assurance Vélo
+        </div>
+      </div>
+      <div class="header-logo-col">
+        <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-logo.svg" alt="Logo" class="header-logo-img">
+      </div>
+    </div>
 
-    <h3>De quel type d'assurance s'agit-il ?</h3>
-    <p>Cette assurance couvre le vol, la perte et les dommages des vélos (y compris les vélos électriques) et de leurs accessoires. Vous pouvez résilier votre assurance quotidiennement et payer la prime mensuellement à terme échu.</p>
+    <!-- INTRODUCTION -->
+    <div class="intro-notice" data-i18n="intro_notice">
+      Ce document d'information présente un résumé des principales garanties et exclusions du produit. Il ne prend pas en compte les besoins et demandes spécifiques. Une information complète sur ce produit est fournie dans la documentation précontractuelle et contractuelle.
+    </div>
 
-    <hr>
+    <!-- DE QUEL TYPE D'ASSURANCE S'AGIT-IL ? -->
+    <div class="intro-section">
+      <h2 class="intro-title" data-i18n="sec_type_title">De quel type d'assurance s'agit-il ?</h2>
+      <p class="intro-body" data-i18n="sec_type_body">
+        Ce produit est destiné à couvrir les dommages matériels au vélo assuré et les dommages corporels de ses utilisateurs ayant qualité d'assurés ainsi que des services d'assistance au vélo.
+      </p>
+    </div>
 
-    <h3>Qu'est-ce qui est assuré ?</h3>
-    <ul>
-      <li>Optionnel : Module dommages accidentels</li>
-      <li>Optionnel : Module vol au domicile</li>
-      <li>Optionnel : Module vol hors du domicile</li>
-      <li>Optionnel : Module frais de trajet d'urgence</li>
-      <li>Optionnel : Module couverture des dommages en course</li>
-      <li>Frais liés à la résolution de votre sinistre.</li>
-      <li>Location d'un vélo jusqu'à 200€</li>
-      <li>Perte par un tiers</li>
-      <li>Optionnel : dans le monde entier, jusqu'à un maximum de 120 jours consécutifs</li>
-    </ul>
+    <!-- 2 COLONNES -->
+    <div class="grid-two-columns">
+      
+      <!-- COLONNE GAUCHE : QU'EST-CE QUI EST ASSURÉ ? -->
+      <div class="column-left">
+        <div class="card-block full-height">
+          <div class="card-header">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-umbrella.svg" class="card-header-icon" alt="Parapluie">
+            <h3 class="card-header-title" data-i18n="sec_insured_title">Qu'est-ce qui est assuré ?</h3>
+          </div>
 
-    <hr>
+          <div class="section-notice">
+            <span data-i18n="notice_check_intro">Les garanties précédées d'une coche</span>
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" alt="v">
+            <br>
+            <span data-i18n="notice_check_sub">sont systématiquement prévues au contrat</span>
+          </div>
 
-    <h3>Qu'est-ce qui n'est pas assuré ?</h3>
-    <ul>
-      <li>Les Dommages qui résultent de l'utilisation de votre vélo à des fins commerciales.</li>
-      <li>Les Dommages lors d'une Course professionnelle.</li>
-      <li>Les dommages superficiels</li>
-      <li>Le vol avec un antivol non conforme</li>
-    </ul>
+          <!-- Dommages corporels -->
+          <div class="sub-heading" data-i18n="sub_bodily_title">Les dommages corporels</div>
+          <p style="margin-bottom: 4px;" data-i18n="sub_bodily_intro">Indemnisation des dommages corporels résultant de l'utilisation du véhicule assuré :</p>
+          <ul class="item-list">
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_1">Frais médicaux restés à charge (plafond de 1 400 €) ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_2">Services d'aide à la personne : assistance à domicile (plafond de 700 €) et service d'accompagnement. ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_3">Frais divers d'hospitalisation : 16 € par nuitée (max : 365 nuits) ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_4">Perte justifiée de revenus pour la période d'incapacité de travail dans la limite de 3 100 € ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_5">Incapacité permanente à partir de 10 %. ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_6">Capitaux décès : ayant droit (1 600 €).</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_7">Conjoint (3 900 €).</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bodily_8">Enfant à charge (3 100 €).</span>
+            </li>
+          </ul>
 
-    <hr>
+          <!-- Dommages au vélo -->
+          <div class="sub-heading" data-i18n="sub_bike_damage_title">Dommages au vélo et à ses accessoires</div>
+          <ul class="item-list">
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bike_1">Événements climatiques ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bike_2">Catastrophes naturelles et technologiques ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bike_3">Attentats ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bike_4">Vol ou tentative de vol ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bike_5">Vandalisme ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bike_6">Incendie ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="bike_7">Autres événements accidentels.</span>
+            </li>
+          </ul>
 
-    <h3>Y a-t-il des exclusions à la couverture ?</h3>
-    <ul>
-      <li>Vous devez utiliser un antivol conforme à la norme indiquée dans vos Conditions Particulières</li>
-      <li>Il y a une période d'abandon</li>
-    </ul>
+          <!-- Recours -->
+          <div class="sub-heading" data-i18n="sub_recours_title">Recours</div>
+          <ul class="item-list">
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="recours_desc">Pour les préjudices résultant d'un événement accidentel garanti.</span>
+            </li>
+          </ul>
 
-    <hr>
+          <!-- Assistance -->
+          <div class="sub-heading" data-i18n="sub_assist_title">Assistance au vélo en cas de déplacement</div>
+          <ul class="item-list">
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="assist_1">Dépannage, remorquage du vélo ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="assist_2">Retour au domicile ou poursuite de trajet ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="assist_3">Récupération du vélo ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+              <span data-i18n="assist_4">Aide financière pour la location d'un vélo de remplacement.</span>
+            </li>
+          </ul>
 
-    <h3>Où suis-je couvert(e) ?</h3>
-    <ul>
-      <li>Vous êtes couvert.e pour les territoires listés dans vos Conditions Particulières</li>
-    </ul>
+          <!-- Garantie optionnelle -->
+          <div class="sub-heading" style="color: #0b4f8a; font-size: 11px; text-transform: uppercase;" data-i18n="opt_header">Garantie optionnelle</div>
+          <div class="sub-heading" style="margin-top: 2px;" data-i18n="opt_title">Responsabilité civile-défense</div>
+          <p style="margin-bottom: 4px;" data-i18n="opt_desc_1">Responsabilité civile : dommages causés aux tiers, dommages corporels (sans limitation de somme), dommages matériels et immatériels consécutifs (3 000 000 €).</p>
+          <p data-i18n="opt_desc_2">Défense des intérêts de l'assuré à la suite d'un accident garanti qui engage sa responsabilité civile.</p>
+        </div>
+      </div>
 
-    <hr>
+      <!-- COLONNE DROITE : QU'EST-CE QUI N'EST PAS ASSURÉ & EXCLUSIONS -->
+      <div class="column-right">
+        
+        <!-- Bloc Qu'est-ce qui n'est pas assuré ? -->
+        <div class="card-block">
+          <div class="card-header">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-cross.svg" class="card-header-icon" alt="Croix rouge">
+            <h3 class="card-header-title" data-i18n="sec_not_insured_title">Qu'est-ce qui<br>n'est pas assuré ?</h3>
+          </div>
+          <ul class="item-list">
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-crosstxt.svg" class="inline-icon-bullet" alt="x">
+              <span data-i18n="not_insured_1">Les déplacements professionnels ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-crosstxt.svg" class="inline-icon-bullet" alt="x">
+              <span data-i18n="not_insured_2">Le transport onéreux de personnes ou de marchandises.</span>
+            </li>
+          </ul>
+        </div>
 
-    <h3>Quelles sont mes obligations ?</h3>
-    <ul>
-      <li>Nous signaler les incidents dès que possible et, au plus tard, 28 jours après la date de l'incident.</li>
-      <li>Nous fournir la preuve que Vous êtes propriétaire de l'Équipement assuré.</li>
-    </ul>
+        <!-- Bloc Exclusions / Restrictions -->
+        <div class="card-block">
+          <div class="card-header">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-warning.svg" class="card-header-icon" alt="Attention">
+            <h3 class="card-header-title" data-i18n="sec_exclusions_title">Y a-t-il des exclusions<br>à la couverture ?</h3>
+          </div>
+          
+          <div class="sub-heading" data-i18n="sub_excl_title">Principales exclusions</div>
+          <ul class="item-list">
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-exclamation.svg" class="inline-icon-bullet" alt="!">
+              <span data-i18n="excl_1">Survenus à l'occasion de la participation de l'assuré en qualité de concurrent ou d'organisateur à des épreuves, courses ; compétitions ou leurs essais, soumis par la réglementation en vigueur à l'autorisation préalable des pouvoirs publics ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-exclamation.svg" class="inline-icon-bullet" alt="!">
+              <span data-i18n="excl_2">Survenus alors que le conducteur est sous l'empire d'un état alcoolique ou a fait l'usage de stupéfiants ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-exclamation.svg" class="inline-icon-bullet" alt="!">
+              <span data-i18n="excl_3">Résultant de la faute intentionnelle ou dolosive de l'assuré ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-exclamation.svg" class="inline-icon-bullet" alt="!">
+              <span data-i18n="excl_4">Résultant de travaux d'entretien réalisés sur le vélo.</span>
+            </li>
+          </ul>
 
-    <hr>
+          <div class="sub-heading" data-i18n="sub_restr_title">Principales restrictions</div>
+          <ul class="item-list">
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-exclamation.svg" class="inline-icon-bullet" alt="!">
+              <span data-i18n="restr_1">En cas de dommages matériels subis par le vélo, l'assuré conserve à sa charge une somme (franchise) qui dépend de la valeur du vélo assuré. Si l'option responsabilité civile est souscrite, l'assuré conserve une somme (franchise) de 75 € pour les dommages matériels causés à un tiers ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-exclamation.svg" class="inline-icon-bullet" alt="!">
+              <span data-i18n="restr_2">Franchise réglementaire catastrophes naturelles : 380 € ;</span>
+            </li>
+            <li class="item-list-entry">
+              <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-exclamation.svg" class="inline-icon-bullet" alt="!">
+              <span data-i18n="restr_3">Pour la garantie recours, une intervention judiciaire ne sera pas exercée si les intérêts en jeu sont &lt; à 625 € ou si l'événement à l'origine du dommage est survenu en dehors de France métropolitaine, Guadeloupe, Martinique, Réunion, Saint-Barthélemy et Saint-Martin pour sa partie française et Monaco.</span>
+            </li>
+          </ul>
+        </div>
 
-    <h3>Quand et comment effectuer les paiements ?</h3>
-    <p>Le 3ème jour ouvrable de chaque mois, nous prélevons Votre prime du mois précédent. Vous ne payez que pour les jours pendant lesquels Vous étiez effectivement assuré(e). Celle-ci se compose de Votre part variable des sinistres du Collectif plus une rémunération fixe de Bikelp SLP. Votre paiement mensuel total ne dépassera jamais la Prime mensuelle plafonnée indiquée dans Vos Conditions Particulières.</p>
+      </div>
 
-    <hr>
+    </div>
 
-    <h3>Quand commence la couverture et quand prend-elle fin ?</h3>
-    <p>Votre couverture prend effet dès que nous vous envoyons votre relevé de compte et est automatiquement renouvelée chaque mois civil, à moins que l'assurance ne soit résiliée par vous ou par nous avant cette date.</p>
+    <!-- BLOCS PLEINE LARGEUR (PAGE 2 DU PDF) -->
+    <div class="full-width-stack">
+      
+      <!-- OÙ SUIS-JE COUVERT ? -->
+      <div class="card-block">
+        <div class="card-header">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-map.svg" class="card-header-icon" alt="Monde">
+          <h3 class="card-header-title" data-i18n="sec_where_title">Où suis-je couvert ?</h3>
+        </div>
+        <p style="margin-bottom: 6px;" data-i18n="where_intro">Sous réserves des dispositions propres à certaines garanties (assistance en cas de déplacement, recours) :</p>
+        <ul class="item-list">
+          <li class="item-list-entry">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+            <span data-i18n="where_1">Sans limitation de durée en France métropolitaine, Guadeloupe, Martinique, Réunion, Saint-Barthélemy, Saint-Martin pour sa partie française et Monaco ;</span>
+          </li>
+          <li class="item-list-entry">
+            <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-checktxt.svg" class="inline-icon" alt="✓">
+            <span data-i18n="where_2">Dès lors que le séjour n'excède pas un an, dans les pays de l'espace économique européen (EEE).</span>
+          </li>
+        </ul>
+      </div>
 
-    <hr>
+      <!-- QUELLES SONT MES OBLIGATIONS ? -->
+      <div class="card-block">
+        <div class="card-header">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-hand.svg" class="card-header-icon" alt="Main">
+          <h3 class="card-header-title" data-i18n="sec_oblig_title">Quelles sont mes obligations ?</h3>
+        </div>
+        <div class="obligation-block">
+          <div class="obligation-title" data-i18n="oblig_sub_1">Lors de la souscription du contrat :</div>
+          <p data-i18n="oblig_p1">Répondre exactement aux questions posées par l'assureur pour lui permettre de connaître et d'apprécier le risque à assurer.</p>
+          <p data-i18n="oblig_p2">Fournir tous documents justificatifs demandés par l'assureur.</p>
+          <p data-i18n="oblig_p3">Régler la cotisation (ou fraction de cotisation) indiquée au contrat.</p>
+        </div>
+        <div class="obligation-block">
+          <div class="obligation-title" data-i18n="oblig_sub_2">En cours de contrat :</div>
+          <p data-i18n="oblig_p4">Déclarer dans un délai de 15 jours toutes circonstances nouvelles qui ont pour conséquence d'aggraver les risques pris en charge ou d'en créer de nouveaux.</p>
+        </div>
+        <div class="obligation-block" style="margin-bottom: 0;">
+          <div class="obligation-title" data-i18n="oblig_sub_3">En cas de sinistre :</div>
+          <p data-i18n="oblig_p5">Déclarer tout événement susceptible de mettre en jeu l'une des garanties souscrites dans les 5 jours ouvrés de la date à laquelle l'assuré en a pris connaissance. En cas de vol ou tentative de vol, déposer plainte auprès des autorités compétentes et fournir le récépissé délivré.</p>
+        </div>
+      </div>
 
-    <h3>Comment puis-je résilier le contrat ?</h3>
-    <p>Vous pouvez résilier Votre assurance en contactant Bikelp SLP par le biais de la Plateforme Bikelp SLP ou par e-mail.</p>
-  </div>
+      <!-- QUAND ET COMMENT EFFECTUER LE PAIEMENT ? -->
+      <div class="card-block">
+        <div class="card-header">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-money.svg" class="card-header-icon" alt="Euros">
+          <h3 class="card-header-title" data-i18n="sec_payment_title">Quand et comment effectuer le paiement ?</h3>
+        </div>
+        <p data-i18n="payment_desc">La cotisation est exigible au 1er janvier. Le règlement peut être effectué en une fois par chèque ou prélèvement automatique ou mensuellement par prélèvement automatique.</p>
+      </div>
 
-  <!-- ================================================================= -->
-  <!-- ANGLAIS (?lang=eng)                                               -->
-  <!-- ================================================================= -->
-  <div id="content-eng" class="lang-content">
-    <h1>Bicycle Insurance</h1>
-    <h2>Insurance Product Information Document</h2>
-    <p><strong>Company:</strong> Occidente Seguros<br>
-    <strong>Product:</strong> Bicycle Insurance</p>
+      <!-- QUAND COMMENCE LA COUVERTURE ET QUAND PREND-ELLE FIN ? -->
+      <div class="card-block">
+        <div class="card-header">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-time.svg" class="card-header-icon" alt="Sablier">
+          <h3 class="card-header-title" data-i18n="sec_duration_title">Quand commence la couverture et quand prend-elle fin ?</h3>
+        </div>
+        <p data-i18n="duration_desc">De la date de prise d'effet au 31 décembre suivant. Le contrat est conclu pour une durée d'un an et il est ensuite reconduit automatiquement pour une année à chaque 1er janvier sauf résiliation par l'une des parties dans les cas et conditions fixés au contrat.</p>
+      </div>
 
-    <p>This document provides only a summary of the insurance policy. The Specific Conditions describe in full detail what you are insured for and what you are not.</p>
+      <!-- COMMENT PUIS-JE RÉSILIER MON CONTRAT ? -->
+      <div class="card-block">
+        <div class="card-header">
+          <img src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp-pdf-agreement.svg" class="card-header-icon" alt="Poignée de main">
+          <h3 class="card-header-title" data-i18n="sec_cancel_title">Comment puis-je résilier mon contrat ?</h3>
+        </div>
+        <p style="margin-bottom: 4px;" data-i18n="cancel_p1">À tout moment à l'expiration d'un délai d'un an à compter de la première souscription. Chaque année au 31 décembre moyennant un préavis de deux mois. En cas de changement de domicile, de situation ou de régime matrimonial, de profession ou de cessation définitive d'activité professionnelle, sous réserve que ces événements entraînent une réelle modification des risques assurés.</p>
+        <p data-i18n="cancel_p2">La résiliation doit être demandée, par lettre simple, par e-mail ou via l'espace personnel maif.fr..</p>
+      </div>
 
-    <hr>
+    </div>
 
-    <h3>What type of insurance is this?</h3>
-    <p>This insurance covers theft, loss, and damage to bicycles (including e-bikes) and their accessories. You can cancel your insurance on a daily basis and pay the premium monthly in arrears.</p>
+    <!-- PIED DE PAGE -->
+    <div class="doc-footer">
+      <span>06/2026</span>
+      <span>IPID VELO</span>
+    </div>
 
-    <hr>
+  </main>
 
-    <h3>What is insured?</h3>
-    <ul>
-      <li>Optional: Accidental damage module</li>
-      <li>Optional: Theft at home module</li>
-      <li>Optional: Theft away from home module</li>
-      <li>Optional: Emergency travel expenses module</li>
-      <li>Optional: Race damage coverage module</li>
-      <li>Costs related to the settlement of your claim.</li>
-      <li>Bicycle rental up to €200</li>
-      <li>Loss by a third party</li>
-      <li>Optional: Worldwide coverage, up to a maximum of 120 consecutive days</li>
-    </ul>
-
-    <hr>
-
-    <h3>What is not insured?</h3>
-    <ul>
-      <li>Damage resulting from the use of your bicycle for commercial purposes.</li>
-      <li>Damage occurring during a Professional Race.</li>
-      <li>Superficial damage</li>
-      <li>Theft involving a non-compliant lock</li>
-    </ul>
-
-    <hr>
-
-    <h3>Are there any exclusions to coverage?</h3>
-    <ul>
-      <li>You must use a lock complying with the standard specified in your Specific Conditions</li>
-      <li>An abandonment period applies</li>
-    </ul>
-
-    <hr>
-
-    <h3>Where am I covered?</h3>
-    <ul>
-      <li>You are covered within the territories listed in your Specific Conditions</li>
-    </ul>
-
-    <hr>
-
-    <h3>What are my obligations?</h3>
-    <ul>
-      <li>Notify us of incidents as soon as possible and no later than 28 days after the date of the incident.</li>
-      <li>Provide us with proof of ownership of the Insured Equipment.</li>
-    </ul>
-
-    <hr>
-
-    <h3>When and how do I make payments?</h3>
-    <p>On the 3rd business day of each month, we collect your premium for the preceding month. You only pay for the days you were actively insured. It consists of your variable share of Collective claims plus Bikelp SLP's fixed fee. Your total monthly payment will never exceed the Capped Monthly Premium indicated in your Specific Conditions.</p>
-
-    <hr>
-
-    <h3>When does coverage start and end?</h3>
-    <p>Your coverage takes effect as soon as we send you your statement and is automatically renewed each calendar month, unless cancelled by you or by us prior to that date.</p>
-
-    <hr>
-
-    <h3>How can I cancel the contract?</h3>
-    <p>You can cancel your insurance by contacting Bikelp SLP via the Bikelp SLP Platform or by email.</p>
-  </div>
-
-  <!-- ================================================================= -->
-  <!-- NÉERLANDAIS (?lang=nl)                                            -->
-  <!-- ================================================================= -->
-  <div id="content-nl" class="lang-content">
-    <h1>Fietsverzekering</h1>
-    <h2>Informatiedocument over het verzekeringsproduct</h2>
-    <p><strong>Verzekeraar:</strong> Occidente Seguros<br>
-    <strong>Product:</strong> Fietsverzekering</p>
-
-    <p>Dit document geeft slechts een overzicht van de verzekering. De Bijzondere Voorwaarden beschrijven in detail waarvoor u wel en niet verzekerd bent.</p>
-
-    <hr>
-
-    <h3>Wat voor type verzekering is dit?</h3>
-    <p>Deze verzekering dekt diefstal, verlies en schade aan fietsen (inclusief elektrische fietsen) en bijbehorende accessoires. U kunt uw verzekering dagelijks opzeggen en betaalt de premie maandelijks achteraf.</p>
-
-    <hr>
-
-    <h3>Wat is verzekerd?</h3>
-    <ul>
-      <li>Optioneel: Module accidentele schade</li>
-      <li>Optioneel: Module diefstal thuis</li>
-      <li>Optioneel: Module diefstal buitenshuis</li>
-      <li>Optioneel: Module noodreiskosten</li>
-      <li>Optioneel: Module wedstrijdschadedekking</li>
-      <li>Kosten verbonden aan de afhandeling van uw schadegeval.</li>
-      <li>Huur van een vervangende fiets tot € 200</li>
-      <li>Verlies door derden</li>
-      <li>Optioneel: Wereldwijde dekking, tot maximaal 120 aaneengesloten dagen</li>
-    </ul>
-
-    <hr>
-
-    <h3>Wat is niet verzekerd?</h3>
-    <ul>
-      <li>Schade als gevolg van commercieel gebruik van uw fiets.</li>
-      <li>Schade tijdens een Professionele Wedstrijd.</li>
-      <li>Oppervlakkige schade</li>
-      <li>Diefstal bij gebruik van een niet-conform slot</li>
-    </ul>
-
-    <hr>
-
-    <h3>Zijn er dekkingsbeperkingen?</h3>
-    <ul>
-      <li>U moet een slot gebruiken dat voldoet aan de norm vermeld in uw Bijzondere Voorwaarden</li>
-      <li>Er geldt een maximale periode voor het onbeheerd achterlaten van de fiets</li>
-    </ul>
-
-    <hr>
-
-    <h3>Waar ben ik gedekt?</h3>
-    <ul>
-      <li>U bent gedekt in de gebieden die zijn vermeld in uw Bijzondere Voorwaarden</li>
-    </ul>
-
-    <hr>
-
-    <h3>Wat zijn mijn verplichtingen?</h3>
-    <ul>
-      <li>Incidenten zo snel mogelijk en uiterlijk binnen 28 dagen na de datum van het voorval aan ons melden.</li>
-      <li>Het eigendomsbewijs van de Verzekerde Uitrusting aan ons verstrekken.</li>
-    </ul>
-
-    <hr>
-
-    <h3>Wanneer en hoe betaal ik?</h3>
-    <p>Op de 3e werkdag van elke maand incasseren wij uw premie voor de voorgaande maand. U betaalt uitsluitend voor de dagen dat u daadwerkelijk verzekerd was. Deze bestaat uit uw variabele aandeel in de claims van het Collectief plus een vaste vergoeding voor Bikelp SLP. Uw totale maandelijkse betaling zal de in uw Bijzondere Voorwaarden vermelde Maximale Maandpremie nooit overschrijden.</p>
-
-    <hr>
-
-    <h3>Wanneer begint en eindigt de dekking?</h3>
-    <p>Uw dekking gaat in zodra wij uw polisafschrift toesturen en wordt elke kalendermaand automatisch verlengd, tenzij de verzekering voor die datum door u of door ons wordt opgezegd.</p>
-
-    <hr>
-
-    <h3>Hoe kan ik het contract opzeggen?</h3>
-    <p>U kunt uw verzekering opzeggen door contact op te nemen met Bikelp SLP via het Bikelp SLP Platform of per e-mail.</p>
-  </div>
-
-  <!-- ================================================================= -->
-  <!-- ROUTAGE PAR PARAMÈTRE D'URL (?lang=)                              -->
-  <!-- ================================================================= -->
+  <!-- ================= SCRIPTS DE TRADUCTION ================= -->
   <script>
-    (function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const langParam = (urlParams.get('lang') || '').toLowerCase();
+    const translations = {
+      fr: {
+        doc_title: "Assurance Vélo",
+        doc_subtitle: "Document d'information sur le produit d'assurance",
+        doc_legal: "MAIF - Entreprise d'assurance immatriculée en France<br>et régie par le Code des assurances - 775709702<br>Assurance Vélo",
+        intro_notice: "Ce document d'information présente un résumé des principales garanties et exclusions du produit. Il ne prend pas en compte les besoins et demandes spécifiques. Une information complète sur ce produit est fournie dans la documentation précontractuelle et contractuelle.",
+        sec_type_title: "De quel type d'assurance s'agit-il ?",
+        sec_type_body: "Ce produit est destiné à couvrir les dommages matériels au vélo assuré et les dommages corporels de ses utilisateurs ayant qualité d'assurés ainsi que des services d'assistance au vélo.",
+        sec_insured_title: "Qu'est-ce qui est assuré ?",
+        notice_check_intro: "Les garanties précédées d'une coche",
+        notice_check_sub: "sont systématiquement prévues au contrat",
+        sub_bodily_title: "Les dommages corporels",
+        sub_bodily_intro: "Indemnisation des dommages corporels résultant de l'utilisation du véhicule assuré :",
+        bodily_1: "Frais médicaux restés à charge (plafond de 1 400 €) ;",
+        bodily_2: "Services d'aide à la personne : assistance à domicile (plafond de 700 €) et service d'accompagnement. ;",
+        bodily_3: "Frais divers d'hospitalisation : 16 € par nuitée (max : 365 nuits) ;",
+        bodily_4: "Perte justifiée de revenus pour la période d'incapacité de travail dans la limite de 3 100 € ;",
+        bodily_5: "Incapacité permanente à partir de 10 %. ;",
+        bodily_6: "Capitaux décès : ayant droit (1 600 €).",
+        bodily_7: "Conjoint (3 900 €).",
+        bodily_8: "Enfant à charge (3 100 €).",
+        sub_bike_damage_title: "Dommages au vélo et à ses accessoires",
+        bike_1: "Événements climatiques ;",
+        bike_2: "Catastrophes naturelles et technologiques ;",
+        bike_3: "Attentats ;",
+        bike_4: "Vol ou tentative de vol ;",
+        bike_5: "Vandalisme ;",
+        bike_6: "Incendie ;",
+        bike_7: "Autres événements accidentels.",
+        sub_recours_title: "Recours",
+        recours_desc: "Pour les préjudices résultant d'un événement accidentel garanti.",
+        sub_assist_title: "Assistance au vélo en cas de déplacement",
+        assist_1: "Dépannage, remorquage du vélo ;",
+        assist_2: "Retour au domicile ou poursuite de trajet ;",
+        assist_3: "Récupération du vélo ;",
+        assist_4: "Aide financière pour la location d'un vélo de remplacement.",
+        opt_header: "Garantie optionnelle",
+        opt_title: "Responsabilité civile-défense",
+        opt_desc_1: "Responsabilité civile : dommages causés aux tiers, dommages corporels (sans limitation de somme), dommages matériels et immatériels consécutifs (3 000 000 €).",
+        opt_desc_2: "Défense des intérêts de l'assuré à la suite d'un accident garanti qui engage sa responsabilité civile.",
+        sec_not_insured_title: "Qu'est-ce qui<br>n'est pas assuré ?",
+        not_insured_1: "Les déplacements professionnels ;",
+        not_insured_2: "Le transport onéreux de personnes ou de marchandises.",
+        sec_exclusions_title: "Y a-t-il des exclusions<br>à la couverture ?",
+        sub_excl_title: "Principales exclusions",
+        excl_1: "Survenus à l'occasion de la participation de l'assuré en qualité de concurrent ou d'organisateur à des épreuves, courses ; compétitions ou leurs essais, soumis par la réglementation en vigueur à l'autorisation préalable des pouvoirs publics ;",
+        excl_2: "Survenus alors que le conducteur est sous l'empire d'un état alcoolique ou a fait l'usage de stupéfiants ;",
+        excl_3: "Résultant de la faute intentionnelle ou dolosive de l'assuré ;",
+        excl_4: "Résultant de travaux d'entretien réalisés sur le vélo.",
+        sub_restr_title: "Principales restrictions",
+        restr_1: "En cas de dommages matériels subis par le vélo, l'assuré conserve à sa charge une somme (franchise) qui dépend de la valeur du vélo assuré. Si l'option responsabilité civile est souscrite, l'assuré conserve une somme (franchise) de 75 € pour les dommages matériels causés à un tiers ;",
+        restr_2: "Franchise réglementaire catastrophes naturelles : 380 € ;",
+        restr_3: "Pour la garantie recours, une intervention judiciaire ne sera pas exercée si les intérêts en jeu sont < à 625 € ou si l'événement à l'origine du dommage est survenu en dehors de France métropolitaine, Guadeloupe, Martinique, Réunion, Saint-Barthélemy et Saint-Martin pour sa partie française et Monaco.",
+        sec_where_title: "Où suis-je couvert ?",
+        where_intro: "Sous réserves des dispositions propres à certaines garanties (assistance en cas de déplacement, recours) :",
+        where_1: "Sans limitation de durée en France métropolitaine, Guadeloupe, Martinique, Réunion, Saint-Barthélemy, Saint-Martin pour sa partie française et Monaco ;",
+        where_2: "Dès lors que le séjour n'excède pas un an, dans les pays de l'espace économique européen (EEE).",
+        sec_oblig_title: "Quelles sont mes obligations ?",
+        oblig_sub_1: "Lors de la souscription du contrat :",
+        oblig_p1: "Répondre exactement aux questions posées par l'assureur pour lui permettre de connaître et d'apprécier le risque à assurer.",
+        oblig_p2: "Fournir tous documents justificatifs demandés par l'assureur.",
+        oblig_p3: "Régler la cotisation (ou fraction de cotisation) indiquée au contrat.",
+        oblig_sub_2: "En cours de contrat :",
+        oblig_p4: "Déclarer dans un délai de 15 jours toutes circonstances nouvelles qui ont pour conséquence d'aggraver les risques pris en charge ou d'en créer de nouveaux.",
+        oblig_sub_3: "En cas de sinistre :",
+        oblig_p5: "Déclarer tout événement susceptible de mettre en jeu l'une des garanties souscrites dans les 5 jours ouvrés de la date à laquelle l'assuré en a pris connaissance. En cas de vol ou tentative de vol, déposer plainte auprès des autorités compétentes et fournir le récépissé délivré.",
+        sec_payment_title: "Quand et comment effectuer le paiement ?",
+        payment_desc: "La cotisation est exigible au 1er janvier. Le règlement peut être effectué en une fois par chèque ou prélèvement automatique ou mensuellement par prélèvement automatique.",
+        sec_duration_title: "Quand commence la couverture et quand prend-elle fin ?",
+        duration_desc: "De la date de prise d'effet au 31 décembre suivant. Le contrat est conclu pour une durée d'un an et il est ensuite reconduit automatiquement pour une année à chaque 1er janvier sauf résiliation par l'une des parties dans les cas et conditions fixés au contrat.",
+        sec_cancel_title: "Comment puis-je résilier mon contrat ?",
+        cancel_p1: "À tout moment à l'expiration d'un délai d'un an à compter de la première souscription. Chaque année au 31 décembre moyennant un préavis de deux mois. En cas de changement de domicile, de situation ou de régime matrimonial, de profession ou de cessation définitive d'activité professionnelle, sous réserve que ces événements entraînent une réelle modification des risques assurés.",
+        cancel_p2: "La résiliation doit être demandée, par lettre simple, par e-mail ou via l'espace personnel maif.fr.."
+      },
+      en: {
+        doc_title: "Bicycle Insurance",
+        doc_subtitle: "Insurance Product Information Document",
+        doc_legal: "MAIF - Insurance company registered in France<br>governed by the French Insurance Code - 775709702<br>Bicycle Insurance",
+        intro_notice: "This information document provides a summary of the main coverage and exclusions of the product. It does not take into account specific needs and requests. Complete information on this product is provided in the pre-contractual and contractual documentation.",
+        sec_type_title: "What type of insurance is this?",
+        sec_type_body: "This product is designed to cover physical damage to the insured bicycle and bodily injury to its users who qualify as insured persons, as well as bicycle assistance services.",
+        sec_insured_title: "What is insured?",
+        notice_check_intro: "Coverage preceded by a check mark",
+        notice_check_sub: "is systematically included in the contract",
+        sub_bodily_title: "Bodily injury",
+        sub_bodily_intro: "Compensation for bodily injuries resulting from the use of the insured vehicle:",
+        bodily_1: "Remaining medical expenses (cap of €1,400);",
+        bodily_2: "Personal assistance services: home assistance (cap of €700) and accompaniment service.;",
+        bodily_3: "Hospital stay expenses: €16 per night (max: 365 nights);",
+        bodily_4: "Justified loss of income for the period of incapacity to work up to €3,100;",
+        bodily_5: "Permanent disability starting from 10%.;",
+        bodily_6: "Death benefits: beneficiaries (€1,600).",
+        bodily_7: "Spouse (€3,900).",
+        bodily_8: "Dependent child (€3,100).",
+        sub_bike_damage_title: "Damage to the bicycle and accessories",
+        bike_1: "Weather events;",
+        bike_2: "Natural and technological disasters;",
+        bike_3: "Terrorist attacks;",
+        bike_4: "Theft or attempted theft;",
+        bike_5: "Vandalism;",
+        bike_6: "Fire;",
+        bike_7: "Other accidental events.",
+        sub_recours_title: "Legal recovery",
+        recours_desc: "For damages resulting from a covered accidental event.",
+        sub_assist_title: "Bicycle assistance during travel",
+        assist_1: "Bicycle breakdown assistance and towing;",
+        assist_2: "Return home or continuation of trip;",
+        assist_3: "Bicycle recovery;",
+        assist_4: "Financial assistance for renting a replacement bicycle.",
+        opt_header: "Optional coverage",
+        opt_title: "Third-party liability and legal defense",
+        opt_desc_1: "Third-party liability: damage caused to third parties, bodily injury (unlimited amount), resulting material and immaterial damages (€3,000,000).",
+        opt_desc_2: "Defense of the insured's interests following a covered accident involving their civil liability.",
+        sec_not_insured_title: "What is<br>not insured?",
+        not_insured_1: "Business trips;",
+        not_insured_2: "Paid transportation of persons or goods.",
+        sec_exclusions_title: "Are there any exclusions<br>to coverage?",
+        sub_excl_title: "Main exclusions",
+        excl_1: "Occurring during participation as a competitor or organizer in trials, races, competitions or their tests requiring prior official authorization;",
+        excl_2: "Occurring while the rider is under the influence of alcohol or narcotics;",
+        excl_3: "Resulting from intentional or fraudulent fault of the insured;",
+        excl_4: "Resulting from maintenance work carried out on the bicycle.",
+        sub_restr_title: "Main restrictions",
+        restr_1: "In case of material damage to the bicycle, a deductible based on the bicycle's value remains at the insured's expense. If third-party liability is chosen, a €75 deductible applies to third-party property damage;",
+        restr_2: "Statutory deductible for natural disasters: €380;",
+        restr_3: "For legal recovery, legal proceedings will not be initiated if the dispute amount is < €625 or if the event occurred outside mainland France, Guadeloupe, Martinique, Réunion, Saint-Barthélemy, French Saint-Martin and Monaco.",
+        sec_where_title: "Where am I covered?",
+        where_intro: "Subject to specific conditions for certain coverages (travel assistance, legal recovery):",
+        where_1: "Without time limitation in Metropolitan France, Guadeloupe, Martinique, Réunion, Saint-Barthélemy, French Saint-Martin, and Monaco;",
+        where_2: "Provided the stay does not exceed one year, in the countries of the European Economic Area (EEA).",
+        sec_oblig_title: "What are my obligations?",
+        oblig_sub_1: "When taking out the policy:",
+        oblig_p1: "Accurately answer questions asked by the insurer to allow risk assessment.",
+        oblig_p2: "Provide all supporting documents requested by the insurer.",
+        oblig_p3: "Pay the premium (or premium installment) indicated in the contract.",
+        oblig_sub_2: "During the contract term:",
+        oblig_p4: "Notify the insurer within 15 days of any new circumstance that increases insured risks or creates new ones.",
+        oblig_sub_3: "In the event of a claim:",
+        oblig_p5: "Declare any event likely to trigger coverage within 5 business days of becoming aware of it. In case of theft, file a police report and submit the receipt.",
+        sec_payment_title: "When and how do I pay?",
+        payment_desc: "The premium is due on January 1st. Payment can be made in one lump sum by check or direct debit, or monthly by direct debit.",
+        sec_duration_title: "When does coverage start and end?",
+        duration_desc: "From the effective date until the following December 31st. The contract is concluded for one year and automatically renewed annually on January 1st unless terminated under contract terms.",
+        sec_cancel_title: "How do I cancel the contract?",
+        cancel_p1: "At any time after one year from first subscription. Each year on December 31st with two months' notice. In case of change of address, marital status, profession, or permanent cessation of work, provided it modifies the risks.",
+        cancel_p2: "Cancellation must be requested by simple letter, e-mail, or via the maif.fr personal account."
+      },
+      nl: {
+        doc_title: "Fietsverzekering",
+        doc_subtitle: "Informatiedocument over het verzekeringsproduct",
+        doc_legal: "MAIF - Verzekeringsmaatschappij geregistreerd in Frankrijk<br>gereguleerd door de Franse Verzekeringswet - 775709702<br>Fietsverzekering",
+        intro_notice: "Dit informatiedocument geeft een overzicht van de belangrijkste dekkingen en uitsluitingen van het product. Het houdt geen rekening met specifieke behoeften. Volledige informatie is te vinden in de contractuele documenten.",
+        sec_type_title: "Wat voor soort verzekering is dit?",
+        sec_type_body: "Dit product dekt materiële schade aan de verzekerde fiets en lichamelijk letsel van de verzekerde gebruikers, evenals pechhulpdiensten voor de fiets.",
+        sec_insured_title: "Wat is verzekerd?",
+        notice_check_intro: "De dekkingen voorafgegaan door een vinkje",
+        notice_check_sub: "zijn standaard inbegrepen in het contract",
+        sub_bodily_title: "Lichamelijk letsel",
+        sub_bodily_intro: "Vergoeding van lichamelijk letsel als gevolg van het gebruik van het verzekerde voertuig:",
+        bodily_1: "Resterende medische kosten (maximaal € 1.400);",
+        bodily_2: "Persoonlijke hulp: thuishulp (maximaal € 700) en begeleidingsdienst.;",
+        bodily_3: "Ziekenhuiskosten: € 16 per nacht (max: 365 nachten);",
+        bodily_4: "Gerechtvaardigd inkomensverlies tijdens arbeidsongeschiktheid tot € 3.100;",
+        bodily_5: "Blijvende invaliditeit vanaf 10%.;",
+        bodily_6: "Overlijdenskapitaal: rechthebbenden (€ 1.600).",
+        bodily_7: "Echtgenoot (€ 3.900).",
+        bodily_8: "Ten laste komend kind (€ 3.100).",
+        sub_bike_damage_title: "Schade aan de fiets en accessoires",
+        bike_1: "Weersomstandigheden;",
+        bike_2: "Natuurrampen en technologische rampen;",
+        bike_3: "Aanslagen;",
+        bike_4: "Diefstal of poging tot diefstal;",
+        bike_5: "Vandalisme;",
+        bike_6: "Brand;",
+        bike_7: "Andere ongevallen.",
+        sub_recours_title: "Juridisch verhaal",
+        recours_desc: "Voor schade als gevolg van een gedekt ongeval.",
+        sub_assist_title: "Fietshulp bij verplaatsingen",
+        assist_1: "Pechhulp en slepen van de fiets;",
+        assist_2: "Terugkeer naar huis of voortzetting van de reis;",
+        assist_3: "Ophalen van de fiets;",
+        assist_4: "Financiële bijdrage voor het huren van een vervangende fiets.",
+        opt_header: "Optionele dekking",
+        opt_title: "Aansprakelijkheid en verdediging",
+        opt_desc_1: "Aansprakelijkheid: schade aan derden, lichamelijk letsel (onbeperkt), materiële en immateriële schade (€ 3.000.000).",
+        opt_desc_2: "Verdediging van de belangen van de verzekerde na een gedekt ongeval.",
+        sec_not_insured_title: "Wat is niet<br>verzekerd?",
+        not_insured_1: "Zakelijke ritten;",
+        not_insured_2: "Betaald vervoer van personen of goederen.",
+        sec_exclusions_title: "Zijn er uitsluitingen<br>van de dekking?",
+        sub_excl_title: "Belangrijkste uitsluitingen",
+        excl_1: "Tijdens deelname aan wedstrijden, races of proeven onderworpen aan officiële vergunningen;",
+        excl_2: "Terwijl de bestuurder onder invloed van alcohol of verdovende middelen is;",
+        excl_3: "Als gevolg van opzettelijke of frauduleuze fout van de verzekerde;",
+        excl_4: "Als gevolg van onderhoudswerkzaamheden aan de fiets.",
+        sub_restr_title: "Belangrijkste beperkingen",
+        restr_1: "Bij materiële schade aan de fiets geldt een eigen risico afhankelijk van de fietswaarde. Bij aansprakelijkheid geldt een eigen risico van € 75 voor materiële schade aan derden;",
+        restr_2: "Wettelijk eigen risico natuurrampen: € 380;",
+        restr_3: "Voor juridisch verhaal geen tussenkomst onder € 625 of indien het voorval buiten Frans grondgebied en Monaco plaatsvond.",
+        sec_where_title: "Waar ben ik gedekt?",
+        where_intro: "Onder voorbehoud van specifieke bepalingen voor bepaalde dekkingen:",
+        where_1: "Zonder tijdsbeperking in Europees Frankrijk, overzeese departementen en Monaco;",
+        where_2: "Zolang het verblijf niet langer duurt dan een jaar, in de landen van de EER.",
+        sec_oblig_title: "Wat zijn mijn verplichtingen?",
+        oblig_sub_1: "Bij het afsluiten van het contract:",
+        oblig_p1: "De gestelde vragen nauwkeurig beantwoorden om de risicobeoordeling mogelijk te maken.",
+        oblig_p2: "Alle gevraagde documenten verstrekken.",
+        oblig_p3: "De premie betalen zoals aangegeven in het contract.",
+        oblig_sub_2: "Tijdens de looptijd van het contract:",
+        oblig_p4: "Binnen 15 dagen nieuwe omstandigheden melden die het risico vergroten.",
+        oblig_sub_3: "Bij schade:",
+        oblig_p5: "Elk schadegeval binnen 5 werkdagen melden. Bij diefstal aangifte doen bij de politie en het bewijs leveren.",
+        sec_payment_title: "Wanneer en hoe betaal ik?",
+        payment_desc: "De premie is verschuldigd op 1 januari. Betaling per cheque, eenmalige of maandelijkse automatische incasso.",
+        sec_duration_title: "Wanneer begint en eindigt de dekking?",
+        duration_desc: "Vanaf de ingangsdatum tot 31 december. Het contract wordt afgesloten voor één jaar en stilzwijgend verlengd.",
+        sec_cancel_title: "Hoe kan ik opzeggen?",
+        cancel_p1: "Op elk moment na het eerste jaar. Jaarlijks per 31 december met 2 maanden opzegtermijn. Of bij wijziging van persoonlijke situatie.",
+        cancel_p2: "Opzegging kan per brief, e-mail of via de persoonlijke ruimte op maif.fr."
+      },
+      es: {
+        doc_title: "Seguro de Bicicleta",
+        doc_subtitle: "Documento de información sobre el producto de seguro",
+        doc_legal: "MAIF - Entidad aseguradora registrada en Francia<br>y regulada por el Código de Seguros - 775709702<br>Seguro de Bicicleta",
+        intro_notice: "Este documento presenta un resumen de las principales coberturas y exclusiones. No tiene en cuenta necesidades específicas. La información completa se facilita en la documentación contractual.",
+        sec_type_title: "¿De qué tipo de seguro se trata?",
+        sec_type_body: "Este producto cubre los daños materiales a la bicicleta asegurada y los daños corporales de sus usuarios, así como servicios de asistencia a la bicicleta.",
+        sec_insured_title: "¿Qué está asegurado?",
+        notice_check_intro: "Las garantías precedidas de una marca",
+        notice_check_sub: "están sistemáticamente previstas en el contrato",
+        sub_bodily_title: "Daños corporales",
+        sub_bodily_intro: "Indemnización de daños corporales resultantes del uso del vehículo asegurado:",
+        bodily_1: "Gastos médicos restantes a cargo (límite de 1.400 €);",
+        bodily_2: "Ayuda a domicilio (límite de 700 €) y servicio de acompañamiento;",
+        bodily_3: "Gastos de hospitalización: 16 € por noche (máx: 365 noches);",
+        bodily_4: "Pérdida justificada de ingresos por incapacidad laboral hasta 3.100 €;",
+        bodily_5: "Incapacidad permanente a partir del 10%;",
+        bodily_6: "Capitales de fallecimiento: herederos legales (1.600 €).",
+        bodily_7: "Cónyuge (3.900 €).",
+        bodily_8: "Hijo a cargo (3.100 €).",
+        sub_bike_damage_title: "Daños a la bicicleta y accesorios",
+        bike_1: "Fenómenos meteorológicos;",
+        bike_2: "Catástrofes naturales y tecnológicas;",
+        bike_3: "Atentados;",
+        bike_4: "Robo o tentativa de robo;",
+        bike_5: "Vandalismo;",
+        bike_6: "Incendio;",
+        bike_7: "Otros eventos accidentales.",
+        sub_recours_title: "Reclamación y defensa",
+        recours_desc: "Por los perjuicios derivados de un siniestro cubierto.",
+        sub_assist_title: "Asistencia a la bicicleta en desplazamiento",
+        assist_1: "Reparación y remolque de la bicicleta;",
+        assist_2: "Regreso al domicilio o continuación del viaje;",
+        assist_3: "Recuperación de la bicicleta;",
+        assist_4: "Ayuda económica para el alquiler de una bicicleta de sustitución.",
+        opt_header: "Garantía opcional",
+        opt_title: "Responsabilidad civil y defensa",
+        opt_desc_1: "Responsabilidad civil: daños a terceros, daños corporales (sin límite), daños materiales y consecuenciales (3.000.000 €).",
+        opt_desc_2: "Defensa jurídica del asegurado tras un accidente cubierto.",
+        sec_not_insured_title: "¿Qué no está<br>asegurado?",
+        not_insured_1: "Desplazamientos profesionales;",
+        not_insured_2: "Transporte retribuido de personas o mercancías.",
+        sec_exclusions_title: "¿Existen exclusiones<br>de cobertura?",
+        sub_excl_title: "Principales exclusiones",
+        excl_1: "Participación en competiciones o pruebas deportivas no autorizadas;",
+        excl_2: "Conducción bajo los efectos del alcohol o estupefacientes;",
+        excl_3: "Falta intencional o dolosa del asegurado;",
+        excl_4: "Daños por operaciones de mantenimiento en la bicicleta.",
+        sub_restr_title: "Principales restricciones",
+        restr_1: "Franquicia variable según el valor de la bicicleta. En responsabilidad civil, franquicia de 75 € por daños materiales a terceros;",
+        restr_2: "Franquicia legal por catástrofes naturales: 380 €;",
+        restr_3: "Para reclamación, límite mínimo de 625 € y dentro del territorio francés o Mónaco.",
+        sec_where_title: "¿Dónde estoy cubierto?",
+        where_intro: "Sujeto a las cláusulas particulares de cada cobertura:",
+        where_1: "Sin límite temporal en Francia metropolitana, departamentos de ultramar y Mónaco;",
+        where_2: "Estancias de menos de un año en los países del Espacio Económico Europeo (EEE).",
+        sec_oblig_title: "¿Cuáles son mis obligaciones?",
+        oblig_sub_1: "Al contratar:",
+        oblig_p1: "Responder con exactitud a las preguntas formuladas por la aseguradora.",
+        oblig_p2: "Facilitar los documentos justificativos requeridos.",
+        oblig_p3: "Abonar la prima convenida.",
+        oblig_sub_2: "Durante la vigencia:",
+        oblig_p4: "Comunicar en 15 días cualquier cambio que agrave el riesgo.",
+        oblig_sub_3: "En caso de siniestro:",
+        oblig_p5: "Declarar el siniestro en un plazo máximo de 5 días hábiles. En caso de robo, formular denuncia policial.",
+        sec_payment_title: "¿Cuándo y cómo realizo el pago?",
+        payment_desc: "La prima vence el 1 de enero. Puede abonarse en un pago único por cheque o domiciliación, o mensualmente.",
+        sec_duration_title: "¿Cuándo comienza y finaliza la cobertura?",
+        duration_desc: "Desde la fecha de efecto hasta el 31 de diciembre. El contrato es anual y renovable tácitamente.",
+        sec_cancel_title: "¿Cómo puedo rescindir mi contrato?",
+        cancel_p1: "En cualquier momento transcurrido el primer año, o anualmente con 2 meses de preaviso antes del 31 de diciembre.",
+        cancel_p2: "Por carta simple, correo electrónico o mediante el área de clientes de maif.fr."
+      },
+      pt: {
+        doc_title: "Seguro de Bicicleta",
+        doc_subtitle: "Documento de informação sobre o produto de seguro",
+        doc_legal: "MAIF - Empresa de seguros registada em França<br>regulada pelo Código de Seguros - 775709702<br>Seguro de Bicicleta",
+        intro_notice: "Este documento resume as principais coberturas e exclusões do seguro. As informações completas constam na apólice.",
+        sec_type_title: "Que tipo de seguro é este?",
+        sec_type_body: "Destina-se a cobrir danos materiais na bicicleta segurada e danos corporais dos seus utilizadores, além de assistência.",
+        sec_insured_title: "O que está seguro?",
+        notice_check_intro: "As coberturas assinaladas com visto",
+        notice_check_sub: "estão sistematicamente incluídas no contrato",
+        sub_bodily_title: "Danos corporais",
+        sub_bodily_intro: "Indemnização por danos corporais resultantes da utilização do veículo:",
+        bodily_1: "Despesas médicas remanescentes (limite de 1.400 €);",
+        bodily_2: "Apoio domiciliário (limite de 700 €) e acompanhamento;",
+        bodily_3: "Despesas de hospitalização: 16 € por dia (máx: 365 noites);",
+        bodily_4: "Perda comprovada de rendimentos por incapacidade temporária até 3.100 €;",
+        bodily_5: "Invalidez permanente a partir de 10%;",
+        bodily_6: "Capital por morte: herdeiros legais (1.600 €).",
+        bodily_7: "Cônjuge (3.900 €).",
+        bodily_8: "Filho a cargo (3.100 €).",
+        sub_bike_damage_title: "Danos na bicicleta e acessórios",
+        bike_1: "Eventos climáticos;",
+        bike_2: "Catástrofes naturais e tecnológicas;",
+        bike_3: "Atentados;",
+        bike_4: "Roubo ou tentativa de roubo;",
+        bike_5: "Vandalismo;",
+        bike_6: "Incêndio;",
+        bike_7: "Outros acidentes imprevistos.",
+        sub_recours_title: "Proteção jurídica",
+        recours_desc: "Para reparação de danos decorrentes de sinistros garantidos.",
+        sub_assist_title: "Assistência à bicicleta em viagem",
+        assist_1: "Reparação e reboque da bicicleta;",
+        assist_2: "Regresso a casa ou continuação da viagem;",
+        assist_3: "Recuperação da bicicleta;",
+        assist_4: "Apoio financeiro para aluguer de bicicleta de substituição.",
+        opt_header: "Cobertura opcional",
+        opt_title: "Responsabilidade civil e defesa",
+        opt_desc_1: "Responsabilidade civil perante terceiros: corporais (ilimitado), materiais e imateriais (3.000.000 €).",
+        opt_desc_2: "Defesa jurídica dos interesses do segurado em sinistros abrangidos.",
+        sec_not_insured_title: "O que não está<br>seguro?",
+        not_insured_1: "Deslocações profissionais;",
+        not_insured_2: "Transporte remunerado de passageiros ou mercadorrias.",
+        sec_exclusions_title: "Existem exclusões<br>à cobertura?",
+        sub_excl_title: "Principais exclusões",
+        excl_1: "Participação em provas desportivas ou competições oficiais sem autorização;",
+        excl_2: "Sob efeito de álcool ou substâncias psicotrópicas;",
+        excl_3: "Atos intencionais ou fraudulentos do segurado;",
+        excl_4: "Trabalhos de manutenção e reparação mecânica da bicicleta.",
+        sub_restr_title: "Principais restrições",
+        restr_1: "Franquia consoante o valor da bicicleta. Em responsabilidade civil, franquia de 75 € para danos materiais a terceiros;",
+        restr_2: "Franquia legal para catástrofes naturais: 380 €;",
+        restr_3: "Recurso judicial apenas a partir de litígios superiores a 625 €.",
+        sec_where_title: "Onde estou coberto?",
+        where_intro: "Sob reserva das cláusulas aplicáveis a cada garantia:",
+        where_1: "Sem limite de tempo em França metropolitana, territórios ultramarinos e Mónaco;",
+        where_2: "Estadias até 1 ano nos países do Espaço Económico Europeu (EEE).",
+        sec_oblig_title: "Quais são as minhas obrigações?",
+        oblig_sub_1: "Na adesão ao contrato:",
+        oblig_p1: "Responder com veracidade às questões de avaliação do risco.",
+        oblig_p2: "Apresentar os comprovativos solicitados pela seguradora.",
+        oblig_p3: "Pagar o prémio do seguro indicado.",
+        oblig_sub_2: "Durante a vigência:",
+        oblig_p4: "Comunicar alterações de risco no prazo de 15 dias.",
+        oblig_sub_3: "Em caso de sinistro:",
+        oblig_p5: "Participar o sinistro em até 5 dias úteis e apresentar queixa policial no caso de roubo.",
+        sec_payment_title: "Quando e como efetuar o pagamento?",
+        payment_desc: "O prémio vence a 1 de janeiro. Pagamento único por cheque/débito direto ou mensalidades.",
+        sec_duration_title: "Quando começa e quando termina a cobertura?",
+        duration_desc: "Da data de início a 31 de dezembro seguinte, com renovação anual automática.",
+        sec_cancel_title: "Como posso cancelar o contrato?",
+        cancel_p1: "A qualquer momento após 1 ano ou anualmente antes de 31 de dezembro com 2 meses de pré-aviso.",
+        cancel_p2: "Por carta registada, e-mail ou através da área pessoal em maif.fr."
+      },
+      it: {
+        doc_title: "Assicurazione Bicicletta",
+        doc_subtitle: "Documento informativo sul prodotto assicurativo",
+        doc_legal: "MAIF - Compagnia assicurativa registrata in Francia<br>disciplinata dal Codice delle Assicurazioni - 775709702<br>Assicurazione Bicicletta",
+        intro_notice: "Il presente documento riassume le garanzie e le esclusioni principali della polizza. Le condizioni complete sono disponibili nel contratto.",
+        sec_type_title: "Che tipo di assicurazione è?",
+        sec_type_body: "Copre i danni materiali alla bicicletta assicurata, le lesioni fisiche degli utenti assicurati e i servizi di assistenza stradale.",
+        sec_insured_title: "Cosa è assicurato?",
+        notice_check_intro: "Le garanzie precedute dal segno di spunta",
+        notice_check_sub: "sono sempre incluse nella copertura base",
+        sub_bodily_title: "Danni fisici alla persona",
+        sub_bodily_intro: "Indennizzo per infortuni derivanti dall'uso della bicicletta assicurata:",
+        bodily_1: "Spese sanitarie a carico (fino a 1.400 €);",
+        bodily_2: "Assistenza alla persona: assistenza domiciliare (fino a 700 €) e accompagnamento;",
+        bodily_3: "Degenza ospedaliera: 16 € al giorno (max: 365 giorni);",
+        bodily_4: "Perdita di reddito da lavoro fino a un massimo di 3.100 €;",
+        bodily_5: "Invalidità permanente a partire dal 10%;",
+        bodily_6: "Capitale in caso di morte: eredi (1.600 €).",
+        bodily_7: "Coniuge (3.900 €).",
+        bodily_8: "Figlio a carico (3.100 €).",
+        sub_bike_damage_title: "Danni alla bicicletta e accessori",
+        bike_1: "Eventi atmosferici e intemperie;",
+        bike_2: "Calamità naturali e tecnologiche;",
+        bike_3: "Attentati;",
+        bike_4: "Furto o tentato furto;",
+        bike_5: "Vandalismo;",
+        bike_6: "Incendio;",
+        bike_7: "Altri eventi accidentali.",
+        sub_recours_title: "Tutela legale e rivalsa",
+        recours_desc: "Per danni derivanti da un evento assicurato.",
+        sub_assist_title: "Assistenza alla bicicletta in viaggio",
+        assist_1: "Soccorso e traino della bicicletta;",
+        assist_2: "Rientro al domicilio o prosecuzione del viaggio;",
+        assist_3: "Recupero della bicicletta;",
+        assist_4: "Contributo economico per noleggio bicicletta sostitutiva.",
+        opt_header: "Garanzia facoltativa",
+        opt_title: "Responsabilità Civile e Difesa Legale",
+        opt_desc_1: "Responsabilità Civile: danni a terzi, danni corporali (illimitati), danni materiali (3.000.000 €).",
+        opt_desc_2: "Difesa legale degli interessi dell'assicurato a seguito di sinistro.",
+        sec_not_insured_title: "Cosa non è<br>assicurato?",
+        not_insured_1: "Spostamenti professionali;",
+        not_insured_2: "Trasporto a pagamento di persone o merci.",
+        sec_exclusions_title: "Ci sono esclusioni<br>dalla copertura?",
+        sub_excl_title: "Principali esclusioni",
+        excl_1: "Partecipazione a gare, corse o competizioni sportive ufficiali;",
+        excl_2: "Sinistri avvenuti sotto l'influenza di alcool o sostanze stupefacenti;",
+        excl_3: "Dolo o colpa grave dell'assicurato;",
+        excl_4: "Danni dovuti a lavori di manutenzione sulla bicicletta.",
+        sub_restr_title: "Principali franchigie e limitazioni",
+        restr_1: "Franchigia variabile per danni alla bicicletta. In RC, franchigia di 75 € per danni a terzi;",
+        restr_2: "Franchigia di legge per catastrofi naturali: 380 €;",
+        restr_3: "Azione legale solo per controversie superiori a 625 € in Francia o Monaco.",
+        sec_where_title: "Dove sono coperto?",
+        where_intro: "Salvo disposizioni speciali:",
+        where_1: "Senza limiti di tempo in Francia metropolitana, territori d'oltremare e Monaco;",
+        where_2: "Fino a un anno nei Paesi dello Spazio Economico Europeo (SEE).",
+        sec_oblig_title: "Quali sono i miei obblighi?",
+        oblig_sub_1: "Alla stipula del contratto:",
+        oblig_p1: "Fornire informazioni veritiere all'assicuratore per stimare il rischio.",
+        oblig_p2: "Inviare tutti i documenti giustificativi richiesti.",
+        oblig_p3: "Pagare il premio stabilito.",
+        oblig_sub_2: "Durante il contratto:",
+        oblig_p4: "Dichiarare entro 15 giorni ogni variazione che aumenti i rischi.",
+        oblig_sub_3: "In caso di sinistro:",
+        oblig_p5: "Denunciare il sinistro entro 5 giorni lavorativi e sporgere denuncia in caso di furto.",
+        sec_payment_title: "Quando e come devo pagare?",
+        payment_desc: "Il pagamento scade il 1° gennaio, tramite assegno o addebito diretto (annuale o mensile).",
+        sec_duration_title: "Quando inizia e quando finisce la copertura?",
+        duration_desc: "Dalla data di decorrenza fino al 31 dicembre successivo, con rinnovo tacito annuale.",
+        sec_cancel_title: "Come posso disdire la polizza?",
+        cancel_p1: "In qualsiasi momento dopo un anno, oppure al 31 dicembre con due mesi di preavviso.",
+        cancel_p2: "Con raccomandata, e-mail o dall'area personale maif.fr."
+      },
+      de: {
+        doc_title: "Fahrradversicherung",
+        doc_subtitle: "Informationsdokument zum Versicherungsprodukt",
+        doc_legal: "MAIF - In Frankreich eingetragenes Versicherungsunternehmen<br>nach dem französischen Versicherungsgesetz - 775709702<br>Fahrradversicherung",
+        intro_notice: "Dieses Informationsblatt fasst die wesentlichen Leistungen und Ausschlüsse zusammen. Vollständige Einzelheiten entnehmen Sie den Vertragsunterlagen.",
+        sec_type_title: "Um welche Art von Versicherung handelt es sich?",
+        sec_type_body: "Dieses Produkt deckt Sachschäden am versicherten Fahrrad und Personenschäden der versicherten Fahrer sowie Fahrrad-Pannenhilfeleistungen ab.",
+        sec_insured_title: "Was ist versichert?",
+        notice_check_intro: "Mit einem Häkchen gekennzeichnete Leistungen",
+        notice_check_sub: "sind standardmäßig im Vertrag enthalten",
+        sub_bodily_title: "Personenschäden",
+        sub_bodily_intro: "Entschädigung für Personenschäden bei der Nutzung des versicherten Fahrzeugs:",
+        bodily_1: "Restliche medizinische Behandlungskosten (Höchstgrenze 1.400 €);",
+        bodily_2: "Haushaltshilfe (Höchstgrenze 700 €) und Begleitdienst;",
+        bodily_3: "Krankenhaustagegeld: 16 € pro Tag (max: 365 Tage);",
+        bodily_4: "Verdienstausfall bei vorübergehender Arbeitsunfähigkeit bis 3.100 €;",
+        bodily_5: "Dauernde Invalidität ab 10 %;",
+        bodily_6: "Todesfallentschädigung: Erben (1.600 €).",
+        bodily_7: "Ehepartner (3.900 €).",
+        bodily_8: "Unterhaltsberechtigtes Kind (3.100 €).",
+        sub_bike_damage_title: "Schäden am Fahrrad und Zubehör",
+        bike_1: "Witterungseinflüsse und Stürme;",
+        bike_2: "Natur- und Umweltkatastrophen;",
+        bike_3: "Terrorakte;",
+        bike_4: "Diebstahl oder versuchter Diebstahl;",
+        bike_5: "Vandalismus;",
+        bike_6: "Brand;",
+        bike_7: "Sonstige Unfallereignisse.",
+        sub_recours_title: "Schadensersatzansprüche",
+        recours_desc: "Für Schäden aus einem versicherten Unfallereignis.",
+        sub_assist_title: "Fahrrad-Pannenhilfe unterwegs",
+        assist_1: "Pannenhilfe und Abschleppen des Fahrrads;",
+        assist_2: "Heimreise oder Weiterfahrt;",
+        assist_3: "Fahrrad-Rücktransport;",
+        assist_4: "Zuschuss zu den Kosten für ein Ersatzfahrrad.",
+        opt_header: "Optionale Zusatzdeckung",
+        opt_title: "Haftpflicht und Rechtsschutz",
+        opt_desc_1: "Haftpflichtversicherung: Personen- (unbegrenzt) sowie Sach- und Vermögensschäden Dritter (3.000.000 €).",
+        opt_desc_2: "Wahrnehmung der rechtlichen Interessen des Versicherten nach einem Schadensfall.",
+        sec_not_insured_title: "Was ist nicht<br>versichert?",
+        not_insured_1: "Berufliche Fahrten;",
+        not_insured_2: "Entgeltliche Personen- oder Güterbeförderung.",
+        sec_exclusions_title: "Gibt es Deckungs-<br>ausschlüsse?",
+        sub_excl_title: "Wichtigste Ausschlüsse",
+        excl_1: "Teilnahme an behördlich genehmigungspflichtigen Renn- und Sportveranstaltungen;",
+        excl_2: "Fahren unter Einfluss von Alkohol oder berauschenden Mitteln;",
+        excl_3: "Vorsätzlich oder arglistig herbeigeführte Schäden;",
+        excl_4: "Schäden durch Reparatur- und Wartungsarbeiten am Fahrrad.",
+        sub_restr_title: "Wichtigste Einschränkungen",
+        restr_1: "Selbstbeteiligung abhängig vom Fahrradwert. In der Haftpflicht 75 € Selbstbeteiligung für Sachschäden;",
+        restr_2: "Gesetzliche Selbstbeteiligung bei Naturkatastrophen: 380 €;",
+        restr_3: "Rechtsschutz erst ab Streitwert über 625 € in Frankreich oder Monaco.",
+        sec_where_title: "Wo bin ich versichert?",
+        where_intro: "Vorbehaltlich besonderer Bedingungen einzelner Bausteine:",
+        where_1: "Ohne zeitliche Begrenzung in Frankreich, den Überseegebieten und Monaco;",
+        where_2: "Bei Aufenthalten bis zu einem Jahr in allen Ländern des EWR.",
+        sec_oblig_title: "Welche Pflichten habe ich?",
+        oblig_sub_1: "Bei Vertragsabschluss:",
+        oblig_p1: "Vollständige und wahrheitsgemäße Beantwortung der Risikofragen.",
+        oblig_p2: "Vorlage der angeforderten Belege.",
+        oblig_p3: "Zahlung des vereinbarten Versicherungsbeitrags.",
+        oblig_sub_2: "Während der Vertragslaufzeit:",
+        oblig_p4: "Meldung von gefahrerhöhenden Umständen innerhalb von 15 Tagen.",
+        oblig_sub_3: "Im Schadensfall:",
+        oblig_p5: "Schaden innerhalb von 5 Werktagen melden. Bei Diebstahl polizeiliche Anzeige erstatten.",
+        sec_payment_title: "Wann und wie zahle ich?",
+        payment_desc: "Der Beitrag ist zum 1. Januar fällig, zahlbar per Lastschrift (jährlich oder monatlich) oder Scheck.",
+        sec_duration_title: "Wann beginnt und endet der Versicherungsschutz?",
+        duration_desc: "Ab Vertragsbeginn bis zum 31. Dezember des Jahres, danach automatische Verlängerung um jeweils ein Jahr.",
+        sec_cancel_title: "Wie kann ich den Vertrag kündigen?",
+        cancel_p1: "Jederzeit nach Ablauf des ersten Jahres oder jeweils zum 31. Dezember mit zweimonatiger Kündigungsfrist.",
+        cancel_p2: "Kündigung formlos per Brief, E-Mail oder über den Kundenbereich auf maif.fr möglich."
+      }
+    };
 
-      document.querySelectorAll('.lang-content').forEach(function(el) {
-        el.classList.remove('active');
+    const langSwitcher = document.getElementById("langSwitcher");
+
+    function setLanguage(lang) {
+      const selectedLang = translations[lang] ? lang : "fr";
+      
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.getAttribute("data-i18n");
+        if (translations[selectedLang][key]) {
+          element.innerHTML = translations[selectedLang][key];
+        }
       });
 
-      if (langParam === 'eng') {
-        document.getElementById('content-eng').classList.add('active');
-        document.documentElement.lang = 'en';
-      } else if (langParam === 'nl') {
-        document.getElementById('content-nl').classList.add('active');
-        document.documentElement.lang = 'nl';
-      } else {
-        // Par défaut ou ?lang=fr
-        document.getElementById('content-fr').classList.add('active');
-        document.documentElement.lang = 'fr';
-      }
-    })();
-  </script>
+      document.documentElement.lang = selectedLang;
+      localStorage.setItem("user_selected_lang", selectedLang);
+      langSwitcher.value = selectedLang;
+    }
 
+    langSwitcher.addEventListener("change", (e) => {
+      setLanguage(e.target.value);
+    });
+
+    const savedLang = localStorage.getItem("user_selected_lang") || "fr";
+    setLanguage(savedLang);
+  </script>
 </body>
 </html>
