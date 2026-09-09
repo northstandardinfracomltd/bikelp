@@ -1436,22 +1436,22 @@ Devis en ligne instantané
   // Dictionnaire des traductions
 const translations = {
   "fr-FR": {
-    drawer_title: "Configuration de votre offre"
+    drawer_title: "Informations sur votre vélo."
   },
   "en-US": {
-    drawer_title: "Configure your offer"
+    drawer_title: "Information about your bike."
   },
   "es-ES": {
-    drawer_title: "Configuración de su oferta"
+    drawer_title: "Información sobre su bicicleta."
   },
   "de-DE": {
-    drawer_title: "Konfiguration Ihres Angebots"
+    drawer_title: "Informationen zu Ihrem Fahrrad."
   },
   "nl-NL": {
-    drawer_title: "Configuratie van uw aanbod"
+    drawer_title: "Konfiguration Ihres Angebots."
   },
   "pt-PT": {
-    drawer_title: "Configuração da sua oferta"
+    drawer_title: "Configuração da sua oferta."
   }
 };
 
@@ -1543,7 +1543,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   <!-- Entête du Side-Pane -->
   <div class="bk-sub-123-drawer-header">
-  <h3 class="bk-sub-123-drawer-title" data-i18n="drawer_title">Configuration de votre offre</h3>
+  <h3 class="bk-sub-123-drawer-title">Configuration de votre offre</h3>
 
   </div>
 
@@ -1568,7 +1568,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()">
       Fermer
     </button></div>
-      <h2 class="bk-sub-123-title">Informations sur votre vélo.</h2>
+
+<h2 class="bk-sub-123-title" data-i18n="drawer_title">Informations sur votre vélo.</h2>
 
           <!-- 1. Marque -->
           <div class="bk-sub-123-field-group" id="bk-sub-123-fg-brand">
