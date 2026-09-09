@@ -8661,41 +8661,43 @@ margin: auto;
 </script>
 
 
+<style id="bk-i18n-toggle-style"></style>
+
 <script>
 (function() {
   const manualOverrides = {
     "en-US": {
       "Souscrire": "Subscribe",
-      "Masquer le texte": "Hide text",
-      "Lire le texte réglementaire": "Read regulatory text",
+      "hide": "Hide text",
+      "read": "Read regulatory text",
       "promo_placeholder": "Enter a promo code",
       "regulatory_snippet": "After taking out insurance with Bikelp, we ask you to upload photos and documents relating to your bike and lock to your customer account. We advise you to do this as soon as possible to provide proof of purchase. Without this, we may be unable to process your compensation. As an insurance applicant, you are required to answer the questions as thoroughly as possible. They also apply to facts and circumstances relating to the person you wish to insure. Only your knowledge, and that of the insured person, is decisive in answering the questions."
     },
     "es-ES": {
       "Souscrire": "Contratar",
-      "Masquer le texte": "Ocultar texto",
-      "Lire le texte réglementaire": "Leer texto reglamentario",
+      "hide": "Ocultar texto",
+      "read": "Leer texto reglamentario",
       "promo_placeholder": "Introduzca un código promocional",
       "regulatory_snippet": "Tras contratar un seguro en Bikelp, le solicitamos que suba las fotos y documentos relativos a su bicicleta y candado en su cuenta de cliente. Le recomendamos hacerlo lo antes posible para acreditar la prueba de compra. Sin esto, podríamos encontrarnos en la imposibilidad de tramitar su indemnización. Como solicitante de seguro, debe responder a las preguntas planteadas de la forma más exhaustiva posible. Aplican asimismo a los hechos y circunstancias relativos a la persona que desea asegurar. A la hora de responder a las preguntas, solo son determinantes sus conocimientos y los de la persona asegurada."
     },
     "de-DE": {
       "Souscrire": "Abschließen",
-      "Masquer le texte": "Text ausblenden",
-      "Lire le texte réglementaire": "Rechtlichen Text lesen",
+      "hide": "Text ausblenden",
+      "read": "Rechtlichen Text lesen",
       "promo_placeholder": "Gutscheincode eingeben",
       "regulatory_snippet": "Nach Abschluss einer Versicherung bei Bikelp bitten wir Sie, Fotos und Unterlagen zu Ihrem Fahrrad und Fahrradschloss in Ihrem Kundenkonto hochzuladen. Wir empfehlen, dies baldmöglichst zu tun, um den Kaufnachweis zu erbringen. Andernfalls können wir Ihre Entschädigung unter Umständen nicht bearbeiten. Als Antragsteller sind Sie verpflichtet, die gestellten Fragen so vollständig wie möglich zu beantworten. Diese gelten auch für Umstände bezüglich der zu versichernden Person. Bei der Beantwortung sind ausschließlich Ihre Kenntnisse und die der versicherten Person maßgebend."
     },
     "nl-NL": {
       "Souscrire": "Afsluiten",
-      "Masquer le texte": "Tekst verbergen",
-      "Lire le texte réglementaire": "Regelgevende tekst lezen",
+      "hide": "Tekst verbergen",
+      "read": "Regelgevende tekst lezen",
       "promo_placeholder": "Voer een promotiecode in",
       "regulatory_snippet": "Na het afsluiten van een verzekering bij Bikelp vragen we u foto's en documenten over uw fiets en slot te uploaden in uw account. We raden aan dit zo snel mogelijk te doen om het aankoopbewijs te leveren. Zonder dit bewijs kunnen we uw vergoeding mogelijk niet verwerken. Als verzekeringsaanvrager bent u verplicht de gestelde vragen zo volledig mogelijk te beantwoorden. Ze gelden tevens voor feiten en omstandigheden van de te verzekeren persoon. Bij het beantwoorden zijn uitsluitend uw kennis en die van de verzekerde doorslaggevend."
     },
     "pt-PT": {
       "Souscrire": "Subscrever",
-      "Masquer le texte": "Ocultar texto",
-      "Lire le texte réglementaire": "Ler o texto regulamentar",
+      "hide": "Ocultar texto",
+      "read": "Ler o texto regulamentar",
       "promo_placeholder": "Introduza um código promocional",
       "regulatory_snippet": "Após subscrever um seguro na Bikelp, solicitamos que carregue as fotografias e documentos da bicicleta e do cadeado na sua área de cliente. Recomendamos fazê-lo o quanto antes para comprovar a prova de compra. Sem isso, poderemos ficar impossibilitados de proceder à sua indemnização. Como requerente do seguro, deve responder às questões colocadas da forma mais completa possível. Aplicam-se igualmente aos factos e circunstâncias da pessoa que pretende segurar. Nas respostas, apenas o seu conhecimento e o da pessoa segura são determinantes."
     }
@@ -8718,8 +8720,7 @@ margin: auto;
     }
 
     // 2. Paragraphe réglementaire
-    const paragraphs = document.querySelectorAll("p, div, span");
-    paragraphs.forEach((el) => {
+    document.querySelectorAll("p, div, span").forEach((el) => {
       if (el.children.length > 0) return;
       const t = el.textContent.trim();
       const isRegulatory = t.includes("Après avoir souscrit") || 
@@ -8740,28 +8741,63 @@ margin: auto;
       }
     });
 
-    // 4. Bouton de bascule Lire / Masquer (mise à jour sans perturber le script d'origine)
-    updateToggleButtons(lang);
-  }
-
-  function updateToggleButtons(lang) {
+    // 4. Boutons de bascule (Lire / Masquer) via CSS dynamique
+    // On remet le texte en français pour que votre fonction JS ne plante pas
     document.querySelectorAll("button, a, span").forEach((el) => {
       if (el.children.length > 0) return;
       const t = el.textContent.trim();
 
-      // Détecte si l'élément correspond à l'état "Lire" ou "Masquer"
-      const isRead = t.includes("Lire le texte") || Object.values(manualOverrides).some(o => t.includes(o["Lire le texte réglementaire"]));
-      const isHide = t.includes("Masquer") || Object.values(manualOverrides).some(o => t.includes(o["Masquer le texte"]));
+      if (Object.values(manualOverrides).some(o => o.read === t)) {
+        el.textContent = "Lire le texte réglementaire";
+      } else if (Object.values(manualOverrides).some(o => o.hide === t)) {
+        el.textContent = "Masquer le texte";
+      }
 
-      if (isRead) {
-        el.textContent = lang === "fr-FR" ? "Lire le texte réglementaire" : (manualOverrides[lang]?.["Lire le texte réglementaire"] || "Lire le texte réglementaire");
-      } else if (isHide) {
-        el.textContent = lang === "fr-FR" ? "Masquer le texte" : (manualOverrides[lang]?.["Masquer le texte"] || "Masquer le texte");
+      // Marquer l'élément pour le styliser
+      if (el.textContent.includes("Lire le texte réglementaire") || el.textContent.includes("Masquer le texte")) {
+        el.classList.add("bk-toggle-btn-target");
       }
     });
+
+    // Injection des règles CSS pour masquer le mot français et afficher la langue choisie
+    const styleEl = document.getElementById("bk-i18n-toggle-style");
+    if (styleEl) {
+      if (lang === "fr-FR" || !manualOverrides[lang]) {
+        styleEl.innerHTML = "";
+      } else {
+        const readTxt = manualOverrides[lang].read;
+        const hideTxt = manualOverrides[lang].hide;
+
+        styleEl.innerHTML = `
+          .bk-toggle-btn-target {
+            font-size: 0 !important;
+            display: inline-block !important;
+          }
+          .bk-toggle-btn-target::after {
+            font-size: 13px !important;
+            display: inline-block !important;
+          }
+        `;
+        
+        // Mettre à jour le texte visible selon ce que contient l'élément
+        document.querySelectorAll(".bk-toggle-btn-target").forEach((el) => {
+          if (el.textContent.includes("Lire")) {
+            el.setAttribute("data-display-txt", readTxt);
+          } else {
+            el.setAttribute("data-display-txt", hideTxt);
+          }
+        });
+
+        styleEl.innerHTML += `
+          .bk-toggle-btn-target[data-display-txt]::after {
+            content: attr(data-display-txt) !important;
+          }
+        `;
+      }
+    }
   }
 
-  // Événements d'initialisation
+  // Événements
   window.addEventListener("DOMContentLoaded", runPatch);
   window.addEventListener("load", runPatch);
 
@@ -8771,12 +8807,9 @@ margin: auto;
     }
   });
 
-  // Pour les clics : on laisse d'abord votre fonction d'origine terminer son toggle (délai de 100ms)
+  // Détection du clic pour actualiser le libellé sans casser l'action
   document.addEventListener("click", function(e) {
-    const target = e.target;
-    if (target.closest("#bk-sub-open-btn, .bk-sub-123-trigger-btn, [onclick*='bkSub'], button, a")) {
-      setTimeout(runPatch, 120);
-    }
+    setTimeout(runPatch, 50);
   });
 })();
 </script>
