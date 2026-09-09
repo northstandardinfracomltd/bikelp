@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Bloquer l'indexation par les moteurs de recherche (Google, etc.) -->
+  <!-- Bloquer l'indexation par les moteurs de recherche -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   
-  <title>Paiement confirmé - Bikelp</title>
+  <title id="meta-title">Paiement confirmé - Bikelp</title>
 
   <style>
     /* ======================================================== */
@@ -19,6 +19,7 @@
       src: url('https://civilprom.s3.eu-north-1.amazonaws.com/bikelpfont.woff2') format('woff2');
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
     /* ======================================================== */
@@ -31,18 +32,154 @@
     }
 
     body {
-      background-color: #ffffff; /* Fond 100% blanc */
-      font-family: 'Civilprom', sans-serif;
+      background-color: #ffffff;
+      font-family: 'Civilprom', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       color: #111111;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 24px;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ======================================================== */
-    /* 3. CONTENEUR PRINCIPAL DU CONTENU                       */
+    /* 3. BOUTON SÉLECTEUR DE LANGUE GÉLULE (TOP RIGHT)         */
+    /* ======================================================== */
+    .lang-selector-container {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 100;
+    }
+
+    .lang-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      background-color: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 9999px; /* Forme gélule */
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      color: #111111;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .lang-pill-btn:hover {
+      border-color: #111111;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .lang-pill-btn:focus-visible {
+      outline: 2px solid #111111;
+      outline-offset: 2px;
+    }
+
+    .lang-icon {
+      width: 14px;
+      height: 14px;
+      stroke-width: 1.6;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    .lang-chevron {
+      width: 10px;
+      height: 10px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      transition: transform 0.2s ease;
+    }
+
+    .lang-selector-container.open .lang-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Menu déroulant des langues */
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 160px;
+      background-color: #ffffff;
+      border: 1px solid #ebebeb;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+      padding: 6px;
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      animation: fadeInDropdown 0.15s ease-out forwards;
+    }
+
+    .lang-selector-container.open .lang-dropdown {
+      display: flex;
+    }
+
+    @keyframes fadeInDropdown {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 9px 12px;
+      border: none;
+      background: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 13.5px;
+      color: #333333;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .lang-item:hover {
+      background-color: #f5f5f5;
+      color: #111111;
+    }
+
+    .lang-item.active {
+      font-weight: bold;
+      color: #111111;
+      background-color: #f4f4f4;
+    }
+
+    .lang-check {
+      width: 12px;
+      height: 12px;
+      stroke: #111111;
+      stroke-width: 2.2;
+      fill: none;
+      opacity: 0;
+    }
+
+    .lang-item.active .lang-check {
+      opacity: 1;
+    }
+
+    /* ======================================================== */
+    /* 4. CONTENEUR PRINCIPAL DU CONTENU                        */
     /* ======================================================== */
     .conteneur-page {
       width: 100%;
@@ -51,20 +188,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: opacity 0.2s ease;
     }
 
     /* ======================================================== */
-    /* 4. LOGO                                                  */
+    /* 5. LOGO                                                  */
     /* ======================================================== */
     .logo-bikelp {
-      height: 75px;            /* Hauteur bien visible */
+      height: 75px;
       width: auto;
-      margin-bottom: 35px;     /* Espace sous le logo */
+      margin-bottom: 35px;
       display: block;
     }
 
     /* ======================================================== */
-    /* 5. TITRE PRINCIPAL                                       */
+    /* 6. TITRE PRINCIPAL                                       */
     /* ======================================================== */
     .titre-page {
       font-size: 30px;
@@ -75,7 +213,7 @@
     }
 
     /* ======================================================== */
-    /* 6. TEXTE DE DESCRIPTION                                  */
+    /* 7. TEXTE DE DESCRIPTION                                  */
     /* ======================================================== */
     .texte-description {
       font-size: 16px;
@@ -85,64 +223,144 @@
     }
 
     /* ======================================================== */
-    /* 7. CONTENEUR DES BOUTONS D'ACTION                        */
+    /* 8. CONTENEUR DES BOUTONS D'ACTION                        */
     /* ======================================================== */
     .zone-boutons {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px;               /* Espace entre les deux boutons */
+      gap: 12px;
     }
 
     /* ======================================================== */
-    /* 8. BOUTON 1 : ACCÉDER À L'ESPACE CLIENT (PRINCIPAL)      */
+    /* 9. BOUTONS                                               */
     /* ======================================================== */
     .bouton-espace-client {
       display: block;
       width: 100%;
       padding: 15px;
-      background-color: #111111; /* Fond noir */
-      color: #ffffff;            /* Texte blanc */
+      background-color: #111111;
+      color: #ffffff;
       border: 1px solid #111111;
       border-radius: 10px;
       font-size: 15px;
       text-decoration: none;
       font-family: inherit;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      text-align: center;
     }
 
     .bouton-espace-client:hover {
       background-color: #333333;
     }
 
-    /* ======================================================== */
-    /* 9. BOUTON 2 : CONTACTER L'ASSISTANCE (SECONDAIRE)        */
-    /* ======================================================== */
+    .bouton-espace-client:active {
+      transform: scale(0.99);
+    }
+
     .bouton-assistance {
       display: block;
       width: 100%;
       padding: 15px;
-      background-color: #ffffff; /* Fond blanc */
-      color: #111111;            /* Texte noir */
-      border: 1px solid #dcdcdc; /* Bordure fine grise */
+      background-color: #ffffff;
+      color: #111111;
+      border: 1px solid #dcdcdc;
       border-radius: 10px;
       font-size: 15px;
       text-decoration: none;
       font-family: inherit;
       cursor: pointer;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+      text-align: center;
     }
 
     .bouton-assistance:hover {
       border-color: #111111;
       background-color: #f7f7f7;
     }
+
+    .bouton-assistance:active {
+      transform: scale(0.99);
+    }
+
+    @media (max-width: 480px) {
+      .lang-selector-container {
+        top: 16px;
+        right: 16px;
+      }
+      .titre-page {
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <main class="conteneur-page">
+  <!-- Sélecteur de langue gélule -->
+  <div class="lang-selector-container" id="langSelectorContainer">
+    <button 
+      type="button" 
+      class="lang-pill-btn" 
+      id="langPillBtn" 
+      aria-haspopup="true" 
+      aria-expanded="false"
+      aria-label="Sélectionner la langue"
+    >
+      <!-- Icône Globe minimaliste -->
+      <svg class="lang-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M2 12h20"></path>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span id="currentLangLabel">Français</span>
+      <!-- Chevron -->
+      <svg class="lang-chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+
+    <div class="lang-dropdown" id="langDropdown" role="menu">
+      <button type="button" class="lang-item active" data-lang="fr" role="menuitem">
+        <span>Français</span>
+        <svg class="lang-check" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+      <button type="button" class="lang-item" data-lang="en" role="menuitem">
+        <span>English</span>
+        <svg class="lang-check" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+      <button type="button" class="lang-item" data-lang="es" role="menuitem">
+        <span>Español</span>
+        <svg class="lang-check" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+      <button type="button" class="lang-item" data-lang="de" role="menuitem">
+        <span>Deutsch</span>
+        <svg class="lang-check" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+      <button type="button" class="lang-item" data-lang="nl" role="menuitem">
+        <span>Nederlands</span>
+        <svg class="lang-check" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+      <button type="button" class="lang-item" data-lang="pt" role="menuitem">
+        <span>Português</span>
+        <svg class="lang-check" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <main class="conteneur-page" id="mainContainer">
     
     <!-- Logo officiel Bikelp -->
     <img 
@@ -152,10 +370,10 @@
     >
 
     <!-- Titre -->
-    <h1 class="titre-page">Paiement confirmé</h1>
+    <h1 class="titre-page" id="textTitle">Paiement confirmé</h1>
 
     <!-- Explication / Statut -->
-    <p class="texte-description">
+    <p class="texte-description" id="textDesc">
       Votre souscription est validée et votre assurance est désormais active. Vos documents contractuels vous ont été envoyés par e-mail.
     </p>
 
@@ -163,18 +381,215 @@
     <div class="zone-boutons">
       
       <!-- Lien vers l'espace client -->
-      <a href="https://client.bikelp.com/" target="_blank" rel="noopener noreferrer" class="bouton-espace-client">
+      <a href="https://client.bikelp.com/" target="_blank" rel="noopener noreferrer" class="bouton-espace-client" id="btnClient">
         Accéder à mon espace
       </a>
 
       <!-- Lien d'assistance par email -->
-      <a href="mailto:support@bikelp.com" class="bouton-assistance">
+      <a href="mailto:support@bikelp.com" class="bouton-assistance" id="btnSupport">
         Contacter l'assistance
       </a>
 
     </div>
 
   </main>
+
+  <script>
+    /* Dictionnaire des 6 langues prises en charge */
+    const translations = {
+      fr: {
+        label: 'Français',
+        docTitle: 'Paiement confirmé - Bikelp',
+        title: 'Paiement confirmé',
+        desc: 'Votre souscription est validée et votre assurance est désormais active. Vos documents contractuels vous ont été envoyés par e-mail.',
+        btnClient: 'Accéder à mon espace',
+        btnSupport: "Contacter l'assistance"
+      },
+      en: {
+        label: 'English',
+        docTitle: 'Payment confirmed - Bikelp',
+        title: 'Payment confirmed',
+        desc: 'Your subscription has been validated and your insurance policy is now active. Your policy documents have been sent to you by email.',
+        btnClient: 'Access my account',
+        btnSupport: 'Contact support'
+      },
+      es: {
+        label: 'Español',
+        docTitle: 'Pago confirmado - Bikelp',
+        title: 'Pago confirmado',
+        desc: 'Su suscripción ha sido validada y su seguro ya está activo. Sus documentos contractuales le han sido enviados por correo electrónico.',
+        btnClient: 'Acceder a mi espacio',
+        btnSupport: 'Contactar con soporte'
+      },
+      de: {
+        label: 'Deutsch',
+        docTitle: 'Zahlung bestätigt - Bikelp',
+        title: 'Zahlung bestätigt',
+        desc: 'Ihre Anmeldung wurde bestätigt und Ihre Versicherung ist ab sofort aktiv. Ihre Vertragsunterlagen wurden Ihnen per E-Mail zugesandt.',
+        btnClient: 'Zum Kundenbereich',
+        btnSupport: 'Support kontaktieren'
+      },
+      nl: {
+        label: 'Nederlands',
+        docTitle: 'Betaling bevestigd - Bikelp',
+        title: 'Betaling bevestigd',
+        desc: 'Uw aanvraag is bevestigd en uw verzekering is vanaf nu actief. Uw contractdocumenten zijn per e-mail naar u verzonden.',
+        btnClient: 'Naar mijn account',
+        btnSupport: 'Klantenservice'
+      },
+      pt: {
+        label: 'Português',
+        docTitle: 'Pagamento confirmado - Bikelp',
+        title: 'Pagamento confirmado',
+        desc: 'A sua subscrição foi validada e o seu seguro está agora ativo. Os seus documentos contratuais foram enviados por e-mail.',
+        btnClient: 'Aceder à minha área',
+        btnSupport: 'Contactar apoio ao cliente'
+      }
+    };
+
+    /* Correspondance pays (ISO 2 lettres) -> langue */
+    const countryToLang = {
+      FR: 'fr', BE: 'fr', MC: 'fr', CH: 'fr', LU: 'fr', SN: 'fr', CI: 'fr',
+      GB: 'en', US: 'en', CA: 'en', AU: 'en', IE: 'en', NZ: 'en',
+      ES: 'es', MX: 'es', AR: 'es', CO: 'es', CL: 'es', PE: 'es',
+      DE: 'de', AT: 'de',
+      NL: 'nl',
+      PT: 'pt', BR: 'pt', AO: 'pt', MZ: 'pt'
+    };
+
+    const container = document.getElementById('langSelectorContainer');
+    const pillBtn = document.getElementById('langPillBtn');
+    const currentLangLabel = document.getElementById('currentLangLabel');
+    const items = document.querySelectorAll('.lang-item');
+
+    /* Fonction d'application de la langue sur le DOM */
+    function applyLanguage(lang) {
+      if (!translations[lang]) lang = 'fr';
+
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.getElementById('meta-title').textContent = t.docTitle;
+      document.getElementById('textTitle').textContent = t.title;
+      document.getElementById('textDesc').textContent = t.desc;
+      document.getElementById('btnClient').textContent = t.btnClient;
+      document.getElementById('btnSupport').textContent = t.btnSupport;
+      currentLangLabel.textContent = t.label;
+
+      items.forEach(btn => {
+        if (btn.dataset.lang === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    /* Changement de langue par l'utilisateur */
+    function setLanguage(lang, savePreference = true) {
+      applyLanguage(lang);
+      if (savePreference) {
+        try {
+          localStorage.setItem('bikelp_lang', lang);
+        } catch (e) {
+          /* Fallback local storage inaccessible */
+        }
+      }
+    }
+
+    /* Détection de la langue du navigateur */
+    function getBrowserLanguage() {
+      const navLang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+      const code = navLang.slice(0, 2);
+      if (['fr', 'en', 'es', 'de', 'nl', 'pt'].includes(code)) {
+        return code;
+      }
+      return null;
+    }
+
+    /* Détection par Pays IP (fallback instantané sans blocage) */
+    async function detectCountryLanguage() {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2000); // 2s max
+
+        const res = await fetch('https://ipapi.co/json/', { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (res.ok) {
+          const data = await res.json();
+          const country = data.country_code || data.country;
+          if (country && countryToLang[country.toUpperCase()]) {
+            return countryToLang[country.toUpperCase()];
+          }
+        }
+      } catch (err) {
+        // En cas d'erreur ou d'adblock, passage silencieux
+      }
+      return null;
+    }
+
+    /* Initialisation au chargement */
+    async function initLanguage() {
+      // 1. Choix déjà mémorisé par l'utilisateur
+      let savedLang = null;
+      try {
+        savedLang = localStorage.getItem('bikelp_lang');
+      } catch (e) {}
+
+      if (savedLang && translations[savedLang]) {
+        applyLanguage(savedLang);
+        return;
+      }
+
+      // 2. Détection par la langue du navigateur (très rapide et fiable pour la device)
+      const browserLang = getBrowserLanguage();
+      if (browserLang) {
+        setLanguage(browserLang, false);
+      }
+
+      // 3. Détection par géolocalisation IP en arrière-plan pour affiner selon le pays de connexion
+      const detectedCountryLang = await detectCountryLanguage();
+      // Si l'utilisateur n'a pas sélectionné manuellement entre-temps
+      const isStillDefault = !localStorage.getItem('bikelp_lang');
+      if (isStillDefault && detectedCountryLang) {
+        setLanguage(detectedCountryLang, false);
+      }
+    }
+
+    // Gestion du menu déroulant gélule
+    pillBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = container.classList.toggle('open');
+      pillBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    items.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const lang = button.getAttribute('data-lang');
+        setLanguage(lang, true);
+        container.classList.remove('open');
+        pillBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Fermeture lors d'un clic extérieur
+    document.addEventListener('click', (e) => {
+      if (!container.contains(e.target)) {
+        container.classList.remove('open');
+        pillBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Fermeture avec la touche Échap
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        container.classList.remove('open');
+        pillBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Lancement
+    initLanguage();
+  </script>
 
 </body>
 </html>
