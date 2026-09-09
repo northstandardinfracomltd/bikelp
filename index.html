@@ -1891,6 +1891,10 @@ heading_free_events: "Participez aux <span class=\"triach\">Événements</span> 
 X2: "The non-binding insurance covering all types of cycling and all incidents, with zero deductible, anywhere in the EU.",
 X3: "Hello, how can I help you today?",
 X4: "Bikelp Support",
+legal_policy_ipid: "I have read and accept the <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Policy Terms & Insurance Product Information Document (IPID)</a>.",
+legal_info_sheet: "I have read and accept the <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Information Sheet</a>.",
+placeholder_promo_code: "Enter a promo code",
+translate_elect: "Subscribe",
 placeholder_enter_text: "Enter your text...",
 X5: "Bikelp Help",
 btnA: "Instant online quote",
@@ -2209,6 +2213,10 @@ btnA: "Presupuesto online instantáneo",
 btnB: "Iniciar sesión",
 X4: "Asistencia Bikelp",
 X5: "Ayuda Bikelp",
+legal_policy_ipid: "He leído y acepto las <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Condiciones de la póliza y el Documento de información (IPID)</a>.",
+legal_info_sheet: "He leído y acepto la <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Ficha informativa</a>.",
+placeholder_promo_code: "Introduzca un código promocional",
+translate_elect: "Contratar",
 X6: "Minimizar",
 X7: "Tickets Anteriores",
 X8: "Añada sus datos para iniciar la sesión con la ayuda de Bikelp",
@@ -2525,6 +2533,10 @@ X4: "Bikelp Support",
 X5: "Bikelp Hilfe",
 X6: "Minimieren",
 X7: "Bisherige Tickets",
+legal_policy_ipid: "Ich habe die <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Versicherungsbedingungen & Produktinformationsblatt (IPID)</a> gelesen und akzeptiere diese.",
+legal_info_sheet: "Ich habe das <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Informationsblatt</a> gelesen und akzeptiere es.",
+placeholder_promo_code: "Gutscheincode eingeben",
+translate_elect: "Abschließen",
 X8: "Geben Sie Ihre Daten ein, um den Chat mit der Bikelp-Hilfe zu starten",
 X9: "Ihr Name",
 X10: "Ihre E-Mail",
@@ -2830,6 +2842,10 @@ heading_free_events: "Nehmen Sie an kostenlosen <span class=\"triach\">Events</s
     btnA: "Directe online offerte",
 btnB: "Inloggen",
     placeholder_enter_text: "Voer uw tekst in...",
+    legal_policy_ipid: "Ik heb de <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Polisvoorwaarden & Samenvatting van de polis (IPID)</a> gelezen en ga hiermee akkoord.",
+legal_info_sheet: "Ik heb het <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Informatieblad</a> gelezen en ga hiermee akkoord.",
+placeholder_promo_code: "Voer een promotiecode in",
+translate_elect: "Afsluiten",
     meta_title: "Bikelp | Fietsverzekering",
     meta_desc: "Bikelp | Online fietsverzekering. Bescherm uw fiets tegen diefstal en schade met onze formules.",
     translate_4: "Type fiets.",
@@ -3140,6 +3156,10 @@ heading_free_events: "Neem deel aan gratis <span class=\"triach\">Evenementen</s
     hero_title: 'Bikelp <span class="triach3">Segura</span> a sua <span class="triach3">Bicicleta</span> a partir de <span class="triach3">9</span><span class="currency-title">€</span> por mês <span class="triach3">Roubo e Danos</span> incluídos',
     translate_3: "Outro",
     translate_4: "Tipo de bicicleta.",
+    legal_policy_ipid: "Li e aceito as <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Condições da apólice e o Resumo do produto (IPID)</a>.",
+legal_info_sheet: "Li e aceito a <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Ficha informativa</a>.",
+placeholder_promo_code: "Introduza um código promocional",
+translate_elect: "Subscrever",
     translate_5: "Selecione um tipo",
     ineurope: "Na Europa, são roubadas entre 3 e 4 milhões de bicicletas todos os anos, o equivalente a uma média de 6 a 8 roubos por minuto, embora o fenómeno varie conforme o país: fazer um seguro e registar o quadro deveriam ser reflexos automáticos logo na compra.",
 X2: "O seguro sem fidelização que abrange todas as modalidades de ciclismo e cobre qualquer sinistro, sem franquia, em toda a UE.",
@@ -3937,7 +3957,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="bk-sub-123-field-group" style="margin-top: 25px;">
             <label class="bk-sub-123-label" for="bk-sub-123-promo" data-i18n="translate_115">Code promotion (Optionnel).</label>
-            <input type="text" id="bk-sub-123-promo" class="bk-sub-123-input" placeholder="Entrez un code promo" />
+            <input type="text" id="bk-sub-123-promo" class="bk-sub-123-input" placeholder="Entrez un code promo" data-i18n-placeholder="placeholder_promo_code" />
           </div>
 
           <div class="bk-sub-123-actions">
@@ -4104,9 +4124,9 @@ Lire le texte réglementaire
           
           <!-- Q5 IPID -->
           <div class="bk-sub-123-apple-toggle-row">
-            <span class="bk-sub-123-apple-toggle-text">
-              J’ai lu et j'accepte les <a href="/document-police" target="_blank" class="bk-sub-123-link">Conditions de la police & Résumé de la police (IPID)</a>.
-            </span>
+<span class="bk-sub-123-apple-toggle-text" data-i18n-html="legal_policy_ipid">
+  J’ai lu et j'accepte les <a href="/document-police" target="_blank" class="bk-sub-123-link">Conditions de la police &amp; Résumé de la police (IPID)</a>.
+</span>
             <label class="bk-sub-123-switch">
               <input type="checkbox" name="bk-sub-123-c1" id="bk-sub-123-c1" required>
               <span class="bk-sub-123-slider"></span>
@@ -4115,9 +4135,9 @@ Lire le texte réglementaire
 
           <!-- Q6 FINFOR -->
           <div class="bk-sub-123-apple-toggle-row">
-            <span class="bk-sub-123-apple-toggle-text">
-              J’ai lu et j'accepte la <a href="/document-police" target="_blank" class="bk-sub-123-link">Fiche d'informations</a>.
-            </span>
+<span class="bk-sub-123-apple-toggle-text" data-i18n-html="legal_info_sheet">
+  J’ai lu et j'accepte la <a href="/document-police" target="_blank" class="bk-sub-123-link">Fiche d'informations</a>.
+</span>
             <label class="bk-sub-123-switch">
               <input type="checkbox" name="bk-sub-123-c2" id="bk-sub-123-c2" required>
               <span class="bk-sub-123-slider"></span>
