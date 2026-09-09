@@ -1398,6 +1398,147 @@ display: none !important;
 </head>
 <body>
 
+
+  <!-- START: Sticky Language Bar -->
+<style>
+  .bk-lang-sticky-banner-wrap {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    background: #1e232a;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .bk-lang-sticky-banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-sizing: border-box;
+  }
+
+  .bk-lang-sticky-banner-text-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bk-lang-sticky-banner-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #f1f5f9;
+    white-space: nowrap;
+  }
+
+  .bk-lang-sticky-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bk-lang-sticky-select-field {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #2c3440;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 36px 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #434e5e;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+
+  .bk-lang-sticky-select-field:hover,
+  .bk-lang-sticky-select-field:focus {
+    border-color: #3b82f6;
+    background-color: #323b49;
+  }
+
+  .bk-lang-sticky-close-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  .bk-lang-sticky-close-btn:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 640px) {
+    .bk-lang-sticky-banner-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 16px;
+    }
+    .bk-lang-sticky-banner-actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .bk-lang-sticky-select-field {
+      flex: 1;
+    }
+  }
+</style>
+
+<div class="bk-lang-sticky-banner-wrap" id="bk-lang-sticky-banner-component">
+  <div class="bk-lang-sticky-banner-container">
+    <div class="bk-lang-sticky-banner-text-box">
+      <h4 class="bk-lang-sticky-banner-title" data-i18n="banner_title">
+        Please select your language
+      </h4>
+    </div>
+    <div class="bk-lang-sticky-banner-actions">
+      <select class="subbtn bk-lang-sticky-select-field" id="btn-register-cta" name="language">
+        <option value="fr-FR" selected>Français</option>
+        <option value="en-US">English</option>
+        <option value="es-ES">Español</option>
+        <option value="de-DE">Deutsch</option>
+        <option value="nl-NL">Nederlands</option>
+        <option value="pt-PT">Português</option>
+      </select>
+      <button 
+        type="button" 
+        class="bk-lang-sticky-close-btn" 
+        aria-label="Fermer" 
+        onclick="document.getElementById('bk-lang-sticky-banner-component').style.display='none';"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- END: Sticky Language Bar -->
+
+
   <div class="div-preventio">
     <h3 class="preventio">En Europe, entre 3 et 4 millions de vélos sont dérobés chaque année, soit en moyenne 6 à 8 vols par minute, bien que le phénomène varie selon les pays : souscrire une assurance et faire une gravure de son vélo devraient être des réflexes dès l'acquisition.</h3>
 
