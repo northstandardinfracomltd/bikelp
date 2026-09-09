@@ -3903,6 +3903,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="bk-sub-123-actions">
             <button type="button" class="bk-sub-123-btn-secondary" onclick="bkSubPrevStep(2)" data-i18n="translate_105">Retour</button>
             <button type="button" class="bk-sub-123-btn-primary" onclick="bkSubNextStep(2)" data-i18n="translate_106">Voir mon tarif</button>
+
+
           </div>
         </div>
 
@@ -3910,7 +3912,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="bk-sub-123-step-panel" id="bk-sub-123-step-3">
           <h2 class="bk-sub-123-title" data-i18n="translate_107">Votre tarif personnalisé.</h2>
           
-          <p class="bk-sub-123-subtitle" data-i18n="translate_108">Valeur totale (Vélo + Équipements) assurée pour tous les risques (Vol, Dommages & Dégâts Accidentels) : <strong id="bk-sub-123-summary-total">0.00€</strong>.</p>
+<!-- AVANT -->
+<p class="bk-sub-123-subtitle" data-i18n="translate_108">
+  Valeur totale (Vélo + Équipements) assurée : <strong id="bk-sub-123-summary-total">0.00€</strong>.
+</p>
 
           <div class="bk-sub-123-pricing-grid">
             <div class="bk-sub-123-price-card active" id="bk-sub-123-card-monthly" onclick="bkSubSelectPlan('monthly')">
@@ -4247,6 +4252,7 @@ font-size: 1px;
 
   .bk-sub-123-drawer-close-btn {
     box-shadow: none;
+        margin-bottom: 20px;
     background: #000;
     color: #fff;
     border: none;
