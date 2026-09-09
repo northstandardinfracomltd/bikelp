@@ -1424,10 +1424,115 @@ Devis en ligne instantané
 <br>
 <a href="https://client.bikelp.com/" class="subbtn">Connexion</a>
 <select class="subbtn" id="btn-register-cta" name="language">
-  <option value="fr-FR" selected>Français</option>
+  <option value="fr-FR">Français</option>
   <option value="en-US">English</option>
   <option value="es-ES">Español</option>
+  <option value="de-DE">Deutsch</option>
+  <option value="nl-NL">Nederlands</option>
+  <option value="pt-PT">Português</option>
 </select>
+
+<script>
+  // Dictionnaire des traductions
+const translations = {
+  "fr-FR": {
+    drawer_title: "Configuration de votre offre"
+  },
+  "en-US": {
+    drawer_title: "Configure your offer"
+  },
+  "es-ES": {
+    drawer_title: "Configuración de su oferta"
+  },
+  "de-DE": {
+    drawer_title: "Konfiguration Ihres Angebots"
+  },
+  "nl-NL": {
+    drawer_title: "Configuratie van uw aanbod"
+  },
+  "pt-PT": {
+    drawer_title: "Configuração da sua oferta"
+  }
+};
+
+// Correspondance pays (code ISO 2) -> langue
+const countryToLang = {
+  // Francophones
+  FR: "fr-FR", BE: "fr-FR", CH: "fr-FR", LU: "fr-FR", MC: "fr-FR", CA: "fr-FR",
+  SN: "fr-FR", CI: "fr-FR", CM: "fr-FR", MA: "fr-FR", DZ: "fr-FR", TN: "fr-FR",
+  // Hispanophones
+  ES: "es-ES", MX: "es-ES", AR: "es-ES", CO: "es-ES", CL: "es-ES", PE: "es-ES",
+  // Germanophones
+  DE: "de-DE", AT: "de-DE",
+  // Néerlandophones
+  NL: "nl-NL",
+  // Lusophones
+  PT: "pt-PT", BR: "pt-PT", AO: "pt-PT", MZ: "pt-PT",
+  // Anglophones
+  US: "en-US", GB: "en-US", AU: "en-US", NZ: "en-US", IE: "en-US"
+};
+
+// Applique la traduction sur tous les éléments balisés
+function applyLanguage(lang) {
+  const dictionary = translations[lang] || translations["en-US"];
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (dictionary[key]) {
+      el.textContent = dictionary[key];
+    }
+  });
+
+  const select = document.getElementById("btn-register-cta");
+  if (select) {
+    select.value = lang;
+  }
+}
+
+// Détection de la langue via l'IP
+async function detectLanguage() {
+  // 1. Vérifier si l'utilisateur a déjà choisi une langue manuellement
+  const savedLang = localStorage.getItem("preferred_lang");
+  if (savedLang && translations[savedLang]) {
+    applyLanguage(savedLang);
+    return;
+  }
+
+  // 2. Détection par pays via IP
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    if (!response.ok) throw new Error("Erreur réseau");
+    const data = await response.json();
+    const countryCode = data.country_code;
+    const detectedLang = countryToLang[countryCode] || "en-US";
+
+    applyLanguage(detectedLang);
+  } catch (err) {
+    // Repli sur la langue du navigateur si l'API échoue
+    const browserLang = navigator.language.slice(0, 2);
+    const fallbackMap = {
+      fr: "fr-FR", es: "es-ES", de: "de-DE", nl: "nl-NL", pt: "pt-PT"
+    };
+    applyLanguage(fallbackMap[browserLang] || "en-US");
+  }
+}
+
+// Initialisation et gestionnaire de changement
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("btn-register-cta");
+
+  if (select) {
+    select.addEventListener("change", (e) => {
+      const selectedLang = e.target.value;
+      localStorage.setItem("preferred_lang", selectedLang);
+      applyLanguage(selectedLang);
+    });
+  }
+
+  detectLanguage();
+});
+
+</script>
 
 <!-- ========================================================== -->
 <!-- 2. SIDE-PANE (OVERLAY + TIROIR LATERAL FULL HEIGHT) -->
@@ -1438,7 +1543,7 @@ Devis en ligne instantané
   
   <!-- Entête du Side-Pane -->
   <div class="bk-sub-123-drawer-header">
-    <h3 class="bk-sub-123-drawer-title">Configuration de votre offre</h3>
+  <h3 class="bk-sub-123-drawer-title" data-i18n="drawer_title">Configuration de votre offre</h3>
 
   </div>
 
