@@ -1710,7 +1710,7 @@ heading_free_events: "Participez aux <span class=\"triach\">Événements</span> 
     translate_105: "Retour",
     translate_106: "Voir mon tarif",
     translate_107: "Votre tarif personnalisé.",
-    translate_108: "Valeur totale (Vélo + Équipements) assurée pour tous les risques (Vol, Dommages & Dégâts Accidentels) : 0.00€.",
+    translate_108: "Valeur totale (Vélo + Équipements) assurée pour tous les risques (Vol, Dommages & Dégâts Accidentels) :",
     translate_109: "FLEXIBLE",
     translate_110: "Mensuel",
     translate_111: "Taxes et Frais inclus.",
@@ -2019,7 +2019,7 @@ heading_free_events: "Join free <span class=\"triach\">Events</span> by <span cl
     translate_105: "Back",
     translate_106: "View my quote",
     translate_107: "Your personalized quote.",
-    translate_108: "Total insured value (Bike + Equipment) for all risks (Theft, Damage & Accidental Damage): €0.00.",
+    translate_108: "Total insured value (Bike + Equipment) for all risks (Theft, Damage & Accidental Damage):",
     translate_109: "FLEXIBLE",
     translate_110: "Monthly",
     translate_111: "Taxes and fees included.",
@@ -2333,7 +2333,7 @@ hero_title: 'Bikelp <span class="triach3">Asegura</span> tu <span class="triach3
     translate_105: "Atrás",
     translate_106: "Ver mi tarifa",
     translate_107: "Su tarifa personalizada.",
-    translate_108: "Valor total asegurado (Bicicleta + Accesorios) a todo riesgo (Robo, Daños y Daños Accidentales): 0.00€.",
+    translate_108: "Valor total asegurado (Bicicleta + Accesorios) a todo riesgo (Robo, Daños y Daños Accidentales):",
     translate_109: "FLEXIBLE",
     translate_110: "Mensual",
     translate_111: "Impuestos y gastos incluidos.",
@@ -2646,7 +2646,7 @@ heading_free_events: "Nehmen Sie an kostenlosen <span class=\"triach\">Events</s
     translate_105: "Zurück",
     translate_106: "Meinen Tarif anzeigen",
     translate_107: "Ihr persönlicher Tarif.",
-    translate_108: "Gesamter Versicherungswert (Fahrrad + Ausrüstung) für alle Risiken (Diebstahl, Sachschäden & Unfallschäden): 0,00 €.",
+    translate_108: "Gesamter Versicherungswert (Fahrrad + Ausrüstung) für alle Risiken (Diebstahl, Sachschäden & Unfallschäden):",
     translate_109: "FLEXIBEL",
     translate_110: "Monatlich",
     translate_111: "Inklusive Steuern und Gebühren.",
@@ -2958,7 +2958,7 @@ heading_free_events: "Neem deel aan gratis <span class=\"triach\">Evenementen</s
     translate_105: "Terug",
     translate_106: "Mijn premie bekijken",
     translate_107: "Uw gepersonaliseerde premie.",
-    translate_108: "Totale verzekerde waarde (fiets + uitrusting) voor alle risico's (diefstal, beschadiging en transportschade): € 0,00.",
+    translate_108: "Totale verzekerde waarde (fiets + uitrusting) voor alle risico's (diefstal, beschadiging en transportschade):",
     translate_109: "FLEXIBEL",
     translate_110: "Maandelijks",
     translate_111: "Inclusief belastingen en kosten.",
@@ -3270,7 +3270,7 @@ heading_free_events: "Participe nos <span class=\"triach\">Eventos</span> gratui
     translate_105: "Voltar",
     translate_106: "Ver a minha tarifa",
     translate_107: "A sua tarifa personalizada.",
-    translate_108: "Valor total seguro (Bicicleta + Equipamento) contra todos os riscos (Roubo, Danos e Danos Acidentais): 0,00€.",
+    translate_108: "Valor total seguro (Bicicleta + Equipamento) contra todos os riscos (Roubo, Danos e Danos Acidentais):",
     translate_109: "FLEXÍVEL",
     translate_110: "Mensal",
     translate_111: "Impostos e taxas incluídos.",
@@ -3912,9 +3912,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="bk-sub-123-step-panel" id="bk-sub-123-step-3">
           <h2 class="bk-sub-123-title" data-i18n="translate_107">Votre tarif personnalisé.</h2>
           
-<!-- AVANT -->
-<p class="bk-sub-123-subtitle" data-i18n="translate_108">
-  Valeur totale (Vélo + Équipements) assurée : <strong id="bk-sub-123-summary-total">0.00€</strong>.
+<p class="bk-sub-123-subtitle">
+  <span data-i18n="translate_108">Valeur totale (Vélo + Équipements) assurée pour tous les risques (Vol, Dommages & Dégâts Accidentels) :</span>
+  <strong id="bk-sub-123-summary-total">0.00€</strong>
 </p>
 
           <div class="bk-sub-123-pricing-grid">
@@ -4801,17 +4801,21 @@ margin: auto;
   var overlay = document.getElementById('bk-sub-123-overlay');
 
   window.bkSubOpenPane = function() {
-    drawer.classList.add('active');
-    overlay.classList.add('active');
-    drawer.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    if (drawer && overlay) {
+      drawer.classList.add('active');
+      overlay.classList.add('active');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
   };
 
   window.bkSubClosePane = function() {
-    drawer.classList.remove('active');
-    overlay.classList.remove('active');
-    drawer.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    if (drawer && overlay) {
+      drawer.classList.remove('active');
+      overlay.classList.remove('active');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
   };
 
   // DOM Elements Step 1
@@ -4837,88 +4841,94 @@ margin: auto;
 
   // --- LOGIQUE PROGRESSIVE STEP 1 ---
   function updateStep1ProgressiveFlow() {
-    var brandValid = brandSelect.value !== "" && (brandSelect.value !== "Autre" || brandOtherInput.value.trim() !== "");
-    var typeValid = typeSelect.value !== "" && (typeSelect.value !== "Autre" || typeOtherInput.value.trim() !== "");
+    if (!brandSelect || !typeSelect || !bikeValueInput) return;
+
+    var brandValid = brandSelect.value !== "" && (brandSelect.value !== "Autre" || (brandOtherInput && brandOtherInput.value.trim() !== ""));
+    var typeValid = typeSelect.value !== "" && (typeSelect.value !== "Autre" || (typeOtherInput && typeOtherInput.value.trim() !== ""));
 
     if (brandValid && typeValid) {
-      fgValue.style.display = 'block';
+      if (fgValue) fgValue.style.display = 'block';
     } else {
-      fgValue.style.display = 'none';
-      fgEngraved.style.display = 'none';
-      fgAccessories.style.display = 'none';
-      accPanel.style.display = 'none';
-      step1Actions.style.display = 'none';
+      if (fgValue) fgValue.style.display = 'none';
+      if (fgEngraved) fgEngraved.style.display = 'none';
+      if (fgAccessories) fgAccessories.style.display = 'none';
+      if (accPanel) accPanel.style.display = 'none';
+      if (step1Actions) step1Actions.style.display = 'none';
       return;
     }
 
     var val = parseFloat(bikeValueInput.value);
     if (!isNaN(val) && val > 0) {
-      fgEngraved.style.display = 'block';
+      if (fgEngraved) fgEngraved.style.display = 'block';
     } else {
-      fgEngraved.style.display = 'none';
-      fgAccessories.style.display = 'none';
-      accPanel.style.display = 'none';
-      step1Actions.style.display = 'none';
+      if (fgEngraved) fgEngraved.style.display = 'none';
+      if (fgAccessories) fgAccessories.style.display = 'none';
+      if (accPanel) accPanel.style.display = 'none';
+      if (step1Actions) step1Actions.style.display = 'none';
       return;
     }
 
     var engravedChecked = document.querySelector('input[name="bk-sub-123-engraved"]:checked');
     if (engravedChecked) {
-      fgAccessories.style.display = 'block';
+      if (fgAccessories) fgAccessories.style.display = 'block';
     } else {
-      fgAccessories.style.display = 'none';
-      accPanel.style.display = 'none';
-      step1Actions.style.display = 'none';
+      if (fgAccessories) fgAccessories.style.display = 'none';
+      if (accPanel) accPanel.style.display = 'none';
+      if (step1Actions) step1Actions.style.display = 'none';
       return;
     }
 
-    if (hasAccYes.checked) {
-      accPanel.style.display = 'block';
+    if (hasAccYes && hasAccYes.checked) {
+      if (accPanel) accPanel.style.display = 'block';
       var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
       if (selectedTags.length > 0) {
-        accValWrap.style.display = 'block';
-        var accVal = parseFloat(accValueInput.value);
-        if (!isNaN(accVal) && accVal >= 0 && accValueInput.value.trim() !== "") {
-          step1Actions.style.display = 'flex';
+        if (accValWrap) accValWrap.style.display = 'block';
+        var accVal = parseFloat(accValueInput ? accValueInput.value : 0);
+        if (!isNaN(accVal) && accVal >= 0 && accValueInput && accValueInput.value.trim() !== "") {
+          if (step1Actions) step1Actions.style.display = 'flex';
         } else {
-          step1Actions.style.display = 'none';
+          if (step1Actions) step1Actions.style.display = 'none';
         }
       } else {
-        accValWrap.style.display = 'none';
-        step1Actions.style.display = 'none';
+        if (accValWrap) accValWrap.style.display = 'none';
+        if (step1Actions) step1Actions.style.display = 'none';
       }
-    } else if (hasAccNo.checked) {
-      accPanel.style.display = 'none';
-      accValWrap.style.display = 'none';
-      step1Actions.style.display = 'flex';
+    } else if (hasAccNo && hasAccNo.checked) {
+      if (accPanel) accPanel.style.display = 'none';
+      if (accValWrap) accValWrap.style.display = 'none';
+      if (step1Actions) step1Actions.style.display = 'flex';
     } else {
-      step1Actions.style.display = 'none';
+      if (step1Actions) step1Actions.style.display = 'none';
     }
   }
 
   // Événements Step 1
-  brandSelect.addEventListener('change', function() {
-    brandOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
-    updateStep1ProgressiveFlow();
-  });
-  brandOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
+  if (brandSelect) {
+    brandSelect.addEventListener('change', function() {
+      if (brandOtherWrap) brandOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
+      updateStep1ProgressiveFlow();
+    });
+  }
+  if (brandOtherInput) brandOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
 
-  typeSelect.addEventListener('change', function() {
-    typeOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
-    updateStep1ProgressiveFlow();
-  });
-  typeOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
+  if (typeSelect) {
+    typeSelect.addEventListener('change', function() {
+      if (typeOtherWrap) typeOtherWrap.style.display = (this.value === 'Autre') ? 'block' : 'none';
+      updateStep1ProgressiveFlow();
+    });
+  }
+  if (typeOtherInput) typeOtherInput.addEventListener('input', updateStep1ProgressiveFlow);
 
-  bikeValueInput.addEventListener('input', updateStep1ProgressiveFlow);
+  if (bikeValueInput) bikeValueInput.addEventListener('input', updateStep1ProgressiveFlow);
 
   document.querySelectorAll('input[name="bk-sub-123-engraved"]').forEach(function(radio) {
     radio.addEventListener('change', updateStep1ProgressiveFlow);
   });
 
-  hasAccYes.addEventListener('change', updateStep1ProgressiveFlow);
-  hasAccNo.addEventListener('change', updateStep1ProgressiveFlow);
+  if (hasAccYes) hasAccYes.addEventListener('change', updateStep1ProgressiveFlow);
+  if (hasAccNo) hasAccNo.addEventListener('change', updateStep1ProgressiveFlow);
 
-  accValueInput.addEventListener('input', updateStep1ProgressiveFlow);
+  if (accValueInput) accValueInput.addEventListener('input', updateStep1ProgressiveFlow);
 
   var tags = document.querySelectorAll('.bk-sub-123-tag');
   tags.forEach(function(tag) {
@@ -4947,7 +4957,8 @@ margin: auto;
     document.querySelectorAll('.bk-sub-123-step-panel').forEach(function(el) {
       el.classList.remove('active');
     });
-    document.getElementById('bk-sub-123-step-' + stepIndex).classList.add('active');
+    var nextPanel = document.getElementById('bk-sub-123-step-' + stepIndex);
+    if (nextPanel) nextPanel.classList.add('active');
 
     document.querySelectorAll('.bk-sub-123-step-indicator').forEach(function(ind) {
       var s = parseInt(ind.getAttribute('data-step'), 10);
@@ -4958,11 +4969,13 @@ margin: auto;
       }
     });
 
-    document.querySelector('.bk-sub-123-drawer-body').scrollTo({ top: 0, behavior: 'smooth' });
+    var drawerBody = document.querySelector('.bk-sub-123-drawer-body');
+    if (drawerBody) drawerBody.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function validateStep(step) {
     var panel = document.getElementById('bk-sub-123-step-' + step);
+    if (!panel) return true;
     var valid = true;
 
     // Validation des inputs classiques et radios
@@ -4985,23 +4998,23 @@ margin: auto;
     });
 
     if (step === 1) {
-      if (brandSelect.value === 'Autre' && !brandOtherInput.value.trim()) {
+      if (brandSelect && brandSelect.value === 'Autre' && brandOtherInput && !brandOtherInput.value.trim()) {
         alert('Veuillez préciser la marque et le modèle.');
         return false;
       }
-      if (typeSelect.value === 'Autre' && !typeOtherInput.value.trim()) {
+      if (typeSelect && typeSelect.value === 'Autre' && typeOtherInput && !typeOtherInput.value.trim()) {
         alert('Veuillez préciser le type de vélo.');
         return false;
       }
-      var bVal = parseFloat(bikeValueInput.value);
+      var bVal = parseFloat(bikeValueInput ? bikeValueInput.value : 0);
       if (isNaN(bVal) || bVal <= 0) {
         alert('Veuillez indiquer une valeur valide pour le vélo.');
         return false;
       }
-      if (hasAccYes.checked) {
+      if (hasAccYes && hasAccYes.checked) {
         var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
         if (selectedTags.length > 0) {
-          var aVal = parseFloat(accValueInput.value);
+          var aVal = parseFloat(accValueInput ? accValueInput.value : 0);
           if (isNaN(aVal) || aVal < 0) {
             alert('Veuillez indiquer la valeur de vos accessoires.');
             return false;
@@ -5022,13 +5035,24 @@ margin: auto;
   }
 
   function computeAndRenderPrices() {
-    var bikeVal = parseFloat(bikeValueInput.value) || 0;
+    var bikeVal = (bikeValueInput && parseFloat(bikeValueInput.value)) || 0;
     var accVal = 0;
-    if (hasAccYes.checked) {
+    if (hasAccYes && hasAccYes.checked && accValueInput) {
       accVal = parseFloat(accValueInput.value) || 0;
     }
     var totalVal = bikeVal + accVal;
-    document.getElementById('bk-sub-123-summary-total').innerText = totalVal.toLocaleString('fr-FR', { minimumFractionDigits: 2 }) + '€';
+    var formattedTotal = totalVal.toLocaleString('fr-FR', { minimumFractionDigits: 2 }) + '€';
+
+    var summaryEl = document.getElementById('bk-sub-123-summary-total');
+    if (summaryEl) {
+      summaryEl.innerText = formattedTotal;
+    } else {
+      // Si la balise a été écrasée par i18n, on la recrée dans son conteneur parent
+      var subtitleEl = document.querySelector('#bk-sub-123-step-3 .bk-sub-123-subtitle');
+      if (subtitleEl) {
+        subtitleEl.innerHTML += ' <strong id="bk-sub-123-summary-total">' + formattedTotal + '</strong>';
+      }
+    }
 
     for (var i = 0; i < BK_TIERS.length; i++) {
       if (totalVal < BK_TIERS[i].max) {
@@ -5038,27 +5062,28 @@ margin: auto;
     }
     if (!bkCurrentTier) bkCurrentTier = BK_TIERS[BK_TIERS.length - 1];
 
-    document.getElementById('bk-sub-123-val-month').innerText = bkCurrentTier.m;
-    document.getElementById('bk-sub-123-val-year').innerText = bkCurrentTier.a;
+    var monthEl = document.getElementById('bk-sub-123-val-month');
+    var yearEl = document.getElementById('bk-sub-123-val-year');
+
+    if (monthEl) monthEl.innerText = bkCurrentTier.m;
+    if (yearEl) yearEl.innerText = bkCurrentTier.a;
 
     updateStep3BtnText();
   }
 
   window.bkSubSelectPlan = function(plan) {
     bkSelectedPlan = plan;
-    document.getElementById('bk-sub-123-card-monthly').classList.toggle('active', plan === 'monthly');
-    document.getElementById('bk-sub-123-card-annual').classList.toggle('active', plan === 'annual');
+    var cardM = document.getElementById('bk-sub-123-card-monthly');
+    var cardA = document.getElementById('bk-sub-123-card-annual');
+    if (cardM) cardM.classList.toggle('active', plan === 'monthly');
+    if (cardA) cardA.classList.toggle('active', plan === 'annual');
     updateStep3BtnText();
   };
 
   function updateStep3BtnText() {
     var btn = document.getElementById('bk-sub-123-step3-btn');
-    if (!bkCurrentTier) return;
-    if (bkSelectedPlan === 'monthly') {
-      btn.innerText = 'Souscrire';
-    } else {
-      btn.innerText = 'Souscrire';
-    }
+    if (!btn || !bkCurrentTier) return;
+    btn.innerText = 'Souscrire';
   }
 
   window.bkSubFinalizePayment = function() {
@@ -6516,8 +6541,8 @@ font-family: 'Civilprom';
 
 
   <div class="bklp-cmp-meta-bar">
-<span class="bklp-cmp-meta-bar-meta" data-i18n="translate_219">Pourquoi Bikelp?<br>
-<span class="devaz" data-i18n="translate_220">Tableau comparatif des assurances pour vélo, actualisé en Septembre 2026.</span></span>
+<span class="bklp-cmp-meta-bar-meta" data-i18n="translate_219">Pourquoi Bikelp?<br></span>
+<span class="devaz" data-i18n="translate_220">Tableau comparatif des assurances pour vélo, actualisé en Septembre 2026.</span>
     <span class="bklp-cmp-scroll-hint" >
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       Défiler horizontalement
