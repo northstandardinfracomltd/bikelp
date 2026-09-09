@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bloque la détection et la traduction automatique par Google Translate / Chrome -->
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
   <title>Assurance Vélo - Document d'information</title>
   <style>
     /* =========================================================
@@ -293,10 +296,10 @@
     }
   </style>
 </head>
-<body>
+<body translate="no" class="notranslate">
 
   <!-- ================= BARRE FLOTTANTE DE LANGUE ================= -->
-  <header class="floating-nav">
+  <header class="floating-nav notranslate" translate="no">
     <span class="floating-nav-label" id="navLabel">Langue / Language :</span>
     <select id="langSwitcher" class="lang-select" aria-label="Sélection de la langue">
       <option value="fr" selected>Français</option>
@@ -310,7 +313,7 @@
   </header>
 
   <!-- ================= CONTENU DU DOCUMENT PDF ================= -->
-  <main class="document-page">
+  <main class="document-page notranslate" translate="no">
 
     <!-- BANDEAU BLEU : INFOS + LOGO SANS CARRÉ BLANC -->
     <div class="header-bandeau">
@@ -583,8 +586,6 @@
 
   <!-- ================= SCRIPTS DE TRADUCTION ================= -->
   <script>
-    // Dictionnaires de traduction pour toutes les langues cibles (l'assurance requiert une terminologie exacte)
-    // Le français (fr) est dynamiquement capturé depuis le DOM HTML initial.
     const translations = {
       en: {
         doc_title: "Bicycle Insurance",
@@ -966,7 +967,7 @@
       }
     };
 
-    // Objet recevant la version originale française capturée directement du HTML
+    // Capture des textes français d'origine
     const defaultFrenchStrings = {};
     document.querySelectorAll("[data-i18n]").forEach(element => {
       const key = element.getAttribute("data-i18n");
@@ -982,7 +983,6 @@
       document.querySelectorAll("[data-i18n]").forEach(element => {
         const key = element.getAttribute("data-i18n");
         if (targetLang === "fr") {
-          // Affiche le texte d'origine du HTML
           if (defaultFrenchStrings[key]) {
             element.innerHTML = defaultFrenchStrings[key];
           }
@@ -991,6 +991,7 @@
         }
       });
 
+      // Synchronise la langue du document pour que les lecteurs d'écran et navigateurs sachent la langue réelle
       document.documentElement.lang = targetLang;
       localStorage.setItem("user_selected_lang", targetLang);
       langSwitcher.value = targetLang;
