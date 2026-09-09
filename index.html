@@ -8659,6 +8659,8 @@ margin: auto;
     }
   })();
 </script>
+
+
 <script>
 (function() {
   const manualOverrides = {
@@ -8701,86 +8703,80 @@ margin: auto;
 
   const originalFrenchRegulatory = "Après avoir souscrit une assurance chez Bikelp, nous vous demandons de télécharger photos et documents relatifs à votre vélo et antivol dans votre compte client. Nous vous conseillons de faire cela au plus vite afin de démontrer la preuve d'achat. Sans cela, nous pourrions être dans l'impossibilité de procéder à votre indemnisation. En tant que demandeur(-euse) d’assurance, vous êtes tenu(e) de répondre aux questions posées de la manière la plus complète possible. Elles valent également pour les faits et les circonstances liés à la personne que vous souhaitez assurer. Dans les réponses aux questions, seules vos connaissances, et celles de la personne assurée, sont décisives.";
 
-  const shortKeys = ["Souscrire", "Masquer le texte", "Lire le texte réglementaire"];
+  function getLang() {
+    const select = document.getElementById("btn-register-cta");
+    return select ? select.value : (localStorage.getItem("preferred_lang") || "fr-FR");
+  }
 
   function runPatch() {
-    const select = document.getElementById("btn-register-cta");
-    const lang = select ? select.value : (localStorage.getItem("preferred_lang") || "fr-FR");
+    const lang = getLang();
 
-    // 1. Traduction du placeholder code promo
+    // 1. Placeholder Code Promo
     const promoInput = document.getElementById("bk-sub-123-promo") || document.querySelector("input[placeholder*='promo'], input[placeholder*='Promo']");
     if (promoInput) {
-      if (lang === "fr-FR") {
-        promoInput.setAttribute("placeholder", "Entrez un code promo");
-      } else if (manualOverrides[lang]?.promo_placeholder) {
-        promoInput.setAttribute("placeholder", manualOverrides[lang].promo_placeholder);
-      }
+      promoInput.setAttribute("placeholder", lang === "fr-FR" ? "Entrez un code promo" : (manualOverrides[lang]?.promo_placeholder || "Entrez un code promo"));
     }
 
-    // 2. Traduction du long texte réglementaire (détection souple par mots-clés)
+    // 2. Paragraphe réglementaire
     const paragraphs = document.querySelectorAll("p, div, span");
     paragraphs.forEach((el) => {
       if (el.children.length > 0) return;
       const t = el.textContent.trim();
-      
       const isRegulatory = t.includes("Après avoir souscrit") || 
-                           Object.values(manualOverrides).some(o => t.includes(o.regulatory_snippet.substring(0, 30)));
+                           Object.values(manualOverrides).some(o => t.includes(o.regulatory_snippet.substring(0, 25)));
 
       if (isRegulatory) {
-        if (lang === "fr-FR") {
-          el.textContent = originalFrenchRegulatory;
-        } else if (manualOverrides[lang]?.regulatory_snippet) {
-          el.textContent = manualOverrides[lang].regulatory_snippet;
-        }
+        el.textContent = lang === "fr-FR" ? originalFrenchRegulatory : (manualOverrides[lang]?.regulatory_snippet || originalFrenchRegulatory);
       }
     });
 
-    // 3. Traduction des boutons courts (Souscrire, Lire..., Masquer...)
-    const buttons = document.querySelectorAll("button, a, span, label");
-    buttons.forEach((el) => {
+    // 3. Bouton Souscrire
+    document.querySelectorAll("button, a, span").forEach((el) => {
       if (el.children.length > 0) return;
-      const current = el.textContent.trim();
-      if (!current) return;
-
-      let matchedKey = shortKeys.find(k => k === current);
-      if (!matchedKey) {
-        for (const l in manualOverrides) {
-          for (const k of shortKeys) {
-            if (manualOverrides[l][k] === current) {
-              matchedKey = k;
-              break;
-            }
-          }
-          if (matchedKey) break;
-        }
+      const t = el.textContent.trim();
+      const isSubscribe = t === "Souscrire" || Object.values(manualOverrides).some(o => o["Souscrire"] === t);
+      if (isSubscribe) {
+        el.textContent = lang === "fr-FR" ? "Souscrire" : (manualOverrides[lang]?.["Souscrire"] || "Souscrire");
       }
+    });
 
-      if (matchedKey) {
-        if (lang === "fr-FR") {
-          el.textContent = matchedKey;
-        } else if (manualOverrides[lang]?.[matchedKey]) {
-          el.textContent = manualOverrides[lang][matchedKey];
-        }
+    // 4. Bouton de bascule Lire / Masquer (mise à jour sans perturber le script d'origine)
+    updateToggleButtons(lang);
+  }
+
+  function updateToggleButtons(lang) {
+    document.querySelectorAll("button, a, span").forEach((el) => {
+      if (el.children.length > 0) return;
+      const t = el.textContent.trim();
+
+      // Détecte si l'élément correspond à l'état "Lire" ou "Masquer"
+      const isRead = t.includes("Lire le texte") || Object.values(manualOverrides).some(o => t.includes(o["Lire le texte réglementaire"]));
+      const isHide = t.includes("Masquer") || Object.values(manualOverrides).some(o => t.includes(o["Masquer le texte"]));
+
+      if (isRead) {
+        el.textContent = lang === "fr-FR" ? "Lire le texte réglementaire" : (manualOverrides[lang]?.["Lire le texte réglementaire"] || "Lire le texte réglementaire");
+      } else if (isHide) {
+        el.textContent = lang === "fr-FR" ? "Masquer le texte" : (manualOverrides[lang]?.["Masquer le texte"] || "Masquer le texte");
       }
     });
   }
 
-  // Événements d'exécution
+  // Événements d'initialisation
   window.addEventListener("DOMContentLoaded", runPatch);
   window.addEventListener("load", runPatch);
 
-  // Changement de sélecteur
   document.addEventListener("change", function(e) {
     if (e.target && e.target.id === "btn-register-cta") {
       setTimeout(runPatch, 20);
     }
   });
 
-  // Détection des clics (ouverture tiroir, changement d'étape, clic sur "Lire le texte...")
-  document.addEventListener("click", function() {
-    setTimeout(runPatch, 20);
-    setTimeout(runPatch, 150);
-    setTimeout(runPatch, 400);
+  // Pour les clics : on laisse d'abord votre fonction d'origine terminer son toggle (délai de 100ms)
+  document.addEventListener("click", function(e) {
+    const target = e.target;
+    if (target.closest("#bk-sub-open-btn, .bk-sub-123-trigger-btn, [onclick*='bkSub'], button, a")) {
+      setTimeout(runPatch, 120);
+    }
   });
 })();
 </script>
