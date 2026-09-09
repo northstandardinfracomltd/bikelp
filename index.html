@@ -1579,9 +1579,571 @@ Devis en ligne instantané
   // Dictionnaire des traductions
 const translations = {
   "fr-FR": {
-    drawer_title: "Informations sur votre vélo."
+    drawer_title: "Informations sur votre vélo.",
+    translate_1: "Marque du vélo.",
+    translate_2: "Sélectionnez une marque",
+    translate_3: "Autre",
+    translate_4: "Type de vélo.",
+    translate_5: "Sélectionnez un type",
+    translate_6: "Vélo de route",
+    translate_7: "Vélo de ville",
+    translate_8: "Vélo électrique (VAE)",
+    translate_9: "VTT (MTB)",
+    translate_10: "Gravel",
+    translate_11: "Vélo de trekking (VTC)",
+    translate_12: "Vélo pliable",
+    translate_13: "Fixie (Pignon fixe)",
+    translate_14: "BMX",
+    translate_15: "Fatbike",
+    translate_16: "Tandem",
+    translate_17: "Vélo de cyclo-cross",
+    translate_18: "Vélo de contre-la-montre (Triathlon)",
+    translate_19: "Vélo de piste",
+    translate_20: "Vélo couché (Recumbent)",
+    translate_21: "Vélo hollandais",
+    translate_22: "Beach Cruiser",
+    translate_23: "Draisienne",
+    translate_24: "VTT de descente (Downhill)",
+    translate_25: "VTT d'enduro",
+    translate_26: "VTT de cross-country (XC)",
+    translate_27: "VTT all-mountain",
+    translate_28: "VTT dirt/street",
+    translate_29: "Vélo longtail",
+    translate_30: "Biporteur",
+    translate_31: "Triporteur",
+    translate_32: "Vélo de voyage (Touring/Randonneuse)",
+    translate_33: "Vélomobile",
+    translate_34: "Vélo handisport (Handbike)",
+    translate_35: "Autre",
+    translate_36: "Valeur du vélo (€).",
+    translate_37: "Combien coûterait le remplacement à neuf au prix catalogue avec vos éventuelles personnalisations et améliorations.",
+    translate_38: "Mon vélo dispose d’une gravure et d’un numéro d’enregistrement.",
+    translate_39: "Oui",
+    translate_40: "Non",
+    translate_41: "Je souhaite assurer mes accessoires et vêtements de vélo.",
+    translate_42: "Oui",
+    translate_43: "Non",
+    translate_44: "Sélectionnez vos accessoires et équipements.",
+    translate_45: "Antivol",
+    translate_46: "Casque",
+    translate_47: "Éclairage",
+    translate_48: "Panier",
+    translate_49: "Capteur de puissance non intégré",
+    translate_50: "Porte-bagages",
+    translate_51: "Rétroviseur de vélo",
+    translate_52: "Sacoche pour vélo",
+    translate_53: "Sacoches",
+    translate_54: "Siège pour enfant",
+    translate_55: "Alarme pour vélo",
+    translate_56: "Bidon",
+    translate_57: "Caméra embarquée",
+    translate_58: "Chargeur",
+    translate_59: "Chaussures",
+    translate_60: "Compteur",
+    translate_61: "Gants",
+    translate_62: "Cuissard",
+    translate_63: "Maillot",
+    translate_64: "Combinaison",
+    translate_65: "Garde-Boue",
+    translate_66: "Housse de vélo",
+    translate_67: "Valise de vélo",
+    translate_68: "Kit de réparation",
+    translate_69: "Lunette",
+    translate_70: "Porte-bidons",
+    translate_71: "Remorque",
+    translate_72: "Montant total de la valeur des objets (€).",
+    translate_73: "Continuer",
+    translate_74: "Indiquez votre lieu de résidence.",
+    translate_75: "Pays.",
+    translate_76: "Sélectionnez un pays",
+    translate_77: "France",
+    translate_78: "Espagne",
+    translate_79: "Allemagne",
+    translate_80: "Italie",
+    translate_81: "Portugal",
+    translate_82: "Belgique",
+    translate_83: "Pays-Bas",
+    translate_84: "Autriche",
+    translate_85: "Irlande",
+    translate_86: "Suède",
+    translate_87: "Danemark",
+    translate_88: "Finlande",
+    translate_89: "Pologne",
+    translate_90: "République tchèque",
+    translate_91: "Grèce",
+    translate_92: "Hongrie",
+    translate_93: "Roumanie",
+    translate_94: "Bulgarie",
+    translate_95: "Croatie",
+    translate_96: "Slovaquie",
+    translate_97: "Slovénie",
+    translate_98: "Lituanie",
+    translate_99: "Lettonie",
+    translate_100: "Estonie",
+    translate_101: "Luxembourg",
+    translate_102: "Malte",
+    translate_103: "Chypre",
+    translate_104: "Code postal.",
+    translate_105: "Retour",
+    translate_106: "Voir mon tarif",
+    translate_107: "Votre tarif personnalisé.",
+    translate_108: "Valeur totale (Vélo + Équipements) assurée pour tous les risques (Vol, Dommages & Dégâts Accidentels) : 0.00€.",
+    translate_109: "FLEXIBLE",
+    translate_110: "Mensuel",
+    translate_111: "Taxes et Frais inclus.",
+    translate_112: "ÉCONOMIQUE",
+    translate_113: "Annuel",
+    translate_114: "Taxes et Frais inclus.",
+    translate_115: "Code promotion (Optionnel).",
+    translate_116: "Retour",
+    translate_117: "Souscrire",
+    translate_118: "Vos informations personnelles.",
+    translate_119: "Email.",
+    translate_120: "Mot de passe.",
+    translate_121: "Prénom.",
+    translate_122: "Nom.",
+    translate_123: "Date de naissance.",
+    translate_124: "Ville de naissance.",
+    translate_125: "Pays de naissance.",
+    translate_126: "Numéro et voie postale.",
+    translate_127: "Code postal.",
+    translate_128: "Retour",
+    translate_129: "Valider",
+    translate_130: "Informations sur l’assurance.",
+    translate_131: "Lire le texte réglementaire",
+    translate_140: "Je dispose d’un antivol ART2, Sold Secure Silver, FUB ou supérieur.",
+    translate_141: "Oui",
+    translate_142: "Non",
+    translate_143: "Avez-vous subi des dommages au niveau de votre vélo au cours des trois derniers mois.",
+    translate_145: "Oui",
+    translate_146: "Non",
+    translate_147: "Un assureur a-t-il déjà refusé ou résilié votre assurance.",
+    translate_148: "Oui",
+    translate_149: "Non",
+    translate_150: "Avez-vous déjà commis une infraction qui vous a mené à avoir des contacts avec la police ou à être condamné par la justice.",
+    translate_151: "Oui",
+    translate_152: "Non",
+    translate_155: "J’accepte que mes données soient enregistrées dans des systèmes (d’avertissement) internes et externes afin d’assurer une politique d’acceptation et une politique de risque responsables et d’éviter les fraudes.",
+    translate_156: "Retour",
+    translate_157: "Valider",
+    translate_160: "Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite.",
+    translate_161: "Je souscris à l'assurance",
+    translate_165: "Présentation de Bikelp",
+    translate_166: "Voici Bikelp, contraction de Bike (vélo) et Help (aide), qui propose une assurance spécialisée. Bikelp SLP est une DNVB (Digital Native Vertical Brand) fondée en 2016. L'entreprise s'appuie également sur un partenariat financier et structurel avec Barclays Insurances pour renforcer la solidité de ses produits.",
+    translate_167: "Une assurance tous risques complète",
+    translate_168: "Bikelp propose une couverture complète incluant le vol, les dommages matériels et les dégâts accidentels, pour les vélos neufs ou d’occasion d'une valeur de 800€ à 16,000€. Nous remboursons les frais de réparation ou la valeur assurée du vélo, à partir de 9,99€ par mois (taxes et frais inclus) et sans engagement.",
+    translate_169: "Simple et 100% digitale",
+    translate_170: "La souscription s’effectue entièrement en ligne via un formulaire permettant d'obtenir un devis précis et instantané. Un espace client dédié vous permet ensuite de gérer facilement vos vélos, équipements assurés, sinistres et informations personnelles.",
+    translate_171: "Assurance engagée pour le climat",
+    translate_172: "Pour chaque contrat mensuel souscrit, nous plantons 2 arbres par mois ; pour une formule annuelle, nous en plantons 30 par an. Sans intermédiaire, nous organisons ces plantations nous-mêmes à travers des événements communautaires auxquels vous pouvez prendre part.",
+    translate_173: "Une assistance 24/7",
+    translate_174: "Notre service client est joignable chaque jour, y compris les jours fériés, en français, anglais, allemand, néerlandais, portugais et espagnol. Vous pouvez nous contacter depuis votre espace assuré, par chat en direct, email ou téléphone, pour une prise en charge rapide allant de l'instantané à 24 heures maximum.",
+    translate_175: "Pause",
+    translate_176: "14 Raisons de Souscrire avec Bikelp!",
+    translate_177: "Formule Unique Vol & Dommages",
+    translate_178: "Une protection complète pour faire face à tous les imprévus du quotidien.",
+    translate_179: "Inclus",
+    translate_180: "Dégâts Accidentels",
+    translate_181: "Une chute est vite arrivée. Prenez soin de vous, nous nous occupons de votre vélo.",
+    translate_182: "Inclus",
+    translate_183: "Libre & Sans engagement",
+    translate_184: "Suspendez ou résiliez votre contrat à tout moment, en un clic.",
+    translate_185: "Zéro Franchise",
+    translate_186: "En cas de sinistre, vous n'avez rien à débourser de votre poche.",
+    translate_187: "Inclus",
+    translate_188: "Réponse Sinistre 48h",
+    translate_189: "Vos déclarations de sinistre sont traitées sous 1 à 2 jours ouvrés.",
+    translate_190: "Inclus",
+    translate_191: "Support Multilingue 24/7",
+    translate_192: "Notre assistance vous répond en français, anglais, espagnol, allemand et néerlandais.",
+    translate_193: "Inclus",
+    translate_194: "Aucun Frais Initial",
+    translate_195: "Tout est inclus directement dans votre mensualité ou votre cotisation annuelle.",
+    translate_196: "Inclus",
+    translate_198: "Courses & Compétitions Officielles",
+    translate_199: "Vous restez couvert lors des épreuves officielles nécessitant une licence.",
+    translate_200: "Inclus",
+    translate_201: "Cyclosportives & Événements",
+    translate_202: "Une couverture active sur tous vos événements et défis ouverts à tous.",
+    translate_203: "Inclus",
+    translate_204: "Couverture Européenne 12 mois",
+    translate_205: "Roulez sereinement dans toute l'Union européenne avec les mêmes garanties.",
+    translate_206: "Inclus",
+    translate_207: "Remboursement 100% Valeur Assurée",
+    translate_208: "Aucune condition cachée ni décote de vétusté est appliquée : votre vélo est indemnisé à sa valeur réelle.",
+    translate_209: "Inclus",
+    translate_210: "Assistance & Continuité",
+    translate_211: "Jusqu’à 400€ pour louer un vélo de remplacement ou financer votre retour à domicile.",
+    translate_212: "Inclus",
+    translate_213: "Offre Foyer Multi-Vélos",
+    translate_214: "Profitez de -30% sur chaque vélo supplémentaire au sein de votre famille.",
+    translate_215: "Inclus",
+    translate_216: "Assurez vos Équipements & Accessoires",
+    translate_217: "Casque, textile, compteur et antivols sont également pris en charge.",
+    translate_218: "Inclus",
+    translate_219: "Pourquoi Bikelp?",
+    translate_220: "Tableau comparatif des assurances pour vélo, actualisé en Septembre 2026.",
+    translate_221: "Assurance",
+    translate_222: "Évaluation",
+    translate_223: "Valeur Max (Vélo)",
+    translate_224: "Tarif Min (TTC)",
+    translate_225: "Sans Franchise",
+    translate_226: "Vélo Occasion",
+    translate_227: "Batterie VAE Couverte",
+    translate_228: "Pas de Vétusté",
+    translate_229: "Accessoires Vélo ou Cycliste",
+    translate_230: "Remboursement Vol",
+    translate_231: "Délai Remboursement",
+    translate_232: "Délai Étude Sinistre",
+    translate_233: "Casse et Vandalisme",
+    translate_234: "Antivol Homologué Requis",
+    translate_235: "Assistance ou Remorquage",
+    translate_236: "Délai Carence",
+    translate_237: "Garantie Valeur d’Achat",
+    translate_238: "Réparateur Accepté",
+    translate_239: "Couverture Géographique",
+    translate_240: "Oui",
+    translate_241: "4 à 7 jours",
+    translate_242: "0 à 15 jours",
+    translate_243: "Tous sur Facture",
+    translate_244: "Union Européenne",
+    translate_245: "Non",
+    translate_246: "4 semaines",
+    translate_247: "3 semaines",
+    translate_248: "N/c",
+    translate_249: "0 à 15 jours",
+    translate_250: "Tous sur Facture",
+    translate_251: "Pays Résidence",
+    translate_252: "2 semaines",
+    translate_253: "Selon Offre",
+    translate_254: "1 semaine",
+    translate_255: "Agréé Uniquement",
+    translate_400: "Légende des critères du tableau comparatif.\n— 1. Valeur Max (Vélo) : Montant plafond du prix d'achat de votre vélo que l'assureur accepte de couvrir en cas de sinistre total.\n— 2. Sans Franchise : Absence de reste à charge financier pour l'assuré lors du dédommagement d'un sinistre.\n— 3. Accessoires Vélo ou Cycliste : Équipements fixes ou amovibles (casque, antivol, bagagerie, compteur) pris en charge en cas de vol ou de dégradation.\n— 4. Délai Remboursement : Temps nécessaire à la compagnie pour verser l'indemnisation sur votre compte après validation du dossier.\n— 5. Délai Étude Sinistre : Durée d'analyse de votre déclaration et de vos pièces justificatives par l'assureur pour accepter ou refuser la prise en charge.\n— 6. Antivol Homologué Requis : Obligation d'utiliser un modèle certifié (souvent FUB 2 roues ou Sold Secure) pour que la garantie vol s'applique.\n— 7. Délai Carence : Période consécutive à la souscription durant laquelle les garanties ne fonctionnent pas encore.\n— 8. Garantie Valeur d’Achat : Engagement de l'assureur à rembourser le vélo à son prix neuf facturé, sans appliquer de décote pour vétusté pendant une durée définie.\n— 9. Réparateur Accepté : Réseau de professionnels autorisés par l'assurance (atelier partenaire agréé ou réparateur libre de votre choix) pour effectuer les remises en état.\n— 10. Couverture Géographique : Zone territoriale (Pays Résidence, Union européenne ou monde entier) dans laquelle vos garanties restent actives lors de vos trajets.\nSignaler une information incorrecte : support@bikelp.com.",
+    translate_401: "Nous transformons votre Sinistre en une Solution!",
+    translate_402: "Sinistre",
+    translate_403: "Solution!",
+    translate_404: "Parce que votre vélo représente un investissement important : optez pour une véritable sécurité avec l’assurance complète Bikelp : vol, dommages et dégâts accidentels. Nous remboursons sans franchise les factures de réparation ou la valeur de votre vélo à 100%, sans décote. C'est cela un assureur responsable.",
+    translate_405: "Configurer mon assurance",
+    translate_406: "Remplacer",
+    translate_407: "Votre vélo est volé ou irréparable? Pas d'inquiétude, nous vous aidons à le remplacer. Transmettez les informations relatives à votre sinistre depuis votre compte Bikelp et obtenez une confirmation de remboursement sous 48h.",
+    translate_408: "Déclarer sinistre",
+    translate_409: "Réparer",
+    translate_410: "Un composant est abîmé suite à une chute ou une dégradation? Faites réparer votre vélo auprès de votre réparateur habituel et envoyez-nous la ou les facture(s) pour recevoir votre remboursement sous 4 à 7 jours ouvrés.",
+    translate_411: "Suivre mon sinistre",
+    translate_500: "Prévention : Non, votre assurance habitation n'assure pas véritablement votre vélo.",
+    translate_501: "La majorité des contrats multirisques habitation restreignent fortement l'indemnisation de votre cycle en dehors de votre domicile. Entre franchises élevées, plafonds de remboursement dérisoires et clauses d'exclusion liées au vol sur voie publique ou sans point fixe, votre vélo reste très souvent exposé en cas de sinistre imprévu.",
+    translate_502: "Téléchargez la fiche IPID :  Document d’information officiel sur le produit d’assurance.",
+    translate_503: "Accédez en toute transparence au récapitulatif complet de vos garanties, plafonds et modalités de prise en charge avant de souscrire.",
+    translate_504: "Et des Solutions dédiées aux Professionnels!",
+    translate_505: "Solutions",
+    translate_506: "Professionnels!",
+    translate_507: "Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’une assurance pour le stock d'un magasin, de proposer Bikelp à vos clients contre une commission, ou encore d’assurer la flotte de vélos d’une entreprise utilisée par ses collaborateurs : Bikelp s'adapte à vos besoins, toujours au prix le plus juste.",
+    translate_508: "Contacter Bikelp",
+    translate_509: "Programme Magasin",
+    translate_510: "Devenez partenaire Bikelp en proposant notre assurance complète à vos clients et obtenez une rémunération instantanée pour chaque souscription.",
+    translate_511: "Contacter Bikelp",
+    translate_512: "Assurance Flotte",
+    translate_513: "Avec Bikelp, assurez votre stock ou votre flotte de vélos et accessoires contre le vol, les dégradations et les accidents.",
+    translate_514: "Contacter Bikelp",
+    translate_515: "Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes passionnés et engagés pour la mobilité douce. Au-delà de l’assurance, souscrire chez Bikelp, c’est rejoindre une communauté solidaire qui s'entraide au quotidien.",
+    translate_516: "Activer mon assurance",
+    translate_517: "Une communauté de cyclistes assurés de tous horizons qui mutualisent les sinistres et financent le fonds solidaire Bikelp.",
+    translate_518: "Partageons des moments uniques! Bikelp organise régulièrement des événements, souvent en haute montagne ou dans des lieux emblématiques du cyclisme. C’est toujours gratuit et ouvert à tous, que vous soyez assuré chez nous ou non.",
+    translate_519: "Je souscris à l'assurance",
+    translate_520: "Bikelp, l'assurance tous risques pour toutes les pratiques du vélo dans l'Union européenne.",
+    translate_521: "Bikelp & Vous!",
+    translate_522: "Pour les particuliers : Bikelp, l’assurance des particuliers pour la mobilité douce, les loisirs et la compétition. \n Pour les particuliers : Bikelp, l’assurance des entreprises pour leurs flottes ou stocks de vélos.",
+    translate_523: "Partenariats & Presse",
+    translate_524: "Pour toute demande de partenariat d'influence, de sponsoring, de collaboration sur les réseaux sociaux ou de relations presse, veuillez nous contacter à l'adresse support@bikelp.com.",
+    translate_525: "Contacter Bikelp",
+    translate_526: "Documents Légaux",
+    translate_527: "Politique Confidentialité",
+    translate_528: "Produit Assurance (IPID)",
+    translate_529: "Conditions Générales",
+    translate_530: "Certificat FCA",
   },
   "en-US": {
+    translate_1: "Bike brand.",
+    translate_2: "Select a brand",
+    translate_3: "Other",
+    translate_4: "Bike type.",
+    translate_5: "Select a type",
+    translate_6: "Road bike",
+    translate_7: "City bike",
+    translate_8: "Electric bike (E-bike)",
+    translate_9: "Mountain bike (MTB)",
+    translate_10: "Gravel bike",
+    translate_11: "Trekking bike (Hybrid)",
+    translate_12: "Folding bike",
+    translate_13: "Fixie (Fixed-gear)",
+    translate_14: "BMX",
+    translate_15: "Fatbike",
+    translate_16: "Tandem",
+    translate_17: "Cyclo-cross bike",
+    translate_18: "Time trial bike (Triathlon)",
+    translate_19: "Track bike",
+    translate_20: "Recumbent bike",
+    translate_21: "Dutch bike",
+    translate_22: "Beach Cruiser",
+    translate_23: "Balance bike",
+    translate_24: "Downhill MTB",
+    translate_25: "Enduro MTB",
+    translate_26: "Cross-country MTB (XC)",
+    translate_27: "All-mountain MTB",
+    translate_28: "Dirt/street MTB",
+    translate_29: "Longtail bike",
+    translate_30: "Front-loading cargo bike (Two-wheeler)",
+    translate_31: "Cargo tricycle (Three-wheeler)",
+    translate_32: "Touring bike",
+    translate_33: "Velomobile",
+    translate_34: "Handbike",
+    translate_35: "Other",
+    translate_36: "Bike value (€).",
+    translate_37: "Replacement cost as new at list price, including any customizations and upgrades.",
+    translate_38: "My bike has an engraving and a registration number.",
+    translate_39: "Yes",
+    translate_40: "No",
+    translate_41: "I want to insure my bike accessories and clothing.",
+    translate_42: "Yes",
+    translate_43: "No",
+    translate_44: "Select your accessories and equipment.",
+    translate_45: "Bike lock",
+    translate_46: "Helmet",
+    translate_47: "Lights",
+    translate_48: "Basket",
+    translate_49: "Non-integrated power meter",
+    translate_50: "Luggage rack",
+    translate_51: "Rearview mirror",
+    translate_52: "Bikepacking bag",
+    translate_53: "Panniers",
+    translate_54: "Child seat",
+    translate_55: "Bike alarm",
+    translate_56: "Water bottle",
+    translate_57: "Action camera",
+    translate_58: "Charger",
+    translate_59: "Shoes",
+    translate_60: "Bike computer",
+    translate_61: "Gloves",
+    translate_62: "Bib shorts",
+    translate_63: "Jersey",
+    translate_64: "Skinsuit",
+    translate_65: "Mudguard",
+    translate_66: "Bike cover",
+    translate_67: "Bike travel case",
+    translate_68: "Repair kit",
+    translate_69: "Glasses",
+    translate_70: "Bottle cage",
+    translate_71: "Trailer",
+    translate_72: "Total item value (€).",
+    translate_73: "Continue",
+    translate_74: "Enter your place of residence.",
+    translate_75: "Country.",
+    translate_76: "Select a country",
+    translate_77: "France",
+    translate_78: "Spain",
+    translate_79: "Germany",
+    translate_80: "Italy",
+    translate_81: "Portugal",
+    translate_82: "Belgium",
+    translate_83: "Netherlands",
+    translate_84: "Austria",
+    translate_85: "Ireland",
+    translate_86: "Sweden",
+    translate_87: "Denmark",
+    translate_88: "Finland",
+    translate_89: "Poland",
+    translate_90: "Czech Republic",
+    translate_91: "Greece",
+    translate_92: "Hungary",
+    translate_93: "Romania",
+    translate_94: "Bulgaria",
+    translate_95: "Croatia",
+    translate_96: "Slovakia",
+    translate_97: "Slovenia",
+    translate_98: "Lithuania",
+    translate_99: "Latvia",
+    translate_100: "Estonia",
+    translate_101: "Luxembourg",
+    translate_102: "Malta",
+    translate_103: "Cyprus",
+    translate_104: "Postal code.",
+    translate_105: "Back",
+    translate_106: "View my quote",
+    translate_107: "Your personalized quote.",
+    translate_108: "Total insured value (Bike + Equipment) for all risks (Theft, Damage & Accidental Damage): €0.00.",
+    translate_109: "FLEXIBLE",
+    translate_110: "Monthly",
+    translate_111: "Taxes and fees included.",
+    translate_112: "ECONOMICAL",
+    translate_113: "Annual",
+    translate_114: "Taxes and fees included.",
+    translate_115: "Promo code (Optional).",
+    translate_116: "Back",
+    translate_117: "Subscribe",
+    translate_118: "Your personal details.",
+    translate_119: "Email.",
+    translate_120: "Password.",
+    translate_121: "First name.",
+    translate_122: "Last name.",
+    translate_123: "Date of birth.",
+    translate_124: "City of birth.",
+    translate_125: "Country of birth.",
+    translate_126: "Street address.",
+    translate_127: "Postal code.",
+    translate_128: "Back",
+    translate_129: "Confirm",
+    translate_130: "Insurance details.",
+    translate_131: "Read regulatory disclosures",
+    translate_140: "I have an ART2, Sold Secure Silver, FUB or higher certified bike lock.",
+    translate_141: "Yes",
+    translate_142: "No",
+    translate_143: "Has your bike suffered any damage over the past three months?",
+    translate_145: "Yes",
+    translate_146: "No",
+    translate_147: "Has an insurer ever declined or cancelled your insurance?",
+    translate_148: "Yes",
+    translate_149: "No",
+    translate_150: "Have you ever committed an offense that led to police contact or a criminal conviction?",
+    translate_151: "Yes",
+    translate_152: "No",
+    translate_155: "I agree to my data being recorded in internal and external (warning) systems to maintain responsible underwriting and risk management practices and to prevent fraud.",
+    translate_156: "Back",
+    translate_157: "Confirm",
+    translate_160: "Transparent and hassle-free: with Bikelp insurance, there is no hidden fine print. Our priority is to get you back in the saddle as quickly as possible.",
+    translate_161: "Get insured",
+    translate_165: "About Bikelp",
+    translate_166: "Meet Bikelp—a blend of Bike and Help—providing dedicated bicycle coverage. Founded in 2016 as a DNVB (Digital Native Vertical Brand), Bikelp SLP also relies on a strategic and financial partnership with Barclays Insurances to ensure rock-solid underwriting.",
+    translate_167: "Comprehensive all-risks insurance",
+    translate_168: "Bikelp delivers complete coverage against theft, material damage, and accidental damage for new or pre-owned bikes valued between €800 and €16,000. We cover repair costs or reimburse the insured value starting at €9.99/month (all taxes and fees included), with no lock-in contract.",
+    translate_169: "Simple and 100% digital",
+    translate_170: "Enrollment is fully digital via a simple form that provides an accurate, instant quote. Your dedicated customer portal lets you easily manage bikes, covered gear, claims, and account details.",
+    translate_171: "Committed to the climate",
+    translate_172: "For every monthly plan active, we plant 2 trees each month; for annual plans, we plant 30 trees a year. We skip intermediaries and run these planting efforts ourselves through community gatherings you are welcome to join.",
+    translate_173: "24/7 assistance",
+    translate_174: "Our support team is available every day, including bank holidays, in French, English, German, Dutch, Portuguese, and Spanish. Reach us from your account dashboard, live chat, email, or phone, with response times ranging from immediate to within 24 hours.",
+    translate_175: "Pause",
+    translate_176: "14 Reasons to Choose Bikelp!",
+    translate_177: "All-in-One Theft & Damage Plan",
+    translate_178: "Complete coverage to safeguard against everyday mishaps.",
+    translate_179: "Included",
+    translate_180: "Accidental Damage",
+    translate_181: "Crashes happen. Focus on your recovery—we will handle the bike.",
+    translate_182: "Included",
+    translate_183: "Flexible & Non-Binding",
+    translate_184: "Pause or cancel your subscription whenever you want, in just one click.",
+    translate_185: "Zero Deductible",
+    translate_186: "When filing a claim, you pay nothing out of pocket.",
+    translate_187: "Included",
+    translate_188: "48-Hour Claim Response",
+    translate_189: "Your claims are reviewed within 1 to 2 business days.",
+    translate_190: "Included",
+    translate_191: "24/7 Multilingual Support",
+    translate_192: "Our team assists you in French, English, Spanish, German, and Dutch.",
+    translate_193: "Included",
+    translate_194: "No Upfront Fees",
+    translate_195: "Everything is built directly into your monthly or annual subscription.",
+    translate_196: "Included",
+    translate_198: "Official Races & Competitions",
+    translate_199: "You remain covered during licensed competitive events.",
+    translate_200: "Included",
+    translate_201: "Sportives & Open Events",
+    translate_202: "Active coverage across all mass-participation events and open challenges.",
+    translate_203: "Included",
+    translate_204: "12-Month European Coverage",
+    translate_205: "Ride with peace of mind across the entire European Union under identical terms.",
+    translate_206: "Included",
+    translate_207: "100% Insured Value Reimbursement",
+    translate_208: "No hidden clauses or depreciation applied: your bike is reimbursed at its true value.",
+    translate_209: "Included",
+    translate_210: "Assistance & Mobility Continuity",
+    translate_211: "Up to €400 to rent a replacement bike or cover your journey home.",
+    translate_212: "Included",
+    translate_213: "Multi-Bike Family Discount",
+    translate_214: "Enjoy 30% off every additional bike insured within your household.",
+    translate_215: "Included",
+    translate_216: "Insure Your Accessories & Gear",
+    translate_217: "Helmets, cycling apparel, computers, and locks are also covered.",
+    translate_218: "Included",
+    translate_219: "Why Bikelp?",
+    translate_220: "Bike insurance comparison table, updated September 2026.",
+    translate_221: "Insurance",
+    translate_222: "Rating",
+    translate_223: "Max Value (Bike)",
+    translate_224: "Min Price (incl. tax)",
+    translate_225: "Zero Deductible",
+    translate_226: "Used Bikes",
+    translate_227: "E-bike Battery Covered",
+    translate_228: "No Depreciation",
+    translate_229: "Bike & Rider Accessories",
+    translate_230: "Theft Reimbursement",
+    translate_231: "Payout Timeline",
+    translate_232: "Claim Review Time",
+    translate_233: "Breakage and Vandalism",
+    translate_234: "Approved Lock Required",
+    translate_235: "Roadside Assistance / Towing",
+    translate_236: "Waiting Period",
+    translate_237: "Purchase Price Guarantee",
+    translate_238: "Authorized Repair Shops",
+    translate_239: "Geographic Coverage",
+    translate_240: "Yes",
+    translate_241: "4 to 7 days",
+    translate_242: "0 to 15 days",
+    translate_243: "Any with receipt",
+    translate_244: "European Union",
+    translate_245: "No",
+    translate_246: "4 weeks",
+    translate_247: "3 weeks",
+    translate_248: "N/A",
+    translate_249: "0 to 15 days",
+    translate_250: "Any with receipt",
+    translate_251: "Country of residence",
+    translate_252: "2 weeks",
+    translate_253: "Varies by plan",
+    translate_254: "1 week",
+    translate_255: "Approved shops only",
+    translate_400: "Comparison Table Criteria Legend.\n— 1. Max Value (Bike): Maximum purchase price covered by the insurer in case of total loss.\n— 2. Zero Deductible: No out-of-pocket costs for the policyholder when a claim is settled.\n— 3. Bike & Rider Accessories: Fixed or removable equipment (helmet, lock, bags, computer) covered against theft or damage.\n— 4. Payout Timeline: Time required for the provider to deposit funds into your account once approved.\n— 5. Claim Review Time: Time needed to review your claim and supporting documents to determine eligibility.\n— 6. Approved Lock Required: Mandatory use of a certified lock (e.g., Sold Secure or FUB) for theft protection to apply.\n— 7. Waiting Period: Time frame following enrollment during which coverage is not yet active.\n— 8. Purchase Price Guarantee: Insurer's commitment to reimburse the original purchase price without depreciation for a set period.\n— 9. Authorized Repair Shops: Service network permitted to perform repairs (approved partner workshop or any shop of your choice).\n— 10. Geographic Coverage: Territory (country of residence, European Union, or worldwide) where coverage remains active during trips.\nReport inaccurate information: support@bikelp.com.",
+    translate_401: "Turning your Claim into a Solution!",
+    translate_402: "Claim",
+    translate_403: "Solution!",
+    translate_404: "Because your bike is a significant investment, choose real security with comprehensive coverage from Bikelp: theft, damage, and accidental breakage. We reimburse repair bills or 100% of your bike's value with zero deductible and no depreciation. That is responsible insurance.",
+    translate_405: "Configure my plan",
+    translate_406: "Replace",
+    translate_407: "Is your bike stolen or written off? Don't worry, we will help replace it. Submit your claim details through your Bikelp dashboard and receive claim approval within 48 hours.",
+    translate_408: "File a claim",
+    translate_409: "Repair",
+    translate_410: "Damaged a component after a crash or act of vandalism? Get your bike fixed at your preferred shop and send us the invoice(s) to receive your reimbursement within 4 to 7 business days.",
+    translate_411: "Track my claim",
+    translate_500: "Heads-up: No, your home insurance doesn't truly protect your bike.",
+    translate_501: "Most home insurance policies severely limit coverage for your bicycle outside the house. Between high deductibles, low reimbursement caps, and strict exclusions for outdoor theft or locking requirements, your bike remains largely unprotected against unexpected loss.",
+    translate_502: "Download the IPID: Official Insurance Product Information Document.",
+    translate_503: "Review a transparent overview of your coverage, limits, and claim procedures before signing up.",
+    translate_504: "Dedicated Business Solutions!",
+    translate_505: "Solutions",
+    translate_506: "Professionals!",
+    translate_507: "Bikelp also designs tailored plans for businesses. Whether covering retail inventory, offering Bikelp to your customers on commission, or insuring a corporate bike fleet, Bikelp adapts to your exact needs at fair pricing.",
+    translate_508: "Contact Bikelp",
+    translate_509: "Dealer Program",
+    translate_510: "Partner with Bikelp to offer complete coverage to your customers and earn commission on every enrollment.",
+    translate_511: "Contact Bikelp",
+    translate_512: "Fleet Insurance",
+    translate_513: "Protect your retail stock or company fleet of bikes and gear against theft, damage, and accidents with Bikelp.",
+    translate_514: "Contact Bikelp",
+    translate_515: "Straightforward and human: just like you, we are dedicated cyclists passionate about sustainable transit. Beyond insurance, joining Bikelp means becoming part of an active community that looks out for one another.",
+    translate_516: "Activate my coverage",
+    translate_517: "A community of insured cyclists pooling claims to support each other and sustain the Bikelp solidarity fund.",
+    translate_518: "Share unique rides! Bikelp hosts regular cycling outings, often in iconic mountain passes and historic cycling spots. Always free and open to everyone, whether insured with us or not.",
+    translate_519: "Get insured",
+    translate_520: "Bikelp: all-risks bicycle insurance across the European Union.",
+    translate_521: "Bikelp & You!",
+    translate_522: "For individuals: Bikelp covers personal commuting, leisure, and racing.\nFor businesses: Bikelp protects corporate bike fleets and shop inventory.",
+    translate_523: "Partnerships & Press",
+    translate_524: "For influencer collaborations, sponsorships, media partnerships, or PR inquiries, reach us at support@bikelp.com.",
+    translate_525: "Contact Bikelp",
+    translate_526: "Legal Documents",
+    translate_527: "Privacy Policy",
+    translate_528: "Insurance Product Info (IPID)",
+    translate_529: "Terms & Conditions",
+    translate_530: "FCA Certificate",
     drawer_title: "Information about your bike."
   },
   "es-ES": {
@@ -4656,28 +5218,27 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
             <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
-
-          <!-- 3. AXA -->
+<!-- 3. AXA -->
           <tr class="bklp-cmp-row">
             <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Axa</div></td>
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">84%</span></td>
             <td class="bklp-cmp-td">9 000€</td>
             <td class="bklp-cmp-td">49,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">4 semaines</td>
-            <td class="bklp-cmp-td">3 semaines</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_246">4 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_247">3 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_248">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 4. LAKA -->
@@ -4686,21 +5247,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">88%</span></td>
             <td class="bklp-cmp-td">10 000€</td>
             <td class="bklp-cmp-td">24,99€/mois</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
             <td class="bklp-cmp-td">48h</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Union Européenne</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_244">Union Européenne</td>
           </tr>
 
           <!-- 5. MMA.        -->
@@ -4709,21 +5270,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">91%</span></td>
             <td class="bklp-cmp-td">9 000€</td>
             <td class="bklp-cmp-td">55,54€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">4 semaines</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_246">4 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 6. GROUPAMA -->
@@ -4732,21 +5293,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">91%</span></td>
             <td class="bklp-cmp-td">9 000€</td>
             <td class="bklp-cmp-td">46,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">4 semaines</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_246">4 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 7. BALOISE -->
@@ -4755,21 +5316,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">76%</span></td>
             <td class="bklp-cmp-td">15 000€</td>
             <td class="bklp-cmp-td">39,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">1 semaine</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_254">1 semaine</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 8. CASER -->
@@ -4778,21 +5339,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">76%</span></td>
             <td class="bklp-cmp-td">15 000€</td>
             <td class="bklp-cmp-td">39,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">1 semaine</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_254">1 semaine</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 9. HELVETIA -->
@@ -4801,21 +5362,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">76%</span></td>
             <td class="bklp-cmp-td">15 000€</td>
             <td class="bklp-cmp-td">39,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">1 semaine</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_254">1 semaine</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 10. BICYTRUST -->
@@ -4824,21 +5385,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">89%</span></td>
             <td class="bklp-cmp-td">10 000€</td>
             <td class="bklp-cmp-td">9,90€/mois</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">1 semaine</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Agréé Uniquement</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_254">1 semaine</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_255">Agréé Uniquement</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 11. CYCLASSUR -->
@@ -4847,21 +5408,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">67%</span></td>
             <td class="bklp-cmp-td">8 000€</td>
             <td class="bklp-cmp-td">59,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">4 semaines</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_246">4 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 12. HEPSTER -->
@@ -4870,21 +5431,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">87%</span></td>
             <td class="bklp-cmp-td">10 000€</td>
             <td class="bklp-cmp-td">16,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">1 semaine</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_254">1 semaine</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 13. SHARELOCK -->
@@ -4893,21 +5454,21 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">86%</span></td>
             <td class="bklp-cmp-td">10 000€</td>
             <td class="bklp-cmp-td">17,99€/mois</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">1 semaine</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_254">1 semaine</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
           <!-- 14. ULYGO -->
@@ -4916,69 +5477,68 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">57%</span></td>
             <td class="bklp-cmp-td">5 000€</td>
             <td class="bklp-cmp-td">19,99€/mois</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays résidence</td>
           </tr>
 
-                    <!-- 15. ZURICH -->
+          <!-- 15. ZURICH -->
           <tr class="bklp-cmp-row">
             <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Zurich</div></td>
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">87%</span></td>
             <td class="bklp-cmp-td">9 000€</td>
             <td class="bklp-cmp-td">39,74€/mois</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">4 semaines</td>
-            <td class="bklp-cmp-td">2 semaines</td>
-            <td class="bklp-cmp-td">Selon Offre</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Non</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_246">4 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
-                              <!-- 15. GENERALI -->
+          <!-- 16. GENERALI -->
           <tr class="bklp-cmp-row">
             <td class="bklp-cmp-td lastrowtab bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Generali</div></td>
             <td class="bklp-cmp-td lastrowtab"><span class="bklp-score-bar bklp-score-other">85%</span></td>
             <td class="bklp-cmp-td lastrowtab">7 000€</td>
             <td class="bklp-cmp-td lastrowtab">39,74€/mois</td>
-            <td class="bklp-cmp-td lastrowtab">Selon Offre</td>
-            <td class="bklp-cmp-td lastrowtab">Oui</td>
-            <td class="bklp-cmp-td">N/c</td>
-            <td class="bklp-cmp-td lastrowtab">Non</td>
-            <td class="bklp-cmp-td lastrowtab">Non</td>
-            <td class="bklp-cmp-td lastrowtab">Oui</td>
-            <td class="bklp-cmp-td lastrowtab">4 semaines</td>
-            <td class="bklp-cmp-td lastrowtab">2 semaines</td>
-            <td class="bklp-cmp-td lastrowtab">Selon Offre</td>
-            <td class="bklp-cmp-td lastrowtab">Oui</td>
-            <td class="bklp-cmp-td lastrowtab">Non</td>
-            <td class="bklp-cmp-td">0 à 15 jours</td>
-            <td class="bklp-cmp-td">Oui</td>
-            <td class="bklp-cmp-td">Tous sur Facture</td>
-            <td class="bklp-cmp-td lastrowtab bklp-cmp-td-last">Pays Résidence</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_241">N/c</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_246">4 semaines</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_252">2 semaines</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_253">Selon Offre</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td lastrowtab" data-i18n="translate_245">Non</td>
+            <td class="bklp-cmp-td" data-i18n="translate_249">0 à 15 jours</td>
+            <td class="bklp-cmp-td" data-i18n="translate_240">Oui</td>
+            <td class="bklp-cmp-td" data-i18n="translate_250">Tous sur Facture</td>
+            <td class="bklp-cmp-td lastrowtab bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
-
 
         </tbody>
       </table>
@@ -4986,7 +5546,7 @@ font-family: 'Civilprom';
   </div>
 
     <div class="legendar">
-<span class="legendar-txt">
+<span class="legendar-txt" data-i18n="translate_400">
 Légende des critères du tableau comparatif.
 <br>
 — 1. Valeur Max (Vélo) : Montant plafond du prix d'achat de votre vélo que l'assureur accepte de couvrir en cas de sinistre total.<br>
@@ -5009,11 +5569,11 @@ Signaler une information incorrecte : support@bikelp.com. <br>
 
 <div class="cp-mecanic-sec-2024-wrapper">
   <div class="cp-mecanic-sec-2024-left-pane">
-    <h2 class="cp-mecanic-sec-2024-heading">Nous transformons votre <span class="triach">Sinistre</span> en une <span class="triach2">Solution!</span></h2>
-    <p class="cp-mecanic-sec-2024-paragraph">
+    <h2 class="cp-mecanic-sec-2024-heading" data-i18n="translate_401">Nous transformons votre <span class="triach" data-i18n="translate_402">Sinistre</span> en une <span class="triach2" data-i18n="translate_403">Solution!</span></h2>
+    <p class="cp-mecanic-sec-2024-paragraph" data-i18n="translate_404">
 Parce que votre vélo représente un investissement important : optez pour une véritable sécurité avec l’assurance complète Bikelp : vol, dommages et dégâts accidentels. Nous remboursons sans franchise les factures de réparation ou la valeur de votre vélo à 100%, sans décote. C'est cela un assureur responsable.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Configurer mon assurance</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()" data-i18n="translate_405">Configurer mon assurance</a>
   </div>
 
   <div class="cp-mecanic-sec-2024-right-pane">
@@ -5032,21 +5592,21 @@ Parce que votre vélo représente un investissement important : optez pour une v
           <div class="claims-grid">
           <div class="claim-card">
             <div>
-              <h3>Remplacer</h3>
-              <p>
+              <h3 data-i18n="translate_406">Remplacer</h3>
+              <p data-i18n="translate_407">
                 Votre vélo est volé ou irréparable? Pas d'inquiétude, nous vous aidons à le remplacer. Transmettez les informations relatives à votre sinistre depuis votre compte Bikelp et obtenez une confirmation de remboursement sous 48h.
               </p>
             </div>
-            <a href="https://client.bikelp.com/" class="divabtn">Déclarer sinistre</a>
+            <a href="https://client.bikelp.com/" class="divabtn" data-i18n="translate_408">Déclarer sinistre</a>
           </div>
 
           <div class="claim-card">
             <div>
-              <h3>Réparer</h3>
-              <p>
+              <h3 data-i18n="translate_409">Réparer</h3>
+              <p data-i18n="translate_410">
                 Un composant est abîmé suite à une chute ou une dégradation? Faites réparer votre vélo auprès de votre réparateur habituel et envoyez-nous la ou les facture(s) pour recevoir votre remboursement sous 4 à 7 jours ouvrés.</p>
             </div>
-            <a href="https://client.bikelp.com/" class="divabtn">Suivre mon sinistre</a>
+            <a href="https://client.bikelp.com/" class="divabtn" data-i18n="translate_411">Suivre mon sinistre</a>
           </div>
         </div>
       </div>
@@ -5334,10 +5894,10 @@ text-decoration: underline;
           loading="lazy"
         />
       </div>
-      <h3 class="bk-dualcard-title">
+      <h3 class="bk-dualcard-title" data-i18n="translate_500">
         Prévention : Non, votre assurance habitation n'assure pas véritablement votre vélo.
       </h3>
-      <p class="bk-dualcard-body">
+      <p class="bk-dualcard-body" data-i18n="translate_501">
         La majorité des contrats multirisques habitation restreignent fortement l'indemnisation de votre cycle en dehors de votre domicile. Entre franchises élevées, plafonds de remboursement dérisoires et clauses d'exclusion liées au vol sur voie publique ou sans point fixe, votre vélo reste très souvent exposé en cas de sinistre imprévu.
       </p>
     </div>
@@ -5358,10 +5918,10 @@ text-decoration: underline;
           loading="lazy"
         />
       </div>
-      <h3 class="bk-dualcard-title downloadABC">
+      <h3 class="bk-dualcard-title downloadABC" data-i18n="translate_502">
         Téléchargez la fiche IPID :  Document d’information officiel sur le produit d’assurance.
       </h3>
-      <p class="bk-dualcard-body">
+      <p class="bk-dualcard-body" data-i18n="translate_503">
         Accédez en toute transparence au récapitulatif complet de vos garanties, plafonds et modalités de prise en charge avant de souscrire.
       </p>
     </a>
@@ -5374,11 +5934,11 @@ text-decoration: underline;
 
 <div class="cp-velo-sec-2024-container">
   <div class="cp-velo-sec-2024-text-area">
-    <h2 class="cp-mecanic-sec-2024-heading">Et des <span class="triach">Solutions</span> dédiées aux <span class="triach2">Professionnels!</span></h2>
-    <p class="cp-mecanic-sec-2024-paragraph">
+    <h2 class="cp-mecanic-sec-2024-heading" data-i18n="translate_504">Et des <span class="triach" data-i18n="translate_505">Solutions</span> dédiées aux <span class="triach2" data-i18n="translate_506">Professionnels!</span></h2>
+    <p class="cp-mecanic-sec-2024-paragraph" data-i18n="translate_507">
 Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’une assurance pour le stock d'un magasin, de proposer Bikelp à vos clients contre une commission, ou encore d’assurer la flotte de vélos d’une entreprise utilisée par ses collaborateurs : Bikelp s'adapte à vos besoins, toujours au prix le plus juste.
     </p>
-    <a href="mailto:support@bikelp.com" class="cp-mecanic-sec-2024-action-btn">Contacter Bikelp</a>
+    <a href="mailto:support@bikelp.com" class="cp-mecanic-sec-2024-action-btn" data-i18n="translate_508">Contacter Bikelp</a>
   </div>
 
   <div class="cp-velo-sec-2024-pic-wrapper">
@@ -5397,18 +5957,18 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
  <div class="claims-grid">
           <div class="claim-card">
             <div>
-              <h3>Programme Magasin</h3>
-              <p>Devenez partenaire Bikelp en proposant notre assurance complète à vos clients et obtenez une rémunération instantanée pour chaque souscription.</p>
+              <h3 data-i18n="translate_509">Programme Magasin</h3>
+              <p data-i18n="translate_510">Devenez partenaire Bikelp en proposant notre assurance complète à vos clients et obtenez une rémunération instantanée pour chaque souscription.</p>
             </div>
-            <a href="mailto:support@bikelp.com" class="divabtn">Contacter Bikelp</a>
+            <a href="mailto:support@bikelp.com" class="divabtn" data-i18n="translate_511">Contacter Bikelp</a>
           </div>
 
           <div class="claim-card">
             <div>
-              <h3>Assurance Flotte</h3>
-              <p>Avec Bikelp, assurez votre stock ou votre flotte de vélos et accessoires contre le vol, les dégradations et les accidents.</p>
+              <h3 data-i18n="translate_512">Assurance Flotte</h3>
+              <p data-i18n="translate_513">Avec Bikelp, assurez votre stock ou votre flotte de vélos et accessoires contre le vol, les dégradations et les accidents.</p>
             </div>
-            <a href="mailto:support@bikelp.com" class="divabtn">Contacter Bikelp</a>
+            <a href="mailto:support@bikelp.com" class="divabtn" data-i18n="translate_514">Contacter Bikelp</a>
           </div>
         </div>
       </div>
@@ -5537,10 +6097,10 @@ border-left: 1px solid #e1e1e1;
 <div class="cp-cafe-sec-2024-container">
   <div class="cp-cafe-sec-2024-body-box">
     <h2 class="cp-mecanic-sec-2024-heading">Une <span class="triach">Communauté</span> avec qui l'on partagerait bien un <span class="triach2">Café!</span></h2>
-    <p class="cp-mecanic-sec-2024-paragraph">
+    <p class="cp-mecanic-sec-2024-paragraph" data-i18n="translate_515">
 Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes passionnés et engagés pour la mobilité douce. Au-delà de l’assurance, souscrire chez Bikelp, c’est rejoindre une communauté solidaire qui s'entraide au quotidien.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Activer mon assurance</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()" data-i18n="translate_516">Activer mon assurance</a>
   </div>
 
   <div class="cp-cafe-sec-2024-asset-box">
@@ -5613,67 +6173,9 @@ Sans blabla et d’humain à humain : nous sommes comme vous, des cyclistes pass
 
   }, 5500);
 </script>
-        <p class="counter-claim">Une communauté de cyclistes assurés de tous horizons qui mutualisent les sinistres et financent le fonds solidaire Bikelp.</p>
+        <p class="counter-claim" data-i18n="translate_517">Une communauté de cyclistes assurés de tous horizons qui mutualisent les sinistres et financent le fonds solidaire Bikelp.</p>
       </div>
     </section>
-
-        
-    <section class="section-reviews" aria-label="Avis de nos cyclistes">
-      <div class="container">
-        <div style="display: block;">
-              <img class="Icono" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelp_white.svg" alt="Defibeo Logo">
-        <h2 style="font-size: 46px; text-align: center; font-family: 'Civilprom'; text-transform: none; color: #000; letter-spacing: 0px; margin-bottom: 45px !important; line-height: 55px; max-width: 900px; cursor: default; margin: auto;">Le peloton de tous les types de pratiquants en parle. Et vous?</h2>
-       
-        </div>
-
-        <div class="reviews-stream">
-          <article class="review-card">
-            <div class="review-card__top">
-              <div class="review-card__user">
-                <span class="review-card__name">Marc T.</span>
-              </div>
-              <div class="review-card__badge">4.9<small>/5</small></div>
-            </div>
-            <p class="review-card__desc">Cadre carbone fissuré lors d'une chute, remplacement validé sous 48h sans expertise lourde.</p>
-          </article>
-
-          <article class="review-card">
-            <div class="review-card__top">
-              <div class="review-card__user">
-                <span class="review-card__name">Hélène V.</span>
-              </div>
-              <div class="review-card__badge">5.0<small>/5</small></div>
-            </div>
-            <p class="review-card__desc">Rapatriement impeccable au pied du Coll de Rates lors d'un séjour d'entraînement.</p>
-          </article>
-
-          <article class="review-card">
-            <div class="review-card__top">
-              <div class="review-card__user">
-                <span class="review-card__name">Sébastien P.</span>
-              </div>
-              <div class="review-card__badge">4.8<small>/5</small></div>
-            </div>
-            <p class="review-card__desc">Tarification transparente, pas de mauvaise surprise lors du remboursement de ma paire de roues.</p>
-          </article>
-
-          <article class="review-card">
-            <div class="review-card__top">
-              <div class="review-card__user">
-                <span class="review-card__name">Guillaume R.</span>
-              </div>
-              <div class="review-card__badge">4.7<small>/5</small></div>
-            </div>
-            <p class="review-card__desc">Souscription rapide et déclaration de sinistre simplifiée au maximum sur mobile.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
 
 
     <!-- Bloc Section Paysage / Évasion Bikelp -->
@@ -5792,10 +6294,10 @@ border-bottom: 1px solid #e1e1e1;
 <div class="cp-land-sec-2024-holder">
   <div class="cp-land-sec-2024-info-column">
     <h2 class="cp-mecanic-sec-2024-heading">Participez aux <span class="triach">Événements</span> gratuits <span class="triach2">Bikelp!</span></h2>
-    <p class="cp-mecanic-sec-2024-paragraph">
+    <p class="cp-mecanic-sec-2024-paragraph" data-i18n="translate_518">
 Partageons des moments uniques! Bikelp organise régulièrement des événements, souvent en haute montagne ou dans des lieux emblématiques du cyclisme. C’est toujours gratuit et ouvert à tous, que vous soyez assuré chez nous ou non.
     </p>
-    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()">Je souscris à l'assurance</a>
+    <a href="#" class="cp-mecanic-sec-2024-action-btn" onclick="bkSubOpenPane()" data-i18n="translate_519">Je souscris à l'assurance</a>
   </div>
 
   <div class="cp-land-sec-2024-visual-column">
@@ -5808,42 +6310,7 @@ Partageons des moments uniques! Bikelp organise régulièrement des événements
   </div>
 </div>
 
-    <!-- ==================== SECTION 6 : NOS ÉVÉNEMENTS ==================== -->
-    <section class="section-events">
-      <div class="container">
-        <div class="events-grid">
-          <article class="event-card">
-            <div class="event-date-box">
-              <strong>19</strong>
-              <span>SEPT</span>
-            </div>
-            <h3 class="event-title">Pyrénées #BikelpRides</h3>
-            <p class="event-desc">Gravissez 3 cols d’exception dans les Pyrénées : le Pla d'Adet, Piau-Engaly et Azet, pour terminer à Loudenvielle avec plus de 40 cyclistes dans la joie et la bonne humeur!</p>
-            <a href="https://client.bikelp.com/" class="btnevent">Participer</a>
-          </article>
 
-          <article class="event-card">
-            <div class="event-date-box">
-              <strong>17</strong>
-              <span>OCT</span>
-            </div>
-            <h3 class="event-title">Défi Calp'Express</h3>
-            <p class="event-desc">Participez avec plus de 60 cyclistes, à un parcours de 140km à travers les routes mytiques de la Costa Blanca (Calpe, Moraira, Benissa, Coll de Rates, La Vall d'Ebo, ...).</p>
-            <a href="https://client.bikelp.com/" class="btnevent">Participer</a>
-          </article>
-
-          <article class="event-card">
-            <div class="event-date-box">
-              <strong>10</strong>
-              <span>DEC</span>
-            </div>
-            <h3 class="event-title">London #NightRide</h3>
-            <p class="event-desc">Rassemblement convivial en partenariat avec la sécurité civile et parcours pour promouvoir la sécurité cycliste nocturne.</p>
-            <a href="https://client.bikelp.com/" class="btnevent">Participer</a>
-          </article>
-        </div>
-      </div>
-    </section>
 
 
   </main>
@@ -6005,7 +6472,7 @@ box-shadow: none;
         <div class="footer-col">
 
           <img class="partner-tag" src="https://civilprom.s3.eu-north-1.amazonaws.com/Bikelp_ico_black.svg" alt="Profil">
-          <p>Bikelp, l'assurance tous risques pour toutes les pratiques du vélo dans l'Union européenne.</p>
+          <p data-i18n="translate_520">Bikelp, l'assurance tous risques pour toutes les pratiques du vélo dans l'Union européenne.</p>
 
           <a href="https://www.instagram.com/bikelp_com/" class="instagrambtn">Instagram @bikelp_com</a>
 
@@ -6013,19 +6480,19 @@ box-shadow: none;
         </div>
 
         <div class="footer-col">
-          <h4>Bikelp & Vous!</h4>
-          <p>Pour les particuliers : Bikelp, l’assurance des particuliers pour la mobilité douce, les loisirs et la compétition.
+          <h4 data-i18n="translate_521">Bikelp & Vous!</h4>
+          <p data-i18n="translate_522">Pour les particuliers : Bikelp, l’assurance des particuliers pour la mobilité douce, les loisirs et la compétition.
            <br> Pour les particuliers : Bikelp, l’assurance des entreprises pour leurs flottes ou stocks de vélos.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Partenariats & Presse</h4>
-          <p>Pour toute demande de partenariat d'influence, de sponsoring, de collaboration sur les réseaux sociaux ou de relations presse, veuillez nous contacter à l'adresse support@bikelp.com.</p>
+          <h4 data-i18n="translate_523">Partenariats & Presse</h4>
+          <p data-i18n="translate_524">Pour toute demande de partenariat d'influence, de sponsoring, de collaboration sur les réseaux sociaux ou de relations presse, veuillez nous contacter à l'adresse support@bikelp.com.</p>
         </div>
 
         <div class="footer-col">
-          <h4>Contacter Bikelp</h4>
+          <h4 data-i18n="translate_525">Contacter Bikelp</h4>
           <ul class="footer-links">
           <li><a href="+447366434159">+44 7366 434159</a></li>
           <li><a href="mailto:support@bikelp.com">support@bikelp.com</a></li>
@@ -6035,12 +6502,12 @@ box-shadow: none;
         </div>
 
         <div class="footer-col">
-          <h4>Documents Légaux</h4>
+          <h4 data-i18n="translate_526">Documents Légaux</h4>
           <ul class="footer-links">
-            <li><a href="/privacy">Politique Confidentialité</a></li>
-            <li><a href="/document-police">Produit Assurance (IPID)</a></li>
-            <li><a href="/conditions">Conditions Générales</a></li>
-            <li><a href="/certificatefca">Certificat FCA</a></li>
+            <li><a href="/privacy" data-i18n="translate_527">Politique Confidentialité</a></li>
+            <li><a href="/document-police" data-i18n="translate_528">Produit Assurance (IPID)</a></li>
+            <li><a href="/conditions" data-i18n="translate_529">Conditions Générales</a></li>
+            <li><a href="/certificatefca" data-i18n="translate_530">Certificat FCA</a></li>
           </ul>
         </div>
       </div>
