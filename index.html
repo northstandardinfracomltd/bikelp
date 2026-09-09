@@ -8477,6 +8477,27 @@ margin: auto;
     margin-bottom: -30px;
     }
 
+
+.subbtn.bk-lang-sticky-select-field {
+  /* 1. Retire le rendu système natif imposé par Safari */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* 2. Centre le texte */
+  text-align: center;
+  text-align-last: center; /* Crucial pour le texte visible du select */
+
+  /* 3. Ajustements recommandés */
+  width: 100%; /* Ou une largeur définie */
+  background-color: transparent; /* À ajuster selon votre design */
+}
+
+/* Centre aussi les options déroulantes (support variable selon versions iOS) */
+.subbtn.bk-lang-sticky-select-field option {
+  text-align: center;
+}
+
 </style>
 
 <script>
