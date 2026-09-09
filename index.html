@@ -1882,6 +1882,7 @@ heading_free_events: "Participez aux <span class=\"triach\">Événements</span> 
     translate_526: "Documents Légaux",
     translate_527: "Politique Confidentialité",
     translate_528: "Produit Assurance (IPID)",
+    
     translate_529: "Conditions Générales",
     translate_530: "Certificat FCA",
   },
@@ -1895,6 +1896,7 @@ legal_policy_ipid: "I have read and accept the <a href=\"/document-police\" targ
 legal_info_sheet: "I have read and accept the <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Information Sheet</a>.",
 placeholder_promo_code: "Enter a promo code",
 translate_elect: "Subscribe",
+closerimp: "Close",
 placeholder_enter_text: "Enter your text...",
 X5: "Bikelp Help",
 btnA: "Instant online quote",
@@ -2211,6 +2213,7 @@ X2: "El seguro sin permanencia que cubre todas las modalidades de ciclismo y cua
 X3: "Hola, ¿cómo puedo ayudarle hoy?",
 btnA: "Presupuesto online instantáneo",
 btnB: "Iniciar sesión",
+closerimp: "Cerrar",
 X4: "Asistencia Bikelp",
 X5: "Ayuda Bikelp",
 legal_policy_ipid: "He leído y acepto las <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Condiciones de la póliza y el Documento de información (IPID)</a>.",
@@ -2525,6 +2528,7 @@ hero_title: 'Bikelp <span class="triach3">Asegura</span> tu <span class="triach3
     btnA: "Sofortiges Online-Angebot",
 btnB: "Anmelden",
     translate_4: "Fahrradtyp.",
+    closerimp: "Schließen",
     placeholder_enter_text: "Geben Sie Ihren Text ein...",
     ineurope: "In Europa werden jedes Jahr zwischen 3 und 4 Millionen Fahrräder gestohlen, was durchschnittlich 6 bis 8 Diebstählen pro Minute entspricht, auch wenn das Ausmaß je nach Land variiert: Der Abschluss einer Versicherung und eine Fahrradcodierung sollten sofort nach dem Kauf selbstverständlich sein.",
 X2: "Die Versicherung ohne Mindestlaufzeit, die alle Fahrradarten vereint und jeden Schadenfall deckt – ohne Selbstbeteiligung und in der gesamten EU.",
@@ -2841,6 +2845,7 @@ heading_free_events: "Nehmen Sie an kostenlosen <span class=\"triach\">Events</s
     translate_3: "Overige",
     btnA: "Directe online offerte",
 btnB: "Inloggen",
+closerimp: "Sluiten",
     placeholder_enter_text: "Voer uw tekst in...",
     legal_policy_ipid: "Ik heb de <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Polisvoorwaarden & Samenvatting van de polis (IPID)</a> gelezen en ga hiermee akkoord.",
 legal_info_sheet: "Ik heb het <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Informatieblad</a> gelezen en ga hiermee akkoord.",
@@ -3166,6 +3171,7 @@ X2: "O seguro sem fidelização que abrange todas as modalidades de ciclismo e c
 X3: "Olá, como posso ajudar hoje?",
 placeholder_enter_text: "Introduza o seu texto...",
 X4: "Assistência Bikelp",
+closerimp: "Fechar",
 X5: "Ajuda Bikelp",
 X6: "Minimizar",
 X7: "Tickets Anteriores",
@@ -3658,7 +3664,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- ==================== STEP 1 ==================== -->
         <div class="bk-sub-123-step-panel active" id="bk-sub-123-step-1">
           <div class="radalignf">
-            <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()">
+            <button type="button" class="bk-sub-123-drawer-close-btn" onclick="bkSubClosePane()" data-i18n="closerimp">
       Fermer
     </button></div>
 
