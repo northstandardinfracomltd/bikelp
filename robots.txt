@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Empêcher l'indexation de la page de succès de commande/tunnel
+Disallow: /success230972320/
+
+# Indication du Sitemap pour accélérer la découverte
+Sitemap: https://bikelp.com/sitemap.xml
