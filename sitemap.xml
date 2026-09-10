@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil (priorité maximale) -->
+  <url>
+    <loc>https://bikelp.com/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Pages de contenu et déclinaisons linguistiques -->
+  <url>
+    <loc>https://bikelp.com/assurance-velo</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/be</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/belgique</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/bici-seguros</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/bike-insurance</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/ch</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/de</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/es</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/espana</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/fr</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/france</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/insurance</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/it</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/nederlands</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/nl</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/portugues</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/pt</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/ue</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/uk</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pages légales -->
+  <url>
+    <loc>https://bikelp.com/conditions</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/privacy</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/document-police</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bikelp.com/certificatefca</loc>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
