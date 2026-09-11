@@ -1966,7 +1966,7 @@ X2: "The non-binding insurance covering all types of cycling and all incidents, 
 X3: "Hello, how can I help you today?",
 X4: "Bikelp Support",
 legal_policy_ipid: "I have read and accept the <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Policy Terms & Insurance Product Information Document (IPID)</a>.",
-legal_info_sheet: "I have read and accept the <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Information Sheet</a>.",
+legal_info_sheet: "I have read and accept the <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Insurance Conditions</a>.",
 placeholder_promo_code: "Enter a promo code",
 translate_elect: "Subscribe",
 closerimp: "Close",
@@ -2289,8 +2289,8 @@ btnB: "Iniciar sesión",
 closerimp: "Cerrar",
 X4: "Asistencia Bikelp",
 X5: "Ayuda Bikelp",
-legal_policy_ipid: "He leído y acepto las <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Condiciones de la póliza y el Documento de información (IPID)</a>.",
-legal_info_sheet: "He leído y acepto la <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Ficha informativa</a>.",
+legal_policy_ipid: "He leído y acepto las <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Condiciones de la póliza y el Documento de información</a>.",
+legal_info_sheet: "He leído y acepto las <a href=\"/document-police\" target=\"_blank\" class=\"bk-sub-123-link\">Bikelp Condiciones</a>.",
 placeholder_promo_code: "Introduzca un código promocional",
 translate_elect: "Contratar",
 X6: "Minimizar",
@@ -3659,17 +3659,8 @@ function applyLanguage(lang) {
   if (select) select.value = lang;
 }
 
-// Détection de la langue via l'IP
-async function detectLanguage() {
-  // 1. Vérifier si l'utilisateur a déjà choisi une langue manuellement
-  const savedLang = localStorage.getItem("preferred_lang");
-  if (savedLang && (savedLang === "fr-FR" || translations[savedLang])) {
-    applyLanguage(savedLang);
-    return;
-  }
-
-// Détection de la langue : conservée uniquement si l'utilisateur l'a déjà choisie
-async function detectLanguage() {
+// Détection et application de la langue préférée
+function detectLanguage() {
   const savedLang = localStorage.getItem("preferred_lang");
   if (savedLang && (savedLang === "fr-FR" || translations[savedLang])) {
     applyLanguage(savedLang);
@@ -4228,7 +4219,7 @@ Lire le texte réglementaire
           <!-- Q6 FINFOR -->
           <div class="bk-sub-123-apple-toggle-row">
 <span class="bk-sub-123-apple-toggle-text" data-i18n-html="legal_info_sheet">
-  J’ai lu et j'accepte la <a href="/document-police" target="_blank" class="bk-sub-123-link">Fiche d'informations</a>.
+  J’ai lu et j'accepte les <a href="/document-police" target="_blank" class="bk-sub-123-link">Conditions de l'Assureur</a>.
 </span>
             <label class="bk-sub-123-switch">
               <input type="checkbox" name="bk-sub-123-c2" id="bk-sub-123-c2" required>
@@ -4390,6 +4381,7 @@ font-size: 1px;
 
   /* Conteneur formulaire interne */
   .bk-sub-123-container {
+    border-top: 8px solid #9f1996;
     width: 100%;
     margin: 0 auto;
     background: #fff;
@@ -5111,16 +5103,16 @@ margin: auto;
 
     if (step === 1) {
       if (brandSelect && brandSelect.value === 'Autre' && brandOtherInput && !brandOtherInput.value.trim()) {
-        alert('Veuillez préciser la marque et le modèle.');
+        alert('"Please specify the make and model.');
         return false;
       }
       if (typeSelect && typeSelect.value === 'Autre' && typeOtherInput && !typeOtherInput.value.trim()) {
-        alert('Veuillez préciser le type de vélo.');
+        alert('Please specify the type of bicycle.');
         return false;
       }
       var bVal = parseFloat(bikeValueInput ? bikeValueInput.value : 0);
       if (isNaN(bVal) || bVal <= 0) {
-        alert('Veuillez indiquer une valeur valide pour le vélo.');
+        alert('Please enter a valid value for the bicycle.);
         return false;
       }
       if (hasAccYes && hasAccYes.checked) {
@@ -5128,7 +5120,7 @@ margin: auto;
         if (selectedTags.length > 0) {
           var aVal = parseFloat(accValueInput ? accValueInput.value : 0);
           if (isNaN(aVal) || aVal < 0) {
-            alert('Veuillez indiquer la valeur de vos accessoires.');
+            alert('Please enter the value of your accessories.');
             return false;
           }
         }
@@ -5136,12 +5128,12 @@ margin: auto;
     }
 
     if (step === 5 && !valid) {
-      alert('Veuillez répondre à toutes les questions et activer les acceptations réglementaires obligatoires.');
+      alert('Please answer all questions and accept the mandatory regulatory terms.');
       return false;
     }
 
     if (!valid) {
-      alert('Veuillez remplir tous les champs obligatoires.');
+      alert('Please answer all questions.');
     }
     return valid;
   }
@@ -6878,9 +6870,9 @@ font-family: 'Civilprom';
             <td class="bklp-cmp-td bklp-cmp-td-last" data-i18n="translate_251">Pays Résidence</td>
           </tr>
 
-          <!-- 8. CASER -->
+          <!-- 8. Occident -->
           <tr class="bklp-cmp-row">
-            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Caser</div></td>
+            <td class="bklp-cmp-td bklp-cmp-col-sticky"><div class="bklp-cmp-brand-name">Occident</div></td>
             <td class="bklp-cmp-td"><span class="bklp-score-bar bklp-score-other">76%</span></td>
             <td class="bklp-cmp-td">15 000€</td>
             <td class="bklp-cmp-td">39,99€/mois</td>
