@@ -36,7 +36,11 @@
 <meta name="rating" content="general">
 <link rel="preconnect" href="https://civilprom.s3.eu-north-1.amazonaws.com" crossorigin>
 <link rel="dns-prefetch" href="https://civilprom.s3.eu-north-1.amazonaws.com">
-<link rel="icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpfavicon2026vv.png" type="image/png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpfavicon.png">
+<link rel="apple-touch-icon" href="https://civilprom.s3.eu-north-1.amazonaws.com/bikelpfavicon.png">
+
+
 
 <script type="application/ld+json">
 {
@@ -3864,7 +3868,132 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-value" style="display: none;">
             <label class="bk-sub-123-label" for="bk-sub-123-bike-value" data-i18n="translate_36">Valeur du vélo (€).</label>
             <div class="bk-sub-123-helper" data-i18n="translate_37">Combien coûterait le remplacement à neuf au prix catalogue avec vos éventuelles personnalisations et améliorations.</div>
-            <input type="number" id="bk-sub-123-bike-value" class="bk-sub-123-input" min="1" step="any" placeholder="Ex: 2500" required />
+<div class="bk-otp-container" id="bk-otp-wrapper">
+  <!-- 5 cases sur une seule ligne -->
+  <div class="bk-otp-boxes">
+    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="0" aria-label="Chiffre 1" />
+    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="1" aria-label="Chiffre 2" />
+    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="2" aria-label="Chiffre 3" />
+    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="3" aria-label="Chiffre 4" />
+    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="4" aria-label="Chiffre 5" />
+  </div>
+
+  <!-- Votre input d'origine synchronisé avec min 800 et max 17000 -->
+  <input 
+    type="number" 
+    id="bk-sub-123-bike-value" 
+    name="bike_value"
+    class="bk-sub-123-input" 
+    min="800" 
+    max="17000" 
+    step="1" 
+    required 
+    style="display: none;" 
+  />
+
+  <p class="bk-otp-feedback" id="bk-otp-msg"></p>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const hiddenInput = document.getElementById('bk-sub-123-bike-value');
+  const digits = Array.from(document.querySelectorAll('.bk-otp-digit'));
+  const boxesWrapper = document.querySelector('.bk-otp-boxes');
+  const feedbackMsg = document.getElementById('bk-otp-msg');
+
+  const MIN_VAL = 800;
+  const MAX_VAL = 17000;
+
+  function updateValue() {
+    const rawStr = digits.map(d => d.value).join('');
+    
+    if (rawStr === '') {
+      hiddenInput.value = '';
+      boxesWrapper.classList.remove('is-valid', 'is-invalid');
+      feedbackMsg.textContent = '';
+      hiddenInput.setCustomValidity('Veuillez renseigner un montant.');
+      return;
+    }
+
+    const val = parseInt(rawStr, 10);
+    hiddenInput.value = isNaN(val) ? '' : val;
+
+    if (isNaN(val)) {
+      boxesWrapper.classList.remove('is-valid', 'is-invalid');
+      feedbackMsg.textContent = '';
+      hiddenInput.setCustomValidity('');
+      return;
+    }
+
+    if (val < MIN_VAL) {
+      boxesWrapper.classList.add('is-invalid');
+      boxesWrapper.classList.remove('is-valid');
+      feedbackMsg.className = 'bk-otp-feedback error';
+      feedbackMsg.textContent = `Montant minimum : ${MIN_VAL} €`;
+      hiddenInput.setCustomValidity(`La valeur doit être au moins de ${MIN_VAL} €.`);
+    } else if (val > MAX_VAL) {
+      boxesWrapper.classList.add('is-invalid');
+      boxesWrapper.classList.remove('is-valid');
+      feedbackMsg.className = 'bk-otp-feedback error';
+      feedbackMsg.textContent = `Montant maximum : ${MAX_VAL} €`;
+      hiddenInput.setCustomValidity(`La valeur ne peut excéder ${MAX_VAL} €.`);
+    } else {
+      boxesWrapper.classList.remove('is-invalid');
+      boxesWrapper.classList.add('is-valid');
+      feedbackMsg.className = 'bk-otp-feedback success';
+      feedbackMsg.textContent = `Montant valide : ${val} €`;
+      hiddenInput.setCustomValidity('');
+    }
+  }
+
+  digits.forEach((input, index) => {
+    // Saisie et saut automatique vers la case suivante
+    input.addEventListener('input', (e) => {
+      const char = e.data || input.value.slice(-1);
+      if (char && /^[0-9]$/.test(char)) {
+        input.value = char;
+        if (index < digits.length - 1) {
+          digits[index + 1].focus();
+        }
+      } else {
+        input.value = '';
+      }
+      updateValue();
+    });
+
+    // Retour arrière et navigation fléchée
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace') {
+        if (!input.value && index > 0) {
+          digits[index - 1].focus();
+          digits[index - 1].value = '';
+          updateValue();
+        }
+      } else if (e.key === 'ArrowLeft' && index > 0) {
+        digits[index - 1].focus();
+      } else if (e.key === 'ArrowRight' && index < digits.length - 1) {
+        digits[index + 1].focus();
+      }
+    });
+
+    // Gestion du copier/coller (jusqu'à 5 chiffres)
+    input.addEventListener('paste', (e) => {
+      e.preventDefault();
+      const pastedData = (e.clipboardData || window.clipboardData)
+        .getData('text')
+        .replace(/\D/g, '')
+        .slice(0, digits.length);
+
+      pastedData.split('').forEach((digit, i) => {
+        if (digits[i]) digits[i].value = digit;
+      });
+
+      const nextFocus = Math.min(pastedData.length, digits.length - 1);
+      digits[nextFocus].focus();
+      updateValue();
+    });
+  });
+});
+</script>
           </div>
 
           <!-- 4. Gravure -->
@@ -5346,20 +5475,22 @@ margin: auto;
 
     .craph2 {
     margin: 0;
-    font-size: 18px;
-    color: #000;
+    font-size: 16px;
+    color: #00000080;
     line-height: 1.1;
     max-width: 98%;
+    cursor: default;
     font-family: 'Civilprom';
     font-weight: 100;
-    cursor: default;
-    text-align: left; 
-    }
+    text-align: left;
+    margin-bottom: -5px;
+}
 
         .partnerslogos {
 width: 100%;
-max-width: 190px; 
-margin-right: auto;
+    max-width: 270px;
+    margin-right: auto;
+    margin-top: -20px;
     }
 
 
@@ -5367,8 +5498,8 @@ margin-right: auto;
 
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
-<p class="craph2" data-i18n="translate_giant">L'assurance Bikelp de confiance avec ses partenaires reconnus.</p>
-<img class="partnerslogos" src="https://civilprom.s3.eu-north-1.amazonaws.com/barclaysandmapfre.svg" alt="Defibeo Logo">
+<p class="craph2" data-i18n="translate_giant">Bikelp : l'assurance de confiance, aux côtés de partenaires reconnus.</p>
+<img class="partnerslogos" src="https://civilprom.s3.eu-north-1.amazonaws.com/barclaysandmapfre.svg" alt="Partenaires Bikelp Mapfre Barclays">
 <h2 class="cp-mecanic-sec-2024-heading" data-i18n-html="heading_super_coverage">Optez pour la <span class="triach">Super</span> <span class="triach2">Couverture!</span></h2>
     <p class="cp-mecanic-sec-2024-paragraph" data-i18n="translate_160">
 Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
@@ -7493,6 +7624,65 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
 
     <!-- Bloc Section Café / Pause Bikelp -->
 <style>
+
+
+  .bk-otp-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bk-otp-boxes {
+  display: flex;
+  width: 100%;
+  gap: 8px; /* écartement uniforme */
+  box-sizing: border-box;
+}
+
+.bk-otp-digit {
+  flex: 1 1 0; /* chaque case prend exactement la même largeur */
+  min-width: 0;
+  height: 54px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bk-otp-digit:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Retours visuels validation */
+.bk-otp-boxes.is-invalid .bk-otp-digit {
+  border-color: #ef4444;
+}
+
+.bk-otp-boxes.is-valid .bk-otp-digit {
+  border-color: #10b981;
+}
+
+.bk-otp-feedback {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  min-height: 1.2em;
+}
+
+.bk-otp-feedback.error {
+  color: #ef4444;
+}
+
+.bk-otp-feedback.success {
+  color: #10b981;
+}
+
+
   .cp-cafe-sec-2024-container {
      box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
         border: 1px solid #e1e1e1;
