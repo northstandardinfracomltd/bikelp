@@ -3868,31 +3868,28 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="bk-sub-123-field-group bk-sub-123-prog-field" id="bk-sub-123-fg-value" style="display: none;">
             <label class="bk-sub-123-label" for="bk-sub-123-bike-value" data-i18n="translate_36">Valeur du vélo (€).</label>
             <div class="bk-sub-123-helper" data-i18n="translate_37">Combien coûterait le remplacement à neuf au prix catalogue avec vos éventuelles personnalisations et améliorations.</div>
-<div class="bk-otp-container" id="bk-otp-wrapper">
-  <!-- 5 cases sur une seule ligne -->
-  <div class="bk-otp-boxes">
-    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="0" aria-label="Chiffre 1" />
-    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="1" aria-label="Chiffre 2" />
-    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="2" aria-label="Chiffre 3" />
-    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="3" aria-label="Chiffre 4" />
-    <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="4" aria-label="Chiffre 5" />
-  </div>
-
-  <!-- Votre input d'origine synchronisé avec min 800 et max 17000 -->
-  <input 
-    type="number" 
-    id="bk-sub-123-bike-value" 
-    name="bike_value"
-    class="bk-sub-123-input" 
-    min="800" 
-    max="17000" 
-    step="1" 
-    required 
-    style="display: none;" 
-  />
-
-  <p class="bk-otp-feedback" id="bk-otp-msg"></p>
+<!-- Wrapper OTP 5 cases -->
+<div class="bk-otp-boxes" role="group" aria-labelledby="bk-sub-123-fg-value">
+  <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="0" autocomplete="off" />
+  <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="1" autocomplete="off" />
+  <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="2" autocomplete="off" />
+  <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="3" autocomplete="off" />
+  <input type="text" inputmode="numeric" maxlength="1" class="bk-otp-digit" data-index="4" autocomplete="off" />
 </div>
+
+<!-- Votre input d'origine : conservé, synchronisé, non-display:none pour éviter l'erreur "not focusable" -->
+<input 
+  type="number" 
+  id="bk-sub-123-bike-value" 
+  class="bk-sub-123-input bk-sub-123-hidden-native" 
+  min="800" 
+  max="17000" 
+  step="any" 
+  tabindex="-1"
+  aria-hidden="true"
+/>
+
+<div class="bk-otp-feedback" id="bk-otp-msg"></div>
           </div>
 
           <!-- 4. Gravure -->
@@ -7525,46 +7522,55 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
 <style>
 
 
-  .bk-otp-container {
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* Container 5 cases pleine largeur */
 .bk-otp-boxes {
   display: flex;
   width: 100%;
-  gap: 8px; /* écartement uniforme */
+  gap: 8px;
+  margin-top: 10px;
   box-sizing: border-box;
 }
 
 .bk-otp-digit {
-  flex: 1 1 0; /* chaque case prend exactement la même largeur */
-  min-width: 0;
-  height: 54px;
+  flex: 1 1 0;
+  width: 0; /* force le partage strict équitable */
+  height: 52px;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  border: 2px solid #d1d5db;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   background-color: #fff;
   color: #111827;
   outline: none;
   box-sizing: border-box;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .bk-otp-digit:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-/* Retours visuels validation */
 .bk-otp-boxes.is-invalid .bk-otp-digit {
   border-color: #ef4444;
 }
 
 .bk-otp-boxes.is-valid .bk-otp-digit {
   border-color: #10b981;
+}
+
+/* Cache l'input natif sans utiliser display:none (évite les bugs de form validity) */
+.bk-sub-123-hidden-native {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 .bk-otp-feedback {
@@ -7580,7 +7586,6 @@ Bikelp propose aussi des solutions pour les entreprises. Qu’il s’agisse d’
 .bk-otp-feedback.success {
   color: #10b981;
 }
-
 
   .cp-cafe-sec-2024-container {
      box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
@@ -8990,6 +8995,120 @@ margin: auto;
 })();
 </script>
 
+
+
+
+<script>document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('bk-sub-123-fg-value');
+  if (!container) return;
+
+  const nativeInput = container.querySelector('#bk-sub-123-bike-value');
+  const digits = Array.from(container.querySelectorAll('.bk-otp-digit'));
+  const boxesWrapper = container.querySelector('.bk-otp-boxes');
+  const feedbackMsg = container.querySelector('#bk-otp-msg');
+
+  const MIN_VAL = 800;
+  const MAX_VAL = 17000;
+
+  function syncAndValidate() {
+    const rawValue = digits.map(d => d.value).join('');
+
+    if (rawValue === '') {
+      nativeInput.value = '';
+      boxesWrapper.classList.remove('is-valid', 'is-invalid');
+      feedbackMsg.textContent = '';
+      feedbackMsg.className = 'bk-otp-feedback';
+      nativeInput.setCustomValidity('');
+      // Émet l'événement pour que votre script progressif réagisse
+      nativeInput.dispatchEvent(new Event('input', { bubbles: true }));
+      nativeInput.dispatchEvent(new Event('change', { bubbles: true }));
+      return;
+    }
+
+    const num = parseInt(rawValue, 10);
+    nativeInput.value = isNaN(num) ? '' : num;
+
+    if (!isNaN(num) && num >= MIN_VAL && num <= MAX_VAL) {
+      boxesWrapper.classList.add('is-valid');
+      boxesWrapper.classList.remove('is-invalid');
+      feedbackMsg.className = 'bk-otp-feedback success';
+      feedbackMsg.textContent = '';
+      nativeInput.setCustomValidity('');
+    } else {
+      boxesWrapper.classList.add('is-invalid');
+      boxesWrapper.classList.remove('is-valid');
+      feedbackMsg.className = 'bk-otp-feedback error';
+
+      if (num < MIN_VAL) {
+        feedbackMsg.textContent = `La valeur minimale est de ${MIN_VAL} €.`;
+        nativeInput.setCustomValidity(`Minimum ${MIN_VAL} €`);
+      } else {
+        feedbackMsg.textContent = `La valeur maximale est de ${MAX_VAL} €.`;
+        nativeInput.setCustomValidity(`Maximum ${MAX_VAL} €`);
+      }
+    }
+
+    // Déclenche les events écoutés par votre logique progressive
+    nativeInput.dispatchEvent(new Event('input', { bubbles: true }));
+    nativeInput.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  // Clic sur le label d'origine renvoie le focus sur la 1ère case vide
+  const label = container.querySelector('label[for="bk-sub-123-bike-value"]');
+  if (label) {
+    label.addEventListener('click', (e) => {
+      e.preventDefault();
+      const emptyBox = digits.find(d => !d.value) || digits[0];
+      emptyBox.focus();
+    });
+  }
+
+  digits.forEach((input, index) => {
+    input.addEventListener('input', (e) => {
+      const char = (e.data || input.value).slice(-1);
+      if (/^[0-9]$/.test(char)) {
+        input.value = char;
+        if (index < digits.length - 1) {
+          digits[index + 1].focus();
+        }
+      } else {
+        input.value = '';
+      }
+      syncAndValidate();
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace') {
+        if (!input.value && index > 0) {
+          digits[index - 1].focus();
+          digits[index - 1].value = '';
+          syncAndValidate();
+        }
+      } else if (e.key === 'ArrowLeft' && index > 0) {
+        digits[index - 1].focus();
+      } else if (e.key === 'ArrowRight' && index < digits.length - 1) {
+        digits[index + 1].focus();
+      }
+    });
+
+    input.addEventListener('paste', (e) => {
+      e.preventDefault();
+      const paste = (e.clipboardData || window.clipboardData)
+        .getData('text')
+        .replace(/\D/g, '')
+        .slice(0, digits.length);
+
+      paste.split('').forEach((digit, i) => {
+        if (digits[i]) digits[i].value = digit;
+      });
+
+      const nextTarget = Math.min(paste.length, digits.length - 1);
+      digits[nextTarget].focus();
+      syncAndValidate();
+    });
+  });
+});
+</script>
 
 </body>
 </html>
