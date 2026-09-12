@@ -5106,21 +5106,21 @@ margin: auto;
       }
     });
 
-    if (step === 1) {
-      if (brandSelect && brandSelect.value === 'Autre' && brandOtherInput && !brandOtherInput.value.trim()) {
-        alert('"Please specify the make and model.');
-        return false;
-      }
-      if (typeSelect && typeSelect.value === 'Autre' && typeOtherInput && !typeOtherInput.value.trim()) {
-        alert('Please specify the type of bicycle.');
-        return false;
-      }
-      var bVal = parseFloat(bikeValueInput ? bikeValueInput.value : 0);
-      if (isNaN(bVal) || bVal <= 0) {
-        alert('Please enter a valid value for the bicycle.);
-        return false;
-      }
-      if (hasAccYes && hasAccYes.checked) {
+if (step === 1) {
+  if (brandSelect && brandSelect.value === 'Autre' && brandOtherInput && !brandOtherInput.value.trim()) {
+    alert('Please specify the make and model.'); // <- Retirer le guillemet double " en trop au début
+    return false;
+  }
+  if (typeSelect && typeSelect.value === 'Autre' && typeOtherInput && !typeOtherInput.value.trim()) {
+    alert('Please specify the type of bicycle.');
+    return false;
+  }
+  var bVal = parseFloat(bikeValueInput ? bikeValueInput.value : 0);
+  if (isNaN(bVal) || bVal <= 0) {
+    alert('Please enter a valid value for the bicycle.'); // <- Ajouter le guillemet simple ' avant la parenthèse
+    return false;
+  }
+  if (hasAccYes && hasAccYes.checked) {
         var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
         if (selectedTags.length > 0) {
           var aVal = parseFloat(accValueInput ? accValueInput.value : 0);
