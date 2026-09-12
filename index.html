@@ -5395,7 +5395,7 @@ width: 100%;
 <div class="cp-bikelp-hero-2024-container">
   <div class="cp-bikelp-hero-2024-content">
 <p class="craph2" data-i18n="translate_giant">Bikelp : l'assurance de confiance, aux côtés de partenaires reconnus.</p>
-<img class="partnerslogos" src="https://civilprom.s3.eu-north-1.amazonaws.com/Barclays & Mapfreandmapfre.svg" alt="Partenaires Bikelp Mapfre Barclays & Mapfre">
+<img class="partnerslogos" src="https://civilprom.s3.eu-north-1.amazonaws.com/barclaysandmapfre.svg" alt="Partenaires Bikelp Mapfre Barclays & Mapfre">
 <h2 class="cp-mecanic-sec-2024-heading" data-i18n-html="heading_super_coverage">Optez pour la <span class="triach">Super</span> <span class="triach2">Couverture!</span></h2>
     <p class="cp-mecanic-sec-2024-paragraph" data-i18n="translate_160">
 Transparente et sans mauvaises surprises, avec l'assurance Bikelp, pas de petites lignes cachées, notre priorité est de vous remettre en selle au plus vite. 
@@ -5777,11 +5777,14 @@ Notre service client est joignable chaque jour, y compris les jours fériés, en
     const btnIcon = document.getElementById('bkpVa59BtnIcon');
 
     const CYCLE_DURATION = 5000; // 5 secondes par onglet
+    const AUTO_PAUSE_DELAY = 60000; // Pause automatique après 60 secondes (60 000 ms)
+
     let currentIndex = 0;
     let isPaused = false;
     let animStartTime = null;
     let animFrameId = null;
     let elapsedBeforePause = 0;
+    let globalTimeoutId = null;
 
     const pauseIconSvg = '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>';
     const playIconSvg = '<svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>';
@@ -5855,18 +5858,18 @@ Notre service client est joignable chaque jour, y compris les jours fériés, en
       if (animStartTime) {
         elapsedBeforePause = performance.now() - animStartTime;
       }
-      btnText.textContent = 'Reprendre';
-      btnIcon.innerHTML = playIconSvg;
-      toggleBtn.setAttribute('aria-label', 'Reprendre le défilement automatique');
+      if (btnText) btnText.textContent = 'Reprendre';
+      if (btnIcon) btnIcon.innerHTML = playIconSvg;
+      if (toggleBtn) toggleBtn.setAttribute('aria-label', 'Reprendre le défilement automatique');
     }
 
     function resumeTimer() {
       if (!isPaused) return;
       isPaused = false;
       animStartTime = null;
-      btnText.textContent = 'Pause';
-      btnIcon.innerHTML = pauseIconSvg;
-      toggleBtn.setAttribute('aria-label', 'Mettre en pause');
+      if (btnText) btnText.textContent = 'Pause';
+      if (btnIcon) btnIcon.innerHTML = pauseIconSvg;
+      if (toggleBtn) toggleBtn.setAttribute('aria-label', 'Mettre en pause');
       startTimer();
     }
 
@@ -5876,26 +5879,35 @@ Notre service client est joignable chaque jour, y compris les jours fériés, en
       if (!header) return;
 
       header.addEventListener('click', function() {
-        if (currentIndex === index && !isPaused) {
-          // Si déjà actif et qu'on clique : remet le compteur à zéro pour ce même élément
-          setActiveItem(index);
-        } else {
-          setActiveItem(index);
-        }
+        setActiveItem(index);
       });
     });
 
     // Bouton Pause / Reprendre
-    toggleBtn.addEventListener('click', function() {
-      if (isPaused) {
-        resumeTimer();
-      } else {
-        pauseTimer();
-      }
-    });
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        // Annule l'auto-pause initiale de 60s si l'utilisateur interagit manuellement
+        if (globalTimeoutId) {
+          clearTimeout(globalTimeoutId);
+          globalTimeoutId = null;
+        }
+
+        if (isPaused) {
+          resumeTimer();
+        } else {
+          pauseTimer();
+        }
+      });
+    }
 
     // Démarrage initial
     setActiveItem(0);
+
+    // Déclencheur pour mettre en pause après 60 secondes
+    globalTimeoutId = setTimeout(function() {
+      pauseTimer();
+      globalTimeoutId = null;
+    }, AUTO_PAUSE_DELAY);
   })();
 </script>
   </div>
