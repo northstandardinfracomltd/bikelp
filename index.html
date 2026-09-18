@@ -6338,7 +6338,7 @@ font-size: 20px !important;
   <div class="insidebarz-actions" id="insidebarz-actions">
     <div class="insidebarz-gradient"></div>
     <button type="button" class="insidebarz-btn-more" id="btn-insidebarz-expand">
-      En savoir plus
+Tout dérouler
     </button>
   </div>
 
@@ -7147,6 +7147,10 @@ Parce que votre vélo représente un investissement important : optez pour une v
       </div>
     </section>
 
+
+
+
+
 <div class="bklp-cmp-wrapper">
   <div class="bklp-cmp-meta-bar">
 <span class="bklp-cmp-meta-bar-meta" data-i18n="translate_219">Pourquoi Bikelp?<br></span>
@@ -7157,7 +7161,20 @@ Parce que votre vélo représente un investissement important : optez pour une v
     </span>
   </div>
 
-  <div class="bklp-cmp-scroll-outer">
+
+
+
+
+
+
+
+
+
+
+  <!-- Wrapper parent positionné pour le tableau -->
+<div class="bklp-table-expand-wrapper">
+  
+  <div class="bklp-cmp-scroll-outer" id="bklp-table-content">
     <div class="bklp-cmp-scroll-container">
       <table class="bklp-cmp-table" aria-label="Tableau comparatif des assurances vélo">
         <thead>
@@ -7561,6 +7578,40 @@ Parce que votre vélo représente un investissement important : optez pour une v
     </div>
   </div>
 
+  <!-- Fondu blanc + Bouton dédié mi-dedans mi-dehors -->
+  <div class="bklp-table-actions" id="bklp-table-actions">
+    <div class="bklp-table-gradient"></div>
+    <button type="button" class="bklp-table-btn-more" id="btn-bklp-table-expand">
+      En savoir plus
+    </button>
+  </div>
+
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tableBtn = document.getElementById('btn-bklp-table-expand');
+    const tableContainer = document.getElementById('bklp-table-content');
+    const tableActions = document.getElementById('bklp-table-actions');
+
+    if (tableBtn && tableContainer) {
+      tableBtn.addEventListener('click', () => {
+        // Déroule la totalité des lignes du tableau
+        tableContainer.classList.add('is-table-expanded');
+
+        // Fait disparaître le masque blanc et le bouton
+        if (tableActions) {
+          tableActions.style.transition = 'opacity 0.25s ease';
+          tableActions.style.opacity = '0';
+          setTimeout(() => tableActions.remove(), 250);
+        }
+      });
+    }
+  });
+</script>
+
+
     <div class="legendar">
 <span class="legendar-txt" data-i18n="translate_400">
 Légende des critères du tableau comparatif.
@@ -7587,6 +7638,83 @@ Signaler une information incorrecte : support@bikelp.com. <br>
 
 
     <style>
+
+
+      /* Conteneur parent relatif */
+.bklp-table-expand-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px; /* Dégagement pour la moitié basse du bouton */
+}
+
+/* Bridage initial de la hauteur du tableau */
+.bklp-cmp-scroll-outer {
+  max-height: 700px;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* État déplié complet */
+.bklp-cmp-scroll-outer.is-table-expanded {
+  max-height: 4000px;
+}
+
+/* Zone réceptrice du bouton et du dégradé */
+.bklp-table-actions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  height: 180px;
+}
+
+/* Fondu progressif vers le blanc du fond de tableau */
+.bklp-table-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 75%, #ffffff 100%);
+  border-radius: 0 0 20px 20px;
+}
+
+/* Style dédié du bouton tableau : sombre/violet avec accent, personnalisable à volonté */
+.bklp-table-btn-more {
+  position: relative;
+  z-index: 25;
+  pointer-events: auto;
+  transform: translateY(50%); /* Mi-dedans, mi-dehors */
+  
+  background: #3e1475;
+  color: #ffffff;
+  font-family: 'Civilprom', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  
+  padding: 16px 38px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  
+  /* Ombre portée dense pour bien trancher sur le blanc */
+  box-shadow: 0 14px 30px rgba(62, 20, 117, 0.35), 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.bklp-table-btn-more:hover {
+  background: #4c1a8f;
+  transform: translateY(46%) scale(1.02);
+  box-shadow: 0 18px 36px rgba(62, 20, 117, 0.45);
+}
+
+.bklp-table-btn-more:active {
+  transform: translateY(50%) scale(0.98);
+}
+
+
+
   .cp-velo-sec-2024-container {
     box-shadow: rgb(17 17 26 / 4%) 0px 4px 16px, rgb(17 17 26 / 6%) 0px 8px 24px, rgb(17 17 26 / 2%) 0px 16px 56px;
       border: 1px solid #e1e1e1;
