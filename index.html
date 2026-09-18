@@ -1952,6 +1952,10 @@ heading_free_events: "Participez aux <span class=\"triach\">Événements</span> 
     translate_524: "Pour toute demande de partenariat d'influence, de sponsoring, de collaboration sur les réseaux sociaux ou de relations presse, veuillez nous contacter à l'adresse support@bikelp.com.",
     translate_525: "Contacter Bikelp",
     translate_526: "Documents Légaux",
+    X15: "Envoyer",
+    X16: "● Hors ligne",
+    X17: "Les membres de l'aide Bikelp sont actuellement hors ligne, nous avons bien reçu votre demande <strong id=\"dfb-display-ticket\"></strong> et nous y répondrons dans les plus brefs délais.",
+    drawer_title: "Informations sur votre vélo.",
     translate_527: "Politique Confidentialité",
     translate_528: "Produit Assurance (IPID)",
     meetourteam: "Et une équipe locale de compet!",
@@ -9075,14 +9079,26 @@ margin: auto;
             history.push({ id: currentTicket, date: new Date().toLocaleDateString('fr-FR') });
             localStorage.setItem('dfb_tickets', JSON.stringify(history));
 
-            setTimeout(() => {
-                loadingBar.classList.add('dfb-hidden');
-                document.getElementById('dfb-contact-form').classList.add('dfb-hidden');
-                document.getElementById('dfb-history-section').classList.add('dfb-hidden');
-                document.querySelector('.dfb-intro-text').classList.add('dfb-hidden');
-                document.getElementById('dfb-display-ticket').innerText = currentTicket;
-                document.getElementById('dfb-success-msg').classList.remove('dfb-hidden');
-            }, 4000);
+setTimeout(() => {
+    loadingBar.classList.add('dfb-hidden');
+    document.getElementById('dfb-contact-form').classList.add('dfb-hidden');
+    
+    const histSection = document.getElementById('dfb-history-section');
+    if (histSection) histSection.classList.add('dfb-hidden');
+    
+    const introText = document.querySelector('.dfb-intro-text');
+    if (introText) introText.classList.add('dfb-hidden');
+
+    // Afficher le conteneur de confirmation
+    const successMsg = document.getElementById('dfb-success-msg');
+    successMsg.classList.remove('dfb-hidden');
+
+    // Insérer le ticket dans la balise dédiée
+    const ticketSpan = document.getElementById('dfb-display-ticket');
+    if (ticketSpan) {
+        ticketSpan.textContent = " " + currentTicket;
+    }
+}, 1000); // 1000ms au lieu de 4000ms pour un affichage plus réactif
 
         } catch (e) {
             console.error(e);
