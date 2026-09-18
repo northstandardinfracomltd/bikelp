@@ -4921,7 +4921,7 @@ margin: auto;
     { max: 6999,     m: "15.99€",  a: "169.99€", mVal: 15.99, aVal: 169.99, linkM: "https://subs1599.bikelp.com/",  linkA: "https://subs16999.bikelp.com/" },
     { max: 7999,     m: "23.99€",  a: "239.99€", mVal: 23.99, aVal: 239.99, linkM: "https://subs23999.bikelp.com/", linkA: "https://subs239999.bikelp.com/" },
     { max: 8999,     m: "27.99€",  a: "299.99€", mVal: 27.99, aVal: 299.99, linkM: "https://subs2799.bikelp.com/",   linkA: "https://subs29999.bikelp.com/" },
-    { max: 9999,    m: "33.99€",  a: "349.99€", mVal: 33.99, aVal: 349.99, linkM: "https://subs3399.bikelp.com/",  linkA: "https://subs34999.bikelp.com/" },
+    { max: 9999,     m: "33.99€",  a: "349.99€", mVal: 33.99, aVal: 349.99, linkM: "https://subs3399.bikelp.com/",  linkA: "https://subs34999.bikelp.com/" },
     { max: 11999,    m: "42.99€",  a: "449.99€", mVal: 42.99, aVal: 449.99, linkM: "https://subs4299.bikelp.com/",  linkA: "https://subs44999.bikelp.com/" },
     { max: 12999,    m: "55.99€",  a: "599.99€", mVal: 55.99, aVal: 599.99, linkM: "https://subs5599.bikelp.com/",  linkA: "https://subs59999.bikelp.com/" },
     { max: Infinity, m: "69.99€",  a: "699.99€", mVal: 69.99, aVal: 699.99, linkM: "https://subs6999.bikelp.com/",  linkA: "https://bikelp.com/subs699.99/" }
@@ -4952,6 +4952,19 @@ margin: auto;
     }
   };
 
+  // Helper Auto-scroll vers le bas du tiroir
+  function bkSubScrollToBottom() {
+    var drawerBody = document.querySelector('.bk-sub-123-drawer-body');
+    if (drawerBody) {
+      setTimeout(function() {
+        drawerBody.scrollTo({
+          top: drawerBody.scrollHeight,
+          behavior: 'smooth'
+        });
+      }, 70);
+    }
+  }
+
   // DOM Elements Step 1
   var brandSelect = document.getElementById('bk-sub-123-brand');
   var brandOtherWrap = document.getElementById('bk-sub-123-brand-other-wrap');
@@ -4976,6 +4989,16 @@ margin: auto;
   // --- LOGIQUE PROGRESSIVE STEP 1 ---
   function updateStep1ProgressiveFlow() {
     if (!brandSelect || !typeSelect || !bikeValueInput) return;
+
+    // État de visibilité avant le traitement pour détecter les nouveaux affichages
+    var wasHidden = {
+      value: fgValue && fgValue.style.display === 'none',
+      engraved: fgEngraved && fgEngraved.style.display === 'none',
+      accessories: fgAccessories && fgAccessories.style.display === 'none',
+      accPanel: accPanel && accPanel.style.display === 'none',
+      accValWrap: accValWrap && accValWrap.style.display === 'none',
+      step1Actions: step1Actions && step1Actions.style.display === 'none'
+    };
 
     var brandValid = brandSelect.value !== "" && (brandSelect.value !== "Autre" || (brandOtherInput && brandOtherInput.value.trim() !== ""));
     var typeValid = typeSelect.value !== "" && (typeSelect.value !== "Autre" || (typeOtherInput && typeOtherInput.value.trim() !== ""));
@@ -5033,6 +5056,18 @@ margin: auto;
       if (step1Actions) step1Actions.style.display = 'flex';
     } else {
       if (step1Actions) step1Actions.style.display = 'none';
+    }
+
+    // Déclenchement automatique du scroll vers le bas dès qu'un champ s'affiche
+    var newlyShown = (wasHidden.value && fgValue && fgValue.style.display === 'block') ||
+                     (wasHidden.engraved && fgEngraved && fgEngraved.style.display === 'block') ||
+                     (wasHidden.accessories && fgAccessories && fgAccessories.style.display === 'block') ||
+                     (wasHidden.accPanel && accPanel && accPanel.style.display === 'block') ||
+                     (wasHidden.accValWrap && accValWrap && accValWrap.style.display === 'block') ||
+                     (wasHidden.step1Actions && step1Actions && step1Actions.style.display === 'flex');
+
+    if (newlyShown) {
+      bkSubScrollToBottom();
     }
   }
 
@@ -5122,7 +5157,6 @@ margin: auto;
           valid = false;
         }
       } else if (input.type === 'checkbox') {
-        // Pour les switches Apple
         if (!input.checked) {
           valid = false;
         }
@@ -5131,21 +5165,21 @@ margin: auto;
       }
     });
 
-if (step === 1) {
-  if (brandSelect && brandSelect.value === 'Autre' && brandOtherInput && !brandOtherInput.value.trim()) {
-    alert('Please specify the make and model.'); // <- Retirer le guillemet double " en trop au début
-    return false;
-  }
-  if (typeSelect && typeSelect.value === 'Autre' && typeOtherInput && !typeOtherInput.value.trim()) {
-    alert('Please specify the type of bicycle.');
-    return false;
-  }
-  var bVal = parseFloat(bikeValueInput ? bikeValueInput.value : 0);
-  if (isNaN(bVal) || bVal <= 0) {
-    alert('Please enter a valid value for the bicycle.'); // <- Ajouter le guillemet simple ' avant la parenthèse
-    return false;
-  }
-  if (hasAccYes && hasAccYes.checked) {
+    if (step === 1) {
+      if (brandSelect && brandSelect.value === 'Autre' && brandOtherInput && !brandOtherInput.value.trim()) {
+        alert('Please specify the make and model.');
+        return false;
+      }
+      if (typeSelect && typeSelect.value === 'Autre' && typeOtherInput && !typeOtherInput.value.trim()) {
+        alert('Please specify the type of bicycle.');
+        return false;
+      }
+      var bVal = parseFloat(bikeValueInput ? bikeValueInput.value : 0);
+      if (isNaN(bVal) || bVal <= 0) {
+        alert('Please enter a valid value for the bicycle.');
+        return false;
+      }
+      if (hasAccYes && hasAccYes.checked) {
         var selectedTags = document.querySelectorAll('.bk-sub-123-tag.selected');
         if (selectedTags.length > 0) {
           var aVal = parseFloat(accValueInput ? accValueInput.value : 0);
@@ -5181,7 +5215,6 @@ if (step === 1) {
     if (summaryEl) {
       summaryEl.innerText = formattedTotal;
     } else {
-      // Si la balise a été écrasée par i18n, on la recrée dans son conteneur parent
       var subtitleEl = document.querySelector('#bk-sub-123-step-3 .bk-sub-123-subtitle');
       if (subtitleEl) {
         subtitleEl.innerHTML += ' <strong id="bk-sub-123-summary-total">' + formattedTotal + '</strong>';
