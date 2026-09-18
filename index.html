@@ -5995,6 +5995,14 @@ border-radius: 16px;
     transform: scale(1.02);
   }
 
+/* Wrapper pour positionner le bouton relatif au bloc */
+.insidebarz-wrapper {
+  position: relative;
+  width: 98%;
+  max-width: 1400px;
+  margin: auto;
+  margin-bottom: 50px; /* Dégagement pour le bas du bouton à cheval */
+}
 
 
 
@@ -6004,10 +6012,73 @@ border-radius: 16px;
     background: radial-gradient(#0059ff, #5a00ff);
     padding-top: 100px;
     padding-bottom: 50px;
-    width: 98%;
     max-width: 1400px;
     border-radius: 20px;
   }
+
+
+/* Hauteur initiale bridée à 700px */
+.insidebarz {
+  width: 100% !important; /* Prend toute la largeur du wrapper */
+  max-height: 700px;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Déplié complet sans restriction */
+.insidebarz.is-expanded {
+  max-height: 4000px;
+}
+
+/* Conteneur de l'action en bas */
+.insidebarz-actions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  height: 180px;
+}
+
+/* Fondu dégradé vers la couleur du bas de la div pour masquer la coupe */
+.insidebarz-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 89, 255, 0) 0%, #3e12dc 85%);
+  border-radius: 0 0 20px 20px;
+}
+
+/* Bouton avec forte ombre, positionné mi-dedans mi-dehors */
+.insidebarz-btn-more {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+  transform: translateY(50%); /* 50% dedans, 50% dehors */
+  
+  background: #ffffff;
+  color: #0059ff;
+  font-family: 'Civilprom', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  
+  padding: 16px 38px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.insidebarz-btn-more:hover {
+  transform: translateY(46%) scale(1.02);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.38);
+}
+
+
 
 
   /* Zone texte */
@@ -6109,12 +6180,18 @@ font-size: 20px !important;
     }
 
 </style>
-<div class="insidebarz">
-<p class="reasonstitle" data-i18n="translate_176">14 Raisons de Souscrire avec Bikelp!</p>
 
-<div class="bp-custom-insurance-grid__wrapper">
 
-  <!-- 1 -->
+
+<div class="insidebarz-wrapper">
+  
+  <div class="insidebarz" id="insidebarz-content">
+    <p class="reasonstitle" data-i18n="translate_176">14 Raisons de Souscrire avec Bikelp!</p>
+
+    <div class="bp-custom-insurance-grid__wrapper">
+
+
+        <!-- 1 -->
   <div class="bp-custom-insurance-grid__item PBblue">
     <div class="bp-custom-insurance-grid__body">
       <p class="numerous">1</p>
@@ -6253,7 +6330,44 @@ font-size: 20px !important;
     </div>
     <span class="bp-custom-insurance-grid__badge" data-i18n="translate_218">Inclus</span>
   </div>
+
+    </div>
+  </div>
+
+  <!-- Dégradé + Bouton à cheval (50% dedans / 50% dehors) -->
+  <div class="insidebarz-actions" id="insidebarz-actions">
+    <div class="insidebarz-gradient"></div>
+    <button type="button" class="insidebarz-btn-more" id="btn-insidebarz-expand">
+      En savoir plus
+    </button>
+  </div>
+
 </div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('btn-insidebarz-expand');
+    const container = document.getElementById('insidebarz-content');
+    const actions = document.getElementById('insidebarz-actions');
+
+    if (btn && container) {
+      btn.addEventListener('click', () => {
+        // Déroule toute la hauteur
+        container.classList.add('is-expanded');
+
+        // Supprime le bouton et le masque fondu (pas de rollback)
+        if (actions) {
+          actions.style.transition = 'opacity 0.25s ease';
+          actions.style.opacity = '0';
+          setTimeout(() => actions.remove(), 250);
+        }
+      });
+    }
+  });
+</script>
+
 
 
 
@@ -6416,7 +6530,7 @@ font-size: 20px !important;
 </script>
 
 
-</div>
+
 
 
 
