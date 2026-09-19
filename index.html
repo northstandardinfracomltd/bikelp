@@ -1641,6 +1641,106 @@ margin: 0;
     margin-bottom: -5px !important;
 }
   }
+
+
+
+
+  /* ==========================================================
+   HERO FLOATING BUBBLES (PARALLAX SCOPÉ)
+   ========================================================== */
+
+/* Conteneur plein écran scopé à la section hero */
+.hero-floating-bubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ne bloque aucun clic sur le logo, titre ou boutons */
+  z-index: 10;          /* Par-dessus le fond mais sous le header-top et le tiroir */
+  overflow: hidden;
+}
+
+/* Base de chaque bulle */
+.hero-bubble {
+  position: absolute;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.hero-bubble img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Légère ombre portée subtile */
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.18));
+}
+
+/* Tailles et positions variées des 6 bulles */
+.hero-bubble--1 {
+  width: 90px;
+  height: 90px;
+  top: 14%;
+  left: 6%;
+}
+
+.hero-bubble--2 {
+  width: 55px;
+  height: 55px;
+  top: 72%;
+  left: 10%;
+  opacity: 0.85;
+}
+
+.hero-bubble--3 {
+  width: 72px;
+  height: 72px;
+  top: 18%;
+  right: 28%;
+}
+
+.hero-bubble--4 {
+  width: 110px;
+  height: 110px;
+  top: 48%;
+  right: 5%;
+}
+
+.hero-bubble--5 {
+  width: 50px;
+  height: 50px;
+  top: 80%;
+  right: 14%;
+  opacity: 0.75;
+}
+
+.hero-bubble--6 {
+  width: 65px;
+  height: 65px;
+  top: 45%;
+  left: 3%;
+  opacity: 0.9;
+}
+
+/* Ajustements tablettes & mobiles */
+@media (max-width: 992px) {
+  .hero-bubble--1 { width: 70px; height: 70px; left: 3%; }
+  .hero-bubble--4 { width: 85px; height: 85px; right: 2%; }
+  .hero-bubble--3 { display: none; } /* Allège l'espace visuel sur tablette */
+}
+
+@media (max-width: 768px) {
+  /* Sur smartphone, réduction de taille pour laisser respirer le texte */
+  .hero-bubble--1 { width: 52px; height: 52px; top: 8%; left: 4%; }
+  .hero-bubble--2 { width: 42px; height: 42px; top: 82%; left: 6%; }
+  .hero-bubble--4 { width: 64px; height: 64px; top: 40%; right: 4%; }
+  .hero-bubble--5 { display: none; }
+  .hero-bubble--6 { display: none; }
+}
+
+
 </style>
 
 <div class="bk-lang-sticky-banner-wrap" id="bk-lang-sticky-banner-component">
@@ -1685,6 +1785,88 @@ margin: 0;
   <main>
     <!-- ==================== SECTION 1 : SOUSCRIPTION (HERO) ==================== -->
     <section class="section-hero" id="souscription">
+
+      <!-- START: Floating Bubbles Parallax Hero -->
+<div class="hero-floating-bubbles" aria-hidden="true">
+  <!-- Bulle 1 : Haute gauche (grande) -->
+  <div class="hero-bubble hero-bubble--1" data-speed="14">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 2 : Basse gauche (petite) -->
+  <div class="hero-bubble hero-bubble--2" data-speed="8">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 3 : Haute centre-droite (moyenne) -->
+  <div class="hero-bubble hero-bubble--3" data-speed="18">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 4 : Droite médiane (très grande) -->
+  <div class="hero-bubble hero-bubble--4" data-speed="12">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 5 : Basse droite (petite / discrète) -->
+  <div class="hero-bubble hero-bubble--5" data-speed="22">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 6 : Centre gauche (moyenne-petite) -->
+  <div class="hero-bubble hero-bubble--6" data-speed="10">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+</div>
+
+<script>
+(function() {
+  const heroSection = document.querySelector('.section-hero');
+  const bubbles = document.querySelectorAll('.hero-floating-bubbles .hero-bubble');
+  
+  if (!heroSection || !bubbles.length) return;
+
+  // Variables de coordonnées cibles et coordonnées interpolées (lerp)
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  let isHovered = false;
+
+  // Détection des mouvements uniquement dans la section-hero
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    // Calcule la position relative au centre de la hero [-1 à 1]
+    targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    isHovered = true;
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    // Retour progressif et naturel au centre au repos
+    targetX = 0;
+    targetY = 0;
+    isHovered = false;
+  });
+
+  // Boucle d'animation fluide à 60/120 fps
+  function animateParallax() {
+    // Amortissement doux (0.06 = inertie classe et feutrée)
+    currentX += (targetX - currentX) * 0.06;
+    currentY += (targetY - currentY) * 0.06;
+
+    bubbles.forEach((bubble) => {
+      const speed = parseFloat(bubble.dataset.speed) || 12;
+      // Déplacement subtil (quelques pixels max, proportionnel à l'attribut speed)
+      const moveX = currentX * speed;
+      const moveY = currentY * speed;
+
+      bubble.style.transform = `translate3d(${moveX.toFixed(2)}px, ${moveY.toFixed(2)}px, 0)`;
+    });
+
+    requestAnimationFrame(animateParallax);
+  }
+
+  requestAnimationFrame(animateParallax);
+})();
+</script>
+<!-- END: Floating Bubbles Parallax Hero -->
+
       <div class="container hero-grid">
       <a href="#" class="header-brand" aria-label="Bikelp Accueil">
 <img class="BikelpLogo" src="https://civilprom.s3.eu-north-1.amazonaws.com/bikelplogo.svg" alt="Bikelp Logo">
