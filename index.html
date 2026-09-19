@@ -338,8 +338,39 @@ position: relative;
     border-radius: 20px;
 }
 
+.section-hero::before {
+    background-image: none !important;
+}
+
+}
+
+.section-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/bikelpherobackgroundbikelpwebsite.svg");
+    background-size: auto 130%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none;
+}
 
 
+/* Safari uniquement (macOS et iOS) */
+@supports (-webkit-touch-callout: none) {
+    .section-hero::before {
+        background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/bikelpherobackgroundneo.svg");
+        opacity: 0.2;
+    }
+}
+
+@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+    .section-hero::before {
+        background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/bikelpherobackgroundneo.svg");
+        opacity: 0.2;
+    }
+}
 
 
 
@@ -1611,6 +1642,10 @@ margin: 0;
 }
   }
 
+
+
+
+  
 </style>
 
 <div class="bk-lang-sticky-banner-wrap" id="bk-lang-sticky-banner-component">
@@ -1656,8 +1691,34 @@ margin: 0;
     <!-- ==================== SECTION 1 : SOUSCRIPTION (HERO) ==================== -->
     <section class="section-hero" id="souscription">
 
-
-
+      <!-- START: Floating Bubbles Parallax Hero -->
+<div class="hero-floating-bubbles" aria-hidden="true">
+  <!-- Bulle 1 : Haute gauche (grande) -->
+  <div class="hero-bubble hero-bubble--1" data-speed="14">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 2 : Basse gauche (petite) -->
+  <div class="hero-bubble hero-bubble--2" data-speed="8">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 3 : Haute centre-droite (moyenne) -->
+  <div class="hero-bubble hero-bubble--3" data-speed="18">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 4 : Droite médiane (très grande) -->
+  <div class="hero-bubble hero-bubble--4" data-speed="12">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 5 : Basse droite (petite / discrète) -->
+  <div class="hero-bubble hero-bubble--5" data-speed="22">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+  <!-- Bulle 6 : Centre gauche (moyenne-petite) -->
+  <div class="hero-bubble hero-bubble--6" data-speed="10">
+    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
+  </div>
+</div>
+<!-- END: Floating Bubbles Parallax Hero -->
 
       <div class="container hero-grid">
       <a href="#" class="header-brand" aria-label="Bikelp Accueil">
