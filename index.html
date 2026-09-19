@@ -326,6 +326,22 @@ background: transparent;
 }
 
 
+/* Safari uniquement (macOS et iOS) */
+@supports (-webkit-touch-callout: none) {
+    .section-hero::before {
+        background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/bikelpherobackgroundneo.svg");
+        opacity: 0.2;
+    }
+}
+
+@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+    .section-hero::before {
+        background-image: url("https://civilprom.s3.eu-north-1.amazonaws.com/bikelpherobackgroundneo.svg");
+        opacity: 0.2;
+    }
+}
+
+
 
     .hero-grid {
 display: block;
