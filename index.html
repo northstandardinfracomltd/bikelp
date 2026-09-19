@@ -7943,15 +7943,34 @@ display: flex;
 
   /* Icône commune (48px - 50px) */
   .bk-dualcard-icon-wrap {
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-    min-height: 80px;
+width: 45px;
+    height: 45px;
+    color: #fff !important;
+    min-width: 45px;
+    padding-top: 38px !important;
+    padding: 0px;
+    text-align: center;
+    min-height: 45px;
+    border-radius: 1000px;
+    background: #9f1996;
     margin-bottom: 20px;
+    outline: 3.5px solid #9f1996;
+    outline-offset: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
+    .bk-dualcard-icon-wrap-green {
+    background: #209139 !important;
+    outline: 3.5px solid #209139 !important;
+  }
+
+      .bk-dualcard-icon-wrap-red {
+    background: #bb1b1b !important;
+    outline: 3.5px solid #bb1b1b !important;
+  }
+
 
   .bk-dualcard-icon {
     width: 80px;
@@ -8014,7 +8033,7 @@ font-size: 22px;
   }
 
   .downloadABC  {
-    color: #3556ec;
+    color: #000;
     cursor: pointer !important;
 }
 
@@ -8038,21 +8057,22 @@ text-decoration: underline;
 }
 
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
+font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 42px;
+    line-height: 1;
+    padding: 0px;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
 }
 
 
@@ -8063,7 +8083,7 @@ text-decoration: underline;
 
     <!-- CARTE DE GAUCHE : Information assurance habitation -->
     <div class="bk-dualcard-item">
-<div class="bk-dualcard-icon-wrap">
+<div class="bk-dualcard-icon-wrap bk-dualcard-icon-wrap-red">
   <span class="material-symbols-outlined bk-dualcard-icon" aria-hidden="true">
     close_small
   </span>
@@ -8084,7 +8104,7 @@ text-decoration: underline;
       class="bk-dualcard-item bk-dualcard-item--clickable"
       aria-label="Télécharger la fiche d'information produit IPID"
     >
-<div class="bk-dualcard-icon-wrap">
+<div class="bk-dualcard-icon-wrap bk-dualcard-icon-wrap-green">
   <span class="material-symbols-outlined bk-dualcard-icon" aria-hidden="true">
     check_small
   </span>
