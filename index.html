@@ -419,7 +419,7 @@ font-size: 80px;
 }
 
     .hero-subtitle {
-    font-family: 'bikelpfont';
+    font-family: 'CivilpromA';
     font-size: 42px;
     color: #fff;
     margin-right: auto;
@@ -1689,13 +1689,13 @@ margin: 0;
 
 <!-- =========================================================================
      COMPOSANT BIKELP : 6 FLOATING ICON BUBBLES
-     (STRICTEMENT MASQUÉES AU DÉPART, TRÈS HAUTES, POP EN ACCÉLÉRATION + PARALLAXE)
+     (DÉPART À 0.5s, DISPERSION ALÉATOIRE MOBILE & PARALLAXE DOUX)
      À coller directement après <section class="section-hero" id="souscription">
      ========================================================================= -->
 
 <!-- 1. STYLES CSS DU COMPOSANT -->
 <style>
-  /* Conteneur plein écran scopé avec padding de sécurité anti-découpage */
+  /* Conteneur plein écran scopé avec marge de sécurité */
   .hero-floating-bubbles {
     position: absolute;
     inset: 0;
@@ -1708,7 +1708,7 @@ margin: 0;
     box-sizing: border-box;
   }
 
-  /* État initial : STRICTEMENT INVISIBLE ET ZÉRO ENCOMBREMENT */
+  /* État initial : strictement masqué sans occuper d'espace */
   .hero-bubble {
     position: absolute;
     will-change: transform, opacity;
@@ -1718,10 +1718,10 @@ margin: 0;
     user-select: none;
   }
 
-  /* Déclenchement de l'animation d'apparition "Pop" */
+  /* Animation Pop In naturelle */
   .hero-bubble.is-visible {
     visibility: visible;
-    animation: bubblePopIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation: bubblePopIn 0.52s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
 
   @keyframes bubblePopIn {
@@ -1729,7 +1729,7 @@ margin: 0;
       opacity: 0;
       transform: scale(0);
     }
-    60% {
+    65% {
       opacity: 1;
       transform: scale(1.08);
     }
@@ -1748,10 +1748,10 @@ margin: 0;
   }
 
   /* ----------------------------------------------------------
-     CONFINEMENT STRICT DANS LA PARTIE TRÈS HAUTE (2% à 24% MAX)
+     DISPOSITION DESKTOP (HAUT DE SECTION & GRANDES TAILLES)
      ---------------------------------------------------------- */
 
-  /* 1. TRÈS GRANDE (170px) - Angle supérieur gauche */
+  /* 1. TRÈS GRANDE (170px) - Haut gauche */
   .hero-bubble--1 {
     width: 170px;
     height: 170px;
@@ -1763,11 +1763,11 @@ margin: 0;
   .hero-bubble--2 {
     width: 64px;
     height: 64px;
-    top: 3%;
+    top: 3.5%;
     left: 24%;
   }
 
-  /* 3. MOYENNE-GRANDE (115px) - Angle supérieur droit */
+  /* 3. MOYENNE-GRANDE (115px) - Haut droite */
   .hero-bubble--3 {
     width: 115px;
     height: 115px;
@@ -1775,7 +1775,7 @@ margin: 0;
     right: 5%;
   }
 
-  /* 4. GRANDE (138px) - Côté droit haut (juste sous la 3) */
+  /* 4. GRANDE (138px) - Côté droit haut (sous la 3) */
   .hero-bubble--4 {
     width: 138px;
     height: 138px;
@@ -1791,7 +1791,7 @@ margin: 0;
     right: 22%;
   }
 
-  /* 6. MOYENNE (96px) - Côté gauche haut (juste sous la 1) */
+  /* 6. MOYENNE (96px) - Côté gauche haut (sous la 1) */
   .hero-bubble--6 {
     width: 96px;
     height: 96px;
@@ -1799,61 +1799,117 @@ margin: 0;
     left: 4.5%;
   }
 
-  /* Responsive : Tablettes */
+  /* ----------------------------------------------------------
+     TABLETTE
+     ---------------------------------------------------------- */
   @media (max-width: 1024px) {
+    .hero-floating-bubbles {
+      padding: 15px 15px;
+    }
     .hero-bubble--1 { width: 120px; height: 120px; top: 2%; left: 2%; }
-    .hero-bubble--3 { width: 88px; height: 88px; top: 2%; right: 2%; }
+    .hero-bubble--2 { width: 50px; height: 50px; top: 3%; left: 20%; }
+    .hero-bubble--3 { width: 88px; height: 88px; top: 2.5%; right: 2.5%; }
     .hero-bubble--4 { width: 98px; height: 98px; top: 20%; right: 2%; }
+    .hero-bubble--5 { width: 56px; height: 56px; top: 4%; right: 18%; }
     .hero-bubble--6 { width: 72px; height: 72px; top: 22%; left: 2%; }
   }
 
-  /* Responsive : Smartphones */
+  /* ----------------------------------------------------------
+     SMARTPHONE : PLACEMENT ALÉATOIRE & DÉCALÉ (PAS EN RECTANGLE)
+     ---------------------------------------------------------- */
   @media (max-width: 768px) {
-    .hero-bubble--1 { width: 72px; height: 72px; top: 2%; left: 3%; }
-    .hero-bubble--3 { width: 62px; height: 62px; top: 2%; right: 3%; }
-    .hero-bubble--4 { width: 75px; height: 75px; top: 22%; right: 2%; }
-    .hero-bubble--6 { width: 52px; height: 52px; top: 24%; left: 2%; }
-    .hero-bubble--2,
+    .hero-floating-bubbles {
+      padding: 10px 12px;
+    }
+
+    /* Bulle 1 : Grande, très haute à gauche */
+    .hero-bubble--1 {
+      width: 78px;
+      height: 78px;
+      top: 1.5%;
+      left: 2%;
+    }
+
+    /* Bulle 2 : Petite, glissée sous le logo à gauche */
+    .hero-bubble--2 {
+      display: block;
+      width: 42px;
+      height: 42px;
+      top: 13%;
+      left: 14%;
+      opacity: 0.9;
+    }
+
+    /* Bulle 3 : Moyenne-grande, décalée vers le haut à droite */
+    .hero-bubble--3 {
+      width: 68px;
+      height: 68px;
+      top: 3%;
+      right: 4%;
+    }
+
+    /* Bulle 4 : Plus imposante, sur le flanc droit intermédiaire */
+    .hero-bubble--4 {
+      width: 82px;
+      height: 82px;
+      top: 26%;
+      right: 1.5%;
+    }
+
+    /* Bulle 5 : Discrète et flottante vers le milieu-droit */
     .hero-bubble--5 {
-      display: none;
+      display: block;
+      width: 44px;
+      height: 44px;
+      top: 17%;
+      right: 20%;
+      opacity: 0.85;
+    }
+
+    /* Bulle 6 : Moyenne, tombée plus bas à gauche pour rompre la symétrie */
+    .hero-bubble--6 {
+      width: 58px;
+      height: 58px;
+      top: 34%;
+      left: 3%;
     }
   }
 </style>
 
 <!-- 2. STRUCTURE HTML DES 6 BULLES -->
 <div class="hero-floating-bubbles" aria-hidden="true">
-  <!-- Bulle 1 : 170px (Très grande) -->
+  <!-- Bulle 1 -->
   <div class="hero-bubble hero-bubble--1" data-speed="14">
     <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
   </div>
 
-  <!-- Bulle 2 : 64px (Petite) -->
+  <!-- Bulle 2 -->
   <div class="hero-bubble hero-bubble--2" data-speed="8">
     <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
   </div>
 
-  <!-- Bulle 3 : 115px (Moyenne-Grande) -->
+  <!-- Bulle 3 -->
   <div class="hero-bubble hero-bubble--3" data-speed="18">
     <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
   </div>
 
-  <!-- Bulle 4 : 138px (Grande) -->
+  <!-- Bulle 4 -->
   <div class="hero-bubble hero-bubble--4" data-speed="11">
     <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
   </div>
 
-  <!-- Bulle 5 : 74px (Mini) -->
+  <!-- Bulle 5 -->
   <div class="hero-bubble hero-bubble--5" data-speed="22">
     <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
   </div>
 
-  <!-- Bulle 6 : 96px (Moyenne) -->
+  <!-- Bulle 6 -->
   <div class="hero-bubble hero-bubble--6" data-speed="15">
     <img src="https://civilprom.s3.eu-north-1.amazonaws.com/testparrallaxeffect.svg" alt="" />
   </div>
 </div>
 
-<!-- 3. JAVASCRIPT (POPUP ACCÉLÉRÉ + PARALLAXE PRO SANS FORCER LE SCALE) -->
+<!-- 3. SCRIPT JAVASCRIPT (PREMIER POP À 0.5s + ENCHAÎNEMENT RAPIDE + PARALLAXE) -->
 <script>
 (function() {
   const heroSection = document.querySelector('.section-hero');
@@ -1861,24 +1917,23 @@ margin: 0;
   
   if (!heroSection || !bubbles.length) return;
 
-  // 1. DÉCLENCHEMENT POPUP ACCÉLÉRÉ (1.2s -> 1.0s -> 0.8s -> 0.6s -> 0.45s -> 0.3s)
-  const popIntervals = [1200, 1000, 800, 600, 450, 300];
-  let cumulativeTime = 250;
+  // 1. POPUP RAPIDE : démarre à 500ms, puis accélère (1s, 0.8s, 0.6s, 0.4s, 0.25s)
+  const popIntervals = [500, 1000, 800, 600, 400, 250];
+  let cumulativeTime = 0;
 
   bubbles.forEach((bubble, idx) => {
-    const delay = popIntervals[idx] !== undefined ? popIntervals[idx] : 350;
-    cumulativeTime += delay;
+    cumulativeTime += (popIntervals[idx] !== undefined ? popIntervals[idx] : 300);
 
     setTimeout(() => {
       bubble.classList.add('is-visible');
-      // Une fois l'animation de pop terminée, on passe le relais au parallaxe
+      // Relais immédiat au moteur de parallaxe une fois l'animation de rebond terminée
       setTimeout(() => {
         bubble.dataset.popped = "true";
-      }, 550);
+      }, 520);
     }, cumulativeTime);
   });
 
-  // 2. PARALLAXE DISCRET & FLUIDE (LERP)
+  // 2. PARALLAXE FLUIDE LERP (ORIENTATION / SOURIS)
   let targetX = 0;
   let targetY = 0;
   let currentX = 0;
@@ -1900,7 +1955,6 @@ margin: 0;
     currentY += (targetY - currentY) * 0.055;
 
     bubbles.forEach((bubble) => {
-      // N'applique le parallaxe que si la bulle a terminé son animation d'apparition
       if (bubble.dataset.popped === "true") {
         const speed = parseFloat(bubble.dataset.speed) || 12;
         const moveX = (currentX * speed).toFixed(2);
