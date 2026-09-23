@@ -1674,13 +1674,7 @@ margin: 0;
     </div>
   </div>
 </div>
-<!-- END: Sticky Language Bar -->
 
-
-  <div class="div-preventio">
-    <h3 class="preventio" data-i18n="ineurope">En Europe, entre 3 et 4 millions de vélos sont dérobés chaque année, soit en moyenne 6 à 8 vols par minute, bien que le phénomène varie selon les pays : souscrire une assurance et faire une gravure de son vélo devraient être des réflexes dès l'acquisition.</h3>
-
-  </div>
 
 
   <main>
@@ -1880,100 +1874,7 @@ display: none !important;
     }
 </style>
 
-<!-- 2. STRUCTURE HTML DES 6 BULLES -->
-<div class="hero-floating-bubbles" aria-hidden="true">
-  <!-- Bulle 1 -->
-  <div class="hero-bubble hero-bubble--1" data-speed="14">
-    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/GAUCHE.svg" alt="" />
-  </div>
 
-  <!-- Bulle 2 -->
-  <div class="hero-bubble hero-bubble--2 nax" data-speed="8">
-    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/velo5.svg" alt="" />
-  </div>
-
-  <!-- Bulle 3 -->
-  <div class="hero-bubble hero-bubble--3" data-speed="18">
-    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/DROIT.svg" alt="" />
-  </div>
-
-  <!-- Bulle 4 -->
-  <div class="hero-bubble hero-bubble--4 nax" data-speed="11">
-    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/velo4.svg" alt="" />
-  </div>
-
-  <!-- Bulle 5 -->
-  <div class="hero-bubble hero-bubble--5 nax" data-speed="22">
-    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/velo2.svg" alt="" />
-  </div>
-
-  <!-- Bulle 6 -->
-  <div class="hero-bubble hero-bubble--6 nax" data-speed="15">
-    <img src="https://civilprom.s3.eu-north-1.amazonaws.com/velo3.svg" alt="" />
-  </div>
-</div>
-
-<!-- 3. SCRIPT JAVASCRIPT (PREMIER POP À 0.5s + ENCHAÎNEMENT RAPIDE + PARALLAXE) -->
-<script>
-(function() {
-  const heroSection = document.querySelector('.section-hero');
-  const bubbles = document.querySelectorAll('.hero-floating-bubbles .hero-bubble');
-  
-  if (!heroSection || !bubbles.length) return;
-
-  // 1. POPUP RAPIDE : démarre à 500ms, puis accélère (1s, 0.8s, 0.6s, 0.4s, 0.25s)
-  const popIntervals = [500, 1000, 800, 600, 400, 250];
-  let cumulativeTime = 0;
-
-  bubbles.forEach((bubble, idx) => {
-    cumulativeTime += (popIntervals[idx] !== undefined ? popIntervals[idx] : 300);
-
-    setTimeout(() => {
-      bubble.classList.add('is-visible');
-      // Relais immédiat au moteur de parallaxe une fois l'animation de rebond terminée
-      setTimeout(() => {
-        bubble.dataset.popped = "true";
-      }, 520);
-    }, cumulativeTime);
-  });
-
-  // 2. PARALLAXE FLUIDE LERP (ORIENTATION / SOURIS)
-  let targetX = 0;
-  let targetY = 0;
-  let currentX = 0;
-  let currentY = 0;
-
-  heroSection.addEventListener('mousemove', (e) => {
-    const rect = heroSection.getBoundingClientRect();
-    targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-    targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-  });
-
-  heroSection.addEventListener('mouseleave', () => {
-    targetX = 0;
-    targetY = 0;
-  });
-
-  function renderParallax() {
-    currentX += (targetX - currentX) * 0.055;
-    currentY += (targetY - currentY) * 0.055;
-
-    bubbles.forEach((bubble) => {
-      if (bubble.dataset.popped === "true") {
-        const speed = parseFloat(bubble.dataset.speed) || 12;
-        const moveX = (currentX * speed).toFixed(2);
-        const moveY = (currentY * speed).toFixed(2);
-
-        bubble.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
-      }
-    });
-
-    requestAnimationFrame(renderParallax);
-  }
-
-  requestAnimationFrame(renderParallax);
-})();
-</script>
       
       <div class="container hero-grid">
       <a href="#" class="header-brand" aria-label="Bikelp Accueil">
